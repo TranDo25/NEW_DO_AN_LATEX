@@ -304,7 +304,7 @@ Chương 1 đặt vấn đề về bài toán phát hiện đối tượng, trì
 
 
 \section{Giới thiệu}
-Trong bài toán phát hiện đối tượng, việc định vị và phát hiện đối tượng dày đặc vẫn còn là một vấn đề thách thức do vấn đề đặc trưng răng cưa (feature aliasing). Có các giải pháp đã được sử dụng: làm giàu các đặc trưng (enhance features) và sử dụng anchors. Nhược điểm của các phương pháp này: làm cho cấu trúc mạng trở nên phức tạp hơn, tăng thời gian huấn luyện (training) và suy luận (inference). Một phương pháp khác đó là sử dụng biến đổi RoI, nhưng phương pháp này không thích ứng tốt với các đối tượng có hướng bất kỳ, đặc biệt đối với các đối tượng xuất hiện dày đặc trong hình ảnh.
+Trong bài toán phát hiện đối tượng, việc định vị và phát hiện đối tượng dày đặc vẫn còn là một vấn đề thách thức do vấn đề đặc trưng răng cưa (feature aliasing), tức là các pi. Có các giải pháp đã được sử dụng: làm giàu các đặc trưng (enhance features) và sử dụng anchors. Nhược điểm của các phương pháp này: làm cho cấu trúc mạng trở nên phức tạp hơn, tăng thời gian huấn luyện (training) và suy luận (inference). Một phương pháp khác đó là sử dụng biến đổi RoI, nhưng phương pháp này không thích ứng tốt với các đối tượng có hướng bất kỳ, đặc biệt đối với các đối tượng xuất hiện dày đặc trong hình ảnh.
 
 
 \begin{figure}[ht!]
@@ -332,24 +332,18 @@ Phương pháp CFA được chia làm 2 giai đoạn thực hiện:
 	\end{center}
 \end{figure} 
 
-\section{Xây dựng tập bao lồi}
+\section{Xây dựng tập bao lồi đầu tiên}
 Việc biểu diễn bằng khung hình chữ nhật do bao lồi sinh ra làm giảm khả năng biểu diễn đối tượng. Vì thế phương pháp CFA đã đề xuất biểu diễn phạm vi của đối tượng bằng bao lồi. Mỗi bao lồi là một tập hợp các điểm thoả mãn công thức:
 
-\begin{center}
-	\begin{equation*}
+\begin{align} \label{convex_hull_definition}
 		C_i=\left\{\left(x_i^k, y_i^k\right)\right\}_i^{k=1 \ldots K}
-		\label{ct1}
-	\end{equation*}
-
-
-\end{center}
+\end{align}
 Trong đó: $C_i$ là bao lồi thứ i, $\left(x_i^k, y_i^k\right)$ là điểm nằm trên bao lồi thứ k, k là chỉ số của điểm đặc trưng, $K = 9$ tương ứng với 9 điểm được khởi tạo của bao lồi.
 
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./compare_convex-hull_with_rectangle.jpg}
 		\caption{So sánh biểu diễn hộp có hướng (bên trên) so với biểu diễn bao lồi (ở dưới).}
-		\label{fig_dhandang1}
 	\end{center}
 \end{figure} 
 
@@ -358,14 +352,14 @@ Việc huấn luyện có thể xem như là quá trình dự đoán độ lệc
 $\left(\Delta x_i^k, \Delta y_i^k\right)$
 với từng điểm đặc trưng, sau trả về một bản đồ độ bù cho các đặc trưng
 $O \in R^{H \times W \times W}$ ($H, W, C$ lần lượt tương ứng với chiều dài, chiều rộng và số lượng kênh của bản đồ đặc trưng):
-\begin{center}
-	$\hat{\mathcal{C}}_i(\theta) \leftarrow\left\{\left(x_i^k+\Delta x_i^k(\theta), y_i^k+\Delta y_i^k(\theta)\right)\right\}_i^{k=1 \ldots K}$
-\end{center}
+\begin{align} \label{convex_hull_learn_offset}
+	\hat{\mathcal{C}}_i(\theta) \leftarrow\left\{\left(x_i^k+\Delta x_i^k(\theta), y_i^k+\Delta y_i^k(\theta)\right)\right\}_i^{k=1 \ldots K}
+\end{align}
 
 Trong đó: $\theta$ biểu thị là các tham số của mạng. Việc dự đoán offset sẽ thực hiện theo công thức trên.
 
 \section{Tích chập biến dạng}
-Tích chập biến dạng (Deformable convolution) là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $NxN$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
+Tích chập biến dạng (Deformable convolution) là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $N\mathrm{x}N$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -444,11 +438,11 @@ Hàm mất mát dành cho bao lồi âm là:
 	\mathcal{L}_i^{-}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)
 \end{align}
 Ngoài ra, trong quá trình huấn luyện (Hình \ref{work_flow_cfa}), vì các bao lồi được ban đầu chỉ được sinh ra bằng cách tối ưu CIoU, một hàm loss cần được định nghĩa cho việc giám sát:
-\begin{center}
-	$\mathcal{L}^{\operatorname{det} 1}(\theta)=\frac{1}{J} \sum_i \mathbb{I}_{\left(x_i, y_i\right)} \mathcal{L}_i^{l o c}(\theta)$
-\end{center}
+\begin{align} \label{loss_det_1}
+	\mathcal{L}^{\operatorname{det} 1}(\theta)=\frac{1}{J} \sum_i \mathbb{I}_{\left(x_i, y_i\right)} \mathcal{L}_i^{l o c}(\theta)
+\end{align}
 Nhìn chung, trong giai đoạn đầu tiên của việc sinh bao lồi, hàm mất mát $L^{\operatorname{det} 1}$ bên trên là hàm cần được quan tâm. Trong giai đoạn 2, hai hàm mất mát phân lớp (\ref{loss_negative_convex} và \ref{loss_function_positive_convex}) sẽ được sử dụng để phân loại bao lồi
-\section{Bao lồi thích ứng}
+\section{Thích ứng bao lồi}
 Phương pháp biểu diễn bằng bao lồi giúp định vị đối tượng ở bất kỳ hình dạng nào, tuy nhiên vẫn có một vấn đề, làm thế nào để định vị một cách chính xác các đối tượng dày đặc, đặc biệt là các đối tượng có đặc trưng răng cưa. Vì vậy bộ phát hiện CFA đã đề xuất một phương pháp thích ứng mới để tinh chỉnh các bao lồi sinh ra ở giai đoạn 1 để đạt được vị trí chính xác hơn và phân lớp hiệu quả hơn.
 \subsection{Xây dựng tập các bao lồi}
 Bộ phát hiện cho xây dựng một tập các bao lồi với mỗi đối tượng, để một đối tượng mục tiêu có thể khớp với nhiều bao lồi phù hợp để cùng nhau tối ưu các đặc trưng của các đối tượng dày đặc.
@@ -461,9 +455,9 @@ Bộ phát hiện cho xây dựng một tập các bao lồi với mỗi đối 
 	\end{center}
 \end{figure} 
 Với mỗi mục tiêu, ý tưởng xây dựng tập bao lồi tương ứng là: theo như hệ số CIoU giữa bao lồi dự đoán và bao lồi thực tế, chọn I bao lồi đứng đầu là ứng cử viên cho bao lồi dương để xây dựng tập các bao lồi. Ngoài ra cũng có thể xây dựng tập bao lồi sử dụng ngưỡng CIoU xác định bằng thực nghiệm. Các bao lồi còn lại không thuộc vào bất kỳ tập bao lồi nào sẽ được gộp lại thành tập bao lồi âm $S$.
-\begin{center}
-$\mathcal{L}_{S_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \omega_i \mathcal{L}_i^{+}(\theta)$
-\end{center}
+\begin{align} \label{construct_convex_hull_set}
+\mathcal{L}_{S_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \omega_i \mathcal{L}_i^{+}(\theta)
+\end{align}
 Khi nhiều đối tượng tập hợp lại cùng nhau, không phải tất cả các bao lồi nằm trong tập bao lồi đều phù hợp với đối tượng, và các bao lồi có đặc trưng răng cưa sẽ phải được phân loại thành tập các bao lồi âm. Cùng thời điểm đó, các bao lồi được chia sẻ bởi nhiều đối tượng phải phải có độ tin cậy thấp hơn.
 \subsection{Chiến lược phân đoạn tập các bao lồi}
 Để giải quyết vấn đề đặc trưng răng cưa ở các đối tượng dày đặc, bộ phát hiện CFA đề xuất chiến lược phân đoạn tập các bao lồi để đánh giá động các mẫu bao lồi âm và mẫu dương, chuyển đổi trọng số $\omega_i$ thành $f\left(L_i^{+}(\theta)\right)$. Sau khi thay thế, được công thức sau:
@@ -483,46 +477,112 @@ Nguyên tắc phân chia tập bao lồi là nguyên tắc nhất quá độ d�
 \begin{align} \label{gradient_of_loss}
 	 \frac{\partial \mathcal{L}_{s_j}^{+}(\theta)}{\partial \theta}=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \frac{\partial\left(f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)\right)}{\partial \mathcal{L}_i^{+}(\theta)} \frac{\partial \mathcal{L}_i^{+}(\theta)}{\partial \theta}
 \end{align}
-Tiêu chí để thực hiện phân đoạn tập các bao lồi là: đạo hàm của mỗi một bao lồi dương $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ yêu cầu đạo hàm của toàn bộ tập bao lồi $\frac{\partial L_{S_j}^{+}(\theta)}{\partial \theta}$ là nhất quán. Điều này có nghĩa là: bao lồi nào có độ dốc không nhất quán được xem là bao lồi âm, tức là những bao lồi này sẽ dẫn đến hiện tượng răng cưa đặc trưng. Xem xét công thức \ref{gradient_of_loss}, nếu $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ mang giá trị dương, thì bao lồi $C_i$ được xếp là bao lồi dương, hoặc ngược lại bao lồi sẽ là âm. Xem xét hình \ref{gradient_consistentcy_illustration}, khi sắp xếp các giá trị mất mát  $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ theo thứ tự tăng dần, $f\left(\partial L_i^{+}(\theta)\right) L_i^{+}(\theta)$ (đường màu cam) là một hàm lồi hướng lên với một cực trị duy nhất, trong khi đường  $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ (màu xanh lục) chia các bao lồi thành tập các bao lồi dương $S_j$ và tập bao lồi âm S-
-Cùng lúc đó, để đối phó với hiện tượng đặc trưng răng cưa, tác giả cũng giới thiệu một hệ số chống đặc trưng răng cưa:
-\begin{center}
-	$\mathcal{L}_{s_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} p_i f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)$
-\end{center}
+Tiêu chí để thực hiện phân đoạn tập các bao lồi là: đạo hàm của mỗi một bao lồi dương $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ yêu cầu đạo hàm của toàn bộ tập bao lồi $\frac{\partial L_{S_j}^{+}(\theta)}{\partial \theta}$ là nhất quán. Điều này có nghĩa là: bao lồi nào có độ dốc không nhất quán được xem là bao lồi âm, tức là những bao lồi này sẽ dẫn đến hiện tượng răng cưa đặc trưng. Xem xét công thức \ref{gradient_of_loss}, nếu $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ mang giá trị dương, thì bao lồi $C_i$ được xếp là bao lồi dương, hoặc ngược lại bao lồi sẽ là âm. Xem xét hình \ref{gradient_consistentcy_illustration}, khi sắp xếp các giá trị mất mát  $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ theo thứ tự tăng dần, $f\left(\partial L_i^{+}(\theta)\right) L_i^{+}(\theta)$ (đường màu cam) là một hàm lồi hướng lên với một cực trị duy nhất, trong khi đường  $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ (màu xanh lục) chia các bao lồi thành tập các bao lồi dương $S_j$ và tập bao lồi âm $S\_$.
 
-giai đoạn thứ 2 của quá trình tối ưu được điều khiển bởi hàm loss trên tập convex hull, cùng nhau được định nghĩa bởi phân lớp và định vị đối tượng:
-\begin{center}
-	$$
+Cùng thời điểm đó, để xử lý đặc trưng răng cưa, tác giả cũng giới thiệu hệ số chống đặc trưng răng cưa:
+\begin{align}\label{FAA_fomular}
+	p_i = \gamma\dot{\frac{\mathrm{CIoU}(\mathcal{C}_i, \mathcal{B}_j)}{\sum_{m=1}^{M}\mathrm{CIoU}\left(\mathcal{C}_i, \mathcal{B}_j\right)}}
+\end{align}
+Hệ số này thể hiện mức độ mà một đối tượng thuộc về một đối tượng duy nhất, khi nó chồng lên M đối tượng khác. $\gamma$ là hệ số chống đặc trưng răng cưa.
+Hàm mất mát được cập nhật thành: 
+
+\begin{align}\label{loss_update}
+	\mathcal{L}_{s_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} p_i f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)
+\end{align}
+Giai đoạn 2 của quá trình tối ưu được điều khiển bởi hàm mất mát trên tập bao lồi, hàm này được xác định bằng cách kết hợp hàm mất mát phân loại và hàm mất mát vị trí:
+\begin{align} \label{loss_det_2}
 	\begin{aligned}
 		\mathcal{L}^{\operatorname{det} 2}(\theta)= & \frac{1}{J} \sum_{j=1}^J \frac{1}{\left|S_j\right|} \sum_{i \in S_j} p_i f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta) \\
 		& +\frac{1}{\left|S_{-}\right|} \sum_{i \in S_{-}} \mathcal{L}_i^{-}(\theta)
 	\end{aligned}
-	$$
-	
+\end{align}
 
-\end{center}
-
-Hàm loss này xem xét tự tương ứng về đặc trưng của nhiều đối tượng,, phạt các bao lồi được chia sẻ bởi nhiều đối tượng, và giảm thiểu đặc trưng răng cưa để đạt được thích ứng đặc trưng tối ưu. Cuối cùng hàm loss của bộ phát hiện CFA toàn bộ là: 
-\begin{center}
-	$L^{\operatorname{det} 1}(\theta)+L^{\operatorname{det} 2}(\theta)$
-\end{center}
+Hàm mất mát này xem xét sự tương ứng về đặc trưng của nhiều đối tượng, tiến hành phạt các bao lồi được chia sẻ bởi nhiều đối tượng, và giảm thiểu đặc trưng răng cưa để đạt được thích ứng đặc trưng tối ưu. Cuối cùng hàm mất mát của toàn bộ bộ phát hiện CFA là: 
+\begin{align} \label{final_loss_CFA}
+	L^{\operatorname{det} 1}(\theta)+L^{\operatorname{det} 2}(\theta)
+\end{align}
 
 \chapter{Thuật toán tính bao lồi xấp xỉ}
 \textit{giới thiệu chung về thuật toán, cách dùng, có bao nhiêu loại thuật toán}
 \section{Outer convex approximation}
 Cho:
-\begin{center}
-	$X:=\left\{x_1, x_2, \ldots, x_n\right\} \subset \mathbb{R}^2$
-\end{center}
+\begin{align} \label{ct2.1} 
+	X:=\left\{x_1, x_2, \ldots, x_n\right\} \subset \mathbb{R}^2
+\end{align}
 Giả sử không mất tính tổng quát rằng
+\begin{align} \label{ct2.2} 
+	x_1, x_2, \ldots, x_n  \text{ không cùng nằm trên cùng một đường thẳng.}
+\end{align}
+Ta viết tất cả các vector thành dạng vector hàng, những vector này sẽ có chuyển vị của chúng được ký hiệu bởi chỉ số trên $T$, và sử dụng chỉ số trên để chỉ định các thành phần của chúng, ví dụ: $x = \left(x^1, x^2\right)\in\mathbb{R}^2$. Cho $x, x'\in\mathbb{R}^2$, chứng tỏ:
+\begin{equation}\label{ct2.3}
+	\begin{aligned}
+		& {\left[x, x^{\prime}\right]:=\left\{(1-\lambda) x+\lambda x^{\prime} \mid \lambda \in[0,1]\right\}} \\
+		& \left(x, x^{\prime}\right):=\left\{(1-\lambda) x+\lambda x^{\prime} \mid \lambda \in(0,1)\right\}
+	\end{aligned}
+\end{equation}
+
+Cho $X$ thỏa mãn (\ref{ct2.1}) - (\ref{ct2.2}) và $\delta \geq 0$, trong phần này em muốn tìm một bao lồi xấp xỉ của $X$, nghĩa là:
+\begin{align}\label{ct2.4}
+	\text{một đa giác lồi }\mathcal{P}^{outer} \text{thỏa mãn bao lồi }X\subset\mathcal{P}^{outer}
+\end{align}
+sao cho
+\begin{align}\label{ct2.5}
+	dist_H\left(conv\ X, \mathcal{P}^{outer}\right) \leq \delta
+\end{align}
+$P^{outer}$ đươc xác định bởi:
+\begin{align}\label{ct2.6}
+	P^{outer} := \{x\in\mathbb{R}^2 | dx^T \leq \beta_d\ \text{ với tất cả d} \in D\}
+\end{align}
+trong đó $D \subset \mathbb{R^2}$ biểu thị tập các hướng tối đa và $\beta_d \in \mathbb{R}$ biểu thị ngưỡng tương ứng với hướng $d \in D$. Với D cho trước, $\mathcal{P}^{outer}$ là bao lồi xấp xỉ phù hợp nhất chứa $X$ nếu:
+\begin{equation}\label{ct2.7}
+	\beta_d:=\max _{x \in X} d x^T \text{với tất cả d }\in D
+\end{equation}
+Cho P là tập các đỉnh của $\mathcal{P}^{outer}$.
+Ta bắt đầu quá trình xác định bao lồi xấp xỉ ngoài với hình chữ nhật nhỏ nhất có chứa $X$, tập $X$ này có chứa cạnh song song với trục tọa độ. Theo công thức (\ref{ct2.5}) - (\ref{ct2.6}), hình chữ nhật $\mathcal{P}^{outer}$ được xác định bởi:
+\begin{align}\label{ct2.8}
+	D:=\{(1, 0), (0, 1), (-1, 0), (0, -1)\}
+\end{align}
+và:
+\begin{equation}
+	\begin{aligned}
+		& \beta_{(1,0)}:=\max \left\{x^1 \mid\left(x^1, x^2\right) \in X\right\}, \\
+		& \beta_{(0,1)}:=\max \left\{x^2 \mid\left(x^1, x^2\right) \in X\right\}, \\
+		& \beta_{(-1,0)}:=\max \left\{-x^1 \mid\left(x^1, x^2\right) \in X\right\}, \\
+		& \beta_{(0,-1)}:=\max \left\{-x^2 \mid\left(x^1, x^2\right) \in X\right\} .
+	\end{aligned}
+\end{equation}
+Theo công thức (\ref{ct2.2}) ta có:
+
 \begin{center}
-	$x_1, x_2, \ldots, x_n$ không cùng nằm trên cùng một đường thẳng
+	$\beta_{(-1, 0)} \textless \beta_{(1, 0)}$ \text{ và } $\beta_{(0, -1)} \textless \beta_{(0, 1)}$
 \end{center}
-\begin{align} \label{ptdd}
-	f(x)= a_0x^n + a_1x^{n-1} + \ldots + a_n \equiv 0\pmod{m}
+Vì vậy, ${P}^{outer}$ là một hình chữ nhật phù hợp với 4 đỉnh phân biệt, có tập đỉnh là:
+\begin{align}\label{ct2.9}
+	P := \{r_1, r_2, r_3, r_4\}
+\end{align}
+Trong đó:
+\begin{equation}\label{ct2.10}
+	\begin{aligned}
+		& r_1:=\left(\beta_{(1,0)}, \beta_{(0,1)}\right), \\
+		& r_2:=\left(\beta_{(-1,0)}, \beta_{(0,1)}\right), \\
+		& r_3:=\left(\beta_{(-1,0)}, \beta_{(0,-1)}\right), \\
+		& r_4:=\left(\beta_{(1,0)}, \beta_{(0,-1)}\right) .
+	\end{aligned}
+\end{equation}
+Trong các bước xấp xỉ tiếp theo, việc xây dựng đa giác ${P}^{outer}$ lần lượt được cải thiện như sau:
+
+\begin{align} \label{ct2.11}
+\text{Với 1 đỉnh }p \in P, \text{cho } p^{-} \in P \text{và} p^{+} \in P \text{lần lượt là điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của} p \in P.
 \end{align}
 
-Ta viết tất cả các vector dưới dạng vector hàng, có ma trận chuyển vị  được ký hiệu bởi chỉ số trên \textit{I}, và sử dụng chỉ sổ phía trên để chỉ định các thành phần, ví dụ $x=\left(x^1, x^2\right) \in \mathbb{R}^2$, biểu thị như sau:
-$\left[x, x^2 \right]$
+
+
+
+
+
+
+
+
 
 
 
