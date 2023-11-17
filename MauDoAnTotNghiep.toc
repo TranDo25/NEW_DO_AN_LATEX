@@ -1,0 +1,23 @@
+\contentsline {chapter}{\bf Danh sách hình vẽ}{iv}{}%
+\contentsline {chapter}{\bf Danh sách bảng}{v}{}%
+\contentsline {chapter}{Danh sách các ký hiệu và chữ viết tắt}{vi}{}%
+\contentsline {chapter}{\vspace *{-8pt} Mở đầu}{1}{}%
+\contentsline {chapter}{\numberline {1}Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng}{3}{}%
+\contentsline {section}{\numberline {1.1}Giới thiệu}{3}{}%
+\contentsline {section}{\numberline {1.2}Xây dựng tập bao lồi}{4}{}%
+\contentsline {section}{\numberline {1.3}Tích chập biến dạng}{5}{}%
+\contentsline {section}{\numberline {1.4}Thuật toán Jarvis March}{7}{}%
+\contentsline {section}{\numberline {1.5}đinh nghĩa CIoU}{8}{}%
+\contentsline {section}{\numberline {1.6}loss}{8}{}%
+\contentsline {section}{\numberline {1.7}Convex Hull Adaptation}{9}{}%
+\contentsline {subsection}{\numberline {1.7.1}Xây dựng tập các bao lồi}{9}{}%
+\contentsline {subsection}{\numberline {1.7.2}Convex hull set segmentation strategy}{10}{}%
+\contentsline {chapter}{\numberline {2}Thuật toán tính bao lồi xấp xỉ}{13}{}%
+\contentsline {section}{\numberline {2.1}Outer convex approximation}{13}{}%
+\contentsline {section}{\numberline {2.2}Sơ lược về ............ }{15}{}%
+\contentsline {chapter}{\numberline {3}Ứng dụng .................}{17}{}%
+\contentsline {section}{\numberline {3.1}Thặng dư bậc hai và ứng dụng}{17}{}%
+\contentsline {subsection}{\numberline {3.1.1}Phương trình đồng dư bậc hai..........}{17}{}%
+\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{19}{}%
+\contentsline {chapter}{\vspace *{-8pt} Kết luận}{21}{}%
+\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{22}{}%
