@@ -324,12 +324,24 @@ Phương pháp CFA được chia làm 2 giai đoạn thực hiện:
 	\item Giai đoạn 2: chỉnh sửa bao lồi sao cho phù hợp với các đối tượng phân bổ dày đặc.
 \end{itemize}
 
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=450px]{./work_flow_cfa.JPG}
+		\caption{Biểu đồ luồng của bộ phát hiện CFA.}
+		\label{work_flow_cfa}
+	\end{center}
+\end{figure} 
 
 \section{Xây dựng tập bao lồi}
 Việc biểu diễn bằng khung hình chữ nhật do bao lồi sinh ra làm giảm khả năng biểu diễn đối tượng. Vì thế phương pháp CFA đã đề xuất biểu diễn phạm vi của đối tượng bằng bao lồi. Mỗi bao lồi là một tập hợp các điểm thoả mãn công thức:
 
 \begin{center}
-	$C_i=\left\{\left(x_i^k, y_i^k\right)\right\}_i^{k=1 \ldots K}$
+	\begin{equation*}
+		C_i=\left\{\left(x_i^k, y_i^k\right)\right\}_i^{k=1 \ldots K}
+		\label{ct1}
+	\end{equation*}
+
+
 \end{center}
 Trong đó: $C_i$ là bao lồi thứ i, $\left(x_i^k, y_i^k\right)$ là điểm nằm trên bao lồi thứ k, k là chỉ số của điểm đặc trưng, $K = 9$ tương ứng với 9 điểm được khởi tạo của bao lồi.
 
@@ -376,15 +388,16 @@ Phép tích chập biến dạng thực ra là thêm phần bù cho các điểm
 
 \begin{figure}[ht!]
 	\begin{center}
-		\includegraphics[width=500px]{./deformable_process.jpg}
+		\includegraphics[width=400px]{./deformable_process.jpg}
 		\caption{Quá trình thực hiện tích chập biến dạng.}
 		\label{deformable_process}
 	\end{center}
 \end{figure} 
 
-Cho một đầu vào là một bản đồ đặc trưng, giả sử toán tử gốc của phép tích chập là 3x3, định nghĩa một lớp tích chập 3x3 khác, và chiều của đầu ra là kích thước của bản đồ đặc trưng ban đầu, số kênh = $2N$.
+
+Cho một đầu vào là một bản đồ đặc trưng, giả sử toán tử gốc của phép tích chập là 3x3, định nghĩa một lớp tích chập 3x3 khác, và chiều của đầu ra là kích thước của bản đồ đặc trưng ban đầu, số kênh = $2N$. (Hình \ref{deformable_process}) Tiếp theo thực hiện tích chập biến dạng, dựa trên độ bù của các phần đã được tính trước đó, sau đó thực hiện phép tích chập như thông thường.
 \section{Thuật toán Jarvis March}
-Sau khi biết được offset, việc cập nhật các điểm đặc trưng của bao lồi được thực hiện bởi thuật toán Jarvis March, bao lồi nhỏ nhất phù hợp với điều kiện sẽ được sinh ra sau mỗi vòng lặp.
+Sau khi học được phần bù, việc hoàn thành cập nhật các điểm đặc trưng của bao lồi được thực hiện bởi thuật toán Jarvis March, bao lồi nhỏ nhất phù hợp với điều kiện sẽ được tạo ra sau mỗi vòng lặp.
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -396,42 +409,41 @@ Sau khi biết được offset, việc cập nhật các điểm đặc trưng c
 Tóm tắt các bước thực hiện thuật toán Jarvis March:
 
 \begin{itemize}
-	\item Đầu tiên, xác định tổng điểm trên biên v1 và điểm tiếp theo v2
-	\item Tìm điểm tiếp theo v3 trong tập điểm sao cho v1, v3, v2 thoả mãn Counter Clock Wise (CCW)
-	\item nếu thoả mãn thì v3 là 1 điểm ngoại vi tiếp theo
-	\item lặp lại bước 3 cho đến khi tất cả các điểm đã được duyệt qua, tức là tìm thấy điểm ngoài cùng nhất
-	\item ghi đè v1 = v2
-	\item lặp lại bước 2 cho đến khi điểm tiếp theo trả về chính là điểm xuất phát
+	\item Bước 1: Chọn điểm xuất phát là v1 nằm trên đường biên. Tìm điểm v2 tiếp theo sao cho mọi điểm khác trong tập hợp nằm ở phía bên trái đoạn thằng nối v1 và v2.
+	\item Bước 2: Tìm điểm v3 tiếp theo trong tập các điểm còn lại, sao cho v1, v2, v3 thỏa mãn góc ngược chiều kim đồng hồ (Counter Clock Wise - CCW). Điền này có nghĩa là v3 nằm ở bên trái đoạn thẳng nối v1 và v2. Nếu điều kiện này được đáp ứng, tức là v3 là 1 điểm nằm ở ngoại vi hơn.
+	\item Bước 3: Nếu điều kiện bước trên thỏa mãn, ghi đè giá trị của v3 lên v2. Gán giá trị của v3 cho v2, tức v2 = v3. Quay lại bước 2 để tìm điểm ngoại vi tiếp theo.
+	\item Bước 4: Lặp lại bước 3 cho đến khi tất cả các điểm đã được duyệt qua, tức là tìm thấy điểm ngoại vi tiếp theo được tìm thấy. Quá trình này tạo ra một chuỗi các điểm trên đường biên của bao lồi.
+	\item Bước 5: Ghi đè giá trị của v2 lên v1. Sau khi tìm thấy điểm ngoại vi tiếp theo, gán giá trị của v2 lên v1, tức v1 = v2.
+	\item  Bước 6: Lặp lại bước 2 cho đến khi điểm tiếp theo trả về chính là điểm xuất phát. Quá trình này sẽ tiếp tục cho đến khi ta quay trở lại điểm xuất phát ban đầu, hoàn thành toàn bộ quá trình tìm bao lồi.
 \end{itemize}
 
-\section{đinh nghĩa CIoU}
-chỉ số $i$ trong bao lồi $C_i(\theta)$ và chỉ số $j$ là giá trị thật của đối tượng $B_j$, CIoU được xác định như sau:
-\begin{center}
-	$\operatorname{CIoU}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)=\frac{\left|\mathcal{C}_i(\theta) \cap \mathcal{B}_j\right|}{\left|\mathcal{C}_i(\theta) \cup \mathcal{B}_j\right|}-\frac{\left|\mathcal{R}_j \backslash\left(\mathcal{C}_i(\theta) \cup \mathcal{B}_j\right)\right|}{\left|\mathcal{R}_j\right|}$
-\end{center}
-\section{loss}
+\section{Đinh nghĩa công thức Convex Intersection over Union (CIoU)}
+Dựa vào mỗi bao lồi dự đoán, có thể tính toán được hàm mất mát vị trí và phân lớp của một đối tượng. Công thức CIoU giữa bao lồi dự đoán thứ $i$:  $C_i(\theta)$ và hộp bao thật sự $\mathcal{B}_j$ của đối tượng thứ $j$ được tính như sau:
 
-\textit{công thức chưa xác định tên:}
-\begin{center}
-	$\mathcal{L}_i^{l o c}(\theta)=1-\operatorname{CIoU}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)$
-\end{center}
-\textit{công thức chưa xác định tên:}
-\begin{center}
-	$\mathcal{L}_i^{c l s}(\theta)=\mathrm{FL}\left(S_i(\theta), Y_j\right)$
-\end{center}
+\begin{align} \label{CioU_fomular}
+	\operatorname{CIoU}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)=\frac{\left|\mathcal{C}_i(\theta) \cap \mathcal{B}_j\right|}{\left|\mathcal{C}_i(\theta) \cup \mathcal{B}_j\right|}-\frac{\left|\mathcal{R}_j \backslash\left(\mathcal{C}_i(\theta) \cup \mathcal{B}_j\right)\right|}{\left|\mathcal{R}_j\right|}
+\end{align}
+Trong đó: $\mathcal{R}_j$ là hợp của hai đa giác, tức là đa giác nhỏ nhất có thể bao quanh  $C_i(\theta)$ và $\mathcal{B}_j$.
+\section{Hàm mất mát}
+Theo công thức \ref{CioU_fomular}, hàm mất mát vị trí CIoU được định nghĩa là:
+\begin{align} \label{cong_thuc_ham_loss_CIoU}
+	\mathcal{L}_i^{l o c}(\theta)=1-\operatorname{CIoU}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)
+\end{align}
+Cho $f_i^{k}(\theta)$ là đặc trưng của điểm thứ $k$, bao lồi đặc trưng $f_i(\theta)$ được tính bởi tổng có trọng số của tất cả các điểm đặc trưng trên bao lồi dự đoán $\mathcal{C}_i(\theta)$, tức là bằng công thức: $f_i(\theta) = \sum_{k}m w_i^k.f_i^k(\theta)$, trong đó, $w_i^k$ biểu thị các trọng số đặc trưng có thể học được từ tích chập biến dạng (DCN). Dựa vào bao lồi đặc trưng, điểm dự đoán $S_i(\theta)$ của bao lồi dự đoán $C_i(\theta)$ được tính bởi phép tích chập, hàm mất mát phân loại của bao lồi dự đoán $C_i(\theta)$ tương ứng với $B_j$ được định nghĩa là:
+\begin{align} \label{loss_classification}
+	\mathcal{L}_i^{c l s}(\theta)=\mathrm{FL}\left(S_i(\theta), Y_j\right)
+\end{align}
+ở đây $Y_j$ biểu thị là nhãn nhị phân thật sự (ground-truth) và FL() ở đây là hàm mất mát Focal (Focal loss). Kết quả có được là hàm mất mát dành cho bao lồi dương: 
+\begin{align} \label{loss_function_positive_convex}
+	\mathcal{L}_i^{+}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)+\lambda \mathcal{L}_i^{l o c}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)
+\end{align}
+Hàm mất mát \ref{loss_function_positive_convex} là tổng của hàm mất mát vị trí \ref{cong_thuc_ham_loss_CIoU} và hàm mất mát phân loại \ref{loss_classification}.
+Hàm mất mát dành cho bao lồi âm là:
 
-hàm phân loại loss cuối cùng cho bao lồi dương là:
-
-\begin{center}
-	$\mathcal{L}_i^{+}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)+\lambda \mathcal{L}_i^{l o c}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)$
-\end{center}
-
-hàm phân loại loss cuối cùng dành cho bao lồi âm là:
-
-\begin{center}
-	$\mathcal{L}_i^{-}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)$
-\end{center}
-Ngoài ra, trong quá trình huấn luyện, vì bao lồi ban đầu chỉ được sinh ra bằng cách tối ưu hoá CIoU, một hàm loss cần được định nghĩa để giám sát:
+\begin{align} \label{loss_negative_convex}
+	\mathcal{L}_i^{-}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)
+\end{align}
+Ngoài ra, trong quá trình huấn luyện (Hình ), vì bao lồi ban đầu chỉ được sinh ra bằng cách tối ưu hoá CIoU, một hàm loss cần được định nghĩa để giám sát:
 \begin{center}
 	$\mathcal{L}^{\operatorname{det} 1}(\theta)=\frac{1}{J} \sum_i \mathbb{I}_{\left(x_i, y_i\right)} \mathcal{L}_i^{l o c}(\theta)$
 \end{center}
