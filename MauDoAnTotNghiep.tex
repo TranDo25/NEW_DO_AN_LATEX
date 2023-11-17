@@ -571,11 +571,62 @@ Trong đó:
 \end{equation}
 Trong các bước xấp xỉ tiếp theo, việc xây dựng đa giác ${P}^{outer}$ lần lượt được cải thiện như sau:
 
+$\text{Với 1 đỉnh }p \in P, \text{cho } p^{-} \in P \text{ và } p^{+} \in P \text{ lần lượt là}$
 \begin{align} \label{ct2.11}
-\text{Với 1 đỉnh }p \in P, \text{cho } p^{-} \in P \text{và} p^{+} \in P \text{lần lượt là điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của} p \in P.
-\end{align}
+\text {điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của} p \in P.
+\end{align}. 
 
 
+Ta có công thức sau:
+\begin{equation}\label{def_d_p}
+	\begin{array}{lcl}
+		d_{p}^T &:=& \|p^+ - p^-\|^{-1}\, R \, (p^+ - p^-)^T, \\
+		\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X\},
+	\end{array}
+\end{equation}
+trong đó:
+\begin{equation}\label{rotationmatrix}
+	R := \begin{pmatrix}
+		0 & 1 \\
+		-1 & 0
+	\end{pmatrix}
+\end{equation}
+là ma trận xoay chiều theo hướng kim đồng hồ với góc xoay $\pi/2$. Vì $R$ là ma trận xoay, ta có:
+\begin{equation}\label{def_d_p1}
+	\|d_{p}\| = \|p^+ - p^-\|^{-1}\, \|(p^+ - p^-) R^T\| = \|p^+ - p^-\|^{-1}\, \|p^+ - p^-\| = 1.
+\end{equation}
+Sẽ có hai trường hợp xảy ra khi ta thêm các ràng buộc tuyến tính sau đây vào định nghĩa của ${P}^{outer}$ trong công thức (\ref{ct2.6}):
+\begin{equation}\label{linearconstr}
+	d_p\, x^T \leq \beta_{d_p}.
+\end{equation}
+
+Đầu tiên, nếu:
+\begin{equation}\label{betaequal}
+	\beta_{d_p} = d_p\, p^+
+\end{equation}
+thì công thức (\ref{def_d_p1}) không tạo thêm đỉnh mới nhưng sẽ thêm 2 cạnh mới  $[p^-, p^+]$ của ${\cal P}^{\rm outer}$. Cho  $d_{[p^-, p]}$ và $d_{[p, p^+]}$ biểu thị 2 hướng cực đại từ D, định nghĩa hai cạnh $[p^-, p]$ và $[ p, p^+]$ của ${\cal P}^{\rm outer}$. Sau đó $d_{[p^-, p]}$ and $d_{[p, p^+]}$ sẽ trở nên vô dụng. Vì vậy, trong khi thêm $d_p$ vào tập $D$ cần phải loại bỏ $d_{[p^-, p]}$ và $d_{[p, p^+]}$ và $p$ trong $P$, nghĩa là:
+\begin{equation}\label{newDP2}
+	\begin{array}{lcl}
+		D &:=& (D \cup \{d_{p}\})\setminus \{d_{[p^-,p]}, d_{[p,p^+]}\}, \\
+		P &:=& P \setminus \{p\}.
+	\end{array}
+\end{equation}
+Thứ hai, nếu
+\begin{equation}\label{betagreater}
+	\beta_{d_p} > d_p\, p^+
+\end{equation}
+và:
+\begin{equation}\label{greaterdelta}
+	d_{p}\, p^T - \beta_{d_{p}} > \delta
+\end{equation}
+thì ràng buộc mới (\ref{linearconstr}) tạo ra hai đỉnh mới của ${\cal P}^{\rm outer}$ có tên $\hat p^-$ và $\hat p^+$ sẽ được tính như sau:
+\begin{equation}\label{def_hatp}
+	\begin{array}{lcl}
+		\lambda_p &:=& (\beta_{d_p} - d_p\, p^{-T})/(d_p\, p^T - d_p\, p^{-T}) \in (0, 1), \\
+		\hat p^- &:=& (1 - \lambda_p)\, p^{-T} + \lambda_p\, p^T, \\
+		\hat p^+ &:=& (1 - \lambda_p)\, p^{+T} + \lambda_p\, p^T.
+	\end{array}
+\end{equation}
 
 
 

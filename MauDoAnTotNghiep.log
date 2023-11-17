@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.11)  18 NOV 2023 03:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.11)  18 NOV 2023 05:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1326,11 +1326,6 @@ LaTeX Warning: Command \textless invalid in math mode on input line 557.
 LaTeX Warning: Command \textless invalid in math mode on input line 557.
 
 
-Overfull \hbox (204.58405pt too wide) detected at line 576
-[]
- []
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1339,15 +1334,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
-Overfull \hbox (111.10129pt too wide) in paragraph at lines 592--593
-[]\T5/cmr/m/n/13 ====================================================== 
- []
-
-<./nhandang1.PNG, id=105, 341.275pt x 402.50375pt>
-File: ./nhandang1.PNG Graphic file (type png)
-<use ./nhandang1.PNG>
-Package pdftex.def Info: ./nhandang1.PNG  used on input line 617.
-(pdftex.def)             Requested size: 200.75073pt x 236.76884pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1357,6 +1343,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
+Overfull \hbox (111.10129pt too wide) in paragraph at lines 643--644
+[]\T5/cmr/m/n/13 ====================================================== 
+ []
+
+<./nhandang1.PNG, id=108, 341.275pt x 402.50375pt>
+File: ./nhandang1.PNG Graphic file (type png)
+<use ./nhandang1.PNG>
+Package pdftex.def Info: ./nhandang1.PNG  used on input line 668.
+(pdftex.def)             Requested size: 200.75073pt x 236.76884pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1365,7 +1360,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17 <./nhandang1.PNG>]
+[17]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1374,12 +1369,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18]
+[18 <./nhandang1.PNG>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
 Ch\uhorn \ohorn ng 3.
 
-LaTeX Warning: Citation `K2007' on page 19 undefined on input line 668.
+LaTeX Warning: Citation `K2007' on page 20 undefined on input line 719.
 
-[19
+[20
 
 ]
 
@@ -1390,12 +1394,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20]
+[21]
 Ch\uhorn \ohorn ng 4.
 
-LaTeX Warning: Reference `al-matduoi' on page 21 undefined on input line 731.
+LaTeX Warning: Reference `al-matduoi' on page 22 undefined on input line 782.
 
-[21
+[22
 
 ]
 
@@ -1406,9 +1410,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22] [23
+[23] [24
 
-] [24
+] [25
 
 ] (./MauDoAnTotNghiep.aux)
 
@@ -1423,10 +1427,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16910 strings out of 476025
- 328637 string characters out of 5794014
+ 16919 strings out of 476025
+ 328742 string characters out of 5794014
  1863382 words of memory out of 5000000
- 37000 multiletter control sequences out of 15000+600000
+ 37009 multiletter control sequences out of 15000+600000
  543857 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,16n,90p,1411b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1449,10 +1453,10 @@ xlive/2023/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb><c:/texlive/2023/texmf-
 dist/fonts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/vn
 tex/vnr/vnr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
 
-Output written on MauDoAnTotNghiep.pdf (32 pages, 745708 bytes).
+Output written on MauDoAnTotNghiep.pdf (33 pages, 750303 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+ 233 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

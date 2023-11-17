@@ -14,10 +14,10 @@
 \contentsline {subsection}{\numberline {1.7.2}Chiến lược phân đoạn tập các bao lồi}{11}{}%
 \contentsline {chapter}{\numberline {2}Thuật toán tính bao lồi xấp xỉ}{14}{}%
 \contentsline {section}{\numberline {2.1}Outer convex approximation}{14}{}%
-\contentsline {section}{\numberline {2.2}Sơ lược về ............ }{17}{}%
-\contentsline {chapter}{\numberline {3}Ứng dụng .................}{19}{}%
-\contentsline {section}{\numberline {3.1}Thặng dư bậc hai và ứng dụng}{19}{}%
-\contentsline {subsection}{\numberline {3.1.1}Phương trình đồng dư bậc hai..........}{19}{}%
-\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{21}{}%
-\contentsline {chapter}{\vspace *{-8pt} Kết luận}{23}{}%
-\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{24}{}%
+\contentsline {section}{\numberline {2.2}Sơ lược về ............ }{18}{}%
+\contentsline {chapter}{\numberline {3}Ứng dụng .................}{20}{}%
+\contentsline {section}{\numberline {3.1}Thặng dư bậc hai và ứng dụng}{20}{}%
+\contentsline {subsection}{\numberline {3.1.1}Phương trình đồng dư bậc hai..........}{20}{}%
+\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{22}{}%
+\contentsline {chapter}{\vspace *{-8pt} Kết luận}{24}{}%
+\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{25}{}%
