@@ -327,7 +327,7 @@ Phương pháp CFA được chia làm 2 giai đoạn thực hiện:
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=450px]{./work_flow_cfa.JPG}
-		\caption{Biểu đồ luồng của bộ phát hiện CFA.}
+		\caption{Biểu đồ luồng quy trình thực hiện của bộ phát hiện CFA.}
 		\label{work_flow_cfa}
 	\end{center}
 \end{figure} 
@@ -395,7 +395,7 @@ Phép tích chập biến dạng thực ra là thêm phần bù cho các điểm
 \end{figure} 
 
 
-Cho một đầu vào là một bản đồ đặc trưng, giả sử toán tử gốc của phép tích chập là 3x3, định nghĩa một lớp tích chập 3x3 khác, và chiều của đầu ra là kích thước của bản đồ đặc trưng ban đầu, số kênh = $2N$. (Hình \ref{deformable_process}) Tiếp theo thực hiện tích chập biến dạng, dựa trên độ bù của các phần đã được tính trước đó, sau đó thực hiện phép tích chập như thông thường.
+Cho đầu vào là một bản đồ đặc trưng, giả sử phép tích chập là 3x3. Để học được phần bù, định nghĩa một lớp tích chập 3x3 khác, chiều của đầu ra là kích thước của bản đồ đặc trưng ban đầu, số kênh = $2N$. (Hình \ref{deformable_process}) Tiếp theo thực hiện tích chập biến dạng, dựa trên độ bù của các phần đã được tính trước đó, sau đó thực hiện phép tích chập như thông thường.
 \section{Thuật toán Jarvis March}
 Sau khi học được phần bù, việc hoàn thành cập nhật các điểm đặc trưng của bao lồi được thực hiện bởi thuật toán Jarvis March, bao lồi nhỏ nhất phù hợp với điều kiện sẽ được tạo ra sau mỗi vòng lặp.
 
@@ -443,15 +443,15 @@ Hàm mất mát dành cho bao lồi âm là:
 \begin{align} \label{loss_negative_convex}
 	\mathcal{L}_i^{-}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)
 \end{align}
-Ngoài ra, trong quá trình huấn luyện (Hình ), vì bao lồi ban đầu chỉ được sinh ra bằng cách tối ưu hoá CIoU, một hàm loss cần được định nghĩa để giám sát:
+Ngoài ra, trong quá trình huấn luyện (Hình \ref{work_flow_cfa}), vì các bao lồi được ban đầu chỉ được sinh ra bằng cách tối ưu CIoU, một hàm loss cần được định nghĩa cho việc giám sát:
 \begin{center}
 	$\mathcal{L}^{\operatorname{det} 1}(\theta)=\frac{1}{J} \sum_i \mathbb{I}_{\left(x_i, y_i\right)} \mathcal{L}_i^{l o c}(\theta)$
 \end{center}
-Nhìn chung, trong giai đoạn đầu tiên của việc sinh bao lồi, sử dụng $L^{\operatorname{det} 1}$ như trên. Trong giai đoạn 2, hai hàm loss sẽ được sử dụng để phân loại bao lồi
-\section{Convex Hull Adaptation}
-Phương pháp biểu diễn bằng bao lồi giúp định vị đối tượng mục tiêu ở bất kỳ hình dạng nào, tuy nhiên vẫn còn đó một vấn đề, đó là làm thế nào để định vị một cách chính xác các đối tượng mục tiêu dày đặc, đặc biệt là các đối tượng mục tiêu có đặc trưng răng cưa. Tác giả đề xuất một phương pháp thích ứng mới để tinh chỉnh hơn nữa bao lồi đầu tiên được sinh ra ở giai đoạn 1 để đạt được vị trí chính xác hơn và phân lớp hiệu quả hơn.
+Nhìn chung, trong giai đoạn đầu tiên của việc sinh bao lồi, hàm mất mát $L^{\operatorname{det} 1}$ bên trên là hàm cần được quan tâm. Trong giai đoạn 2, hai hàm mất mát phân lớp (\ref{loss_negative_convex} và \ref{loss_function_positive_convex}) sẽ được sử dụng để phân loại bao lồi
+\section{Bao lồi thích ứng}
+Phương pháp biểu diễn bằng bao lồi giúp định vị đối tượng ở bất kỳ hình dạng nào, tuy nhiên vẫn có một vấn đề, làm thế nào để định vị một cách chính xác các đối tượng dày đặc, đặc biệt là các đối tượng có đặc trưng răng cưa. Vì vậy bộ phát hiện CFA đã đề xuất một phương pháp thích ứng mới để tinh chỉnh các bao lồi sinh ra ở giai đoạn 1 để đạt được vị trí chính xác hơn và phân lớp hiệu quả hơn.
 \subsection{Xây dựng tập các bao lồi}
-Tác giả xây dựng một tập các bao lồi tương ứng với mỗi đối tượng mục tiêu, để một đối tượng mục tiêu có thể khớp với nhiều bao lồi phù hợp để cùng nhau tối ưu các đặc trưng của các đối tượng phân bổ dày đặc.
+Bộ phát hiện cho xây dựng một tập các bao lồi với mỗi đối tượng, để một đối tượng mục tiêu có thể khớp với nhiều bao lồi phù hợp để cùng nhau tối ưu các đặc trưng của các đối tượng dày đặc.
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -460,32 +460,30 @@ Tác giả xây dựng một tập các bao lồi tương ứng với mỗi đ�
 		\label{fig_dhandang1}
 	\end{center}
 \end{figure} 
-với mỗi đối tượng mục tiêu, ý tưởng xây dựng tập các bao lồi tương ứng là: theo như hệ số CIoU giữa bao lồi dự đoán và bao lồi thực tế, chọn I bao lồi đứng đầu được xác định bởi CIoU. Các bao lồi còn lại không thuộc vào bất kỳ tập bao lồi nào sẽ được gộp lại vào tập bao lồi âm S.
+Với mỗi mục tiêu, ý tưởng xây dựng tập bao lồi tương ứng là: theo như hệ số CIoU giữa bao lồi dự đoán và bao lồi thực tế, chọn I bao lồi đứng đầu là ứng cử viên cho bao lồi dương để xây dựng tập các bao lồi. Ngoài ra cũng có thể xây dựng tập bao lồi sử dụng ngưỡng CIoU xác định bằng thực nghiệm. Các bao lồi còn lại không thuộc vào bất kỳ tập bao lồi nào sẽ được gộp lại thành tập bao lồi âm $S$.
 \begin{center}
 $\mathcal{L}_{S_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \omega_i \mathcal{L}_i^{+}(\theta)$
 \end{center}
-Khi nhiều đối tượng tụ tập cùng nhau, không phải tất cả bao lồi trong một tập các bao lồi đều phù hợp với đối tượng, và các bao lồi phục vụ đặc trưng răng cưa sẽ phải được phân lớp là tập bao lồi âm. Cùng thời điểm đó, các bao lồi được chia sẻ bởi nhiều đối tượng phải có độ tin cậy thấp hơn.
-\subsection{Convex hull set segmentation strategy}
-Để giải quyết vấn đề đặc trưng răng cưa ở các đối tượng phân bố dày đặc, tác giả đề xuất chiến lược phân đoạn tập bao lồi để đánh giá các mẫu âm và mẫu dương, thay đổi $\omega_i$ được định nghĩa là $f\left(L_i^{+}(\theta)\right)$, sau khi thay thế, có công thức sau:
-\begin{center}
-	$\mathcal{L}_{s_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)$
-\end{center}
-$f$ là hàm lỗi đơn điệu giảm phân phối Gaussian, có nghĩa là giá trị loss càng nhỏ, độ tin cậy càng cao.
+Khi nhiều đối tượng tập hợp lại cùng nhau, không phải tất cả các bao lồi nằm trong tập bao lồi đều phù hợp với đối tượng, và các bao lồi có đặc trưng răng cưa sẽ phải được phân loại thành tập các bao lồi âm. Cùng thời điểm đó, các bao lồi được chia sẻ bởi nhiều đối tượng phải phải có độ tin cậy thấp hơn.
+\subsection{Chiến lược phân đoạn tập các bao lồi}
+Để giải quyết vấn đề đặc trưng răng cưa ở các đối tượng dày đặc, bộ phát hiện CFA đề xuất chiến lược phân đoạn tập các bao lồi để đánh giá động các mẫu bao lồi âm và mẫu dương, chuyển đổi trọng số $\omega_i$ thành $f\left(L_i^{+}(\theta)\right)$. Sau khi thay thế, được công thức sau:
+\begin{align} \label{loss_positive_convert}
+	\mathcal{L}_{s_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)
+\end{align}
+Trong đó: $f$ là hàm lỗi đơn điệu giảm phân phối Gaussian: $f\left(x\right) = 1.0 - \frac{2}{\sqrt{\pi}}\int_0^xe^{-t^2}$, có nghĩa là giá trị mất càng nhỏ, độ tin cậy càng cao.
 
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./gaussian_gradient.jpg}
-		\caption{Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc}
-		\label{fig_dhandang1}
+		\caption{Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc.}
+		\label{gradient_consistentcy_illustration}
 	\end{center}
 \end{figure} 
-Nguyên tắc phân chia tập bao lồi là gradient consistency. Bằng cách dẫn xuất công thức trên, ta có được:
-\begin{center}
-	 $\frac{\partial \mathcal{L}_{s_j}^{+}(\theta)}{\partial \theta}=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \frac{\partial\left(f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)\right)}{\partial \mathcal{L}_i^{+}(\theta)} \frac{\partial \mathcal{L}_i^{+}(\theta)}{\partial \theta}$
-\end{center}
-Tiêu chí để thực hiện phân đoạn bao lồi là: đạo hàm của mỗi bao lồi dương 
-$\frac{\partial L_i^{+}(\theta)}{\partial \theta}$. Điều này muốn nói là: bao lồi có dấu đạo hàm không nhất quán được xem là bao lồi âm, điều này sẽ dẫn đến hiện tượng răng cưa đặc trưng, được phản ánh trong công thức toán học là:
-$\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ là dương, bao lồi $C_i$ là dương, nếu không bao lồi sẽ là âm. Xem xét hình 1.8a, khi sắp xếp $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ theo thứ tự tăng dần, $f\left(\partial L_i^{+}(\theta)\right) L_i^{+}(\theta)$ là một hàm lồi hướng lên với một cực trị duy nhất. Hàm liên tục $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ có một điểm không duy nhất, tập bao lồi được chia thành tập các bao lồi dương $S_j$ bởi điểm 0 này, và tập bao lồi âm S-
+Nguyên tắc phân chia tập bao lồi là nguyên tắc nhất quá độ dốc. Bằng cách lấy đạo hàm của công thức công thức \ref{loss_positive_convert}, ta có được:
+\begin{align} \label{gradient_of_loss}
+	 \frac{\partial \mathcal{L}_{s_j}^{+}(\theta)}{\partial \theta}=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \frac{\partial\left(f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)\right)}{\partial \mathcal{L}_i^{+}(\theta)} \frac{\partial \mathcal{L}_i^{+}(\theta)}{\partial \theta}
+\end{align}
+Tiêu chí để thực hiện phân đoạn tập các bao lồi là: đạo hàm của mỗi một bao lồi dương $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ yêu cầu đạo hàm của toàn bộ tập bao lồi $\frac{\partial L_{S_j}^{+}(\theta)}{\partial \theta}$ là nhất quán. Điều này có nghĩa là: bao lồi nào có độ dốc không nhất quán được xem là bao lồi âm, tức là những bao lồi này sẽ dẫn đến hiện tượng răng cưa đặc trưng. Xem xét công thức \ref{gradient_of_loss}, nếu $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ mang giá trị dương, thì bao lồi $C_i$ được xếp là bao lồi dương, hoặc ngược lại bao lồi sẽ là âm. Xem xét hình \ref{gradient_consistentcy_illustration}, khi sắp xếp các giá trị mất mát  $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ theo thứ tự tăng dần, $f\left(\partial L_i^{+}(\theta)\right) L_i^{+}(\theta)$ (đường màu cam) là một hàm lồi hướng lên với một cực trị duy nhất, trong khi đường  $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ (màu xanh lục) chia các bao lồi thành tập các bao lồi dương $S_j$ và tập bao lồi âm S-
 Cùng lúc đó, để đối phó với hiện tượng đặc trưng răng cưa, tác giả cũng giới thiệu một hệ số chống đặc trưng răng cưa:
 \begin{center}
 	$\mathcal{L}_{s_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} p_i f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)$

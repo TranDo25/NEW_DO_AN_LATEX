@@ -9,9 +9,9 @@
 \contentsline {section}{\numberline {1.4}Thuật toán Jarvis March}{8}{}%
 \contentsline {section}{\numberline {1.5}Đinh nghĩa công thức Convex Intersection over Union (CIoU)}{9}{}%
 \contentsline {section}{\numberline {1.6}Hàm mất mát}{9}{}%
-\contentsline {section}{\numberline {1.7}Convex Hull Adaptation}{10}{}%
+\contentsline {section}{\numberline {1.7}Bao lồi thích ứng}{10}{}%
 \contentsline {subsection}{\numberline {1.7.1}Xây dựng tập các bao lồi}{11}{}%
-\contentsline {subsection}{\numberline {1.7.2}Convex hull set segmentation strategy}{12}{}%
+\contentsline {subsection}{\numberline {1.7.2}Chiến lược phân đoạn tập các bao lồi}{12}{}%
 \contentsline {chapter}{\numberline {2}Thuật toán tính bao lồi xấp xỉ}{14}{}%
 \contentsline {section}{\numberline {2.1}Outer convex approximation}{14}{}%
 \contentsline {section}{\numberline {2.2}Sơ lược về ............ }{16}{}%
