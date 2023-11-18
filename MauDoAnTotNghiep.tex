@@ -110,23 +110,19 @@
 
 \vspace{1cm}
 \begin{center}
-	\textbf{\MakeUppercase{ \bf MỘT THUẬT TOÁN HIỆU QUẢ DỰA TRÊN CẠNH\\ ĐỂ TỐI ƯU LỀ PHÂN LOẠI TRONG MẶT PHẲNG}}\\ 
+	\textbf{\MakeUppercase{ \bf BAO LỒI XẤP XỈ VÀ ỨNG DỤNG TRONG VIỆC PHÁT HIỆN ĐỊNH HƯỚNG VÀ ĐÓNG GÓI ĐỐI TƯỢNG}}\\ 
 \end{center} 
 \vspace{2cm}
 
 
 \begin{tabular}{ll}
 	{\textbf{\large{Giảng Viên Hướng Dẫn: }}} & {\textbf{\large{TS. Nguyễn Kiều Linh}}} \\
-	{\textbf{\large{Sinh viên thực hiện:}}}  & {\textbf{\large{Nguyễn Văn A}}} \\
-	{\textbf{\large{Mã sinh viên: }}}  & {\textbf{\large{BXXDCCNYYY}}} \\
-	{\textbf{\large{Lớp:}}}   & {\textbf{\large{DXHTTTY}}}\\
-	{\textbf{\large{Niên khóa:}}}   & {\textbf{\large{20xx-20xx}}}\\
+	{\textbf{\large{Sinh viên thực hiện:}}}  & {\textbf{\large{Trần Xuân Độ}}} \\
+	{\textbf{\large{Mã sinh viên: }}}  & {\textbf{\large{B19DCCN183}}} \\
+	{\textbf{\large{Lớp:}}}   & {\textbf{\large{D19CNPM04}}}\\
+	{\textbf{\large{Niên khóa:}}}   & {\textbf{\large{2019-2023}}}\\
 	{\textbf{\large{Hệ đào tạo:}}}   & {\textbf{\large{Đại học chính quy}}}
 \end{tabular}
-
-
-
-
 
 
 \vfill
@@ -263,50 +259,40 @@
 \chapter*{Mở đầu}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt}  Mở đầu} 
 
-Trong nhiều thập kỷ, chúng ta đã chứng kiến quá trình phát triển đáng kể của bài toán nhận diện đối tượng. Đóng góp vào sự phát triển này chính là việc sử dụng mạng học sâu kết hợp với đa dạng các cách biểu diễn đặc trưng, các database có kích thước lớn hơn, và việc đào tạo trước các mô hình để tiết kiệm thời gian và chi phí. Tuy nhiên, phần lớn các bộ phát hiện đối tượng đều gặp phải vấn đề khi biểu diễn các đối tượng quan sát từ trên xuống, có hướng tuỳ ý, hoặc các đối tượng có bố cục khác nhau trong quá trình đào tạo. Vấn đề trở nên nghiêm trọng hơn khi các đối tượng phân bố dày dặc, gây ra hiện tượng răng cưa ở các vùng giao nhau của trường tiếp nhận.
+Trong nhiều thập kỷ, chúng ta đã chứng kiến quá trình phát triển đáng kể của bài toán nhận diện đối tượng trong ảnh. Đóng góp vào sự phát triển này chính là việc sử dụng mạng học sâu kết hợp với đa dạng các cách biểu diễn đặc trưng, các cơ sở dữ liệu huấn luyện có kích thước lớn, và việc đào tạo trước các mô hình để tiết kiệm thời gian và chi phí. Tuy nhiên, phần lớn các bộ phát hiện đối tượng đều gặp phải vấn đề khi biểu diễn các đối tượng từ trên cao nhìn xuống, có hướng bất kỳ, hoặc các đối tượng có bố cục không giống nhau trong quá trình đào tạo. Vấn đề trở nên nghiêm trọng hơn đối với các đối tượng phân bố dày dặc, gây ra hiện tượng răng cưa ở các vùng giao nhau của trường tiếp nhận (reception field).
 
 
-Một trong những giải pháp để phát hiện đối tượng có hướng, đó là sử dụng phương pháp làm giàu đặc trưng/mỏ neo, cung cấp nhiều hơn các đặc trưng để đào tạo các bộ phát hiện. Giải pháp này tuy nhiên lại gây ra sự phức tạp trong tính toán, dễ gây ra sai sót. Một giải pháp khác là định nghĩa bộ biến đổi RoI, áp dụng phép biến đổi không gian RoIs trong khi tiếp tục học các tham số dưới sự giám sát của hộp bao có hướng. Các bộ biến đổi này được cho là linh hoạt, nhạy bén, hoạt động mượt mà, cho phép trường tiếp nhận thích nghi với các đối tượng có hướng. Tuy nhiên, vấn đề về cách điều chỉnh lưới đặc trưng cho đối tượng có bố cục bất kỳ vẫn chưa được giải quyết. Đây chính là nguyên nhân gây ra hiện tượng feature aliasing, xảy ra khi các đối tượng phân bổ dày đặc trong khung hình.
+Một trong những giải pháp được sử dụng để phát hiện đối tượng có hướng, đó là sử dụng phương pháp làm giàu đặc trưng (feature augmentation)/mỏ neo (anchor), cung cấp nhiều các đặc trưng hơn để huấn luyện các bộ phát hiện. Các giải pháp này tuy nhiên lại gây ra sự phức tạp trong tính toán, từ đó dẫn đến nhiều sai sót. Một giải pháp khác đó là định nghĩa bộ biến đổi RoI (RoIs transformer), áp dụng phép phép biến đổi không gian RoIs, cùng lúc đó học các tham số dưới sự giám sát của hộp bao có hướng. Những bộ biến đổi này được cho là linh hoạt, nhạy bén, hoạt động mượt, cho phép trường tiếp nhận thích nghi với các đối tượng có hướng. Tuy nhiên, vấn đề về điều chỉnh lưới đặc trưng cho đối tượng có bố cục khác nhau vẫn chưa được giải quyết. Đây chính là nguyên nhân gây ra hiện tượng đặc trưng răng cưa (feature aliasing), xảy ra khi các đối tượng nằm phân bổ dày đặc trong khung hình.
 
 
-Do đó, ta đề xuất một cách tiếp cận khác: sử dụng phương pháp điều chỉnh các đặc trưng bằng bao lồi(convex-hull) dành cho các đối tượng có hướng và phân bố dày đặc. Mục tiêu để điều chỉnh các đặc trưng nằm trong lưới tích chập thông thường với các đối tượng có bố cục phân bố không đều. Ta xây dựng bố cục đối tượng thành một bao lồi, có lợi thế hơn so với sử dụng bố cục hình chữ nhật, giúp bao phủ toàn bộ đối tượng nhưng giảm thiểu tối đa diện tích vùng nền của đối tượng. Mỗi bao lồi là tập hợp các điểm đặc trưng định nghĩa đường biên của đối tượng, biểu thị tỷ lệ Convex Intersection over Union để các định vị trí đối tượng. Bên trong bao lồi, các đặc trưng khác nhau biểu thị cho sự xuất hiện của các đối tượng được phân loại khác nhau.
+Bởi các lý do trên, ta sử dụng một cách tiếp cận khác: sử dụng phương pháp điều chỉnh đặc trưng bằng bao lồi (convex-hull) dành cho các đối tượng có hướng và phân bố dày đặc. Mục tiêu của phương pháp là để điều chỉnh các đặc trưng nằm trong lưới tích chập thông thường với các đối tượng có bố cục phân bố không đều. Ta mô hình hóa bố cục của đối tượng giống như một bao lồi, điều này thuận lợi hơn so với sử dụng bố cục hình chữ nhật, đáp ứng được yêu cầu bao phủ toàn bộ đối tượng nhưng giảm thiểu tối đa diện tích nền được bao. Mỗi bao lồi là tập hợp các điểm đặc trưng (feature points) xác định đường biên của đối tượng, sử dụng chỉ số giao của bao lồi trên hợp của bao lồi (Convex Intersection over Union) để xác định vị trí đối tượng. Bên trong bao lồi, các đặc trưng phân biệt mô tả sự xuất hiện của đối tượng để thực hiện phân lớp chính xác.
 
 
-Mục tiêu của đồ án là tìm hiểu, nghiên cứu phương pháp phát hiện đối tượng dày đặc có hướng, cụ thể là nghiên cứu phương pháp BeyoundBoundingBox dành cho vấn đề trên. Ngoài ra, đồ án còn tìm hiểu thuật toán phát hiện bao lồi mới, thay thế vào phương pháp trên, kiểm nghiệm và đo lường độ hiệu quả của thuật toán mới này.
+Mục tiêu của đồ án này là tìm hiểu, nghiên cứu phương pháp phát hiện đối tượng dày đặc có hướng, cụ thể là nghiên cứu phương pháp BeyoundBoundingBox dành cho bài toán phát hiện đối tượng. Ngoài ra, đồ án còn tìm hiểu thuật toán phát hiện bao lồi mới, thay thế vào thuật toán tìm bao lồi cũ của bộ phát hiện, thực hiện huấn luyện lại mô hình, kiểm nghiệm và đo lường độ hiệu quả của thuật toán mới so với thuật toán cũ.
 
 
 Trong đồ án em sẽ tập trung trình bày một số nội dung chính như sau:
 
 \textbf{Chương 1: Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng:}
-Nội dung chương 1 sẽ khái quát các vấn đề và phương pháp nhận dạng đối tượng, trình bày về các phương pháp liên quan, nguyên lý và cách thức triển khai, giới thiệu sử dụng thuật toán bao lồi xấp xỉ để thực hiện bài toán.
+Khái quát các vấn đề và phương pháp nhận dạng đối tượng, trình bày về các phương pháp liên quan, nguyên lý và cách thức triển khai, giới thiệu sử dụng thuật toán bao lồi xấp xỉ để thực hiện bài toán.
 
 
 \textbf{Chương 2: Trình bày thuật toán bao lồi xấp xỉ:}
-Nội dung của chương 2 sẽ giới thiệu thuật toán, lý thuyết và triển khai thuật toán bằng code C++
+Giới thiệu về thuật toán bao lồi xấp xỉ, lý thuyết và triển khai thuật toán bằng mã C++.
 
 
 \textbf{Chương 3: Thực nghiệm và kết quả:}
-Nội dung của chương 3 Áp dụng bao lồi xấp xỉ cho bài toán phát hiện, định hướng và đóng gói đối tượng, cách thức triển khai bộ phát hiện, cách thức thay thế thuật toán.
+ Trình bày cách thức thay thế thuật toán, các bước để tạo cơ sở dữ liệu huấn luyện, phân chia ảnh, tạo môi trường huấn luyện cũng như các bước để huấn luyện mô hình. Ngoài ra phần này sẽ trình bày một số kết quả thu được, so sánh với số liệu của thuật toán cũ.
 
 
 \textbf{Chương 4: Tổng kết:}
 Tổng kết bài toán, tóm tắt những kết quả đã đạt được và còn chưa đạt được. Từ đó đề xuất mục tiêu hướng tới cũng như hướng nghiên cứu, phát triển tiếp theo.
 
-
-
- 
-
-
 \chapter{Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng}
 
-Chương 1 đặt vấn đề về bài toán phát hiện đối tượng, trình bày lý thuyết về phương pháp BeyoundBoundingBox.
-
-
-
 \section{Giới thiệu}
-Trong bài toán phát hiện đối tượng, việc định vị và phát hiện đối tượng dày đặc vẫn còn là một vấn đề thách thức do vấn đề đặc trưng răng cưa (feature aliasing), tức là các pi. Có các giải pháp đã được sử dụng: làm giàu các đặc trưng (enhance features) và sử dụng anchors. Nhược điểm của các phương pháp này: làm cho cấu trúc mạng trở nên phức tạp hơn, tăng thời gian huấn luyện (training) và suy luận (inference). Một phương pháp khác đó là sử dụng biến đổi RoI, nhưng phương pháp này không thích ứng tốt với các đối tượng có hướng bất kỳ, đặc biệt đối với các đối tượng xuất hiện dày đặc trong hình ảnh.
-
-
+Biểu đồ luồng của phương pháp CFA được cung cấp ở hình \ref{work_flow_cfa}, sử dụng phương pháp RepPoint làm cơ sở xây dựng. Là một bộ phát hiện không dùng mỏ neo (anchor-free detector), CFA bao gồm 2 giai đoạn: giai đoạn sinh bao lồi (convex-hull adaptation) và giai đoạn thích ứng bao lồi (convex-hull adaptation). Giai đoạn đầu tiên dự đoán bao lồi cho tất cả các vị trí trên các bản đồ đặc trưng và ước lượng bố cục của bao lồi. Giai đoạn 2 tinh chỉnh lại các bao lồi đã dự đoán cũng như làm chúng thích ứng với các đối tượng dày đặc. Trong quá trình suy luận, chỉ bước sinh bao lồi (convex-hull generation)được thực hiện để định vị đối tượng mà không cần xây dựng tập các bao lồi (convex-hull set construction), đảm bảo sự đơn giản và hiệu quả của bộ phát hiện. Với mỗi bao lồi dự đoán, bộ phát hiện tính toán một hình chữ nhật bao nhỏ nhất và hợp nhất những hình chữ nhật chồng chéo sử dụng bộ phát hiện Non-Maximum Supression(NMS) để thực hiện đánh giá. Đoạn tiếp dưới đây sẽ phân tích sự bất lơi của việc biểu diễn bằng hộp và trình bày cách biểu diễn bằng bao lồi, sau đó giới thiệu các mô đun sinh bao lồi và mô đun thích ứng bao lồi.
+Xem xét rằng lưới đặc trưng CNN được căn chỉnh theo trục tọa độ, các bộ phát hiện hiện đại điển hình thường sử dụng hộp (boxes), ví dụ: hộp hình chữ nhật hoặc hộp xoay hình chữ nhật, để bao phủ toàn bộ một đối tượng. Các bộ phát hiện không sử dụng mỏ neo hiện nay, như RepPoint và ExtremePoint, cho phép làm biến dạng lưới đặc trưng, nghĩa là sắp xếp các điểm đặc trưng sao cho phù hợp với hộp bao đối tượng. Tuy nhiên, chúng không xem xét việc thích ứng với các đối tượng có bố cục không phải là hình chữ nhật, những đối tượng này sẽ gây nên hiện tượng đặc trưng răng cưa khi có nhiều đối tượng nằm sát nhau. Các bài nghiên cứu gần đây như DRN và R3Det đã xử lý vấn đề này bằng cách dự đoán hướng của đối tượng, nhưng cũng không thích ứng tốt các đặc trưng cho các đối tượng. Nhược điểm của các phương pháp đang tồn tại, đó chính là sử dụng hộp bao hình chữ nhật lên các đối tượng có bố cục bất thường, điều này làm giảm đi khả năng biểu diễn của các đặc trưng trong tích chập.
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=400px]{./compare_cfa_with_other.JPG}
@@ -315,14 +301,6 @@ Trong bài toán phát hiện đối tượng, việc định vị và phát hi�
 	\end{center}
 \end{figure} 
 
-
-Để giải quyết các vấn đề trên, một phương pháp đã được đưa ra: phương pháp thích ứng bao lồi (convex-hull feature adaptation-CFA). CFA được thực hiện dựa trên phương pháp biểu diễn bao lồi, định nghĩa một tập các điểm đặc trưng, giới hạn phạm vi của đối tượng mục tiêu sử dụng chỉ số CIoU. CFA đạt được sự phân bổ đặc trưng tối ưu nhờ vào việc xây dựng tập bao lồi và phân chia linh hoạt các bao lồi thành các bao lồi âm và bao lồi dương. CFA cũng xem xét sự chồng chéo nhau giữa bao lồi dự đoán và bao lồi thực tế, phạt các bao lồi được dùng chung bởi nhiều đối tượng, giảm thiểu hiện tượng đặc trưng răng cưa (feature aliasing), đạt được sự thích ứng đặc trưng tối ưu. Nó cũng đạt được kết quả tốt nhất khi thử nghiệm trên tập dữ liệu DOTA và SKUR110KR.
-
-Phương pháp CFA được chia làm 2 giai đoạn thực hiện:
-\begin{itemize}
-	\item Giai đoạn 1: tạo tập bao lồi và ước lượng sơ bộ bố cục của bao lồi.
-	\item Giai đoạn 2: chỉnh sửa bao lồi sao cho phù hợp với các đối tượng phân bổ dày đặc.
-\end{itemize}
 
 \begin{figure}[ht!]
 	\begin{center}

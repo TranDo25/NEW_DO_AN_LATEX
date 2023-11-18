@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.11)  18 NOV 2023 05:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.11)  18 NOV 2023 10:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,7 +1016,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 File: ./logo.png Graphic file (type png)
 <use ./logo.png>
-Package pdftex.def Info: ./logo.png  used on input line 153.
+Package pdftex.def Info: ./logo.png  used on input line 149.
 (pdftex.def)             Requested size: 170.71652pt x 131.72092pt.
  [1
 
@@ -1081,17 +1081,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 204--207
+Underfull \hbox (badness 10000) in paragraph at lines 200--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--212
+Underfull \hbox (badness 10000) in paragraph at lines 204--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--212
+Underfull \hbox (badness 10000) in paragraph at lines 204--208
 
  []
 
@@ -1140,22 +1140,18 @@ Ch\uhorn \ohorn ng 1.
 <./compare_cfa_with_other.JPG, id=46, 681.51387pt x 344.25388pt>
 File: ./compare_cfa_with_other.JPG Graphic file (type jpg)
 <use ./compare_cfa_with_other.JPG>
-Package pdftex.def Info: ./compare_cfa_with_other.JPG  used on input line 312.
+Package pdftex.def Info: ./compare_cfa_with_other.JPG  used on input line 298.
 (pdftex.def)             Requested size: 401.50146pt x 202.81386pt.
 [3
 
 ]
-
-LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 323.
-
 <./work_flow_cfa.JPG, id=50, 529.98pt x 219.91838pt>
 File: ./work_flow_cfa.JPG Graphic file (type jpg)
 <use ./work_flow_cfa.JPG>
-Package pdftex.def Info: ./work_flow_cfa.JPG  used on input line 329.
+Package pdftex.def Info: ./work_flow_cfa.JPG  used on input line 307.
 (pdftex.def)             Requested size: 451.68915pt x 187.43149pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 329--330
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 307--308
  [] 
  []
 
@@ -1167,16 +1163,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./com
-pare_cfa_with_other.jpg>]
-<./compare_convex-hull_with_rectangle.jpg, id=57, 591.37065pt x 283.64032pt>
+[4 <./compare_cfa_with_other.jpg>]
+<./compare_convex-hull_with_rectangle.jpg, id=54, 591.37065pt x 283.64032pt>
 File: ./compare_convex-hull_with_rectangle.jpg Graphic file (type jpg)
 <use ./compare_convex-hull_with_rectangle.jpg>
 Package pdftex.def Info: ./compare_convex-hull_with_rectangle.jpg  used on inpu
-t line 345.
+t line 323.
 (pdftex.def)             Requested size: 446.67038pt x 214.2445pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 345--346
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 323--324
  [] 
  []
 
@@ -1189,32 +1184,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5 <./work_flow_cfa.jpg> <./compare_convex-hull_with_rectangle.jpg>]
-<./compare_normal_with_deformable_convolution.jpg, id=63, 588.26225pt x 244.008
+<./compare_normal_with_deformable_convolution.jpg, id=61, 588.26225pt x 244.008
 39pt>
 File: ./compare_normal_with_deformable_convolution.jpg Graphic file (type jpg)
 <use ./compare_normal_with_deformable_convolution.jpg>
 Package pdftex.def Info: ./compare_normal_with_deformable_convolution.jpg  used
- on input line 366.
+ on input line 344.
 (pdftex.def)             Requested size: 446.67038pt x 185.27702pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 366--367
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 344--345
  [] 
  []
 
-<./feature_offset_type.jpg, id=64, 585.15387pt x 168.63pt>
+<./feature_offset_type.jpg, id=62, 585.15387pt x 168.63pt>
 File: ./feature_offset_type.jpg Graphic file (type jpg)
 <use ./feature_offset_type.jpg>
-Package pdftex.def Info: ./feature_offset_type.jpg  used on input line 376.
+Package pdftex.def Info: ./feature_offset_type.jpg  used on input line 354.
 (pdftex.def)             Requested size: 446.67038pt x 128.7262pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 376--378
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 354--356
  [] 
  []
 
-<./deformable_process.jpg, id=65, 508.90125pt x 329.23pt>
+<./deformable_process.jpg, id=63, 508.90125pt x 329.23pt>
 File: ./deformable_process.jpg Graphic file (type jpg)
 <use ./deformable_process.jpg>
-Package pdftex.def Info: ./deformable_process.jpg  used on input line 385.
+Package pdftex.def Info: ./deformable_process.jpg  used on input line 363.
 (pdftex.def)             Requested size: 401.50146pt x 259.75728pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1225,12 +1220,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6 <./compare_normal_with_deformable_convolution.jpg>]
-<./jarvis_march_steps.jpg, id=70, 589.03935pt x 311.6158pt>
-File: ./jarvis_march_steps.jpg Graphic file (type jpg)
-<use ./jarvis_march_steps.jpg>
-Package pdftex.def Info: ./jarvis_march_steps.jpg  used on input line 398.
-(pdftex.def)             Requested size: 436.63284pt x 230.99149pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1240,6 +1229,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7 <./feature_offset_type.jpg> <./deformable_process.jpg>]
+<./jarvis_march_steps.jpg, id=72, 589.03935pt x 311.6158pt>
+File: ./jarvis_march_steps.jpg Graphic file (type jpg)
+<use ./jarvis_march_steps.jpg>
+Package pdftex.def Info: ./jarvis_march_steps.jpg  used on input line 376.
+(pdftex.def)             Requested size: 436.63284pt x 230.99149pt.
+
+
+LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 384.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1248,7 +1247,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8 <./jarvis_march_steps.jpg>]
+[8{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./jar
+vis_march_steps.jpg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1258,17 +1258,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
-<./construction_convex_hull_set.jpg, id=80, 673.7429pt x 334.15161pt>
-File: ./construction_convex_hull_set.jpg Graphic file (type jpg)
-<use ./construction_convex_hull_set.jpg>
-Package pdftex.def Info: ./construction_convex_hull_set.jpg  used on input line
- 452.
-(pdftex.def)             Requested size: 446.67038pt x 221.53499pt.
-
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 452--453
- [] 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1278,6 +1267,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
+<./construction_convex_hull_set.jpg, id=85, 673.7429pt x 334.15161pt>
+File: ./construction_convex_hull_set.jpg Graphic file (type jpg)
+<use ./construction_convex_hull_set.jpg>
+Package pdftex.def Info: ./construction_convex_hull_set.jpg  used on input line
+ 430.
+(pdftex.def)             Requested size: 446.67038pt x 221.53499pt.
+
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 430--431
+ [] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1290,10 +1290,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <./gaussian_gradient.jpg, id=90, 870.25125pt x 310.15875pt>
 File: ./gaussian_gradient.jpg Graphic file (type jpg)
 <use ./gaussian_gradient.jpg>
-Package pdftex.def Info: ./gaussian_gradient.jpg  used on input line 471.
+Package pdftex.def Info: ./gaussian_gradient.jpg  used on input line 449.
 (pdftex.def)             Requested size: 446.67038pt x 159.19638pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 471--472
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 449--450
  [] 
  []
 
@@ -1320,10 +1320,10 @@ Ch\uhorn \ohorn ng 2.
 
 ]
 
-LaTeX Warning: Command \textless invalid in math mode on input line 557.
+LaTeX Warning: Command \textless invalid in math mode on input line 535.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 557.
+LaTeX Warning: Command \textless invalid in math mode on input line 535.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1343,14 +1343,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-Overfull \hbox (111.10129pt too wide) in paragraph at lines 643--644
+Overfull \hbox (111.10129pt too wide) in paragraph at lines 621--622
 []\T5/cmr/m/n/13 ====================================================== 
  []
 
 <./nhandang1.PNG, id=108, 341.275pt x 402.50375pt>
 File: ./nhandang1.PNG Graphic file (type png)
 <use ./nhandang1.PNG>
-Package pdftex.def Info: ./nhandang1.PNG  used on input line 668.
+Package pdftex.def Info: ./nhandang1.PNG  used on input line 646.
 (pdftex.def)             Requested size: 200.75073pt x 236.76884pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1381,7 +1381,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [19]
 Ch\uhorn \ohorn ng 3.
 
-LaTeX Warning: Citation `K2007' on page 20 undefined on input line 719.
+LaTeX Warning: Citation `K2007' on page 20 undefined on input line 697.
 
 [20
 
@@ -1397,7 +1397,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [21]
 Ch\uhorn \ohorn ng 4.
 
-LaTeX Warning: Reference `al-matduoi' on page 22 undefined on input line 782.
+LaTeX Warning: Reference `al-matduoi' on page 22 undefined on input line 760.
 
 [22
 
@@ -1433,7 +1433,7 @@ Here is how much of TeX's memory you used:
  37009 multiletter control sequences out of 15000+600000
  543857 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,16n,90p,1411b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,16n,90p,1527b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dis
@@ -1453,7 +1453,7 @@ xlive/2023/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb><c:/texlive/2023/texmf-
 dist/fonts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/vn
 tex/vnr/vnr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
 
-Output written on MauDoAnTotNghiep.pdf (33 pages, 750303 bytes).
+Output written on MauDoAnTotNghiep.pdf (33 pages, 750035 bytes).
 PDF statistics:
  233 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams
