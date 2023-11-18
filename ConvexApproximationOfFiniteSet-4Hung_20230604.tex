@@ -1,0 +1,817 @@
+\documentclass[12pt]{article}
+% \usepackage[utf8]{vietnam}
+ \usepackage[latin1]{inputenc}  
+\usepackage{amssymb,amsmath,amsthm,latexsym,enumerate}
+\usepackage{graphicx,subfigure,psfrag} 
+%\usepackage{url}
+\usepackage{cite}
+ \usepackage{longtable}
+\usepackage{multirow}
+\usepackage{color}
+\newcommand{\red}[1]{{\color{red} #1 }}
+\newcommand{\blue}[1]{{\color{blue} #1 }}
+
+\addtolength{\voffset}{-2cm}
+\addtolength{\textheight}{4cm}
+\addtolength{\hoffset}{-1cm}
+\addtolength{\textwidth}{2cm}
+
+\def\figpathnew{figures/}
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}       
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\newtheorem{remark}{Remark}
+\newtheorem{algorithm}{Algorithm}
+
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\ext}{ext}
+\DeclareMathOperator{\sign}{sign}
+
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+
+\def\proof{{\noindent \it Proof. }} 
+\def\whbox{\mbox{\vrule\vbox to 7pt{\hrule width 7pt\vss\hrule}\vrule}}
+\def\qed{{\parfillskip = 0pt\nobreak\hskip 3em\penalty50\mbox{}\hfil
+             \whbox\par}}
+
+\begin{document}
+
+
+\section{Outer convex approximation}\label{OuterConvexApproximation}
+Let
+\begin{equation}\label{def_X1}
+X := \{x_1, x_2, \dots, x_n\} \subset \R^2.
+\end{equation}
+Assume without loss of generality that
+\begin{equation}\label{def_X2}
+\mbox{$x_1, x_2, \dots, x_n$ do not lie on the same straight line.}
+\end{equation}
+
+We write all vectors as row vectors, whose transposes are denoted by the superscript $T$, and use 
+the upper indices to designate their components, e.g. $x = (x^1, x^2) \in \R^2$. For $x, x' \in \R^2$, denote 
+\begin{equation*}
+\begin{array}{lcl}
+[x, x'] &:=& \{(1-\lambda) x + \lambda x' \mid \lambda\in [0, 1]\}, \\
+(x, x') &:=& \{(1-\lambda) x + \lambda x' \mid \lambda\in (0, 1)\}.
+\end{array}
+\end{equation*}
+Given $X$ satisfying (\ref{def_X1})--(\ref{def_X2}) and $\delta \geq 0$,
+in this section we want to find an outer convex approximation of $X$, i.e.
+\begin{equation}\label{def_calPouter-1}
+\mbox{a convex polygon ${\cal P}^{\rm outer}$ satisfying $\conv X \subset {\cal P}^{\rm outer}$} 
+\end{equation}
+such that
+\begin{equation}\label{def_calPouter-2}
+\dist_{\rm H}(\conv X, {\cal P}^{\rm outer}) \leq \delta.
+\end{equation}
+
+Let us determine ${\cal P}^{\rm outer}$ by
+\begin{equation}\label{def_calPouter0}
+{\cal P}^{\rm outer} := \{x \in \R^2 \mid d\, x^T \leq \beta_d \ \mbox{ for all } d \in D\},
+\end{equation}
+where $D \subset \R^2$ denotes the set of maximum directions and $\beta_d \in \R$ denotes the threshold corresponding to the direction $d \in D$.
+For given $D$, ${\cal P}^{\rm outer}$ is the best outer convex approximation polygon containing $X$ if
+\begin{equation}\label{def_betad}
+\beta_d := \max_{x \in X} d\, x^T \ \mbox{ for all } d \in D.
+\end{equation}
+Let $P$ be the vertex set of ${\cal P}^{\rm outer}$.
+
+We start our outer convex approximation process with the smallest rectangle containing $X$ whose edges are parallel to the coordinate axes. According to (\ref{def_calPouter0})--(\ref{def_betad}), this rectangle ${\cal P}^{\rm outer}$ is determined by
+\begin{equation}\label{def_D1}
+D := \{(1, 0),\ (0, 1),\ (-1, 0),\ (0, -1)\}
+\end{equation}
+and
+\begin{equation}\label{def_beta1}
+\begin{array}{lcl}
+\beta_{(1, 0)} &:=& \max\{x^1 \mid (x^1, x^2) \in X\}, \\
+\beta_{(0, 1)} &:=& \max\{x^2 \mid (x^1, x^2) \in X\}, \\
+\beta_{(-1, 0)} &:=& \max\{-x^1 \mid (x^1, x^2) \in X\}, \\
+\beta_{(0, -1)} &:=& \max\{-x^2 \mid (x^1, x^2) \in X\}.
+\end{array}
+\end{equation}
+By (\ref{def_X2}) we have
+\begin{equation*}
+\beta_{(-1, 0)} < \beta_{(1, 0)} \ \mbox{ and } \ \beta_{(0, -1)} < \beta_{(0, 1)}.
+\end{equation*}
+Therefore, ${\cal P}^{\rm outer}$ is a proper rectangle with four distinct vertices, whose vertex set is 
+\begin{equation}\label{def_4r-2}
+P := \{r_1,\ r_2,\ r_3,\ r_4\},
+\end{equation}
+where
+\begin{equation}\label{def_4r-1}
+\begin{array}{lcl}
+r_1 &:=& (\beta_{(1, 0)}, \beta_{(0, 1)}), \\
+r_2 &:=& (\beta_{(-1, 0)}, \beta_{(0, 1)}), \\
+r_3 &:=& (\beta_{(-1, 0)}, \beta_{(0, -1)}), \\
+r_4 &:=& (\beta_{(1, 0)}, \beta_{(0, -1)}).
+\end{array}
+\end{equation}
+
+In the following approximation steps, the constructed polygon ${\cal P}^{\rm outer}$ is successively improved as follows.
+
+For a vertex $p \in P$, let
+\begin{equation}\label{def_p-p+}
+\mbox{$p^- \in P$ and $p^+ \in P$ be the counterclockwise predecessor and successor of $p\in P$}
+\end{equation}
+and denote
+\begin{equation}\label{def_d_p}
+\begin{array}{lcl}
+d_{p}^T &:=& \|p^+ - p^-\|^{-1}\, R \, (p^+ - p^-)^T, \\
+\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X\},
+\end{array}
+\end{equation}
+where 
+\begin{equation}\label{rotationmatrix}
+R := \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}
+\end{equation}
+is the clockwise rotation matrix through angle $\pi/2$.
+As $R$ is a rotation matrix, we  have
+\begin{equation}\label{def_d_p1}
+\|d_{p}\| = \|p^+ - p^-\|^{-1}\, \|(p^+ - p^-) R^T\| = \|p^+ - p^-\|^{-1}\, \|p^+ - p^-\| = 1.
+\end{equation}
+
+There are two cases where we add the following linear constraint to the definition of ${\cal P}^{\rm outer}$ in (\ref{def_calPouter0}):
+\begin{equation}\label{linearconstr}
+d_p\, x^T \leq \beta_{d_p}.
+\end{equation}
+
+First, if
+\begin{equation}\label{betaequal}
+\beta_{d_p} = d_p\, p^+
+\end{equation}
+% (i.e., $\beta_{d_p} = d_p\, p^- = d_p\, p^+$), 
+then the new constraint (\ref{linearconstr}) creates no new vertex but the new edge $[p^-, p^+]$ of ${\cal P}^{\rm outer}$.
+Let $d_{[p^-, p]}$ and $d_{[p, p^+]}$ denote the two maximum directions from $D$ which define the two edges $[p^-, p]$ and $[ p, p^+]$ of ${\cal P}^{\rm outer}$. Then $d_{[p^-, p]}$ and $d_{[p, p^+]}$ become superfluous. Therefore, while adding $d_p$ to $D$ we have to eliminate $d_{[p^-, p]}$ and $d_{[p, p^+]}$ from $D$ and $p$ from $P$, i.e.
+\begin{equation}\label{newDP2}
+\begin{array}{lcl}
+D &:=& (D \cup \{d_{p}\})\setminus \{d_{[p^-,p]}, d_{[p,p^+]}\}, \\
+P &:=& P \setminus \{p\}.
+\end{array}
+\end{equation}
+
+Second, if 
+\begin{equation}\label{betagreater}
+\beta_{d_p} > d_p\, p^+
+\end{equation}
+% (i.e., $\beta_{d_p} > d_p\, p^- = d_p\, p^+$) 
+and
+\begin{equation}\label{greaterdelta}
+d_{p}\, p^T - \beta_{d_{p}} > \delta
+\end{equation}
+then the new constraint (\ref{linearconstr}) creates two new vertices of ${\cal P}^{\rm outer}$ named $\hat p^-$ and $\hat p^+$ that can be computed by
+\begin{equation}\label{def_hatp}
+\begin{array}{lcl}
+\lambda_p &:=& (\beta_{d_p} - d_p\, p^{-T})/(d_p\, p^T - d_p\, p^{-T}) \in (0, 1), \\
+\hat p^- &:=& (1 - \lambda_p)\, p^{-T} + \lambda_p\, p^T, \\
+\hat p^+ &:=& (1 - \lambda_p)\, p^{+T} + \lambda_p\, p^T.
+\end{array}
+\end{equation}
+Hence, we have to add $d_p$ to $D$ and replace $p \in P$ by $\hat p^-$ and $\hat p^+$, i.e.
+\begin{equation}\label{newDP1}
+\begin{array}{lcl}
+D &:=& D \cup \{d_{p}\}, \\
+P &:=&(P \setminus \{p\}) \cup \{\hat p^-, \hat p^+\}.
+\end{array}
+\end{equation}
+
+The approximation procedure is described in the following algorithm, where $P_{\rm doubt}$ denotes the set of vertices that still need to be checked.
+
+\begin{algorithm}\label{alg01}  \rm \ \\
+\emph{Input:} The finite set $X \subset \R^2$ and the approximation parameter $\delta \geq 0$. \\
+\emph{Output:} The outer convex approximation polygon ${\cal P}^{\rm outer}$ defined in (\ref{def_calPouter0}) by $D$ and $\beta_d$ for $d \in D$ and its vertex set $P$.
+\begin{enumerate}[I.]
+\item\label{stepIalg01} 
+Determine $D$, $\beta_d$ for $d \in D$, and $P$ by (\ref{def_D1})--(\ref{def_4r-1}).
+
+\item\label{stepIIalg01} Set $P_{\rm doubt} := P$.
+
+\item\label{stepIIIalg01} 
+Choose an arbitrary $p \in P_{\rm doubt}$ and determine $d_p$, $\beta_{d_p}$ by (\ref{def_p-p+})--(\ref{rotationmatrix}). \\
+If (\ref{betaequal}) is true then change $D$, $P$ as in (\ref{newDP2}), update 
+\begin{equation}\label{newPdoubt2}
+P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
+\end{equation}
+and go to Step \ref{stepIValg01}.\\
+If % (\ref{betagreater}) and 
+(\ref{greaterdelta}) is true then change $D$, $P$ as in (\ref{newDP1}), update 
+\begin{equation}\label{newPdoubt1}
+P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
+\end{equation}
+and go to Step \ref{stepIValg01}.\\
+Otherwise, 
+\begin{equation}\label{newPdoubt3}
+P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
+\end{equation}
+
+\item\label{stepIValg01} 
+If $P_{\rm doubt}$ is nonempty then go to Step \ref{stepIIIalg01}.
+
+\item
+Return the set of maximal directions $D$ and $\beta_d$ for $d \in D$, the vertex set $P$ of ${\cal P}^{\rm outer}$, and stop.
+\end{enumerate}
+\end{algorithm}
+
+By (\ref{def_calPouter0})--(\ref{def_betad}), 
+%\begin{equation}\label{every_edge}
+%\mbox{
+every edge $[p, p^+]$ of $\cal P$ contains at least one point of $X$.
+%}
+%\end{equation}
+Therefore, (\ref{def_d_p}) implies
+\begin{equation*}
+\beta_{d_p} \geq d_p\, p^- = d_p\, p^+.
+\end{equation*}
+Hence, if (\ref{betaequal}) is false then (\ref{betagreater}) is automatically true.
+This explains why (\ref{betagreater}) does not need to be checked together with (\ref{greaterdelta}) in Step \ref{stepIIIalg01}.
+
+Algorithm \ref{alg01} can quickly provide an outer convex approximation polygon ${\cal P}^{\rm outer}$ with
+\begin{equation}\label{smallerdelta}
+d_{p}\, p^T - \beta_{d_{p}} \leq \delta \ \mbox{ for all } p \in P.
+\end{equation}
+This property is necessary but not sufficient for (\ref{def_calPouter-2}).
+To ensure (\ref{def_calPouter-2}), in the next algorithm we also check if
+\begin{equation}\label{checkdistance}
+\begin{array}{lcl}
+&& \|p - x\| > \delta \ \mbox{ for all } x \in X_p, \ \mbox{ where} \\
+&& X_p := \{x \in X \mid d_{p}\, x^T = \beta_{d_{p}}\}.
+\end{array}
+\end{equation}
+
+\begin{algorithm}\label{alg02}  \rm \ \\
+\emph{Input:} The finite set $X \subset \R^2$ and the approximation parameter $\delta \geq 0$. \\
+\emph{Output:} The outer convex approximation polygon ${\cal P}^{\rm outer}$ defined in (\ref{def_calPouter0}) by $D$ and $\beta_d$ for $d \in D$ and its vertex set $P$.
+\begin{enumerate}[I.]
+\item\label{stepIalg02} 
+Determine $D$, $\beta_d$ for $d \in D$, and $P$ by (\ref{def_D1})--(\ref{def_4r-1}).
+
+\item\label{stepIIalg02} Set $P_{\rm doubt} := P$.
+
+\item\label{stepIIIalg02} 
+Choose an arbitrary $p \in P_{\rm doubt}$ and determine $d_p$, $\beta_{d_p}$ by (\ref{def_p-p+})--(\ref{rotationmatrix}). \\
+If (\ref{betaequal}) is true then change $D$, $P$ as in (\ref{newDP2}), update 
+\begin{equation}\label{newPdoubt2b}
+P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
+\end{equation}
+and go to Step \ref{stepIValg02}.\\
+If (\ref{greaterdelta}) is true then change $D$, $P$ as in (\ref{newDP1}), update 
+\begin{equation}\label{newPdoubt1b}
+P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
+\end{equation}
+and go to Step \ref{stepIValg02}.\\
+If (\ref{checkdistance}) is true then change $D$, $P$ as in (\ref{newDP1}), update $P_{\rm doubt}$ by (\ref{newPdoubt1b}), and go to Step \ref{stepIValg02}.\\
+Otherwise, 
+\begin{equation}\label{newPdoubt3b}
+P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
+\end{equation}
+
+\item\label{stepIValg02} 
+If $P_{\rm doubt}$ is nonempty then go to Step \ref{stepIIIalg02}.
+
+\item
+Return the set of maximal directions $D$ and $\beta_d$ for $d \in D$, the vertex set $P$ of ${\cal P}^{\rm outer}$, and stop.
+\end{enumerate}
+\end{algorithm}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=7cm]{./Figures/ConvAppr-Figure01.eps}
+	\caption{$X = \{x_1, x_2, \dots, x_n\}$ with $\conv X = \conv\{x_1, x_2, \dots, x_m\}$ and $m = 10$.}
+	\label{Figure01}
+\end{figure}
+
+
+
+To illustrate the effect of Algorithms \ref{alg01}--\ref{alg02}, let us consider $X$ as a set of $n$ random points in the $16$-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.
+
+\begin{figure}[ht]
+	\centering
+    \includegraphics[width=12cm]{./Figures/Rotate-30.png}
+	\caption{$16$-sided frame polygon ${\cal P}^\diamond$ of $n$ random points.}
+	\label{Figure02}
+\end{figure}
+
+\medskip
+Table \ref{table01} shows some experimental results, where
+\begin{itemize}
+\item $\#_{\rm Edges@ Alg.\, 1}$ is the average number of edges of the outer convex approximation polygon ${\cal P}^{\rm outer}$ returned by Algorithm \ref{alg01},
+\item $\#_{\rm Edges@ Alg.\, 2}$ is the average number of edges of the outer convex approximation polygon ${\cal P}^{\rm outer}$ returned by Algorithm \ref{alg02},
+\item $\#_{\rm Step\, III @ Alg.\, 1}$ is the average number of execution times of Step III in Algorithm \ref{alg01},
+\item $\#_{\rm Step\, III @ Alg.\, 2}$ is the average number of execution times of Step III in Algorithm \ref{alg02}.
+\end{itemize}
+
+		\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		%\hline
+		\hline
+		\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+		\hline		
+		\hline
+		\multirow{ 4}{*}{ $\delta = ???$}
+
+        & $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{ 4}{*}{ $\delta = ???$}
+
+        & $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{ 4}{*}{ $\delta = ???$}
+
+        & $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{ 4}{*}{ $\delta = 0$}
+
+        & $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+	\end{tabular}
+		\caption{The average number of edges of the outer convex approximation polygon ${\cal P}^{\rm outer}$ returned by Algorithms \ref{alg01}--\ref{alg02} and the average number of execution times of their Step III when $X$ consists of $n$ random points in the $16$-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.}
+		\label{table01}
+	\end{center}
+\end{table} 	
+
+
+
+\red{
+\bigskip\noindent
+{\bf REMARK (concerning Table \ref{table01}):} 
+The $n$ random points presented in Table \ref{table01} must be generated in the rotated 16-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.
+
+\bigskip
+}
+
+If the point number $n$ of $X$ is very large then the computation of $\beta_{d_{p}}$ defined in (\ref{def_d_p}) is expensive, which can be significantly reduced as follows. Take four points $q_1$, $q_2$, $q_3$, and $q_4$ of $X$ that lie on the four edges of the starting rectangle ${\cal P}^{\rm outer}$, i.e.
+\begin{equation}\label{def_4q-1}
+q_1, q_2, q_3, q_4 \in X
+\end{equation}
+and
+\begin{equation}\label{def_4q-2}
+\begin{array}{lcl}
+(1, 0)\, q_1^T &=& \beta_{(1, 0)}, \\
+(0, 1)\, q_2^T &=& \beta_{(0, 1)}, \\
+(-1, 0)\, q_3^T &=& \beta_{(-1, 0)}, \\
+(0, -1)\, q_4^T &=& \beta_{(0, -1)}.
+\end{array}
+\end{equation}
+For $j \in \{1, 2, 3, 4\}$ and $q_5 := q_1$, if $q_j \not= q_{j+1}$ then determine
+\begin{equation}\label{def_4Xj}
+X_j := \{x \in X \mid \bar d_{[q_j, q_{j+1}]}\, (x - q_j)^T \geq 0\}, 
+\end{equation}
+where
+\begin{equation}\label{def_4dqj}
+\bar d_{[q_j, q_{j+1}]}^{\, T} := \|q_{j+1} - q_j\|^{-1} R\, (q_{j+1} - q_j)^T.
+\end{equation}
+In the next algorithm, $X$ in (\ref{def_d_p}) and (\ref{checkdistance}) is replaced by $X_j$, i.e.
+\begin{equation}\label{def_d_p-new}
+\begin{array}{lcl}
+d_{p}^T &:=& \|p^+ - p^-\|^{-1} R \, (p^+ - p^-)^T, \\
+\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X_j\}, 
+\end{array}
+\end{equation}
+and
+\begin{equation}\label{checkdistance+}
+\begin{array}{lcl}
+&& \|p - x\| > \delta \ \mbox{ for all } x \in X_p, \ \mbox{ where} \\
+&& X_p := \{x \in X_j \mid d_{p}\, x^T = \beta_{d_{p}}\},
+\end{array}
+\end{equation}
+for $j \in \{1, 2, 3, 4\}$.
+
+\begin{algorithm}\label{alg03}  \rm \ \\
+\emph{Input:} The finite set $X \subset \R^2$ and the approximation parameter $\delta \geq 0$. \\
+\emph{Output:} The outer convex approximation polygon ${\cal P}^{\rm outer}$ defined in (\ref{def_calPouter0}) by $D$ and $\beta_d$ for $d \in D$ and its vertex set $P$.
+\begin{enumerate}[I.]
+\item\label{stepIalg03} 
+Determine $D$, $\beta_d$ for $d \in D$, $r_j$ for $j \in \{1, 2, 3, 4\}$, and $P$ by (\ref{def_D1})--(\ref{def_4r-1}). \\
+Set $j := 1$ and $q_5 := q_1$. 
+
+\item\label{stepIIalg03} 
+If $q_j = q_{j+1}$ then go to Step \ref{stepValg03}.\\
+Otherwise, determine $X_j$ by (\ref{def_4q-1})--(\ref{def_4Xj}) and set $P_{\rm doubt} := \{r_j\}$.
+
+\item\label{stepIIIalg03} 
+Choose an arbitrary $p \in P_{\rm doubt}$ and determine $d_p$, $\beta_{d_p}$ by (\ref{def_p-p+}) and (\ref{def_d_p-new}). \\
+If
+\begin{equation*}%\label{betaequal+}
+\beta_{d_p} = d_p\, p^-
+\end{equation*}
+then change $D$ and $P$ as in (\ref{newDP2}), update 
+\begin{equation*}\label{newPdoubt5+}
+P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\}
+\end{equation*}
+and go to Step \ref{stepIValg03}.\\
+If 
+\begin{equation*}%\label{greaterdelta+}
+d_{p}\, p^T - \beta_{d_{p}} > \delta
+\end{equation*}
+then change $D$ and $P$ as in (\ref{newDP1}), update 
+\begin{equation}\label{newPdoubt4+}
+P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\}
+\end{equation}
+and go to Step \ref{stepIValg03}.\\
+If (\ref{checkdistance+}) is true then change $D$, $P$ as in (\ref{newDP1}), update $P_{\rm doubt}$ by (\ref{newPdoubt4+}), and go to Step \ref{stepIValg03}.\\
+Otherwise,
+\begin{equation*}%\label{newPdoubt6+}
+P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
+\end{equation*}
+
+\item\label{stepIValg03} 
+If $P_{\rm doubt}$ is nonempty then go to Step \ref{stepIIIalg03}.
+
+\item\label{stepValg03} 
+If $j < 4$ then $j := j+1$ and go to Step \ref{stepIIalg03}.
+
+\item\label{stepVIalg03} 
+Return the set of maximal directions $D$ and $\beta_d$ for $d \in D$, the vertex set $P$ of ${\cal P}^{\rm outer}$, and stop.
+\end{enumerate}
+\end{algorithm}
+
+
+
+\medskip
+Table \ref{table02} and Figure \ref{Figure03} show some experimental results on the running time of Algorithms \ref{alg02}--\ref{alg03} when $X$ consists of $n$ random points in the $16$-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}, where
+\begin{itemize}
+\item $T_{\rm Alg.\, 2}$ is the average running time of Algorithm \ref{alg02},
+\item $T_{\rm Alg.\, 3}$ is the average running time of Algorithm \ref{alg03}.
+\end{itemize}
+
+		\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		%\hline
+		\hline
+		\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+		\hline		
+		\hline
+		\multirow{ 4}{*}{ $\delta = ???$}
+
+        & $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{ 4}{*}{ $\delta = ???$}
+
+        & $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{ 4}{*}{ $\delta = ???$}
+
+        & $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{ 4}{*}{ $\delta = 0$}
+
+        & $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        
+        & $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+		
+		& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+	\end{tabular}
+		\caption{The average running time $T_{\rm Alg.\, 2}$ and $T_{\rm Alg.\, 3}$ of Algorithm \ref{alg02} and Algorithm \ref{alg03}
+when $X$ consists of $n$ random points in the $16$-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.}
+		\label{table02}
+	\end{center}
+\end{table} 	
+
+\begin{figure}[ht]
+	\centering
+	???
+%\includegraphics[width=8cm]{./Figures/???}
+	\caption{The ratio between the running time of Algorithms \ref{alg02}--\ref{alg03} and the point number $n$ of $X$.}
+	\label{Figure03}
+\end{figure}
+
+
+\red{
+\bigskip\noindent
+{\bf REMARK (concerning Table \ref{table02} and Figure \ref{Figure03}):} 
+
+ - The $n$ random points presented in Table \ref{table02} must be generated in the rotated 16-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.
+ 
+ - Only two ratios $T_{\rm Alg.\, 2}/n$ and $T_{\rm Alg.\, 3}/n$ are presented in Figure \ref{Figure03}.
+
+\bigskip
+} 
+
+
+
+
+\section{Inner convex approximation}\label{InnerConvexApproximation}
+
+Given $X$ satisfying (\ref{def_X1})--(\ref{def_X2}) and $\delta \geq 0$,
+in this section we want to find an inner convex approximation ${\cal P}^{\rm inner}$  of $X$, i.e.
+\begin{equation}\label{def_calPinner-1}
+{\cal P}^{\rm inner} := \conv X', \ \mbox{ where } X' \subset X,
+\end{equation}
+such that
+\begin{equation}\label{def_calPinner-2}
+\dist_{\rm H}(\conv X, {\cal P}^{\rm inner}) \leq \delta.
+\end{equation}
+
+Let us describe ${\cal P}^{\rm inner}$ by the set $E$ of its directed edges $[p, p^+]$, where $p^+$ is a counterclockwise successor of $p$, i.e.
+\begin{equation}\label{def_E}
+E := \{[p, p^+] \mid p, p^+ \in X', \mbox{ $[p, p^+]$ is an edge of ${\cal P}^{\rm inner}$}\}.
+\end{equation}
+
+
+We start our inner convex approximation process with the quadrilateral $\bar q_1 \bar q_2 \bar q_3 \bar q_4$, i.e.
+\begin{equation}\label{def_X'E}
+\begin{array}{lcl}
+X' &:=& \{\bar q_1, \bar q_2, \bar q_3, \bar q_4\}, \\
+E &:=& \{[\bar q_1, \bar q_2], \, [\bar q_2, \bar q_3], \, [\bar q_3, \bar q_4], \, [\bar q_4, \bar q_1]\},
+\end{array}
+\end{equation}
+where $\bar q_1$, $\bar q_2$, $\bar q_3$, and $\bar q_4$ are uniquely defined by
+\begin{equation}\label{def_4barq1}
+\begin{array}{lcl}
+x^1_{\rm min} &:=& \min \{x^1 \mid (x^1, x^2) \in X\}, \\
+x^1_{\rm max} &:=& \max \{x^1 \mid (x^1, x^2) \in X\}, \\
+x^2_{\rm min} &:=& \min \{x^2 \mid (x^1, x^2) \in X\}, \\
+x^2_{\rm max} &:=& \max \{x^2 \mid (x^1, x^2) \in X\}
+\end{array}
+\end{equation}
+and 
+\begin{equation}\label{def_4barq2}
+\begin{array}{lcl}
+X^1_{\rm min} &:=& \{(x^1, x^2) \in X \mid x^1 = x^1_{\rm min}\}, \\
+X^1_{\rm max} &:=& \{(x^1, x^2) \in X \mid x^1 = x^1_{\rm max}\}, \\
+X^2_{\rm min} &:=& \{(x^1, x^2) \in X \mid x^2 = x^2_{\rm min}\}, \\
+X^2_{\rm max} &:=& \{(x^1, x^2) \in X \mid x^2 = x^2_{\rm max}\}
+\end{array}
+\end{equation}
+and 
+\begin{equation}\label{def_4barq3}
+\begin{array}{lcl}
+&& \bar q_1 = (\bar q_1^1, \bar q_1^2) \in X^1_{\rm max} \mbox{ satisfying } \bar q_1^2 = \max\{x^2 \mid (x^1, x^2) \in X^1_{\rm max}\}, \\
+&& \bar q_2 = (\bar q_2^1, \bar q_2^2) \in X^2_{\rm max} \mbox{ satisfying } \bar q_2^1 = \min\{x^1 \mid (x^1, x^2) \in X^2_{\rm max}\}, \\
+&& \bar q_3 = (\bar q_3^1, \bar q_3^2) \in X^1_{\rm min} \mbox{ satisfying } \bar q_3^2 = \min\{x^2 \mid (x^1, x^2) \in X^1_{\rm min}\}, \\
+&& \bar q_4 = (\bar q_4^1, \bar q_4^2) \in X^2_{\rm min} \mbox{ satisfying } \bar q_4^1 = \max\{x^1 \mid (x^1, x^2) \in X^2_{\rm min}\}.
+\end{array}
+\end{equation}
+Note that two points of $\bar q_1$, $\bar q_2$, $\bar q_3$, and $\bar q_4$ can coincide, but (\ref{def_X2}) implies that at least three of them are different.
+
+In the following approximation steps, the constructed polygon ${\cal P}^{\rm inner}$ is successively
+improved as follows.
+For any $[p, p^+] \in E$ ($p \not= p^+$), define
+\begin{equation}\label{def_d&X_d}
+\begin{array}{lcl}
+\bar d_{[p, p^+]}^{\, T} &:=& \|p^+ - p\|^{-1} R \, (p^+ - p)^T, \\
+X_{[p, p^+]} &:=& \{x \in X \mid \bar d_{[p, p^+]}\, x^T > \bar d_{[p, p^+]}\, p^T \},
+\end{array}
+\end{equation}
+where
+\begin{equation*}%\label{rotationmatrix}
+R := \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}.
+\end{equation*}
+
+If $X_{[p, p^+]} \not= \emptyset$ then determine
+\begin{equation}\label{beta1}
+\begin{array}{lcl}
+\beta_{[p, p^+]} &:=& \max \{\bar d_{[p, p^+]}\, x^T \mid x \in X_{[p, p^+]}\}, \\
+B_{[p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, p^+]}\, x^T = \beta_{[p, p^+]}\}.
+\end{array}
+\end{equation}
+If 
+\begin{equation}\label{beta2}
+\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T \leq \delta
+\end{equation}
+then we no longer have to extend ${\cal P}^{\rm inner }$ in the direction $\bar d_{[p, p^+]}$.
+
+Otherwise, if 
+\begin{equation}\label{beta3}
+\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T > \delta
+\end{equation}
+then take   
+\begin{equation}\label{beta4}
+\hat p \in B_{[p, p^+]} \hbox{ satisfying } \|\hat p - p\| = \max\{\|x - p\| \mid x \in B_{[p, p^+]}\},
+\end{equation}
+update $X'$ and $B$ by
+\begin{equation}\label{beta5}
+\begin{array}{lcl}
+X' &:=& X' \cup \{\hat p\}, \\
+E &:=& E \cup \{[p, \hat p], \, [\hat p, p^+]\},
+\end{array}
+\end{equation}
+and determine
+\begin{equation}\label{beta6}
+\begin{array}{lcl}
+X_{[p, \hat p]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, \hat p]}\, x^T > \bar d_{[p, \hat p]}\, p^T \}, \\
+X_{[\hat p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[\hat p, p^+]}\, x^T > \bar d_{[\hat p, p^T]}\, {\hat p}^T \}.
+\end{array}
+\end{equation}
+Note that we consider only $x \in X_{[p, p^+]}$ in this definition of $X_{[p, \hat p]}$ and $X_{[\hat p, p^+]}$, but all $x \in X$ in the definition (\ref{def_d&X_d}) of $X_{[p, p^+]}$.
+
+The approximation procedure is presented in the following algorithm, where $E_{\rm doubt}$ denotes the set of edges that still need to be checked.
+
+\begin{algorithm}\label{alg04}  \rm \ \\
+\emph{Input:} The finite set $X \subset \R^2$ and the approximation parameter $\delta \geq 0$. \\
+\emph{Output:} The inner convex approximation ${\cal P}^{\rm inner}$ described by $X'$ and $E$.
+\begin{enumerate}[I.]
+\item\label{stepIalg04} 
+Determine $X'$ and $E$ by (\ref{def_X'E})--(\ref{def_4barq3}).\\
+For all $[p, p^+] \in E$ determine $d_{[p, p^+]}$ and $X_{[p, p^+]}$ by (\ref{def_d&X_d}).\\
+Set $E_{\rm doubt} := E$.
+
+\item\label{stepIIalg04} 
+Choose an arbitrary $[p, p^+] \in E_{\rm doubt}$. \\
+If $X_{[p, p^+]} = \emptyset$ then set
+$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
+and go to Step \ref{stepIIIalg04}.\\
+Determine $\beta_{[p, p^+]}$ and $B_{[p, p^+]}$ by (\ref{beta1}). \\
+If (\ref{beta2}) is true then set
+$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
+and go to Step \ref{stepIIIalg04}.\\
+Otherwise, take $\hat p$ defined by (\ref{beta4}),
+update $X'$ and $E$ by (\ref{beta5}), determine $X_{[p, \hat p]}$ and $X_{[\hat p, p^+]}$ by (\ref{beta6}),
+and set
+\begin{equation*}%\label{newBdoubt3}
+E_{\rm doubt} := (E_{\rm doubt} \setminus \{[p, p^+])\}) \cup \{[p, \hat p], \, [\hat p, p^+]\}.
+\end{equation*}
+
+\item\label{stepIIIalg04} 
+If $E_{\rm doubt}$ is nonempty then go to Step \ref{stepIIalg04}.
+
+\item
+Return $X'$, $E$, and stop.
+\end{enumerate}
+\end{algorithm}
+
+
+\medskip
+Table \ref{table03} shows some experimental results, where
+\begin{itemize}
+\item $\#_{\rm Edges@ Alg.\, 4}$ is the average number of edges of the inner convex approximation polygon ${\cal P}^{\rm inner}$ returned by Algorithm \ref{alg04},
+\item $\#_{\rm Step\, II @ Alg.\, 4}$ is the average number of execution times of Step \ref{stepIIalg04} in Algorithm \ref{alg04}.
+\end{itemize}
+
+		\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		%\hline
+		\hline
+		\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+		\hline		
+		\hline
+		\multirow{2}{*}{ $\delta = ???$}
+
+        & $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{2}{*}{ $\delta = ???$}
+
+        & $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{2}{*}{ $\delta = ???$}
+
+        & $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{2}{*}{ $\delta = 0$}
+
+        & $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+	\end{tabular}
+		\caption{The average number of edges of the inner convex approximation polygon ${\cal P}^{\rm inner}$ returned by Algorithm \ref{alg04} and the average number of execution times of its Step II when $X$ consists of $n$ random points in the $16$-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.}
+		\label{table03}
+	\end{center}
+\end{table} 	
+
+
+\red{
+\bigskip\noindent
+{\bf REMARK (concerning Table \ref{table03}):} 
+The $n$ random points presented in Table \ref{table03} must be generated in the rotated 16-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.
+
+\bigskip
+}
+
+\medskip
+Table \ref{table04} and Figure \ref{Figure04} show some experimental results on the running time of Algorithm \ref{alg04} when $X$ consists of $n$ random points in the $16$-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}, where $T_{\rm Alg.\, 4}$ is the average running time of Algorithm \ref{alg04}.
+
+		\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		%\hline
+		\hline
+		\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+		\hline		
+		\hline
+		\multirow{2}{*}{ $\delta = ???$}
+
+        & $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{2}{*}{ $\delta = ???$}
+
+        & $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{2}{*}{ $\delta = ???$}
+
+        & $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+		\multirow{2}{*}{ $\delta = ???$}
+
+        & $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+        		
+		& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+		\hline
+	\end{tabular}
+		\caption{The average running time $T_{\rm Alg.\, 4}$  Algorithm \ref{alg04} 
+when $X$ consists of $n$ random points in the $16$-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.}
+		\label{table04}
+	\end{center}
+\end{table} 	
+
+\begin{figure}[ht]
+	\centering
+	???
+%\includegraphics[width=8cm]{./Figures/???}
+	\caption{The ratio between the running time of Algorithm \ref{alg04} the point number $n$ of $X$.}
+	\label{Figure04}
+\end{figure}
+
+
+\red{
+\bigskip\noindent
+{\bf REMARK (concerning Table \ref{table04} and Figure \ref{Figure04}):} 
+
+ - The $n$ random points presented in Table \ref{table04} must be generated in the rotated 16-sided frame polygon ${\cal P}^\diamond$ shown in Figure \ref{Figure02}.
+ 
+ - Only the ratio $T_{\rm Alg.\, 4}/n$ is presented in Figure \ref{Figure04}.
+
+\bigskip
+} 
+
+
+\end{document}
+
