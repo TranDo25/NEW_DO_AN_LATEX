@@ -1,6 +1,6 @@
 \contentsline {chapter}{\bf Danh sách hình vẽ}{iv}{}%
-\contentsline {chapter}{\bf Danh sách bảng}{v}{}%
-\contentsline {chapter}{Danh sách các ký hiệu và chữ viết tắt}{vi}{}%
+\contentsline {chapter}{\bf Danh sách bảng}{vi}{}%
+\contentsline {chapter}{Danh sách các ký hiệu và chữ viết tắt}{vii}{}%
 \contentsline {chapter}{\vspace *{-8pt} Mở đầu}{1}{}%
 \contentsline {chapter}{\numberline {1}Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng}{3}{}%
 \contentsline {section}{\numberline {1.1}Giới thiệu}{3}{}%
@@ -14,10 +14,10 @@
 \contentsline {subsection}{\numberline {1.7.2}Chiến lược phân đoạn tập các bao lồi}{11}{}%
 \contentsline {chapter}{\numberline {2}Thuật toán tính bao lồi xấp xỉ}{14}{}%
 \contentsline {section}{\numberline {2.1}Outer convex approximation}{14}{}%
-\contentsline {section}{\numberline {2.2}Sơ lược về ............ }{18}{}%
-\contentsline {chapter}{\numberline {3}Ứng dụng .................}{20}{}%
-\contentsline {section}{\numberline {3.1}Thặng dư bậc hai và ứng dụng}{20}{}%
-\contentsline {subsection}{\numberline {3.1.1}Phương trình đồng dư bậc hai..........}{20}{}%
-\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{22}{}%
-\contentsline {chapter}{\vspace *{-8pt} Kết luận}{24}{}%
-\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{25}{}%
+\contentsline {section}{\numberline {2.2}Inner convex approximation}{24}{}%
+\contentsline {chapter}{\numberline {3}Ứng dụng .................}{29}{}%
+\contentsline {section}{\numberline {3.1}Thặng dư bậc hai và ứng dụng}{29}{}%
+\contentsline {subsection}{\numberline {3.1.1}Phương trình đồng dư bậc hai..........}{29}{}%
+\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{31}{}%
+\contentsline {chapter}{\vspace *{-8pt} Kết luận}{33}{}%
+\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{34}{}%

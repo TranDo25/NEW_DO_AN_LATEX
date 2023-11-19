@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.6)  18 NOV 2023 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.6)  19 NOV 2023 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -893,9 +893,6 @@ LaTeX Warning: Label `fig_dhandang1' multiply defined.
 
 LaTeX Warning: Label `fig_dhandang1' multiply defined.
 
-
-LaTeX Warning: Label `fig_dhandang1' multiply defined.
-
 )
 \openout1 = `MauDoAnTotNghiep.aux'.
 
@@ -1160,17 +1157,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3] (MauDoAnTotNghiep.lof)
+[3] (MauDoAnTotNghiep.lof [4
+
+])
 \tf@lof=\write6
 \openout6 = `MauDoAnTotNghiep.lof'.
 
- [4
 
-] (MauDoAnTotNghiep.lot)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5] (MauDoAnTotNghiep.lot)
 \tf@lot=\write7
 \openout7 = `MauDoAnTotNghiep.lot'.
 
- [5
+ [6
 
 ]
 
@@ -1181,7 +1187,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6] [1
+[7] [1
 
 ]
 
@@ -1194,7 +1200,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 Ch\uhorn \ohorn ng 1.
-<./compare_cfa_with_other.JPG, id=45, 681.51387pt x 344.25388pt>
+<./compare_cfa_with_other.JPG, id=51, 681.51387pt x 344.25388pt>
 File: ./compare_cfa_with_other.JPG Graphic file (type jpg)
 <use ./compare_cfa_with_other.JPG>
 Package pdftex.def Info: ./compare_cfa_with_other.JPG  used on input line 312.
@@ -1206,7 +1212,7 @@ Package pdftex.def Info: ./compare_cfa_with_other.JPG  used on input line 312.
 LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <13> not available
 (Font)              size <12> substituted on input line 323.
 
-<./work_flow_cfa.JPG, id=49, 529.98pt x 219.91838pt>
+<./work_flow_cfa.JPG, id=55, 529.98pt x 219.91838pt>
 File: ./work_flow_cfa.JPG Graphic file (type jpg)
 <use ./work_flow_cfa.JPG>
 Package pdftex.def Info: ./work_flow_cfa.JPG  used on input line 329.
@@ -1225,7 +1231,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4 <./compare_cfa_with_other.JPG>]
-<./compare_convex-hull_with_rectangle.jpg, id=56, 591.37065pt x 283.64032pt>
+<./compare_convex-hull_with_rectangle.jpg, id=62, 591.37065pt x 283.64032pt>
 File: ./compare_convex-hull_with_rectangle.jpg Graphic file (type jpg)
 <use ./compare_convex-hull_with_rectangle.jpg>
 Package pdftex.def Info: ./compare_convex-hull_with_rectangle.jpg  used on inpu
@@ -1245,7 +1251,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5 <./work_flow_cfa.JPG> <./compare_convex-hull_with_rectangle.jpg>]
-<./compare_normal_with_deformable_convolution.jpg, id=62, 588.26225pt x 244.008
+<./compare_normal_with_deformable_convolution.jpg, id=66, 588.26225pt x 244.008
 39pt>
 File: ./compare_normal_with_deformable_convolution.jpg Graphic file (type jpg)
 <use ./compare_normal_with_deformable_convolution.jpg>
@@ -1257,7 +1263,7 @@ Overfull \hbox (5.65265pt too wide) in paragraph at lines 366--367
  [] 
  []
 
-<./feature_offset_type.jpg, id=63, 585.15387pt x 168.63pt>
+<./feature_offset_type.jpg, id=67, 585.15387pt x 168.63pt>
 File: ./feature_offset_type.jpg Graphic file (type jpg)
 <use ./feature_offset_type.jpg>
 Package pdftex.def Info: ./feature_offset_type.jpg  used on input line 376.
@@ -1267,7 +1273,7 @@ Overfull \hbox (5.65265pt too wide) in paragraph at lines 376--378
  [] 
  []
 
-<./deformable_process.jpg, id=64, 508.90125pt x 329.23pt>
+<./deformable_process.jpg, id=68, 508.90125pt x 329.23pt>
 File: ./deformable_process.jpg Graphic file (type jpg)
 <use ./deformable_process.jpg>
 Package pdftex.def Info: ./deformable_process.jpg  used on input line 385.
@@ -1281,7 +1287,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6 <./compare_normal_with_deformable_convolution.jpg>]
-<./jarvis_march_steps.jpg, id=69, 589.03935pt x 311.6158pt>
+<./jarvis_march_steps.jpg, id=72, 589.03935pt x 311.6158pt>
 File: ./jarvis_march_steps.jpg Graphic file (type jpg)
 <use ./jarvis_march_steps.jpg>
 Package pdftex.def Info: ./jarvis_march_steps.jpg  used on input line 398.
@@ -1314,7 +1320,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
-<./construction_convex_hull_set.jpg, id=79, 673.7429pt x 334.15161pt>
+<./construction_convex_hull_set.jpg, id=82, 673.7429pt x 334.15161pt>
 File: ./construction_convex_hull_set.jpg Graphic file (type jpg)
 <use ./construction_convex_hull_set.jpg>
 Package pdftex.def Info: ./construction_convex_hull_set.jpg  used on input line
@@ -1343,7 +1349,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11 <./construction_convex_hull_set.jpg>]
-<./gaussian_gradient.jpg, id=89, 870.25125pt x 310.15875pt>
+<./gaussian_gradient.jpg, id=92, 870.25125pt x 310.15875pt>
 File: ./gaussian_gradient.jpg Graphic file (type jpg)
 <use ./gaussian_gradient.jpg>
 Package pdftex.def Info: ./gaussian_gradient.jpg  used on input line 471.
@@ -1399,15 +1405,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-Overfull \hbox (111.10129pt too wide) in paragraph at lines 646--647
-[]\T5/cmr/m/n/13 ====================================================== 
+
+LaTeX Warning: Reference `def_d_p22' on page 17 undefined on input line 710.
+
+
+LaTeX Warning: Reference `def-27' on page 17 undefined on input line 715.
+
+
+LaTeX Warning: Reference `def_d_p22' on page 17 undefined on input line 715.
+
+<./convex X.jpg, id=111, 225.84375pt x 229.45724pt>
+File: ./convex X.jpg Graphic file (type jpg)
+<use ./convex X.jpg>
+Package pdftex.def Info: ./convex X.jpg  used on input line 731.
+(pdftex.def)             Requested size: 301.1261pt x 305.98306pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--740
+
  []
 
-<./nhandang1.PNG, id=107, 341.275pt x 402.50375pt>
-File: ./nhandang1.PNG Graphic file (type png)
-<use ./nhandang1.PNG>
-Package pdftex.def Info: ./nhandang1.PNG  used on input line 671.
-(pdftex.def)             Requested size: 200.75073pt x 236.76884pt.
+<./Frame pylogon.jpg, id=112, 408.3255pt x 264.99pt>
+File: ./Frame pylogon.jpg Graphic file (type jpg)
+<use ./Frame pylogon.jpg>
+Package pdftex.def Info: ./Frame pylogon.jpg  used on input line 743.
+(pdftex.def)             Requested size: 301.1261pt x 195.4264pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1425,7 +1446,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18 <./nhandang1.PNG>]
+[18]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1435,13 +1456,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
-Ch\uhorn \ohorn ng 3.
 
-LaTeX Warning: Citation `K2007' on page 20 undefined on input line 722.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-[20
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-]
+[20 <./convex X.jpg> <./Frame pylogon.jpg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1451,11 +1474,95 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-Ch\uhorn \ohorn ng 4.
 
-LaTeX Warning: Reference `al-matduoi' on page 22 undefined on input line 785.
+LaTeX Warning: Reference `def-27' on page 22 undefined on input line 841.
 
-[22
+
+LaTeX Warning: Reference `def_calPouter0' on page 22 undefined on input line 86
+1.
+
+
+LaTeX Warning: Reference `def_d_p22' on page 22 undefined on input line 886.
+
+
+LaTeX Warning: Reference `def_d_p22' on page 22 undefined on input line 891.
+
+
+LaTeX Warning: Reference `Figure02' on page 22 undefined on input line 908.
+
+
+Overfull \hbox (111.10129pt too wide) in paragraph at lines 987--988
+[]\T5/cmr/m/n/13 ====================================================== 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+Ch\uhorn \ohorn ng 3.
+
+LaTeX Warning: Citation `K2007' on page 29 undefined on input line 1251.
+
+[29
 
 ]
 
@@ -1466,9 +1573,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23] [24
+[30]
+Ch\uhorn \ohorn ng 4.
 
-] [25
+LaTeX Warning: Reference `al-matduoi' on page 31 undefined on input line 1314.
+
+[31
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32] [33
+
+] [34
 
 ] (MauDoAnTotNghiep.aux)
  ***********
@@ -1488,37 +1611,39 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16846 strings out of 475247
- 329365 string characters out of 5758264
- 1931785 words of memory out of 5000000
- 38022 multiletter control sequences out of 15000+600000
- 589642 words of font info for 113 fonts, out of 8000000 for 9000
+ 16933 strings out of 475247
+ 330403 string characters out of 5758264
+ 1951785 words of memory out of 5000000
+ 38106 multiletter control sequences out of 15000+600000
+ 593755 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,16n,93p,1413b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,16n,93p,1413b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\hoij\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmex10.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/hoij/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/hoij/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/hoij/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/hoij/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/hoij/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/
-hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
-:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6
+amsfonts/cm/cmmi10.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/hoij/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/hoij/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/hoij/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/hoij/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/hoi
+j/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
+rs/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9
 .pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmsy9.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb><D:/vntex-3.1.9/fonts/type1/vntex/
-vnr/vnbx12.pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vncsc10.pfb><D:/vntex-3.1.
-9/fonts/type1/vntex/vnr/vnr10.pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vnr12.p
-fb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on MauDoAnTotNghiep.pdf (33 pages, 770561 bytes).
+m/cmsy10.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy6.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy9.pfb><C:/Users/hoij/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/vntex-3.1.9/fonts/type1/vnte
+x/vnr/vnbx12.pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vncsc10.pfb><D:/vntex-3.
+1.9/fonts/type1/vntex/vnr/vnr10.pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vnr12
+.pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vnr9.pfb><D:/vntex-3.1.9/fonts/type1
+/vntex/vnr/vnti12.pfb>
+Output written on MauDoAnTotNghiep.pdf (43 pages, 892865 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
+ 274 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
