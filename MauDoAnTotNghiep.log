@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.6)  19 NOV 2023 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.6)  20 NOV 2023 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1157,13 +1157,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3] (MauDoAnTotNghiep.lof [4
-
-])
+[3] (MauDoAnTotNghiep.lof)
 \tf@lof=\write6
 \openout6 = `MauDoAnTotNghiep.lof'.
 
+ [4
 
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1405,15 +1405,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-
-LaTeX Warning: Reference `def_d_p22' on page 17 undefined on input line 710.
-
-
-LaTeX Warning: Reference `def-27' on page 17 undefined on input line 715.
-
-
-LaTeX Warning: Reference `def_d_p22' on page 17 undefined on input line 715.
-
 <./convex X.jpg, id=111, 225.84375pt x 229.45724pt>
 File: ./convex X.jpg Graphic file (type jpg)
 <use ./convex X.jpg>
@@ -1474,19 +1465,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-
-LaTeX Warning: Reference `def-27' on page 22 undefined on input line 841.
-
-
-LaTeX Warning: Reference `def_calPouter0' on page 22 undefined on input line 86
-1.
-
-
-LaTeX Warning: Reference `def_d_p22' on page 22 undefined on input line 886.
-
-
-LaTeX Warning: Reference `def_d_p22' on page 22 undefined on input line 891.
-
 
 LaTeX Warning: Reference `Figure02' on page 22 undefined on input line 908.
 
@@ -1611,10 +1589,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16933 strings out of 475247
- 330403 string characters out of 5758264
+ 16931 strings out of 475247
+ 330326 string characters out of 5758264
  1951785 words of memory out of 5000000
- 38106 multiletter control sequences out of 15000+600000
+ 38104 multiletter control sequences out of 15000+600000
  593755 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,16n,93p,1413b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1641,7 +1619,7 @@ x/vnr/vnbx12.pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vncsc10.pfb><D:/vntex-3.
 1.9/fonts/type1/vntex/vnr/vnr10.pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vnr12
 .pfb><D:/vntex-3.1.9/fonts/type1/vntex/vnr/vnr9.pfb><D:/vntex-3.1.9/fonts/type1
 /vntex/vnr/vnti12.pfb>
-Output written on MauDoAnTotNghiep.pdf (43 pages, 892865 bytes).
+Output written on MauDoAnTotNghiep.pdf (43 pages, 892776 bytes).
 PDF statistics:
  274 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -503,7 +503,7 @@ Hàm mất mát này xem xét sự tương ứng về đặc trưng của nhiề
 \end{align}
 
 \chapter{Thuật toán tính bao lồi xấp xỉ}
-\textit{giới thiệu chung về thuật toán, cách dùng, có bao nhiêu loại thuật toán}
+\textit{Giới thiệu chung về thuật toán, cách dùng, có bao nhiêu loại thuật toán}
 \section{Outer convex approximation}
 Cho:
 \begin{align} \label{ct2.1} 
@@ -523,7 +523,7 @@ Ta viết tất cả các vector thành dạng vector hàng, những vector này
 
 Cho $X$ thỏa mãn (\ref{ct2.1}) - (\ref{ct2.2}) và $\delta \geq 0$, trong phần này em muốn tìm một bao lồi xấp xỉ của $X$, nghĩa là:
 \begin{align}\label{ct2.4}
-	\text{một đa giác lồi }\mathcal{P}^{outer} \text{thỏa mãn bao lồi }X\subset\mathcal{P}^{outer}
+	\text{Một đa giác lồi }\mathcal{P}^{outer} \text{thỏa mãn bao lồi }X\subset\mathcal{P}^{outer}
 \end{align}
 sao cho
 \begin{align}\label{ct2.5}
@@ -543,7 +543,7 @@ Ta bắt đầu quá trình xác định bao lồi xấp xỉ ngoài với hình
 	D:=\{(1, 0), (0, 1), (-1, 0), (0, -1)\}
 \end{align}
 và:
-\begin{equation}
+\begin{equation}\label{ct2.9}
 	\begin{aligned}
 		& \beta_{(1,0)}:=\max \left\{x^1 \mid\left(x^1, x^2\right) \in X\right\}, \\
 		& \beta_{(0,1)}:=\max \left\{x^2 \mid\left(x^1, x^2\right) \in X\right\}, \\
@@ -557,11 +557,11 @@ Theo công thức (\ref{ct2.2}) ta có:
 	$\beta_{(-1, 0)} \textless \beta_{(1, 0)}$ \text{ và } $\beta_{(0, -1)} \textless \beta_{(0, 1)}$
 \end{center}
 Vì vậy, ${P}^{outer}$ là một hình chữ nhật phù hợp với 4 đỉnh phân biệt, có tập đỉnh là:
-\begin{align}\label{ct2.9}
+\begin{align}\label{ct2.10}
 	P := \{r_1, r_2, r_3, r_4\}
 \end{align}
 Trong đó:
-\begin{equation}\label{ct2.10}
+\begin{equation}\label{ct2.11}
 	\begin{aligned}
 		& r_1:=\left(\beta_{(1,0)}, \beta_{(0,1)}\right), \\
 		& r_2:=\left(\beta_{(-1,0)}, \beta_{(0,1)}\right), \\
@@ -572,55 +572,55 @@ Trong đó:
 Trong các bước xấp xỉ tiếp theo, việc xây dựng đa giác ${P}^{outer}$ lần lượt được cải thiện như sau:
 
 $\text{Với 1 đỉnh }p \in P, \text{cho } p^{-} \in P \text{ và } p^{+} \in P \text{ lần lượt là}$
-\begin{align} \label{ct2.11}
+\begin{align} \label{ct2.12}
 \text {điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của} p \in P.
 \end{align}. 
 
 
 Ta có công thức sau:
-\begin{equation}\label{def_d_p}
+\begin{equation}\label{ct2.13}
 	\begin{array}{lcl}
 		d_{p}^T &:=& \|p^+ - p^-\|^{-1}\, R \, (p^+ - p^-)^T, \\
 		\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X\},
 	\end{array}
 \end{equation}
-trong đó:
-\begin{equation}\label{rotationmatrix}
+Trong đó:
+\begin{equation}\label{ct2.14}
 	R := \begin{pmatrix}
 		0 & 1 \\
 		-1 & 0
 	\end{pmatrix}
 \end{equation}
 là ma trận xoay chiều theo hướng kim đồng hồ với góc xoay $\pi/2$. Vì $R$ là ma trận xoay, ta có:
-\begin{equation}\label{def_d_p1}
+\begin{equation}\label{ct2.15}
 	\|d_{p}\| = \|p^+ - p^-\|^{-1}\, \|(p^+ - p^-) R^T\| = \|p^+ - p^-\|^{-1}\, \|p^+ - p^-\| = 1.
 \end{equation}
 Sẽ có hai trường hợp xảy ra khi ta thêm các ràng buộc tuyến tính sau đây vào định nghĩa của ${P}^{outer}$ trong công thức (\ref{ct2.6}):
-\begin{equation}\label{def_d_p2}
+\begin{equation}\label{ct2.16}
 	d_p\, x^T \leq \beta_{d_p}.
 \end{equation}
 
 Đầu tiên, nếu:
-\begin{equation}\label{def_d_p4}
+\begin{equation}\label{ct2.17}
 	\beta_{d_p} = d_p\, p^+
 \end{equation}
-thì công thức (\ref{def_d_p2}) không tạo thêm đỉnh mới nhưng sẽ thêm 2 cạnh mới  $[p^-, p^+]$ của ${\cal P}^{\rm outer}$. Cho  $d_{[p^-, p]}$ và $d_{[p, p^+]}$ biểu thị 2 hướng cực đại từ D, định nghĩa hai cạnh $[p^-, p]$ và $[ p, p^+]$ của ${\cal P}^{\rm outer}$. Sau đó $d_{[p^-, p]}$ and $d_{[p, p^+]}$ sẽ trở nên vô dụng. Vì vậy, trong khi thêm $d_p$ vào tập $D$ cần phải loại bỏ $d_{[p^-, p]}$ và $d_{[p, p^+]}$ và $p$ trong $P$, nghĩa là:
-\begin{equation}\label{def_d_p3}
+thì công thức (\ref{ct2.15}) không tạo thêm đỉnh mới nhưng sẽ thêm 2 cạnh mới  $[p^-, p^+]$ của ${\cal P}^{\rm outer}$. Cho  $d_{[p^-, p]}$ và $d_{[p, p^+]}$ biểu thị 2 hướng cực đại từ D, định nghĩa hai cạnh $[p^-, p]$ và $[ p, p^+]$ của ${\cal P}^{\rm outer}$. Sau đó $d_{[p^-, p]}$ and $d_{[p, p^+]}$ sẽ trở nên vô dụng. Vì vậy, trong khi thêm $d_p$ vào tập $D$ cần phải loại bỏ $d_{[p^-, p]}$ và $d_{[p, p^+]}$ và $p$ trong $P$, nghĩa là:
+\begin{equation}\label{ct2.18}
 	\begin{array}{lcl}
 		D &:=& (D \cup \{d_{p}\})\setminus \{d_{[p^-,p]}, d_{[p,p^+]}\}, \\
 		P &:=& P \setminus \{p\}.
 	\end{array}
 \end{equation}
 Thứ hai, nếu
-\begin{equation}\label{def_d_p04}
+\begin{equation}\label{ct2.19}
 	\beta_{d_p} > d_p\, p^+
 \end{equation}
 và:
-\begin{equation}\label{def_d_p5}
+\begin{equation}\label{ct2.20}
 	d_{p}\, p^T - \beta_{d_{p}} > \delta
 \end{equation}
-thì ràng buộc mới (\ref{def_d_p2}) tạo ra hai đỉnh mới của ${\cal P}^{\rm outer}$ có tên $\hat p^-$ và $\hat p^+$ sẽ được tính như sau:
-\begin{equation}\label{def_hatp1}
+thì ràng buộc mới (\ref{ct2.16}) tạo ra hai đỉnh mới của ${\cal P}^{\rm outer}$ có tên $\hat p^-$ và $\hat p^+$ sẽ được tính như sau:
+\begin{equation}\label{ct2.21}
 	\begin{array}{lcl}
 		\lambda_p &:=& (\beta_{d_p} - d_p\, p^{-T})/(d_p\, p^T - d_p\, p^{-T}) \in (0, 1), \\
 		\hat p^- &:=& (1 - \lambda_p)\, p^{-T} + \lambda_p\, p^T, \\
@@ -629,7 +629,7 @@ thì ràng buộc mới (\ref{def_d_p2}) tạo ra hai đỉnh mới của ${\cal
 \end{equation}
 
 Do đó, ta sẽ cộng $d_p$ vào $D$ và thay $p \in P$ bằng $\hat p^-$ và $\hat p^+$.
-\begin{equation}\label{newDP1}
+\begin{equation}\label{ct2.22}
 	\begin{array}{lcl}
 		D &:=& D \cup \{d_{p}\}, \\
 		P &:=&(P \setminus \{p\}) \cup \{\hat p^-, \hat p^+\}.
@@ -645,25 +645,25 @@ Quy trình xấp xỉ được mô tả trong thuật toán sau, trong đó $P_{
 	\emph{Output:} Đa giác xấp xỉ lồi ${\cal P}^{\rm outer}$ được xác định ở công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
 	\begin{enumerate}
 		\item\label{stepIalg01} 
-		Xác định $D$, $\beta_d$ với $d \in D$, và $P$ theo (\ref{ct2.8})--(\ref{ct2.10}).
+		Xác định $D$, $\beta_d$ với $d \in D$, và $P$ theo (\ref{ct2.8})--(\ref{ct2.11}).
 		
 		\item\label{stepIIalg01} Đặt $P_{\rm doubt} := P$.
 		
 		\item\label{stepIIIalg01} 
-		 Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$  và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{def_d_p})--(\ref{rotationmatrix}). \\
-		Nếu (\ref{def_d_p4}) là đúng thì thay đổi $D$, $P$ như (\ref{def_d_p3}), và cập nhập
-		\begin{equation}\label{newPdoubt2}
+		 Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$  và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{ct2.12})--(\ref{ct2.14}). \\
+		Nếu (\ref{ct2.17}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.18}), và cập nhập
+		\begin{equation}\label{ct2.23}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
 		\end{equation}
 		Và đi tới bước \ref{stepIValg01}.\\
 		Nếu % (\ref{betagreater}) and 
-		(\ref{def_d_p04}) là đúng thì thay đổi $D$, $P$ như (\ref{def_hatp1}), cập nhật
-		\begin{equation}\label{def_31}
+		(\ref{ct2.20}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), cập nhật
+		\begin{equation}\label{ct2.24}
 			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
 		\end{equation}
 		Và đi tới bước \ref{stepIValg01}.\\
 		Nếu không thì, 
-		\begin{equation}\label{def_32}
+		\begin{equation}\label{ct2.25}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
 		\end{equation}
 		
@@ -679,10 +679,10 @@ Với (\ref{ct2.6}) - (\ref{ct2.7}), mỗi cạnh $\left[p, p^{+}\right]$ của 
 $$
 \beta_{d_p} \geq d_p p^{-}=d_p p^{+} .
 $$
-Do đó, nếu (\ref{def_d_p2}) sai thì (\ref{def_d_p3}) hiển nhiên đúng. Điều này giải thích tại sao (\ref{def_d_p3}) không cần kiểm tra cùng với (\ref{def_d_p04}) ở bước \ref{stepIIIalg01}.
+Do đó, nếu (\ref{ct2.17}) sai thì (\ref{ct2.19}) hiển nhiên đúng. Điều này giải thích tại sao (\ref{ct2.19}) không cần kiểm tra cùng với (\ref{ct2.20}) ở bước \ref{stepIIIalg01}.
 Thuật toán 1 có thể nhanh chóng tạo ra một đa giác lồi xấp xỉ $\mathcal{P}^{\text {outer }}$ với $d_p p^T-\beta_{d_p} \leq \delta$ với tất cả $p \in P$.
-Tính chất này là cần thiết nhưng không đủ cho (\ref{ct2.4}). Để đảm bảo (\ref{ct2.4}), trong thuật toán tiếp theo chúng ta cũng kiểm tra xem nếu 
-\begin{equation}\label{df_d_n33}
+Tính chất này là cần thiết nhưng không đủ cho (\ref{ct2.5}). Để đảm bảo (\ref{ct2.5}), trong thuật toán tiếp theo chúng ta cũng kiểm tra xem nếu 
+\begin{equation}\label{ct2.26}
 	\begin{array}{lcl}
 	 \|p-x\|>\delta \text { với mọi } x \in X_p, \quad \text { trong đó } \\
 	 X_p:=\left\{x \in X \mid d_p x^T=\beta_{d_p}\right\} .
@@ -693,7 +693,7 @@ Tính chất này là cần thiết nhưng không đủ cho (\ref{ct2.4}). Để
 	\floatname{algorithm}{Thuật toán}
 	\caption{}  \label{al-blduoi1}
 	\emph{Input:}  Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ $\delta \geq 0$. \\
-	\emph{Output:} Đa giác xấp xỉ lồi  ${\cal P}^{\rm outer}$  được xác định ở công thức (\ref{ct2.5}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
+	\emph{Output:} Đa giác xấp xỉ lồi  ${\cal P}^{\rm outer}$  được xác định ở công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
 	\begin{enumerate}
 		\item\label{stepIalg02} 
 		Xác định $D$, $\beta_d$ với $d \in D$, và $P$ theo (\ref{ct2.8})--(\ref{ct2.11}).
@@ -701,20 +701,20 @@ Tính chất này là cần thiết nhưng không đủ cho (\ref{ct2.4}). Để
 		\item\label{stepIIalg02} Đặt $P_{\rm doubt} := P$.
 		
 		\item\label{stepIIIalg02} 
-		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{def_d_p})--(\ref{rotationmatrix}). \\
-		Nếu (\ref{def_d_p4}) à đúng thì thay đổi $D$, $P$ như (\ref{def_d_p04}), và cập nhật
-		\begin{equation}\label{newPdoubt2b}
+		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{ct2.12})--(\ref{ct2.14}). \\
+		Nếu (\ref{ct2.17}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.18}), và cập nhật
+		\begin{equation}\label{ct2.27}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
 		\end{equation}
 		Và đi tới bước \ref{stepIValg02}.\\
-		Nếu (\ref{def_d_p5}) à đúng thì thay đổi $D$, $P$ như (\ref{def_d_p22}), và cập nhật
-		\begin{equation}\label{newPdoubt1b}
+		Nếu (\ref{ct2.20}) à đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật
+		\begin{equation}\label{ct2.28}
 			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
 		\end{equation}
 		Và đi tới bước \ref{stepIValg02}.\\
-		Nếu (\ref{def-27}) là đúng thì thay đổi $D$, $P$ như (\ref{def_d_p22}), và cập nhật $P_{\rm doubt}$ theo (\ref{newDP1}), và đi tới bước \ref{stepIValg02}.\\
+		Nếu (\ref{ct2.26}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật $P_{\rm doubt}$ theo (\ref{ct2.28}), và đi tới bước \ref{stepIValg02}.\\
 		Nếu không thì cập nhập, 
-		\begin{equation}\label{newPdoubt3b}
+		\begin{equation}\label{ct2.29}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
 		\end{equation}
 		
@@ -817,12 +817,12 @@ Bảng \ref{table01} cho thấy một số kết quả thử nghiệm, trong đ�
 	\bigskip
 
 
-Nếu số điểm $n$ của $X$ rất lớn thì việc tính toán $\beta_{d_{p}}$ xác định trong (\ref{def_d_p}) sẽ tốn kém, có thể giảm đang kể như sau. Lấy bốn điểm  $q_1$, $q_2$, $q_3$, và $q_4$ của $X$ nằm trên bốn cạnh của hình chữ nhập ban đầu ${\cal P}^{\rm outer}$, tức là.
-\begin{equation}\label{def_37}
+Nếu số điểm $n$ của $X$ rất lớn thì việc tính toán $\beta_{d_{p}}$ xác định trong (\ref{ct2.13}) sẽ tốn kém, có thể giảm đang kể như sau. Lấy bốn điểm  $q_1$, $q_2$, $q_3$, và $q_4$ của $X$ nằm trên bốn cạnh của hình chữ nhập ban đầu ${\cal P}^{\rm outer}$, tức là.
+\begin{equation}\label{ct2.30}
 	q_1, q_2, q_3, q_4 \in X
 \end{equation}
 and
-\begin{equation}\label{def_38}
+\begin{equation}\label{ct2.31}
 	\begin{array}{lcl}
 		(1, 0)\, q_1^T &=& \beta_{(1, 0)}, \\
 		(0, 1)\, q_2^T &=& \beta_{(0, 1)}, \\
@@ -831,22 +831,22 @@ and
 	\end{array}
 \end{equation}
 Với $j \in \{1, 2, 3, 4\}$ và $q_5 := q_1$, nếu $q_j \not= q_{j+1}$ thì xác định
-\begin{equation}\label{def_39}
+\begin{equation}\label{ct2.32}
 	X_j := \{x \in X \mid \bar d_{[q_j, q_{j+1}]}\, (x - q_j)^T \geq 0\}, 
 \end{equation}
 Trong đó
-\begin{equation}\label{def_40}
+\begin{equation}\label{ct2.33}
 	\bar d_{[q_j, q_{j+1}]}^{\, T} := \|q_{j+1} - q_j\|^{-1} R\, (q_{j+1} - q_j)^T.
 \end{equation}
-Trong thuật toán tiếp thep, $X$ trong (\ref{def_d_p}) và (\ref{def-27}) được thay thế bằng $X_j$, tức là
-\begin{equation}\label{def_41}
+Trong thuật toán tiếp thep, $X$ trong (\ref{ct2.12}) và (\ref{ct2.26}) được thay thế bằng $X_j$, tức là
+\begin{equation}\label{ct2.34}
 	\begin{array}{lcl}
 		d_{p}^T &:=& \|p^+ - p^-\|^{-1} R \, (p^+ - p^-)^T, \\
 		\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X_j\}, 
 	\end{array}
 \end{equation}
 và
-\begin{equation}\label{def_42}
+\begin{equation}\label{ct2.35}
 	\begin{array}{lcl}
 		&& \|p - x\| > \delta \ \mbox{ với mọi } x \in X_p, \ \mbox{ trong đó} \\
 		&& X_p := \{x \in X_j \mid d_{p}\, x^T = \beta_{d_{p}}\},
@@ -858,7 +858,7 @@ Với $j \in \{1, 2, 3, 4\}$.
 	\floatname{algorithm}{Thuật toán}
 	\caption{}  \label{al-blduoi2}
 	\emph{Input:}  Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ  $\delta \geq 0$. \\
-	\emph{Output:} Đa giác xấp xỉ lồi ${\cal P}^{\rm outer}$ được xác định bởi công thức (\ref{def_calPouter0}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
+	\emph{Output:} Đa giác xấp xỉ lồi ${\cal P}^{\rm outer}$ được xác định bởi công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
 	\begin{enumerate}
 		\item\label{stepIalg03} 
 		Xác định $D$, $\beta_d$ với $d \in D$, $r_j$ theo $j \in \{1, 2, 3, 4\}$, và $P$ bởi (\ref{ct2.8})--(\ref{ct2.11}). \\
@@ -866,16 +866,16 @@ Với $j \in \{1, 2, 3, 4\}$.
 		
 		\item\label{stepIIalg03} 
 		Nếu $q_j = q_{j+1}$ thì đi tới bước \ref{stepValg03}.\\
-		Nếu không thì, xác định $X_j$ bởi (\ref{def_31})--(\ref{df_d_n33}) và tập $P_{\rm doubt} := \{r_j\}$.
+		Nếu không thì, xác định $X_j$ bởi (\ref{ct2.30})--(\ref{ct2.32}) và tập $P_{\rm doubt} := \{r_j\}$.
 		
 		\item\label{stepIIIalg03} 
-		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và được xác định ở công thức $d_p$, $\beta_{d_p}$ bởi (\ref{def_d_p}) và (2.35). \\
+		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và được xác định ở công thức $d_p$, $\beta_{d_p}$ bởi (\ref{ct2.12}) và (\ref{ct2.34}). \\
 	Nếu
 		\begin{equation*}%\label{betaequal+}
 			\beta_{d_p} = d_p\, p^-
 		\end{equation*}
-		thì thay đổi $D$ và $P$ như (\ref{def_d_p3}), và cập nhật
-		\begin{equation*}\label{newPdoubt5+}
+		thì thay đổi $D$ và $P$ như (\ref{ct2.18}), và cập nhật
+		\begin{equation*}\label{ct2.36}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\}
 		\end{equation*}
 		và đi tới bước \ref{stepIValg03}.\\
@@ -883,12 +883,12 @@ Với $j \in \{1, 2, 3, 4\}$.
 		\begin{equation*}%\label{greaterdelta+}
 			d_{p}\, p^T - \beta_{d_{p}} > \delta
 		\end{equation*}
-		thì thay đổi $D$ và $P$ như (\ref{def_d_p22}), và cập nhât 
+		thì thay đổi $D$ và $P$ như (\ref{ct2.22}), và cập nhât 
 		\begin{equation}\label{newPdoubt4+}
 			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\}
 		\end{equation}
 		và đi tới bước \ref{stepIValg03}.\\
-		Nếu (2.35) đúng thì thay đổi $D$, $P$ như (\ref{def_d_p22}), và cập nhật $P_{\rm doubt}$ theo (2.36), và đi tới bước \ref{stepIValg03}.\\
+		Nếu (\ref{ct2.35}) đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật $P_{\rm doubt}$ theo (\ref{ct2.36}), và đi tới bước \ref{stepIValg03}.\\
 		Nếu không thì,
 		\begin{equation*}%\label{newPdoubt6+}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
@@ -993,29 +993,29 @@ Bảng \ref{table02} và hình\ref{Figure03} cho thấy một số kết quả t
 \section{Inner convex approximation}\label{InnerConvexApproximation}
 
 Cho $X$ thỏa mãn (\ref{ct2.1})--(\ref{ct2.2}) và $\delta \geq 0$, ở đây ta sẽ tìm một xấp xỉ lồi trong ${\cal P}^{\rm inner}$  của $X$, tức là:
-\begin{equation}\label{def_44}
+\begin{equation}\label{ct2.37}
 	{\cal P}^{\rm inner} := \ conv X', \ \mbox{ với} X' \subset X,
 \end{equation}
 Thật vậy
-\begin{equation}\label{def_45}
+\begin{equation}\label{ct2.38}
 	\ dist_{\rm H}(\ conv X, {\cal P}^{\rm inner}) \leq \delta.
 \end{equation}
 
 Ta mô tả ${\cal P}^{\rm inner}$ bởi tập $E$ của các cạnh có hướng của nó $[p, p^+]$, trong đó $p^+$  là cạnh kế tiếp ngược chiều kim đồng hồ của $p$, tức là:
-\begin{equation}\label{def_46}
+\begin{equation}\label{ct2.39}
 	E := \{[p, p^+] \mid p, p^+ \in X', \mbox{ $[p, p^+]$ là một cạnh của ${\cal P}^{\rm inner}$}\}.
 \end{equation}
 
 
 Ta bắt đầu quá trình xấp xỉ lồi trong với tứ giác $\bar q_1 \bar q_2 \bar q_3 \bar q_4$, tức là:
-\begin{equation}\label{def_47}
+\begin{equation}\label{ct2.40}
 	\begin{array}{lcl}
 		X' &:=& \{\bar q_1, \bar q_2, \bar q_3, \bar q_4\}, \\
 		E &:=& \{[\bar q_1, \bar q_2], \, [\bar q_2, \bar q_3], \, [\bar q_3, \bar q_4], \, [\bar q_4, \bar q_1]\},
 	\end{array}
 \end{equation}
 Trong đó $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ là duy nhất và được xác định bởi:
-\begin{equation}\label{def_48}
+\begin{equation}\label{ct2.41}
 	\begin{array}{lcl}
 		x^1_{\rm min} &:=& \min \{x^1 \mid (x^1, x^2) \in X\}, \\
 		x^1_{\rm max} &:=& \max \{x^1 \mid (x^1, x^2) \in X\}, \\
@@ -1024,7 +1024,7 @@ Trong đó $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ là duy nhất và
 	\end{array}
 \end{equation}
 Và
-\begin{equation}\label{def_49}
+\begin{equation}\label{ct2.42}
 	\begin{array}{lcl}
 		X^1_{\rm min} &:=& \{(x^1, x^2) \in X \mid x^1 = x^1_{\rm min}\}, \\
 		X^1_{\rm max} &:=& \{(x^1, x^2) \in X \mid x^1 = x^1_{\rm max}\}, \\
@@ -1033,7 +1033,7 @@ Và
 	\end{array}
 \end{equation}
 Và
-\begin{equation}\label{def_50}
+\begin{equation}\label{ct2.43}
 	\begin{array}{lcl}
 		&& \bar q_1 = (\bar q_1^1, \bar q_1^2) \in X^1_{\rm max} \mbox{ thỏa mãn } \bar q_1^2 = \max\{x^2 \mid (x^1, x^2) \in X^1_{\rm max}\}, \\
 		&& \bar q_2 = (\bar q_2^1, \bar q_2^2) \in X^2_{\rm max} \mbox{  thỏa mãn} \bar q_2^1 = \min\{x^1 \mid (x^1, x^2) \in X^2_{\rm max}\}, \\
@@ -1046,7 +1046,7 @@ Lưu ý rằng hai trong số bốn điểm $\bar q_1$, $\bar q_2$, $\bar q_3$, 
 Trong các bước xấp xỉ sau đây, đa giác ${\cal P}^{\rm inner}$ được xây dựng và cải thiện 
 như sau.
 Với bất kỳ $[p, p^+] \in E$ ($p \not= p^+$), ta các định:
-\begin{equation}\label{def_51}
+\begin{equation}\label{ct2.44}
 	\begin{array}{lcl}
 		\bar d_{[p, p^+]}^{\, T} &:=& \|p^+ - p\|^{-1} R \, (p^+ - p)^T, \\
 		X_{[p, p^+]} &:=& \{x \in X \mid \bar d_{[p, p^+]}\, x^T > \bar d_{[p, p^+]}\, p^T \},
@@ -1061,41 +1061,41 @@ Với
 \end{equation*}
 
 Nếu $X_{[p, p^+]} \not= \emptyset$ thì xác định
-\begin{equation}\label{def_52}
+\begin{equation}\label{ct2.45}
 	\begin{array}{lcl}
 		\beta_{[p, p^+]} &:=& \max \{\bar d_{[p, p^+]}\, x^T \mid x \in X_{[p, p^+]}\}, \\
 		B_{[p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, p^+]}\, x^T = \beta_{[p, p^+]}\}.
 	\end{array}
 \end{equation}
 Nếu
-\begin{equation}\label{def_53}
+\begin{equation}\label{dct2.46}
 	\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T \leq \delta
 \end{equation}
 Thì ta không cần phải mở rộng ${\cal P}^{\rm inner }$ theo hướng $\bar d_{[p, p^+]}$.
 
 Ngược lại, nếu
-\begin{equation}\label{def_54}
+\begin{equation}\label{ct2.47}
 	\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T > \delta
 \end{equation}
 thì lấy  
-\begin{equation}\label{def_55}
+\begin{equation}\label{ct2.48}
 	\hat p \in B_{[p, p^+]} \hbox{ thỏa mãn } \|\hat p - p\| = \max\{\|x - p\| \mid x \in B_{[p, p^+]}\},
 \end{equation}
 Và cập nhập $X'$ và $B$ bởi
-\begin{equation}\label{def_56}
+\begin{equation}\label{ct2.49}
 	\begin{array}{lcl}
 		X' &:=& X' \cup \{\hat p\}, \\
 		E &:=& E \cup \{[p, \hat p], \, [\hat p, p^+]\},
 	\end{array}
 \end{equation}
 Và xác định
-\begin{equation}\label{def_57}
+\begin{equation}\label{ct2.50}
 	\begin{array}{lcl}
 		X_{[p, \hat p]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, \hat p]}\, x^T > \bar d_{[p, \hat p]}\, p^T \}, \\
 		X_{[\hat p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[\hat p, p^+]}\, x^T > \bar d_{[\hat p, p^T]}\, {\hat p}^T \}.
 	\end{array}
 \end{equation}
-Lưu ý rằng ta chỉ xem xét $x \in X_{[p, p^+]}$ trong định nghĩa này của $X_{[p, \hat p]}$ vaf $X_{[\hat p, p^+]}$, nhưng tất cả $x \in X$ trong định nghĩa (\ref{def_51}) của $X_{[p, p^+]}$.
+Lưu ý rằng ta chỉ xem xét $x \in X_{[p, p^+]}$ trong định nghĩa này của $X_{[p, \hat p]}$ vaf $X_{[\hat p, p^+]}$, nhưng tất cả $x \in X$ trong định nghĩa (\ref{ct2.44}) của $X_{[p, p^+]}$.
 
 Quy trình xấp xỉ được trình bày trong thuật toán sau, trong đó  $E_{\rm doubt}$ biểu thị tập hợp các cạnh vẫn cần được kiểm tra.
 
@@ -1106,8 +1106,8 @@ Quy trình xấp xỉ được trình bày trong thuật toán sau, trong đó  
 	\emph{Output:} Đa giác xấp xỉ lồi trong ${\cal P}^{\rm inner}$ được mô tả bởi $X'$ và $E$.
 	\begin{enumerate}
 		\item\label{stepIalg04} 
-		Xác định $X'$ và $E$ theo (\ref{def_47})--(\ref{def_50}).\\
-		Với mọi $[p, p^+] \in E$ xác định $d_{[p, p^+]}$ và $X_{[p, p^+]}$ theo (\ref{def_51}).\\
+		Xác định $X'$ và $E$ theo (\ref{ct2.40})--(\ref{ct2.43}).\\
+		Với mọi $[p, p^+] \in E$ xác định $d_{[p, p^+]}$ và $X_{[p, p^+]}$ theo (\ref{ct2.44}).\\
 		Cho $E_{\rm doubt} := E$.
 		
 		\item\label{stepIIalg04} 
@@ -1115,12 +1115,12 @@ Quy trình xấp xỉ được trình bày trong thuật toán sau, trong đó  
 		Nếu $X_{[p, p^+]} = \emptyset$ thì đặt
 		$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
 		và đi tới bước \ref{stepIIIalg04}.\\
-		Định nghĩa $\beta_{[p, p^+]}$ và $B_{[p, p^+]}$ theo (\ref{def_52}). \\
-		Nếu (\ref{def_53}) đúng thì đặt
+		Định nghĩa $\beta_{[p, p^+]}$ và $B_{[p, p^+]}$ theo (\ref{ct2.45}). \\
+		Nếu (\ref{dct2.46}) đúng thì đặt
 		$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
 		Và đi tới bước \ref{stepIIIalg04}.\\
-		Trường hợp còn lại, lấy $\hat p$ định nghĩa theo (\ref{def_55}),
-		và cập nhật $X'$ và $E$ theo (\ref{def_56}), và xác định $X_{[p, \hat p]}$ và $X_{[\hat p, p^+]}$ theo (\ref{def_57}),	và đặt
+		Trường hợp còn lại, lấy $\hat p$ định nghĩa theo (\ref{ct2.48}),
+		và cập nhật $X'$ và $E$ theo (\ref{ct2.49}), và xác định $X_{[p, \hat p]}$ và $X_{[\hat p, p^+]}$ theo (\ref{ct2.50}),	và đặt
 		\begin{equation*}%\label{newBdoubt3}
 			E_{\rm doubt} := (E_{\rm doubt} \setminus \{[p, p^+])\}) \cup \{[p, \hat p], \, [\hat p, p^+]\}.
 		\end{equation*}
