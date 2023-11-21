@@ -110,19 +110,23 @@
 
 \vspace{1cm}
 \begin{center}
-	\textbf{\MakeUppercase{ \bf BAO LỒI XẤP XỈ VÀ ỨNG DỤNG TRONG VIỆC PHÁT HIỆN ĐỊNH HƯỚNG VÀ ĐÓNG GÓI ĐỐI TƯỢNG}}\\ 
+	\textbf{\MakeUppercase{ \bf BAO LỒI XẤP XỈ VÀ ỨNG DỤNG TRONG VIỆC \\PHÁT HIỆN ĐỊNH HƯỚNG VÀ ĐÓNG GÓI ĐỐI TƯỢNG}}\\ 
 \end{center} 
 \vspace{2cm}
 
 
 \begin{tabular}{ll}
 	{\textbf{\large{Giảng Viên Hướng Dẫn: }}} & {\textbf{\large{TS. Nguyễn Kiều Linh}}} \\
-	{\textbf{\large{Sinh viên thực hiện:}}}  & {\textbf{\large{Trần Xuân Độ}}} \\
-	{\textbf{\large{Mã sinh viên: }}}  & {\textbf{\large{B19DCCN183}}} \\
-	{\textbf{\large{Lớp:}}}   & {\textbf{\large{D19CNPM04}}}\\
-	{\textbf{\large{Niên khóa:}}}   & {\textbf{\large{2019-2023}}}\\
+	{\textbf{\large{Sinh viên thực hiện:}}}  & {\textbf{\large{Nguyễn Văn A}}} \\
+	{\textbf{\large{Mã sinh viên: }}}  & {\textbf{\large{BXXDCCNYYY}}} \\
+	{\textbf{\large{Lớp:}}}   & {\textbf{\large{DXHTTTY}}}\\
+	{\textbf{\large{Niên khóa:}}}   & {\textbf{\large{20xx-20xx}}}\\
 	{\textbf{\large{Hệ đào tạo:}}}   & {\textbf{\large{Đại học chính quy}}}
 \end{tabular}
+
+
+
+
 
 
 \vfill
@@ -259,40 +263,50 @@
 \chapter*{Mở đầu}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt}  Mở đầu} 
 
-Trong nhiều thập kỷ, chúng ta đã chứng kiến quá trình phát triển đáng kể của bài toán nhận diện đối tượng trong ảnh. Đóng góp vào sự phát triển này chính là việc sử dụng mạng học sâu kết hợp với đa dạng các cách biểu diễn đặc trưng, các cơ sở dữ liệu huấn luyện có kích thước lớn, và việc đào tạo trước các mô hình để tiết kiệm thời gian và chi phí. Tuy nhiên, phần lớn các bộ phát hiện đối tượng đều gặp phải vấn đề khi biểu diễn các đối tượng từ trên cao nhìn xuống, có hướng bất kỳ, hoặc các đối tượng có bố cục không giống nhau trong quá trình đào tạo. Vấn đề trở nên nghiêm trọng hơn đối với các đối tượng phân bố dày dặc, gây ra hiện tượng răng cưa ở các vùng giao nhau của trường tiếp nhận (reception field).
+Trong nhiều thập kỷ, chúng ta đã chứng kiến quá trình phát triển đáng kể của bài toán nhận diện đối tượng. Đóng góp vào sự phát triển này chính là việc sử dụng mạng học sâu kết hợp với đa dạng các cách biểu diễn đặc trưng, các database có kích thước lớn hơn, và việc đào tạo trước các mô hình để tiết kiệm thời gian và chi phí. Tuy nhiên, phần lớn các bộ phát hiện đối tượng đều gặp phải vấn đề khi biểu diễn các đối tượng quan sát từ trên xuống, có hướng tuỳ ý, hoặc các đối tượng có bố cục khác nhau trong quá trình đào tạo. Vấn đề trở nên nghiêm trọng hơn khi các đối tượng phân bố dày dặc, gây ra hiện tượng răng cưa ở các vùng giao nhau của trường tiếp nhận.
 
 
-Một trong những giải pháp được sử dụng để phát hiện đối tượng có hướng, đó là sử dụng phương pháp làm giàu đặc trưng (feature augmentation)/mỏ neo (anchor), cung cấp nhiều các đặc trưng hơn để huấn luyện các bộ phát hiện. Các giải pháp này tuy nhiên lại gây ra sự phức tạp trong tính toán, từ đó dẫn đến nhiều sai sót. Một giải pháp khác đó là định nghĩa bộ biến đổi RoI (RoIs transformer), áp dụng phép phép biến đổi không gian RoIs, cùng lúc đó học các tham số dưới sự giám sát của hộp bao có hướng. Những bộ biến đổi này được cho là linh hoạt, nhạy bén, hoạt động mượt, cho phép trường tiếp nhận thích nghi với các đối tượng có hướng. Tuy nhiên, vấn đề về điều chỉnh lưới đặc trưng cho đối tượng có bố cục khác nhau vẫn chưa được giải quyết. Đây chính là nguyên nhân gây ra hiện tượng đặc trưng răng cưa (feature aliasing), xảy ra khi các đối tượng nằm phân bổ dày đặc trong khung hình.
+Một trong những giải pháp để phát hiện đối tượng có hướng, đó là sử dụng phương pháp làm giàu đặc trưng/mỏ neo, cung cấp nhiều hơn các đặc trưng để đào tạo các bộ phát hiện. Giải pháp này tuy nhiên lại gây ra sự phức tạp trong tính toán, dễ gây ra sai sót. Một giải pháp khác là định nghĩa bộ biến đổi RoI, áp dụng phép biến đổi không gian RoIs trong khi tiếp tục học các tham số dưới sự giám sát của hộp bao có hướng. Các bộ biến đổi này được cho là linh hoạt, nhạy bén, hoạt động mượt mà, cho phép trường tiếp nhận thích nghi với các đối tượng có hướng. Tuy nhiên, vấn đề về cách điều chỉnh lưới đặc trưng cho đối tượng có bố cục bất kỳ vẫn chưa được giải quyết. Đây chính là nguyên nhân gây ra hiện tượng feature aliasing, xảy ra khi các đối tượng phân bổ dày đặc trong khung hình.
 
 
-Bởi các lý do trên, ta sử dụng một cách tiếp cận khác: sử dụng phương pháp điều chỉnh đặc trưng bằng bao lồi (convex-hull) dành cho các đối tượng có hướng và phân bố dày đặc. Mục tiêu của phương pháp là để điều chỉnh các đặc trưng nằm trong lưới tích chập thông thường với các đối tượng có bố cục phân bố không đều. Ta mô hình hóa bố cục của đối tượng giống như một bao lồi, điều này thuận lợi hơn so với sử dụng bố cục hình chữ nhật, đáp ứng được yêu cầu bao phủ toàn bộ đối tượng nhưng giảm thiểu tối đa diện tích nền được bao. Mỗi bao lồi là tập hợp các điểm đặc trưng (feature points) xác định đường biên của đối tượng, sử dụng chỉ số giao của bao lồi trên hợp của bao lồi (Convex Intersection over Union) để xác định vị trí đối tượng. Bên trong bao lồi, các đặc trưng phân biệt mô tả sự xuất hiện của đối tượng để thực hiện phân lớp chính xác.
+Do đó, ta đề xuất một cách tiếp cận khác: sử dụng phương pháp điều chỉnh các đặc trưng bằng bao lồi(convex-hull) dành cho các đối tượng có hướng và phân bố dày đặc. Mục tiêu để điều chỉnh các đặc trưng nằm trong lưới tích chập thông thường với các đối tượng có bố cục phân bố không đều. Ta xây dựng bố cục đối tượng thành một bao lồi, có lợi thế hơn so với sử dụng bố cục hình chữ nhật, giúp bao phủ toàn bộ đối tượng nhưng giảm thiểu tối đa diện tích vùng nền của đối tượng. Mỗi bao lồi là tập hợp các điểm đặc trưng định nghĩa đường biên của đối tượng, biểu thị tỷ lệ Convex Intersection over Union để các định vị trí đối tượng. Bên trong bao lồi, các đặc trưng khác nhau biểu thị cho sự xuất hiện của các đối tượng được phân loại khác nhau.
 
 
-Mục tiêu của đồ án này là tìm hiểu, nghiên cứu phương pháp phát hiện đối tượng dày đặc có hướng, cụ thể là nghiên cứu phương pháp BeyoundBoundingBox dành cho bài toán phát hiện đối tượng. Ngoài ra, đồ án còn tìm hiểu thuật toán phát hiện bao lồi mới, thay thế vào thuật toán tìm bao lồi cũ của bộ phát hiện, thực hiện huấn luyện lại mô hình, kiểm nghiệm và đo lường độ hiệu quả của thuật toán mới so với thuật toán cũ.
+Mục tiêu của đồ án là tìm hiểu, nghiên cứu phương pháp phát hiện đối tượng dày đặc có hướng, cụ thể là nghiên cứu phương pháp BeyoundBoundingBox dành cho vấn đề trên. Ngoài ra, đồ án còn tìm hiểu thuật toán phát hiện bao lồi mới, thay thế vào phương pháp trên, kiểm nghiệm và đo lường độ hiệu quả của thuật toán mới này.
 
 
 Trong đồ án em sẽ tập trung trình bày một số nội dung chính như sau:
 
 \textbf{Chương 1: Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng:}
-Khái quát các vấn đề và phương pháp nhận dạng đối tượng, trình bày về các phương pháp liên quan, nguyên lý và cách thức triển khai, giới thiệu sử dụng thuật toán bao lồi xấp xỉ để thực hiện bài toán.
+Nội dung chương 1 sẽ khái quát các vấn đề và phương pháp nhận dạng đối tượng, trình bày về các phương pháp liên quan, nguyên lý và cách thức triển khai, giới thiệu sử dụng thuật toán bao lồi xấp xỉ để thực hiện bài toán.
 
 
 \textbf{Chương 2: Trình bày thuật toán bao lồi xấp xỉ:}
-Giới thiệu về thuật toán bao lồi xấp xỉ, lý thuyết và triển khai thuật toán bằng mã C++.
+Nội dung của chương 2 sẽ giới thiệu thuật toán, lý thuyết và triển khai thuật toán bằng code C++
 
 
 \textbf{Chương 3: Thực nghiệm và kết quả:}
- Trình bày cách thức thay thế thuật toán, các bước để tạo cơ sở dữ liệu huấn luyện, phân chia ảnh, tạo môi trường huấn luyện cũng như các bước để huấn luyện mô hình. Ngoài ra phần này sẽ trình bày một số kết quả thu được, so sánh với số liệu của thuật toán cũ.
+Nội dung của chương 3 Áp dụng bao lồi xấp xỉ cho bài toán phát hiện, định hướng và đóng gói đối tượng, cách thức triển khai bộ phát hiện, cách thức thay thế thuật toán.
 
 
 \textbf{Chương 4: Tổng kết:}
 Tổng kết bài toán, tóm tắt những kết quả đã đạt được và còn chưa đạt được. Từ đó đề xuất mục tiêu hướng tới cũng như hướng nghiên cứu, phát triển tiếp theo.
 
+
+
+ 
+
+
 \chapter{Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng}
 
+Chương 1 đặt vấn đề về bài toán phát hiện đối tượng, trình bày lý thuyết về phương pháp BeyoundBoundingBox.
+
+
+
 \section{Giới thiệu}
-Biểu đồ luồng của phương pháp CFA được cung cấp ở hình \ref{work_flow_cfa}, sử dụng phương pháp RepPoint làm cơ sở xây dựng. Là một bộ phát hiện không dùng mỏ neo (anchor-free detector), CFA bao gồm 2 giai đoạn: giai đoạn sinh bao lồi (convex-hull adaptation) và giai đoạn thích ứng bao lồi (convex-hull adaptation). Giai đoạn đầu tiên dự đoán bao lồi cho tất cả các vị trí trên các bản đồ đặc trưng và ước lượng bố cục của bao lồi. Giai đoạn 2 tinh chỉnh lại các bao lồi đã dự đoán cũng như làm chúng thích ứng với các đối tượng dày đặc. Trong quá trình suy luận, chỉ bước sinh bao lồi (convex-hull generation)được thực hiện để định vị đối tượng mà không cần xây dựng tập các bao lồi (convex-hull set construction), đảm bảo sự đơn giản và hiệu quả của bộ phát hiện. Với mỗi bao lồi dự đoán, bộ phát hiện tính toán một hình chữ nhật bao nhỏ nhất và hợp nhất những hình chữ nhật chồng chéo sử dụng bộ phát hiện Non-Maximum Supression(NMS) để thực hiện đánh giá. Đoạn tiếp dưới đây sẽ phân tích sự bất lơi của việc biểu diễn bằng hộp và trình bày cách biểu diễn bằng bao lồi, sau đó giới thiệu các mô đun sinh bao lồi và mô đun thích ứng bao lồi.
-Xem xét rằng lưới đặc trưng CNN được căn chỉnh theo trục tọa độ, các bộ phát hiện hiện đại điển hình thường sử dụng hộp (boxes), ví dụ: hộp hình chữ nhật hoặc hộp xoay hình chữ nhật, để bao phủ toàn bộ một đối tượng. Các bộ phát hiện không sử dụng mỏ neo hiện nay, như RepPoint và ExtremePoint, cho phép làm biến dạng lưới đặc trưng, nghĩa là sắp xếp các điểm đặc trưng sao cho phù hợp với hộp bao đối tượng. Tuy nhiên, chúng không xem xét việc thích ứng với các đối tượng có bố cục không phải là hình chữ nhật, những đối tượng này sẽ gây nên hiện tượng đặc trưng răng cưa khi có nhiều đối tượng nằm sát nhau. Các bài nghiên cứu gần đây như DRN và R3Det đã xử lý vấn đề này bằng cách dự đoán hướng của đối tượng, nhưng cũng không thích ứng tốt các đặc trưng cho các đối tượng. Nhược điểm của các phương pháp đang tồn tại, đó chính là sử dụng hộp bao hình chữ nhật lên các đối tượng có bố cục bất thường, điều này làm giảm đi khả năng biểu diễn của các đặc trưng trong tích chập.
+Trong bài toán phát hiện đối tượng, việc định vị và phát hiện đối tượng dày đặc vẫn còn là một vấn đề thách thức do vấn đề đặc trưng răng cưa (feature aliasing), tức là các pi. Có các giải pháp đã được sử dụng: làm giàu các đặc trưng (enhance features) và sử dụng anchors. Nhược điểm của các phương pháp này: làm cho cấu trúc mạng trở nên phức tạp hơn, tăng thời gian huấn luyện (training) và suy luận (inference). Một phương pháp khác đó là sử dụng biến đổi RoI, nhưng phương pháp này không thích ứng tốt với các đối tượng có hướng bất kỳ, đặc biệt đối với các đối tượng xuất hiện dày đặc trong hình ảnh.
+
+
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=400px]{./compare_cfa_with_other.JPG}
@@ -301,6 +315,14 @@ Xem xét rằng lưới đặc trưng CNN được căn chỉnh theo trục tọ
 	\end{center}
 \end{figure} 
 
+
+Để giải quyết các vấn đề trên, một phương pháp đã được đưa ra: phương pháp thích ứng bao lồi (convex-hull feature adaptation-CFA). CFA được thực hiện dựa trên phương pháp biểu diễn bao lồi, định nghĩa một tập các điểm đặc trưng, giới hạn phạm vi của đối tượng mục tiêu sử dụng chỉ số CIoU. CFA đạt được sự phân bổ đặc trưng tối ưu nhờ vào việc xây dựng tập bao lồi và phân chia linh hoạt các bao lồi thành các bao lồi âm và bao lồi dương. CFA cũng xem xét sự chồng chéo nhau giữa bao lồi dự đoán và bao lồi thực tế, phạt các bao lồi được dùng chung bởi nhiều đối tượng, giảm thiểu hiện tượng đặc trưng răng cưa (feature aliasing), đạt được sự thích ứng đặc trưng tối ưu. Nó cũng đạt được kết quả tốt nhất khi thử nghiệm trên tập dữ liệu DOTA và SKUR110KR.
+
+Phương pháp CFA được chia làm 2 giai đoạn thực hiện:
+\begin{itemize}
+	\item Giai đoạn 1: tạo tập bao lồi và ước lượng sơ bộ bố cục của bao lồi.
+	\item Giai đoạn 2: chỉnh sửa bao lồi sao cho phù hợp với các đối tượng phân bổ dày đặc.
+\end{itemize}
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -481,7 +503,7 @@ Hàm mất mát này xem xét sự tương ứng về đặc trưng của nhiề
 \end{align}
 
 \chapter{Thuật toán tính bao lồi xấp xỉ}
-\textit{giới thiệu chung về thuật toán, cách dùng, có bao nhiêu loại thuật toán}
+\textit{Giới thiệu chung về thuật toán, cách dùng, có bao nhiêu loại thuật toán}
 \section{Outer convex approximation}
 Cho:
 \begin{align} \label{ct2.1} 
@@ -501,7 +523,7 @@ Ta viết tất cả các vector thành dạng vector hàng, những vector này
 
 Cho $X$ thỏa mãn (\ref{ct2.1}) - (\ref{ct2.2}) và $\delta \geq 0$, trong phần này em muốn tìm một bao lồi xấp xỉ của $X$, nghĩa là:
 \begin{align}\label{ct2.4}
-	\text{một đa giác lồi }\mathcal{P}^{outer} \text{thỏa mãn bao lồi }X\subset\mathcal{P}^{outer}
+	\text{Một đa giác lồi }\mathcal{P}^{outer} \text{thỏa mãn bao lồi }X\subset\mathcal{P}^{outer}
 \end{align}
 sao cho
 \begin{align}\label{ct2.5}
@@ -511,7 +533,7 @@ $P^{outer}$ đươc xác định bởi:
 \begin{align}\label{ct2.6}
 	P^{outer} := \{x\in\mathbb{R}^2 | dx^T \leq \beta_d\ \text{ với tất cả d} \in D\}
 \end{align}
-trong đó $D \subset \mathbb{R^2}$ biểu thị tập các hướng tối đa và $\beta_d \in \mathbb{R}$ biểu thị ngưỡng tương ứng với hướng $d \in D$. Với D cho trước, $\mathcal{P}^{outer}$ là bao lồi xấp xỉ phù hợp nhất chứa $X$ nếu:
+Trong đó $D \subset \mathbb{R^2}$ biểu thị tập các hướng tối đa và $\beta_d \in \mathbb{R}$ biểu thị ngưỡng tương ứng với hướng $d \in D$. Với D cho trước, $\mathcal{P}^{outer}$ là bao lồi xấp xỉ phù hợp nhất chứa $X$ nếu:
 \begin{equation}\label{ct2.7}
 	\beta_d:=\max _{x \in X} d x^T \text{với tất cả d }\in D
 \end{equation}
@@ -521,7 +543,7 @@ Ta bắt đầu quá trình xác định bao lồi xấp xỉ ngoài với hình
 	D:=\{(1, 0), (0, 1), (-1, 0), (0, -1)\}
 \end{align}
 và:
-\begin{equation}
+\begin{equation}\label{ct2.9}
 	\begin{aligned}
 		& \beta_{(1,0)}:=\max \left\{x^1 \mid\left(x^1, x^2\right) \in X\right\}, \\
 		& \beta_{(0,1)}:=\max \left\{x^2 \mid\left(x^1, x^2\right) \in X\right\}, \\
@@ -535,11 +557,11 @@ Theo công thức (\ref{ct2.2}) ta có:
 	$\beta_{(-1, 0)} \textless \beta_{(1, 0)}$ \text{ và } $\beta_{(0, -1)} \textless \beta_{(0, 1)}$
 \end{center}
 Vì vậy, ${P}^{outer}$ là một hình chữ nhật phù hợp với 4 đỉnh phân biệt, có tập đỉnh là:
-\begin{align}\label{ct2.9}
+\begin{align}\label{ct2.10}
 	P := \{r_1, r_2, r_3, r_4\}
 \end{align}
 Trong đó:
-\begin{equation}\label{ct2.10}
+\begin{equation}\label{ct2.11}
 	\begin{aligned}
 		& r_1:=\left(\beta_{(1,0)}, \beta_{(0,1)}\right), \\
 		& r_2:=\left(\beta_{(-1,0)}, \beta_{(0,1)}\right), \\
@@ -550,55 +572,55 @@ Trong đó:
 Trong các bước xấp xỉ tiếp theo, việc xây dựng đa giác ${P}^{outer}$ lần lượt được cải thiện như sau:
 
 $\text{Với 1 đỉnh }p \in P, \text{cho } p^{-} \in P \text{ và } p^{+} \in P \text{ lần lượt là}$
-\begin{align} \label{ct2.11}
+\begin{align} \label{ct2.12}
 \text {điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của} p \in P.
 \end{align}. 
 
 
 Ta có công thức sau:
-\begin{equation}\label{def_d_p}
+\begin{equation}\label{ct2.13}
 	\begin{array}{lcl}
 		d_{p}^T &:=& \|p^+ - p^-\|^{-1}\, R \, (p^+ - p^-)^T, \\
 		\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X\},
 	\end{array}
 \end{equation}
-trong đó:
-\begin{equation}\label{rotationmatrix}
+Trong đó:
+\begin{equation}\label{ct2.14}
 	R := \begin{pmatrix}
 		0 & 1 \\
 		-1 & 0
 	\end{pmatrix}
 \end{equation}
 là ma trận xoay chiều theo hướng kim đồng hồ với góc xoay $\pi/2$. Vì $R$ là ma trận xoay, ta có:
-\begin{equation}\label{def_d_p1}
+\begin{equation}\label{ct2.15}
 	\|d_{p}\| = \|p^+ - p^-\|^{-1}\, \|(p^+ - p^-) R^T\| = \|p^+ - p^-\|^{-1}\, \|p^+ - p^-\| = 1.
 \end{equation}
 Sẽ có hai trường hợp xảy ra khi ta thêm các ràng buộc tuyến tính sau đây vào định nghĩa của ${P}^{outer}$ trong công thức (\ref{ct2.6}):
-\begin{equation}\label{linearconstr}
+\begin{equation}\label{ct2.16}
 	d_p\, x^T \leq \beta_{d_p}.
 \end{equation}
 
 Đầu tiên, nếu:
-\begin{equation}\label{betaequal}
+\begin{equation}\label{ct2.17}
 	\beta_{d_p} = d_p\, p^+
 \end{equation}
-thì công thức (\ref{def_d_p1}) không tạo thêm đỉnh mới nhưng sẽ thêm 2 cạnh mới  $[p^-, p^+]$ của ${\cal P}^{\rm outer}$. Cho  $d_{[p^-, p]}$ và $d_{[p, p^+]}$ biểu thị 2 hướng cực đại từ D, định nghĩa hai cạnh $[p^-, p]$ và $[ p, p^+]$ của ${\cal P}^{\rm outer}$. Sau đó $d_{[p^-, p]}$ and $d_{[p, p^+]}$ sẽ trở nên vô dụng. Vì vậy, trong khi thêm $d_p$ vào tập $D$ cần phải loại bỏ $d_{[p^-, p]}$ và $d_{[p, p^+]}$ và $p$ trong $P$, nghĩa là:
-\begin{equation}\label{newDP2}
+thì công thức (\ref{ct2.15}) không tạo thêm đỉnh mới nhưng sẽ thêm 2 cạnh mới  $[p^-, p^+]$ của ${\cal P}^{\rm outer}$. Cho  $d_{[p^-, p]}$ và $d_{[p, p^+]}$ biểu thị 2 hướng cực đại từ D, định nghĩa hai cạnh $[p^-, p]$ và $[ p, p^+]$ của ${\cal P}^{\rm outer}$. Sau đó $d_{[p^-, p]}$ and $d_{[p, p^+]}$ sẽ trở nên vô dụng. Vì vậy, trong khi thêm $d_p$ vào tập $D$ cần phải loại bỏ $d_{[p^-, p]}$ và $d_{[p, p^+]}$ và $p$ trong $P$, nghĩa là:
+\begin{equation}\label{ct2.18}
 	\begin{array}{lcl}
 		D &:=& (D \cup \{d_{p}\})\setminus \{d_{[p^-,p]}, d_{[p,p^+]}\}, \\
 		P &:=& P \setminus \{p\}.
 	\end{array}
 \end{equation}
 Thứ hai, nếu
-\begin{equation}\label{betagreater}
+\begin{equation}\label{ct2.19}
 	\beta_{d_p} > d_p\, p^+
 \end{equation}
 và:
-\begin{equation}\label{greaterdelta}
+\begin{equation}\label{ct2.20}
 	d_{p}\, p^T - \beta_{d_{p}} > \delta
 \end{equation}
-thì ràng buộc mới (\ref{linearconstr}) tạo ra hai đỉnh mới của ${\cal P}^{\rm outer}$ có tên $\hat p^-$ và $\hat p^+$ sẽ được tính như sau:
-\begin{equation}\label{def_hatp}
+thì ràng buộc mới (\ref{ct2.16}) tạo ra hai đỉnh mới của ${\cal P}^{\rm outer}$ có tên $\hat p^-$ và $\hat p^+$ sẽ được tính như sau:
+\begin{equation}\label{ct2.21}
 	\begin{array}{lcl}
 		\lambda_p &:=& (\beta_{d_p} - d_p\, p^{-T})/(d_p\, p^T - d_p\, p^{-T}) \in (0, 1), \\
 		\hat p^- &:=& (1 - \lambda_p)\, p^{-T} + \lambda_p\, p^T, \\
@@ -606,17 +628,361 @@ thì ràng buộc mới (\ref{linearconstr}) tạo ra hai đỉnh mới của ${
 	\end{array}
 \end{equation}
 
+Do đó, ta sẽ cộng $d_p$ vào $D$ và thay $p \in P$ bằng $\hat p^-$ và $\hat p^+$.
+\begin{equation}\label{ct2.22}
+	\begin{array}{lcl}
+		D &:=& D \cup \{d_{p}\}, \\
+		P &:=&(P \setminus \{p\}) \cup \{\hat p^-, \hat p^+\}.
+	\end{array}
+\end{equation}
+
+Quy trình xấp xỉ được mô tả trong thuật toán sau, trong đó $P_{\rm doubt}$ biểu thị tập hợp các đỉnh vẫn cần được kiểm tra.
+
+\begin{algorithm}\label{alg01}  \rm 
+		\floatname{algorithm}{Thuật toán}
+		\caption{}  \label{al-blduoi0}
+	\emph{Input:} Tập hữu hạn $X \subset \R^2$ và tham số xấp x $\delta \geq 0$. \\
+	\emph{Output:} Đa giác xấp xỉ lồi ${\cal P}^{\rm outer}$ được xác định ở công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
+	\begin{enumerate}
+		\item\label{stepIalg01} 
+		Xác định $D$, $\beta_d$ với $d \in D$, và $P$ theo (\ref{ct2.8})--(\ref{ct2.11}).
+		
+		\item\label{stepIIalg01} Đặt $P_{\rm doubt} := P$.
+		
+		\item\label{stepIIIalg01} 
+		 Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$  và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{ct2.12})--(\ref{ct2.14}). \\
+		Nếu (\ref{ct2.17}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.18}), và cập nhập
+		\begin{equation}\label{ct2.23}
+			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
+		\end{equation}
+		Và đi tới bước \ref{stepIValg01}.\\
+		Nếu % (\ref{betagreater}) and 
+		(\ref{ct2.20}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), cập nhật
+		\begin{equation}\label{ct2.24}
+			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
+		\end{equation}
+		Và đi tới bước \ref{stepIValg01}.\\
+		Nếu không thì, 
+		\begin{equation}\label{ct2.25}
+			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
+		\end{equation}
+		
+		\item\label{stepIValg01} 
+		Nếu $P_{\rm doubt}$ chưa rỗng thì quay lại bước \ref{stepIIIalg01}.
+		
+		\item
+		 Trả về tập hợp các hướng cực đại $D$ và $\beta_d$ với $d \in D$, tập đỉnh $P$ của ${\cal P}^{\rm outer}$, và kết thúc thuật toán.
+	\end{enumerate}
+\end{algorithm}
+
+Với (\ref{ct2.6}) - (\ref{ct2.7}), mỗi cạnh $\left[p, p^{+}\right]$ của $\mathcal{P}$ chứa ít nhất một điểm của tập $X$. Do đó, (\ref{ct2.11}) suy ra:
+$$
+\beta_{d_p} \geq d_p p^{-}=d_p p^{+} .
+$$
+Do đó, nếu (\ref{ct2.17}) sai thì (\ref{ct2.19}) hiển nhiên đúng. Điều này giải thích tại sao (\ref{ct2.19}) không cần kiểm tra cùng với (\ref{ct2.20}) ở bước \ref{stepIIIalg01}.
+Thuật toán 1 có thể nhanh chóng tạo ra một đa giác lồi xấp xỉ $\mathcal{P}^{\text {outer }}$ với $d_p p^T-\beta_{d_p} \leq \delta$ với tất cả $p \in P$.
+Tính chất này là cần thiết nhưng không đủ cho (\ref{ct2.5}). Để đảm bảo (\ref{ct2.5}), trong thuật toán tiếp theo chúng ta cũng kiểm tra xem nếu 
+\begin{equation}\label{ct2.26}
+	\begin{array}{lcl}
+	 \|p-x\|>\delta \text { với mọi } x \in X_p, \quad \text { trong đó } \\
+	 X_p:=\left\{x \in X \mid d_p x^T=\beta_{d_p}\right\} .
+	\end{array}
+\end{equation}
+
+\begin{algorithm}\label{alg02}  \rm 
+	\floatname{algorithm}{Thuật toán}
+	\caption{}  \label{al-blduoi1}
+	\emph{Input:}  Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ $\delta \geq 0$. \\
+	\emph{Output:} Đa giác xấp xỉ lồi  ${\cal P}^{\rm outer}$  được xác định ở công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
+	\begin{enumerate}
+		\item\label{stepIalg02} 
+		Xác định $D$, $\beta_d$ với $d \in D$, và $P$ theo (\ref{ct2.8})--(\ref{ct2.11}).
+		
+		\item\label{stepIIalg02} Đặt $P_{\rm doubt} := P$.
+		
+		\item\label{stepIIIalg02} 
+		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{ct2.12})--(\ref{ct2.14}). \\
+		Nếu (\ref{ct2.17}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.18}), và cập nhật
+		\begin{equation}\label{ct2.27}
+			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
+		\end{equation}
+		Và đi tới bước \ref{stepIValg02}.\\
+		Nếu (\ref{ct2.20}) à đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật
+		\begin{equation}\label{ct2.28}
+			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
+		\end{equation}
+		Và đi tới bước \ref{stepIValg02}.\\
+		Nếu (\ref{ct2.26}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật $P_{\rm doubt}$ theo (\ref{ct2.28}), và đi tới bước \ref{stepIValg02}.\\
+		Nếu không thì cập nhập, 
+		\begin{equation}\label{ct2.29}
+			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
+		\end{equation}
+		
+		\item\label{stepIValg02} 
+		Nếu $P_{\rm doubt}$ chưa rỗng thì quay lại bước \ref{stepIIIalg02}.
+		
+		\item
+		Trả về tập hợp các hướng cực đại $D$ và $\beta_d$ với $d \in D$, tập đỉnh $P$ của ${\cal P}^{\rm outer}$, kết thúc thuật toán.
+	\end{enumerate}
+\end{algorithm}
+
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=300px]{./convex X.jpg}
+		\caption{$X = \{x_1, x_2, \dots, x_n\}$ with $\ conv X = \ conv\{x_1, x_2, \dots, x_m\}$ and $m = 10$.}
+		\label{fig_dhandang2_1}
+	\end{center}
+\end{figure}
+
+\medskip
+Để minh họa tác dụng của thuật toán \ref{al-blduoi0}--\ref{al-blduoi1}, chúng ta hãy coi $X$ là một tập hợp $n$ các điểm ngẫu nhiên trong đa giác khung $16$ cạnh ${\cal P}^\diamond$ được thể hiện 
+trong hình \ref{fig_dhandang2_2}.\\
+
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=300px]{./Frame pylogon.jpg}
+		\caption{$16$-sided frame polygon ${\cal P}^\diamond$ of $n$ random points.}
+		\label{fig_dhandang2_2}
+	\end{center}
+\end{figure}
+\medskip
+Bảng \ref{table01} cho thấy một số kết quả thử nghiệm, trong đó
+\begin{itemize}
+	\item $\#_{\rm Edges@ Alg.\, 1}$ là số cạnh của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm outer}$ được trả về bởi thuật toán \ref{al-blduoi0},
+	\item $\#_{\rm Edges@ Alg.\, 2}$ là số cạnh của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm outer}$ được tả về bởi thuật toán \ref{al-blduoi1},
+	\item $\#_{\rm Step\, III @ Alg.\, 1}$  là số lần thực hiện của bước 3 trong thuật toán \ref{al-blduoi0}
+	\item $\#_{\rm Step\, III @ Alg.\, 2}$ là số lần thực hiện của bước 3 trong thuật toán \ref{al-blduoi1}.
+\end{itemize}
+\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			%\hline
+			\hline
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+			\hline		
+			\hline
+			{ $\delta = ???$}
+			
+			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = 0$}
+			
+			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+		\end{tabular}
+		\caption{Số cạnh của đa giác lồi xấp xỉ ${\cal P}^{\rm outer}$ được trả về bởi thuật toán \ref{al-blduoi0}--\ref{al-blduoi1} và số lần thực hiện của bước \ref{stepIIIalg01} khi $X$ gồm $n$ điểm ngẫu nhiên trong khung $16$ cạnh đa giác ${\cal P}^\diamond$ thể hiện trong hình \ref{fig_dhandang2_2}.}
+		\label{table01}
+	\end{center}
+\end{table} 	
 
 
 
+	\bigskip\noindent
+	{\bf LƯU Ý: (Liên quan đến bảng \ref{table01}):} 
+	 $n$ điểm ngẫu nhiên trong bảng \ref{table01} phải được tạo ra trong đa giác ${\cal P}^\diamond$ với khung 16 cạnh như trong hình \ref{fig_dhandang2_2}.
+	
+	\bigskip
 
 
+Nếu số điểm $n$ của $X$ rất lớn thì việc tính toán $\beta_{d_{p}}$ xác định trong (\ref{ct2.13}) sẽ tốn kém, có thể giảm đang kể như sau. Lấy bốn điểm  $q_1$, $q_2$, $q_3$, và $q_4$ của $X$ nằm trên bốn cạnh của hình chữ nhập ban đầu ${\cal P}^{\rm outer}$, tức là.
+\begin{equation}\label{ct2.30}
+	q_1, q_2, q_3, q_4 \in X
+\end{equation}
+and
+\begin{equation}\label{ct2.31}
+	\begin{array}{lcl}
+		(1, 0)\, q_1^T &=& \beta_{(1, 0)}, \\
+		(0, 1)\, q_2^T &=& \beta_{(0, 1)}, \\
+		(-1, 0)\, q_3^T &=& \beta_{(-1, 0)}, \\
+		(0, -1)\, q_4^T &=& \beta_{(0, -1)}.
+	\end{array}
+\end{equation}
+Với $j \in \{1, 2, 3, 4\}$ và $q_5 := q_1$, nếu $q_j \not= q_{j+1}$ thì xác định
+\begin{equation}\label{ct2.32}
+	X_j := \{x \in X \mid \bar d_{[q_j, q_{j+1}]}\, (x - q_j)^T \geq 0\}, 
+\end{equation}
+Trong đó
+\begin{equation}\label{ct2.33}
+	\bar d_{[q_j, q_{j+1}]}^{\, T} := \|q_{j+1} - q_j\|^{-1} R\, (q_{j+1} - q_j)^T.
+\end{equation}
+Trong thuật toán tiếp thep, $X$ trong (\ref{ct2.12}) và (\ref{ct2.26}) được thay thế bằng $X_j$, tức là
+\begin{equation}\label{ct2.34}
+	\begin{array}{lcl}
+		d_{p}^T &:=& \|p^+ - p^-\|^{-1} R \, (p^+ - p^-)^T, \\
+		\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X_j\}, 
+	\end{array}
+\end{equation}
+và
+\begin{equation}\label{ct2.35}
+	\begin{array}{lcl}
+		&& \|p - x\| > \delta \ \mbox{ với mọi } x \in X_p, \ \mbox{ trong đó} \\
+		&& X_p := \{x \in X_j \mid d_{p}\, x^T = \beta_{d_{p}}\},
+	\end{array}
+\end{equation}
+Với $j \in \{1, 2, 3, 4\}$.
+
+\begin{algorithm}\label{alg03}  \rm 
+	\floatname{algorithm}{Thuật toán}
+	\caption{}  \label{al-blduoi2}
+	\emph{Input:}  Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ  $\delta \geq 0$. \\
+	\emph{Output:} Đa giác xấp xỉ lồi ${\cal P}^{\rm outer}$ được xác định bởi công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
+	\begin{enumerate}
+		\item\label{stepIalg03} 
+		Xác định $D$, $\beta_d$ với $d \in D$, $r_j$ theo $j \in \{1, 2, 3, 4\}$, và $P$ bởi (\ref{ct2.8})--(\ref{ct2.11}). \\
+		Cho $j := 1$ và $q_5 := q_1$. 
+		
+		\item\label{stepIIalg03} 
+		Nếu $q_j = q_{j+1}$ thì đi tới bước \ref{stepValg03}.\\
+		Nếu không thì, xác định $X_j$ bởi (\ref{ct2.30})--(\ref{ct2.32}) và tập $P_{\rm doubt} := \{r_j\}$.
+		
+		\item\label{stepIIIalg03} 
+		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và được xác định ở công thức $d_p$, $\beta_{d_p}$ bởi (\ref{ct2.12}) và (\ref{ct2.34}). \\
+	Nếu
+		\begin{equation*}%\label{betaequal+}
+			\beta_{d_p} = d_p\, p^-
+		\end{equation*}
+		thì thay đổi $D$ và $P$ như (\ref{ct2.18}), và cập nhật
+		\begin{equation*}\label{ct2.36}
+			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\}
+		\end{equation*}
+		và đi tới bước \ref{stepIValg03}.\\
+		Nếu 
+		\begin{equation*}%\label{greaterdelta+}
+			d_{p}\, p^T - \beta_{d_{p}} > \delta
+		\end{equation*}
+		thì thay đổi $D$ và $P$ như (\ref{ct2.22}), và cập nhât 
+		\begin{equation}\label{newPdoubt4+}
+			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\}
+		\end{equation}
+		và đi tới bước \ref{stepIValg03}.\\
+		Nếu (\ref{ct2.35}) đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật $P_{\rm doubt}$ theo (\ref{ct2.36}), và đi tới bước \ref{stepIValg03}.\\
+		Nếu không thì,
+		\begin{equation*}%\label{newPdoubt6+}
+			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
+		\end{equation*}
+		
+		\item\label{stepIValg03} 
+		Nếu $P_{\rm doubt}$ là khác rỗng thì chuyển sang bước \ref{stepIIIalg03}.
+		
+		\item\label{stepValg03} 
+		Nếu $j < 4$ then $j := j+1$ và đi đến bước \ref{stepIIalg03}.
+		
+		\item\label{stepVIalg03} 
+		 Trả về tập hợp các hướng cực đại $D$ và $\beta_d$ với $d \in D$, và tập đỉnh $P$ của ${\cal P}^{\rm outer}$, và kết thúc thuật toán.
+	\end{enumerate}
+\end{algorithm}
+\medskip
+Bảng \ref{table02} và hình\ref{Figure03} cho thấy một số kết quả thử nghiệm về thời gian chay của thuật toán \ref{al-blduoi1}--\ref{al-blduoi2} khi $X$ bao gồm $n$ điểm ngẫu nhiên trong đa giác khung $16$ cạnh của ${\cal P}^\diamond$ được hiển thị trong hình \ref{Figure02}, trong đó
+\begin{itemize}
+	\item $T_{\rm Alg.\, 2}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi1},
+	\item $T_{\rm Alg.\, 3}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi2}.
+\end{itemize}
+
+\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			%\hline
+			\hline
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+			\hline		
+			\hline
+			{ $\delta = ???$}
+			
+			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = 0$}
+			
+			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+		\end{tabular}
+		\caption{Thời gian chạy trung bình $T_{\rm Alg.\, 2}$ và $T_{\rm Alg.\, 3}$ của thuật toán \ref{al-blduoi1} và thuật toán \ref{al-blduoi2}
+			khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh của ${\cal P}^\diamond$ hiển thị như hình \ref{fig_dhandang2_2}.}
+		\label{table02}
+	\end{center}
+\end{table} 
+\begin{figure}[ht]
+	\centering
+	???
+	%\includegraphics[width=8cm]{./Figures/???}
+	\caption{Tỷ lệ thời gian chạy của thuật toán \ref{al-blduoi1}--\ref{al-blduoi2} và số điểm $n$ của $X$.}
+	\label{Figure03}
+\end{figure}
 
 
-
-
-
-
+	\bigskip\noindent
+	{\bf LƯU Ý (liên quan đến bảng \ref{table02} và hình \ref{Figure03}):} 
+	
+	- $n$ điểm ngẫu nhiên được trình bày ở bảng \ref{table02} phải được tạo theo phương trình xoay trong đa giác có khung $16$ cạnh của  ${\cal P}^\diamond$ được hiển thị tỏng hình \ref{fig_dhandang2_2}.
+	
+	- Chỉ có hai tỷ lệ $T_{\rm Alg.\, 2}/n$ và $T_{\rm Alg.\, 3}/n$ được trình bày trong hình \ref{Figure03}.
+	
+	\bigskip
 
 ======================================================
 
@@ -624,64 +990,252 @@ thì ràng buộc mới (\ref{linearconstr}) tạo ra hai đỉnh mới của ${
 
 
 
+\section{Inner convex approximation}\label{InnerConvexApproximation}
+
+Cho $X$ thỏa mãn (\ref{ct2.1})--(\ref{ct2.2}) và $\delta \geq 0$, ở đây ta sẽ tìm một xấp xỉ lồi trong ${\cal P}^{\rm inner}$  của $X$, tức là:
+\begin{equation}\label{ct2.37}
+	{\cal P}^{\rm inner} := \ conv X', \ \mbox{ với} X' \subset X,
+\end{equation}
+Thật vậy
+\begin{equation}\label{ct2.38}
+	\ dist_{\rm H}(\ conv X, {\cal P}^{\rm inner}) \leq \delta.
+\end{equation}
+
+Ta mô tả ${\cal P}^{\rm inner}$ bởi tập $E$ của các cạnh có hướng của nó $[p, p^+]$, trong đó $p^+$  là cạnh kế tiếp ngược chiều kim đồng hồ của $p$, tức là:
+\begin{equation}\label{ct2.39}
+	E := \{[p, p^+] \mid p, p^+ \in X', \mbox{ $[p, p^+]$ là một cạnh của ${\cal P}^{\rm inner}$}\}.
+\end{equation}
 
 
+Ta bắt đầu quá trình xấp xỉ lồi trong với tứ giác $\bar q_1 \bar q_2 \bar q_3 \bar q_4$, tức là:
+\begin{equation}\label{ct2.40}
+	\begin{array}{lcl}
+		X' &:=& \{\bar q_1, \bar q_2, \bar q_3, \bar q_4\}, \\
+		E &:=& \{[\bar q_1, \bar q_2], \, [\bar q_2, \bar q_3], \, [\bar q_3, \bar q_4], \, [\bar q_4, \bar q_1]\},
+	\end{array}
+\end{equation}
+Trong đó $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ là duy nhất và được xác định bởi:
+\begin{equation}\label{ct2.41}
+	\begin{array}{lcl}
+		x^1_{\rm min} &:=& \min \{x^1 \mid (x^1, x^2) \in X\}, \\
+		x^1_{\rm max} &:=& \max \{x^1 \mid (x^1, x^2) \in X\}, \\
+		x^2_{\rm min} &:=& \min \{x^2 \mid (x^1, x^2) \in X\}, \\
+		x^2_{\rm max} &:=& \max \{x^2 \mid (x^1, x^2) \in X\}
+	\end{array}
+\end{equation}
+Và
+\begin{equation}\label{ct2.42}
+	\begin{array}{lcl}
+		X^1_{\rm min} &:=& \{(x^1, x^2) \in X \mid x^1 = x^1_{\rm min}\}, \\
+		X^1_{\rm max} &:=& \{(x^1, x^2) \in X \mid x^1 = x^1_{\rm max}\}, \\
+		X^2_{\rm min} &:=& \{(x^1, x^2) \in X \mid x^2 = x^2_{\rm min}\}, \\
+		X^2_{\rm max} &:=& \{(x^1, x^2) \in X \mid x^2 = x^2_{\rm max}\}
+	\end{array}
+\end{equation}
+Và
+\begin{equation}\label{ct2.43}
+	\begin{array}{lcl}
+		&& \bar q_1 = (\bar q_1^1, \bar q_1^2) \in X^1_{\rm max} \mbox{ thỏa mãn } \bar q_1^2 = \max\{x^2 \mid (x^1, x^2) \in X^1_{\rm max}\}, \\
+		&& \bar q_2 = (\bar q_2^1, \bar q_2^2) \in X^2_{\rm max} \mbox{  thỏa mãn} \bar q_2^1 = \min\{x^1 \mid (x^1, x^2) \in X^2_{\rm max}\}, \\
+		&& \bar q_3 = (\bar q_3^1, \bar q_3^2) \in X^1_{\rm min} \mbox{  thỏa mãn } \bar q_3^2 = \min\{x^2 \mid (x^1, x^2) \in X^1_{\rm min}\}, \\
+		&& \bar q_4 = (\bar q_4^1, \bar q_4^2) \in X^2_{\rm min} \mbox{  thỏa mãn } \bar q_4^1 = \max\{x^1 \mid (x^1, x^2) \in X^2_{\rm min}\}.
+	\end{array}
+\end{equation}
+Lưu ý rằng hai trong số bốn điểm $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ có thể trùng nhau, nhưng (\ref{ct2.2}) ngụ ý rằng ít nhất ba trong số chúng khác nhau.
+
+Trong các bước xấp xỉ sau đây, đa giác ${\cal P}^{\rm inner}$ được xây dựng và cải thiện 
+như sau.
+Với bất kỳ $[p, p^+] \in E$ ($p \not= p^+$), ta các định:
+\begin{equation}\label{ct2.44}
+	\begin{array}{lcl}
+		\bar d_{[p, p^+]}^{\, T} &:=& \|p^+ - p\|^{-1} R \, (p^+ - p)^T, \\
+		X_{[p, p^+]} &:=& \{x \in X \mid \bar d_{[p, p^+]}\, x^T > \bar d_{[p, p^+]}\, p^T \},
+	\end{array}
+\end{equation}
+Với
+\begin{equation*}%\label{rotationmatrix}
+	R := \begin{pmatrix}
+		0 & 1 \\
+		-1 & 0
+	\end{pmatrix}.
+\end{equation*}
+
+Nếu $X_{[p, p^+]} \not= \emptyset$ thì xác định
+\begin{equation}\label{ct2.45}
+	\begin{array}{lcl}
+		\beta_{[p, p^+]} &:=& \max \{\bar d_{[p, p^+]}\, x^T \mid x \in X_{[p, p^+]}\}, \\
+		B_{[p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, p^+]}\, x^T = \beta_{[p, p^+]}\}.
+	\end{array}
+\end{equation}
+Nếu
+\begin{equation}\label{dct2.46}
+	\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T \leq \delta
+\end{equation}
+Thì ta không cần phải mở rộng ${\cal P}^{\rm inner }$ theo hướng $\bar d_{[p, p^+]}$.
+
+Ngược lại, nếu
+\begin{equation}\label{ct2.47}
+	\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T > \delta
+\end{equation}
+thì lấy  
+\begin{equation}\label{ct2.48}
+	\hat p \in B_{[p, p^+]} \hbox{ thỏa mãn } \|\hat p - p\| = \max\{\|x - p\| \mid x \in B_{[p, p^+]}\},
+\end{equation}
+Và cập nhập $X'$ và $B$ bởi
+\begin{equation}\label{ct2.49}
+	\begin{array}{lcl}
+		X' &:=& X' \cup \{\hat p\}, \\
+		E &:=& E \cup \{[p, \hat p], \, [\hat p, p^+]\},
+	\end{array}
+\end{equation}
+Và xác định
+\begin{equation}\label{ct2.50}
+	\begin{array}{lcl}
+		X_{[p, \hat p]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, \hat p]}\, x^T > \bar d_{[p, \hat p]}\, p^T \}, \\
+		X_{[\hat p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[\hat p, p^+]}\, x^T > \bar d_{[\hat p, p^T]}\, {\hat p}^T \}.
+	\end{array}
+\end{equation}
+Lưu ý rằng ta chỉ xem xét $x \in X_{[p, p^+]}$ trong định nghĩa này của $X_{[p, \hat p]}$ vaf $X_{[\hat p, p^+]}$, nhưng tất cả $x \in X$ trong định nghĩa (\ref{ct2.44}) của $X_{[p, p^+]}$.
+
+Quy trình xấp xỉ được trình bày trong thuật toán sau, trong đó  $E_{\rm doubt}$ biểu thị tập hợp các cạnh vẫn cần được kiểm tra.
+
+\begin{algorithm}\label{alg04}  \rm 
+	\floatname{algorithm}{Thuật toán}
+	\caption{}  \label{al-blduoi4}
+	\emph{Input:} Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ $\delta \geq 0$. \\
+	\emph{Output:} Đa giác xấp xỉ lồi trong ${\cal P}^{\rm inner}$ được mô tả bởi $X'$ và $E$.
+	\begin{enumerate}
+		\item\label{stepIalg04} 
+		Xác định $X'$ và $E$ theo (\ref{ct2.40})--(\ref{ct2.43}).\\
+		Với mọi $[p, p^+] \in E$ xác định $d_{[p, p^+]}$ và $X_{[p, p^+]}$ theo (\ref{ct2.44}).\\
+		Cho $E_{\rm doubt} := E$.
+		
+		\item\label{stepIIalg04} 
+		 Chọn tùy ý $[p, p^+] \in E_{\rm doubt}$. \\
+		Nếu $X_{[p, p^+]} = \emptyset$ thì đặt
+		$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
+		và đi tới bước \ref{stepIIIalg04}.\\
+		Định nghĩa $\beta_{[p, p^+]}$ và $B_{[p, p^+]}$ theo (\ref{ct2.45}). \\
+		Nếu (\ref{dct2.46}) đúng thì đặt
+		$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
+		Và đi tới bước \ref{stepIIIalg04}.\\
+		Trường hợp còn lại, lấy $\hat p$ định nghĩa theo (\ref{ct2.48}),
+		và cập nhật $X'$ và $E$ theo (\ref{ct2.49}), và xác định $X_{[p, \hat p]}$ và $X_{[\hat p, p^+]}$ theo (\ref{ct2.50}),	và đặt
+		\begin{equation*}%\label{newBdoubt3}
+			E_{\rm doubt} := (E_{\rm doubt} \setminus \{[p, p^+])\}) \cup \{[p, \hat p], \, [\hat p, p^+]\}.
+		\end{equation*}
+		
+		\item\label{stepIIIalg04} 
+		Nếu $E_{\rm doubt}$ chưa rỗng thì quay lại bước \ref{stepIIalg04}.
+		
+		\item
+		Trả về $X'$, $E$, và kết thúc thuật toán
+	\end{enumerate}
+\end{algorithm}
 
 
-
-
-
-
-Trong các thuật toán tìm bao lồi thì thuật toán Quickhull \cite{David-2002, Rourke-1998} được biết đến là một thuật toán hiệu quả có độ phức tạp tính toán trung bình là $O(n \log n)$ nhưng trong trường hợp xấu nhất thì độ phức tạp là $O(n^2)$, trong đó $n$ là số điểm của tập điểm đầu vào của thuật toán. Độ phức tạp của thuật toán Quickhull tương tự như thuật toán Quicksort - một thuật toán sắp xếp hiệu quả dựa trên việc phân chia mảng dữ liệu thành các nhóm phần tử nhỏ hơn và thuật toán này chạy trong thực tế nhanh hơn rất nhiều so với trường hợp xấu nhất. Để giải thích cho điều này, V. Damerow và C. Sohler đã đánh giá thành công số điểm cực biên của một tập hợp theo nghĩa Smoothed analysis \cite{Damerow-2004}. Từ đó có thể đánh giá độ phức tạp tính toán của thuật toán Quickhulll theo nghĩa này trong hai trường hợp là:
+\medskip
+Bảng \ref{table03}  cho thấy một số kết quả thử nghiệm, trong đó
 \begin{itemize}
-	\item Nhiễu ngẫu nhiên của tập điểm được chọn từ phân bố chuẩn $N(0, \delta)$: 
-	O$\left( n \left(\dfrac{1}{\delta} \right)^2 \log^2 n\right) $.
-	\item Nhiễu ngẫu nhiên được chọn từ phân bố đều trong hình vuông kích thước $2 \epsilon$: 
-	O$\left( n \left(\dfrac{n \log n}{\epsilon} \right)^{2/3}\right). $
+	\item $\#_{\rm Edges@ Alg.\, 4}$  là số cạnh trung bình của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm inner}$ được trả về bởi thuật toán \ref{al-blduoi4},
+	\item $\#_{\rm Step\, II @ Alg.\, 4}$ à số lần thực hiện trung bình của bước \ref{stepIIalg04} của thuật toán \ref{al-blduoi4}.
 \end{itemize}
 
-Bài toán tìm bao lồi có ứng dụng rất quan trọng trong lĩnh vực nhận dạng. Các ứng dụng phổ biến của nhận dạng trong thực tế là nhận dạng tiếng nói tự động, phân loại văn bản thành nhiều loại khác nhau (ví dụ những thư điện tử spam/non-spam), nhận dạng tự động các mã bưu điện viết tay trên các bao thư, hay hệ thống nhận dạng mặt người, nhận dạng biển số xe, v.v\ldots Sau đây ta xét một ứng dụng cụ thể của bài toán tìm bao lồi trong nhận dạng biển số xe. 
-\begin{figure}[ht!]
-	\begin{center}
-		\includegraphics[width=200px]{./nhandang1.PNG}
-		\caption{Quy trình tự động nhận dạng biển số xe.}
-		\label{fig_dhandang1}
+\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			%\hline
+			\hline
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+			\hline		
+			\hline
+			{ $\delta = ???$}
+			
+			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = 0$}
+			
+			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+		\end{tabular}
+		\caption{Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal P}^{\rm inner}$ Trả về bởi thuật toán \ref{al-blduoi4} và số lần thực hiện trung bình của bước \ref{stepIIalg04} khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và được hiển thị trong hình \ref{fig_dhandang2_2}.}
+		\label{table03}
 	\end{center}
-\end{figure} 
+\end{table} 	
 
-\section{Sơ lược về ............ }
-\begin{dn}\rm {\it Phương trình đồng dư đại số bậc $n$} là một đồng dư thức có dạng
-\begin{align} \label{ptdd}
-f(x)= a_0x^n + a_1x^{n-1} + \ldots + a_n \equiv 0\pmod{m}
-\end{align}
-trong đó $x$ là ẩn, $a_i \in \mathbb{Z}$ (với $i = 1, 2, \ldots, n$) và $a_0\not\equiv 0\pmod m$.
-\end{dn} 
-\begin{cy}\rm (i) Giải phương trình (\ref{ptdd}) là tìm tất cả các giá trị nguyên của $x$ thoả mãn đồng dư thức (\ref{ptdd}). Nếu $x = x_0$ thoả mãn phương trình (\ref{ptdd}) thì mọi số $x \equiv x_0\pmod{m}$ đều thoả mãn (\ref{ptdd}); trong trường hợp này tập hợp $\{x\in\Z\mid x\equiv x_0\pmod m\}$ được gọi là một {\it nghiệm} của phương trình đồng dư (\ref{ptdd}), kí hiệu là $\overline{x_0}$ hoặc $x\equiv x_0\pmod m$.\par
-\item (ii) Số nghiệm của phương trình (\ref{ptdd}) là số các phần tử trong một hệ thặng dư đầy đủ theo modulo $m$ mà thỏa mãn (\ref{ptdd}).\par
-\item (iii) Hai phương trình đồng dư được gọi là tương đương nếu tập hợp các số nguyên thỏa mãn các phương trình đó là trùng nhau.
-\end{cy}
+	\bigskip\noindent
+	{\bf LƯU Ý (Liên quan đến bảng \ref{table03}):}  $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và hiển thị trong hình \ref{fig_dhandang2_2}.
+	
+	\bigskip
 
-\begin{vd} \rm Xét phương trình $x^2 \equiv 1 \pmod{5}$.
-\end{vd}
+\medskip
+Bảng \ref{table04} và hình \ref{Figure04}  thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán  \ref{alg04} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}, trong đó
 
-\begin{giai} Ta thấy trong các số 0, 1, 2, 3, 4 của hệ thặng dư không âm bé nhất theo modulo 5, có hai số 1 và 4 thỏa mãn phương trình đã cho. Vậy phương trình có hai nghiệm là $x \equiv 1 \pmod{5}$ và $x \equiv 4 \pmod{5}$.
-\end{giai}
+$T_{\rm Alg.\, 4}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi4}.
 
-\begin{vd} \rm Giải phương trình đồng dư $x^4 + 7x + 4 \equiv 0\pmod{9}$.
-\end{vd}
-\begin{giai} Dễ thấy phương trình $x^4 + 7x + 4 \equiv 0\pmod{3}$ có nghiệm là $x \equiv 1\pmod{3}$ (hay $x = 3t +1$ với $t\in\Z$). Thay $x$ vào phương trình cần giải và bỏ đi những số hạng chia hết cho 9 ta được
-	\begin{align*}
-	&6t + 3  \equiv 0\pmod{9}\\
-	\Leftrightarrow \ & 2t + 1  \equiv 0\pmod{3}\\
-	\Leftrightarrow \ & t \equiv 1\pmod{3}\\
-		\Leftrightarrow \ & t = 3k +1.
-	\end{align*}
-Vậy phương trình có nghiệm là $x = 3(3k+1) + 1$ hay $x \equiv 4\pmod{9}$.
-\end{giai}
+\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			%\hline
+			\hline
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+			\hline		
+			\hline
+			{ $\delta = ???$}
+			
+			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+			{ $\delta = ???$}
+			
+			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			
+			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			\hline
+		\end{tabular}
+		\caption{Thời gian chạy trung bình $T_{\rm Alg.\, 4}$  thuật toán \ref{al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh  ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}.}
+		\label{table04}
+	\end{center}
+\end{table} 	
 
- \begin{dn} \rm Phương trình đồng dư $ax \equiv b \pmod{m}$ được gọi là {\it phương trình đồng dư tuyến tính} với $a, b, m$ là các số nguyên đã biết. Khi đó $x\equiv x_0\pmod m$ là một nghiệm của phương trình khi và chỉ khi $ax_0 \equiv b\pmod{m}$.
-\end{dn}
-
+\begin{figure}[ht]
+	\centering
+	???
+	%\includegraphics[width=8cm]{./Figures/???}
+	\caption{Tỷ lệ thời gian chạy của thuật toán \ref{al-blduoi4} với số điểm $n$ của $X$.}
+	\label{Figure04}
+\end{figure}
 
 
 

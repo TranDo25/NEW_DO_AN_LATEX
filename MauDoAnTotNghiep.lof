@@ -9,6 +9,9 @@
 \contentsline {figure}{\numberline {1.8}{\ignorespaces xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc}}{11}{}%
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc.}}{12}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Quy trình tự động nhận dạng biển số xe.}}{18}{}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces $X = \{x_1, x_2, \dots , x_n\}$ with $\ conv X = \ conv\{x_1, x_2, \dots , x_m\}$ and $m = 10$.}}{20}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces $16$-sided frame polygon ${\cal P}^\diamond $ of $n$ random points.}}{20}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Tỷ lệ thời gian chạy của thuật toán \ref {al-blduoi1}--\ref {al-blduoi2} và số điểm $n$ của $X$.}}{22}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Tỷ lệ thời gian chạy của thuật toán \ref {al-blduoi4} với số điểm $n$ của $X$.}}{28}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
