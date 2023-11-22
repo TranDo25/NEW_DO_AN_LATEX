@@ -14,10 +14,11 @@
 \contentsline {subsection}{\numberline {1.7.2}Chiến lược phân đoạn tập các bao lồi}{11}{}%
 \contentsline {chapter}{\numberline {2}Thuật toán tính bao lồi xấp xỉ}{14}{}%
 \contentsline {section}{\numberline {2.1}Outer convex approximation}{14}{}%
-\contentsline {section}{\numberline {2.2}Inner convex approximation}{24}{}%
-\contentsline {chapter}{\numberline {3}Ứng dụng .................}{29}{}%
-\contentsline {section}{\numberline {3.1}Thặng dư bậc hai và ứng dụng}{29}{}%
-\contentsline {subsection}{\numberline {3.1.1}Phương trình đồng dư bậc hai..........}{29}{}%
-\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{31}{}%
-\contentsline {chapter}{\vspace *{-8pt} Kết luận}{33}{}%
-\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{34}{}%
+\contentsline {section}{\numberline {2.2}Inner convex approximation}{22}{}%
+\contentsline {chapter}{\numberline {3}Thực nghiệm và kết quả}{28}{}%
+\contentsline {section}{\numberline {3.1}Khởi tạo môi trường chạy}{28}{}%
+\contentsline {section}{\numberline {3.2}Tập dữ liệu DOTA}{31}{}%
+\contentsline {subsection}{\numberline {3.2.1}Các bước thực hiện}{33}{}%
+\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{62}{}%
+\contentsline {chapter}{\vspace *{-8pt} Kết luận}{64}{}%
+\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{65}{}%

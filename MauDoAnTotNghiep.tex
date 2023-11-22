@@ -5,6 +5,7 @@
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \usepackage{float}
+\usepackage{listings}
  \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{graphicx}
@@ -12,6 +13,7 @@
 \usepackage[mathscr]{eucal}
 \usepackage[top=3.5cm, bottom=3.0cm, left=3.5cm, right=2cm] {geometry}
 \usepackage{fancybox}
+\usepackage{dirtree}
 %==================================  
 \newtheorem{dl}{Định lý}[section]
 \newtheorem{dn}[dl]{Định nghĩa} 
@@ -198,9 +200,13 @@
 	\Large{\textbf{LỜI CẢM ƠN}}\\
 \end{center}
 \vspace{1cm}
-Đây là mục tùy chọn
+Chân thành cảm ơn cô giáo Nguyễn Kiều Linh, người đã đóng góp không ngừng sức mạnh và sự hiểu biết chuyên sâu, giúp tôi hoàn thành đồ án một cách thành công. Những lời hướng dẫn và sự chia sẻ của cô không chỉ giúp tôi giải quyết các vấn đề khó khăn mà còn mở rộng tầm nhìn và kiến thức của tôi trong lĩnh vực công nghệ thông tin.
 
-...........................
+Tôi cũng muốn bày tỏ lòng biết ơn đặc biệt đến tác giả của các thư viện code MMROTATE và tác giả bài báo BeyoundBoundingBox, người đã chia sẻ những lời khuyên quý báu qua email. Điều này thực sự là một nguồn động viên lớn, giúp tôi áp dụng những kỹ thuật và giải pháp hiệu quả vào dự án của mình.
+
+Cảm ơn anh Linh, đồng nghiệp tại công ty ESC, vì sự hỗ trợ tận tâm và việc cho mượn máy làm việc. Sự thuận tiện này thực sự đã giúp tôi tiếp cận công nghệ và dữ liệu cần thiết một cách dễ dàng và hiệu quả.
+
+Cuối cùng, xin gửi lời tri ân đến bạn bè, những người đã động viên và hỗ trợ tôi trong suốt quá trình thực hiện đồ án. Sự đoàn kết và tình bạn này thực sự là nguồn động viên mạnh mẽ, giúp tôi vượt qua mọi khó khăn. Cảm ơn mọi người vì tất cả!
 \
  \\
  
@@ -209,12 +215,12 @@
  \
   \\
  
-\phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn}\  {\textit{Hà Nội, tháng ....  năm 20....}} \\
+\phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn}\  {\textit{Hà Nội, tháng 11  năm 2023}} \\
 \phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn} {Sinh viên}\\
 \phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn} \\
 \phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn} \\ 
 \phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn} \\ 
-\phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn}   {Nguyễn Văn A}
+\phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn}   {Trần Xuân Độ}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,18 +249,20 @@
 \vspace{1.25cm}
 {\fontsize{13}{13}\selectfont
 	\begin{tabular}{ll}
-		conv$(D)$ & bao lồi của tập hợp $D$\\
-		$\partial ({\rm conv}(D))$ & biên của bao lồi conv$(D)$\\
-		CH($D$) & tập các hình tròn cực biên của tập $D$\\
-		$V_C$ & tập đỉnh của bao lồi conv($C$)\\
-		$[p,q]$ & đoạn thẳng nối $p$ với $q$\\
-		$pq$& đường thẳng đi qua $p$ và $q$\\
-  .......... & ..................
+  CFA &  Convex-hull Feature Adaptation\\
+  CIoU & Convex Intersection over Union\\
+  RoI & Region of Interest transformer\\
+  FPN & Feature Pyramid Network\\
+  Conv & Convolution\\
+  DCN & Deformable Convolution Network\\
+  CCW & Counter Clock Wise\\
+  \textit{loc} & localization\\
+  \textit{cls} & classification\\
+  FL & Focal Loss\\
+  CUDNN & CUDA Deep Neural Network\\
+  CUDA & Compute Unified Device Architecture
 	\end{tabular}
 }
-
-
- 
 \newpage
 \pagenumbering{arabic} 
 \pagestyle{fancy} 
@@ -268,7 +276,7 @@ Trong nhiều thập kỷ, chúng ta đã chứng kiến quá trình phát tri�
 Một trong những giải pháp để phát hiện đối tượng có hướng, đó là sử dụng phương pháp làm giàu đặc trưng/mỏ neo, cung cấp nhiều hơn các đặc trưng để đào tạo các bộ phát hiện. Giải pháp này tuy nhiên lại gây ra sự phức tạp trong tính toán, dễ gây ra sai sót. Một giải pháp khác là định nghĩa bộ biến đổi RoI, áp dụng phép biến đổi không gian RoIs trong khi tiếp tục học các tham số dưới sự giám sát của hộp bao có hướng. Các bộ biến đổi này được cho là linh hoạt, nhạy bén, hoạt động mượt mà, cho phép trường tiếp nhận thích nghi với các đối tượng có hướng. Tuy nhiên, vấn đề về cách điều chỉnh lưới đặc trưng cho đối tượng có bố cục bất kỳ vẫn chưa được giải quyết. Đây chính là nguyên nhân gây ra hiện tượng feature aliasing, xảy ra khi các đối tượng phân bổ dày đặc trong khung hình.
 
 
-Do đó, ta đề xuất một cách tiếp cận khác: sử dụng phương pháp điều chỉnh các đặc trưng bằng bao lồi(convex-hull) dành cho các đối tượng có hướng và phân bố dày đặc. Mục tiêu để điều chỉnh các đặc trưng nằm trong lưới tích chập thông thường với các đối tượng có bố cục phân bố không đều. Ta xây dựng bố cục đối tượng thành một bao lồi, có lợi thế hơn so với sử dụng bố cục hình chữ nhật, giúp bao phủ toàn bộ đối tượng nhưng giảm thiểu tối đa diện tích vùng nền của đối tượng. Mỗi bao lồi là tập hợp các điểm đặc trưng định nghĩa đường biên của đối tượng, biểu thị tỷ lệ Convex Intersection over Union để các định vị trí đối tượng. Bên trong bao lồi, các đặc trưng khác nhau biểu thị cho sự xuất hiện của các đối tượng được phân loại khác nhau.
+Do đó, ta đề xuất một cách tiếp cận khác: sử dụng phương pháp điều chỉnh các đặc trưng bằng bao lồi (convex-hull) dành cho các đối tượng có hướng và phân bố dày đặc. Mục tiêu để điều chỉnh các đặc trưng nằm trong lưới tích chập thông thường với các đối tượng có bố cục phân bố không đều. Ta xây dựng bố cục đối tượng thành một bao lồi, có lợi thế hơn so với sử dụng bố cục hình chữ nhật, giúp bao phủ toàn bộ đối tượng nhưng giảm thiểu tối đa diện tích vùng nền của đối tượng. Mỗi bao lồi là tập hợp các điểm đặc trưng định nghĩa đường biên của đối tượng, biểu thị tỷ lệ Convex Intersection over Union (CIoU) để các định vị trí đối tượng. Bên trong bao lồi, các đặc trưng khác nhau biểu thị cho sự xuất hiện của các đối tượng được phân loại khác nhau.
 
 
 Mục tiêu của đồ án là tìm hiểu, nghiên cứu phương pháp phát hiện đối tượng dày đặc có hướng, cụ thể là nghiên cứu phương pháp BeyoundBoundingBox dành cho vấn đề trên. Ngoài ra, đồ án còn tìm hiểu thuật toán phát hiện bao lồi mới, thay thế vào phương pháp trên, kiểm nghiệm và đo lường độ hiệu quả của thuật toán mới này.
@@ -358,7 +366,7 @@ $O \in R^{H \times W \times W}$ ($H, W, C$ lần lượt tương ứng với chi
 Trong đó: $\theta$ biểu thị là các tham số của mạng. Việc dự đoán offset sẽ thực hiện theo công thức trên.
 
 \section{Tích chập biến dạng}
-Tích chập biến dạng (Deformable convolution) là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $N\mathrm{x}N$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
+Tích chập biến dạng (Deformable convolution - DCN) là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $N\mathrm{x}N$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -502,7 +510,7 @@ Hàm mất mát này xem xét sự tương ứng về đặc trưng của nhiề
 \end{align}
 
 \chapter{Thuật toán tính bao lồi xấp xỉ}
-\textit{Giới thiệu chung về thuật toán, cách dùng, có bao nhiêu loại thuật toán}
+Thuật toán tìm bao lồi xấp xỉ nhận đầu vào là một tập các điểm ngẫu nhiên, đầu ra trả về 1 tập điểm biểu diễn một bao lồi bao quanh tất cả các điểm còn lại. Với ngưỡng $\delta$ tuỳ chỉnh, sẽ cho ra được dạng bao lồi khác nhau. Lưu ý, đây là thuật toán mới còn chưa được công bố rộng rãi.
 \section{Outer convex approximation}
 Cho:
 \begin{align} \label{ct2.1} 
@@ -572,10 +580,8 @@ Trong các bước xấp xỉ tiếp theo, việc xây dựng đa giác ${P}^{ou
 
 $\text{Với 1 đỉnh }p \in P, \text{cho } p^{-} \in P \text{ và } p^{+} \in P \text{ lần lượt là}$
 \begin{align} \label{ct2.12}
-\text {điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của} p \in P.
-\end{align}. 
-
-
+\text {điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của } p \in P.
+\end{align}
 Ta có công thức sau:
 \begin{equation}\label{ct2.13}
 	\begin{array}{lcl}
@@ -752,6 +758,62 @@ Bảng \ref{table01} cho thấy một số kết quả thử nghiệm, trong đ�
 	\item $\#_{\rm Step\, III @ Alg.\, 1}$  là số lần thực hiện của bước 3 trong thuật toán \ref{al-blduoi0}
 	\item $\#_{\rm Step\, III @ Alg.\, 2}$ là số lần thực hiện của bước 3 trong thuật toán \ref{al-blduoi1}.
 \end{itemize}
+
+\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.05cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			%\hline
+			\hline
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & 50& 500& 1000& 2500& 5000& 7500& 9000\\ 
+			\hline		
+			\hline
+			{ $\delta = 70$}
+			
+			& \text{Edges@Alg.1}  &  4& 5& 5& 5& 5& 5& 5 \\
+			
+			& Edges@Alg.2  &   5& 5& 5& 5& 5& 5& 5\\
+			
+			& Step III@Alg.1  &4 &6 &6 &6 &6 &6 &6  \\
+			
+			& Step III@Alg.2 &6 &6 &6 &6 &6 &6 &6  \\
+			\hline
+			{ $\delta = 10$}
+			
+			& Edges@Alg.1  & 10 & 13 &14& 14&11&11&11 \\
+			
+			& Edges@Alg.2 &15&23&21&28&28&36&39\\
+			
+			& Step III@Alg.1 &16&22&24&24&18&18&18 \\
+			
+			& Step III@Alg.2&40&47&44&68&58&76&86  \\
+			\hline
+			{ $\delta = 1$}
+			
+			& Edges@Alg.1  &21&32&28&36&33&32&32 \\
+			
+			& Edges@Alg.2 &13&26&33&45&49&53&50 \\
+			
+			& Step III@Alg.1 &48&64&58&70&62&60&60 \\
+			
+			& Step III@Alg.2&48&92&108&136&166&156&160   \\
+			\hline
+			{ $\delta = 0$}
+			
+			& Edges@Alg.1 &13&25&30&40&45&44&45 \\
+			
+			& Edges@Alg.2&13&25&30&40&45&44&45  \\
+			
+			& Step III@Alg.1 &48 &96 &116 &156 &176 &172 &175 \\
+			
+			& Step III@Alg.2&48 &96 &116 &156 &176 &172 &175   \\
+			\hline
+		\end{tabular}
+		\caption{Số cạnh và số bước 3 lặp lại của từng giải thuật Outer Convex Approximation }
+		\label{table02}
+	\end{center}
+\end{table} 
+\textit{do giải thuật 3 chưa có code nên hiện tại bảng vẫn còn trống}
 \begin{table}[ht]
 	\begin{center}\renewcommand{\arraystretch}{1.2}\small
 		\setlength\tabcolsep{0.05cm}
@@ -910,61 +972,7 @@ Bảng \ref{table02} và hình\ref{Figure03} cho thấy một số kết quả t
 	\item $T_{\rm Alg.\, 3}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi2}.
 \end{itemize}
 
-\begin{table}[ht]
-	\begin{center}\renewcommand{\arraystretch}{1.2}\small
-		\setlength\tabcolsep{0.05cm}
-		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
-			%\hline
-			\hline
-			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
-			\hline		
-			\hline
-			{ $\delta = ???$}
-			
-			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-			{ $\delta = ???$}
-			
-			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-			{ $\delta = ???$}
-			
-			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-			{ $\delta = 0$}
-			
-			& $T_{\rm Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 2}/n$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $T_{\rm Alg.\, 3}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-		\end{tabular}
-		\caption{Thời gian chạy trung bình $T_{\rm Alg.\, 2}$ và $T_{\rm Alg.\, 3}$ của thuật toán \ref{al-blduoi1} và thuật toán \ref{al-blduoi2}
-			khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh của ${\cal P}^\diamond$ hiển thị như hình \ref{fig_dhandang2_2}.}
-		\label{table02}
-	\end{center}
-\end{table} 
+
 \begin{figure}[ht]
 	\centering
 	???
@@ -1146,32 +1154,32 @@ Bảng \ref{table03}  cho thấy một số kết quả thử nghiệm, trong đ
 		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
 			%\hline
 			\hline
-			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  &50& 500& 1000& 2500& 5000& 7500& 9000\\ 
 			\hline		
 			\hline
-			{ $\delta = ???$}
+			{ $\delta = 300$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $\#_{\rm Edges@ Alg.\, 4}$  &6&6&6&6&5&6&6\\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $\#_{\rm Step\, II @ Alg.\, 4}$&8&8&8&8&8&8&8   \\
 			\hline
-			{ $\delta = ???$}
+			{ $\delta = 150$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $\#_{\rm Edges@ Alg.\, 4}$  &8&8&8&8&7&8&8 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $\#_{\rm Step\, II @ Alg.\, 4}$&12&12&12&12&12&12&12\\
 			\hline
-			{ $\delta = ???$}
+			{ $\delta = 10$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $\#_{\rm Edges@ Alg.\, 4}$  &11&17&16&20&18&17&17 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $\#_{\rm Step\, II @ Alg.\, 4}$&54&54&60&58&58&56&56  \\
 			\hline
 			{ $\delta = 0$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $\#_{\rm Edges@ Alg.\, 4}$  &13&25&30&40&45&44&45 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $\#_{\rm Step\, II @ Alg.\, 4}$&74&146&176&236&266&260&266   \\
 			\hline
 		\end{tabular}
 		\caption{Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal P}^{\rm inner}$ Trả về bởi thuật toán \ref{al-blduoi4} và số lần thực hiện trung bình của bước \ref{stepIIalg04} khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và được hiển thị trong hình \ref{fig_dhandang2_2}.}
@@ -1239,75 +1247,1387 @@ $T_{\rm Alg.\, 4}$ là thời gian chạy trung bình của thuật toán \ref{a
 
 
 
-\chapter{Ứng dụng .................}
+\chapter{Thực nghiệm và kết quả}
 
-Chương này trình bày định nghĩa và các tính chất của thặng dư bậc hai: cách tính thặng dư bằng định nghĩa, cách tính thặng dư thông qua ký hiệu Legendre, cách tính thông qua luật thuận nghịch bậc hai. Sau đó ứng dụng thặng dư bậc hai và luật thuận nghịch bậc hai để tính toán và giải một số bài toán chứng minh, tìm căn nguyên thủy, kiểm tra tính nguyên tố.  
+Chương này trình bày cách thức triển khai của đồ án:khởi tạo môi trường chạy, lấy tập dữ liệu DOTA, chuyển đổi thuật toán từ mã Python sang mã C++, thay thế thuật toán mới cho thuật toán cũ, cấu hình file config để thực hiện huấn luyện, một vài kết quả số.
+\section{Khởi tạo môi trường chạy} 
 
-\section{Thặng dư bậc hai và ứng dụng}
-Thặng dư bậc hai đóng vai trò rất quan trọng trong lý thuyết số. Chẳng hạn, thuật toán phân tích số nguyên ra thừa số nguyên tố. Ngoài ra thặng dư bậc hai cũng ứng dụng lớn trong mật mã cũng như trong các giao thức mã hóa.... Ở đây ta xét ứng dụng liên quan đến giải phương trình đồng dư bậc hai trong lý thuyết và thực hành.
- 
-\subsection{Phương trình đồng dư bậc hai..........}
-Xét phương trình đồng dư bậc hai theo modulo nguyên tố (theo tài liệu \cite{K2007}).
-\begin{align}\label{pt7.1}
-Ax^2 + Bx + C \equiv 0 \pmod{p},
-\end{align}
-trong đó $p$ nguyên tố lẻ và $A, B, C \in \mathbb{Z}$ với $p\nmid A$. (Nếu $p\mid A$ thì quay về phương trình tuyến tính). Vì $p$ nguyên tố lẻ và $p\nmid A$, nên $p\nmid 4A$. Ta nhân hai vế của phương trình với $4A$ ta được
-\begin{equation}\label{pt7.2}
-4A(Ax^2+Bx+C)\equiv 0\pmod p.
-\end{equation}
-Nhưng ta có 
-\begin{align*}
-4A(Ax^2+Bx+C)&=4A^2x^2+4ABx+4AC\\
-&=(2Ax+B)^2-(B^2-4AC).
-\end{align*}
-Do đó đồng dư thức (\ref{pt7.2}) được viết lại thành
-\begin{align*}
-(2Ax+B)^2\equiv (B^2-4AC)\pmod p
-\end{align*}
-nó có dạng 
-\begin{align}\label{pt7.3}
-y^2\equiv a\pmod p
-\end{align}
- trong đó $y=2Ax+B$ và $a=B^2-4AC$.\par 
-Nếu phương trình $y^2\equiv a\pmod p$ có nghiệm, thì ta suy ra phương trình $2Ax+B=y$ có nghiệm $x$ modulo $p$ (vì $(2A,p)=1$). Do đó phương trình (\ref{pt7.1}) có nghiệm nếu và chỉ nếu phương trình (\ref{pt7.3}) có nghiệm.\par
+Môi trường được sử dụng trong đồ án là Linux, bản phân phối Ubuntu 20.04.06 LTS, sử dụng 2 máy có thông số khác nhau để chạy. Một máy laptop với GTX 1650 4GB RAM và một máy pc RTX 3060 12GB RAM. CUDA Toolkit sử dụng phiên bản 11.6, cài đặt CUDNN.
 
-Ví dụ sau sẽ minh họa điều này.
+Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản mmcv hiện đại, tôi đã chuyển qua sử dụng thư viện Mmrotate, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện mmcv==1.7.1, Mmdetection==2.28.2 và Mmrotate==0.3.4. Riêng 2 thư viện mmcv và mmrotate thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMMlab. Thư viện mmcv đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA C++ để lập trình tính toán cho card đồ hoạ). Thư viện mmdetection là một bộ thư viện chủ đạo (ngoài ra còn có MMYolo) của phòng nghiên cứu Openmmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện mmrotate. 
 
-	{\fontsize{12pt}{12pt}\selectfont \baselineskip 0.65cm
-	\renewcommand{\baselinestretch}{1.0}	
-	\begin{algorithm}[ht!]
+OpenMMLab là một dự án mã nguồn mở phục vụ cho nghiên cứu học thuật và ứng dụng công nghiệp, bao gồm nhiều chủ đề nghiên cứu trong lĩnh vực thị giác máy tính như: phân loại hình ảnh, phát hiện mục tiêu, phân đoạn mục tiêu, tạo hình ảnh siêu phân giải, và nhiều hơn nữa.
+
+Từ khi được mở cửa vào năm 2018, OpenMMLab đã phát hành hơn 20 thư viện thuật toán, bao gồm hơn 250 cách triển khai thuật toán và 2000 mô hình được huấn luyện trước1. OpenMMLab đã thu hút được hơn 60,000+ người theo dõi trên GitHub, với sự tham gia của hơn 1,300 nhà phát triển cộng đồng.
+
+OpenMMLab cung cấp các thư viện chất lượng cao để giảm khó khăn trong việc tái cài đặt thuật toán, tạo ra chuỗi công cụ triển khai hiệu quả hướng đến nhiều backend và thiết bị khác nhau2. Dựa trên PyTorch, OpenMMLab phát triển MMEngine để cung cấp động cơ đào tạo và đánh giá phổ biến, và MMCV để cung cấp các toán tử mạng nơ-ron và biến đổi dữ liệu, phục vụ như một nền tảng cho toàn bộ dự án.
+
+OpenMMLab đã phát hành hơn 30 thư viện thị giác, đã triển khai hơn 300 thuật toán, và chứa hơn 2000 mô hình được huấn luyện trước.
+
+MMCV là một thư viện nền tảng cho nghiên cứu thị giác máy tính cung cấp các chức năng chính như sau:
+\begin{itemize}
+	\item xử lý ảnh/video
+	\item trực quan hoá ảnh và nhãn của ảnh
+	\item biến đổi ảnh
+	\item các kiến trúc CNN khác nhau
+	\item triển khai chất lượng cao của các phép tính CUDA phổ biến
+\end{itemize}
+
+MMDectection là một hộp công cụ phát hiện đối tượng chứa tập hợp các phương pháp phát hiện đối tượng phong phú, phân đoạn các thể hiện và phân đoạn toàn cảnh, cũng như  các thành phân liên quan và các mô đun. Dưới đây là toàn bộ khung của framework:
+\begin{itemize}
+	\item \textbf{api} cung cấp các APIs để hỗ trợ suy luận (inference)
+	\item \textbf{structures} cung cấp các cấu trúc dữ liệu như bbox, mask, DetDataSample
+	\item \textbf{datasets} hỗ trợ nhiều loai dataset khác nhau để phát hiện đối tượng, phân đoạn đối tượng, phân đoạn toàn cảnh
+	\begin{itemize}
+		\item \textbf{transforms} cung cấp nhiều phép biến đổi làm giàu dữ liệu
+	   \item \textbf{samplers} định nghĩa các chiến lược mẫu nạp dữ liệu khác nhau
+	\end{itemize}
+
+	\item \textbf{models} là phần quan trọng nhất của bộ phát hiện, chứa các thành phần khác nhau của bộ phát hiện
+	\begin{itemize}
+	\item \textbf{detectors} \text{định nghĩa tất các các lớp mô hình phát hiện}
+	\item \textbf{data\_preprocessors} \text{tiền xử lý dữ liệu đầu vào của mô hình}
+	\item \textbf{backbones} \text{chứa nhiều mạng xương sống khác nhau} 
+	\item \textbf{nexts} chứa \text{các thành phần cổ khác nhau của bộ phát hiện} 
+	\item \textbf{dense\_heads} \text{ chứa phần đầu của bộ phát hiện thực hiện dự đoán dày đặc}
+	\item \textbf{roi\_heads} \text{chứa các phần đầu của bộ phát hiện dự đoán từ RoIs} 
+	\item \textbf{seg\_heads} \text{chứa nhiều các head dành cho bài toán phân đoạn} 
+	\item \textbf{losses} \text{ chứa các hàm loss khác nhau}
+	\item \textbf{task\_modules} \text{ cung cấp các module cho các tác vụ phát hiện cụ thể 
+		 ví dụ: assigners, samplers, box coders và prior generators.}
+	\item \textbf{layers} \text{cung cấp một vài lớp mạng cơ bản}
+	\end{itemize}
+	\item \textbf{engine} là một phần của của các thành phần chạy
+	\begin{itemize}
+		\item \textbf{runner} cung cấp các thành phần mở rộng của MMengine's runner
+		\item \textbf{schedulers} cung cấp bộ lập lich để điều chỉnh các siêu tham số tối ưu mạng
+		\item \textbf{optimizers} cung cấp bộ tối ưu và lớp bao tối ưu
+		\item \textbf{hooks} cung cấp các phần móc kết nối của bộ chạy
 		
-		\floatname{algorithm}{Thuật toán}
-		\caption{\textsc{Thuật toán tìm bao lồi dưới} $\hbox{conv}_L(P)$}  \label{al-blduoi}
-		\textbf{Đầu vào: }Cho $P=\{p_i=(x_i,y_i,z_i)\in \mathbb{R}^3,\ i=1,\dots,n\}, n\ge 3$.\\
-		\textbf{Đầu ra:} Tập ${\cal Q}$ tất cả các mặt dưới của $\hbox{conv}_L(P)$.
-		
-		\begin{algorithmic}[1]
-			
-			
-			\State Tìm cạnh đầu tiên $e_0$ của $\hbox{conv}_L(P)$. 
-			\State Xét hàng đợi ${\cal Q}:=\emptyset$ và tập ${\cal E}_L(P):=\emptyset$.
-			
-			\State Gọi {\bf LFRes}($e, P$) để nhận được một mặt dưới $F_e$ qua $e_0$. Đẩy các cạnh của $F_e$  trừ $e_0$ vào trong ${\cal E}_L(P)$. Đẩy $F_e$ vào trong tập ${\cal Q}$.
-			
-			\State  {\bf while} $({\cal Q}\ne\emptyset)$ {\bf do}
-			
-			\State 
-			\quad \quad Lấy $F_e$ từ phía trên của  ${\cal Q}$.
-			
-			\State 	\quad \quad \quad \quad $T:=$ tập các cạnh $F_e$.
-			
-			\State 	\quad \quad \quad \quad {\bf for each} $e \in T\cap  {\cal E}_L(P)$ {\bf do}
-			
-			\State 
-			\quad \quad\quad \quad\quad \quad Gọi {\bf LFRes}($e, P$) để nhận được mặt $F'_e$ có chung cạnh $e$ với $F_e$. \hspace*{2.5cm}Đưa vào ${\cal E}_L(P)$ tất cả các cạnh $e' \ne e_0$ của $F'_e$ chưa xuất hiện trong \hspace*{2.5cm} ${\cal E}_L(P)$ và xoá các cạnh đã xuất hiện trong ${\cal E}_L(P)$. Đẩy $F'_e$ vào ${\cal Q}$.
-		
-			
-		\end{algorithmic}
-	\end{algorithm}
+	\end{itemize}
+	\item \textbf{evaluation} cung cấp các tham số khác nhau để đánh giá hiệu năng của mô hình
+	\item \textbf{visualization} dùng để trực quan hoá các kết quả phát hiện
+	
+	
+\end{itemize}
+
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=445px]{./demo_mmrotate_result.jpg}
+		\caption{Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}
+		\label{demo_mmrotate_result}
+	\end{center}
+\end{figure} 
+
+\section{Tập dữ liệu DOTA} 
+
+Tập dữ liệu được sử dụng trong đồ án chính là tập dữ liệu DOTA v1.0. Tập dữ liệu DOTA được thu thập từ nền tảng Google Earth, GF-2 và vệ tinh JL-1 được cung cấp bởi Trung tâm Trung quốc nghiên cứu dữ liệu vệ tinh và ứng dụng, và các hình ảnh trên không được cung cấp bởi CycloMedia B.V. DOTA bao gồm các ảnh RGB và các ảnh mức xám. Tất cả các ảnh đều được lưu trữ dưới định dạng png. (\textit{bổ sung trích dẫn vào đây}). Tập dữ liệu DOTA có 3 phiên bản: v1.0, v1.5 và v2.0. Riêng tập dữ liệu v1.0 đã được chia sẵn các tập train, test, val.
+
+Danh mục các đối tượng trong tập DOTA v1.0 bao gồm: \textit{plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field and swimming pool.}
+
+Về định dạng nhãn, mỗi đối tượng được gán nhãn bởi một hộp bao có hướng (oriented bounding box - OBB), được ký hiệu là: $(x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4)$. Trong đó $(x_i, y_i)$ biểu thị đỉnh thứ i của OBB. Các đỉnh được sắp xếp theo chiều kim đồng hồ. Ảnh \ref{minh_hoa_hop_bao_dota} minh hoạ trực quan các nhãn. Điểm màu vàng đại diện cho điểm bắt đầu, có nghĩa là: a) góc trái của máy bay, b) góc trái trên cùng của một phương tiện to, c) trung tâm của một sân bóng chày.
+
+Mỗi một thể hiện trong file nhãn có thêm một danh mục (category) và độ khó (difficult) biểu thi liệu thể hiện này có khó nhận diện hay không (1 là khó, 0 là không khó). Các nhãn của một ảnh được lưu trong một file text với cùng tên file. Mỗi dòng trong file đại diện cho một thể hiện. Ví dụ:
+
+$x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4$, category, difficult 
+
+$x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4$, category, difficult 
+
+...
+
+Sau khi download được tập dữ liệu DOTA về máy, thực hiện tiền xử lý dữ liệu. Ở đây sử dụng bộ tool dotadevkit (dùng lệnh pip install dotadevkit để cài đặt). Sử dụng lệnh để chia ảnh ra với 8 process, kích thước ảnh 1024 pixels, overlaps 200. Sau khi chia ta có cây thư mục của tập dữ liệu như sau:
+
+\dirtree{%
+	.1 dota-dataset.
+	.2 train\_split.
+	.3 images.
+	.4 P001.png.
+	.4 P003.png.
+	.4 ....
+	.3 labelTxt.
+	.4 P001.txt.
+	.4 P002.txt.
+	.4 ....
+	.3 images.txt.
+	.2 test.
+	.3 test\_info.json.
+	.3 images.
+	.2 val\_split.
+	.3 images.
+	.3 labelTxt.
+	.3 images.txt.
 }
 
-	\chapter{Một số kết quả tính toán }
+Với labelTxt chứa các file annotation dạng txt của từng ảnh, images là thư mục chứa các ảnh, còn images.txt là thư mục dùng cho việc evaluate bằng dotadevkit.
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=445px]{./minh_hoa_hop_bao_dota.jpg}
+		\caption{Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}
+		\label{minh_hoa_hop_bao_dota}
+	\end{center}
+\end{figure} 
+\subsection{Các bước thực hiện}
+Tiếp theo thực hiện cài đặt miniconda, là một phiên bản thu gọn của Anaconda. Sau đó chạy các câu lệnh sau:
+
+
+\begin{lstlisting}[language=bash, caption={Mô tả lệnh command line}, label={lst:command-line}]
+
+conda create -n mmrotate_v26_beta1 --no-default-packages \
+ python==3.9 -y 
+conda activate mmrotate_v26_beta1 
+conda config --add channels conda-forge 
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 \
+ cudatoolkit=11.6 -c pytorch -c conda-forge 
+cd mmcv
+git checkout v1.7.1
+pip install -r requirements/optional.txt 
+MMCV_WITH_OPS=1 pip install -e . -v 
+pip install mmdet==2.28.2 
+cd ../mmrotate 
+git checkout v0.3.4
+pip install -v -e . 
+conda install packaging 
+conda install scipy 
+conda install python-dateutil
+pip install future tensorboard
+
+\end{lstlisting}
+
+Tiếp theo cần phải thay thế code thuật toán mới vào thuật toán Jarvis. Để thay thế được ta cần phải thay thế vào thư viện mmcv, tìm đến kernel convex\_iou\_kernel.cuh để thay thế 2 hàm Jarvis và Jarvis\_and\_index. Hai hàm hày có đầu vào là một mảng các Point tên là in\_poly đại diện cho số điểm cần tìm bao lồi, n\_poly đại diện cho số lượng phần tử trong mảng in\_poly. Đầu tiên thay thế bằng thuật toán Outer Convex Approximation thứ nhất. Thuật toán này có code Python như sau:
+
+\begin{lstlisting}[language=Python, caption={Mô tả mã nguồn Python}, label={lst:python-code}]
+# import cac thu vien can thiet
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+# Khoi tao N_square
+N_square = 10000
+
+k = 16
+count = 0
+count1 = 0
+count2 = 0
+count3 = 0
+count4 = 0
+
+
+def outer_convex_approximation(X, delta):
+# Rotation angle
+alpha = -math.pi / 2
+
+# Rotation Matrix
+R = np.array([[math.cos(alpha), math.sin(alpha)], 
+	 [-math.sin(alpha), math.cos(alpha)]])
+#     print("Tap X: ", X)
+# Step I: Determine D and P
+D = [(1, 0), (0, 1), (-1, 0), (0, -1)]  # khoi tao D
+       		 # theo cong thuc (7)
+# cong thuc (8)
+min_x = np.min((X[:, 0]))
+max_x = np.max(X[:, 0])
+min_y = np.min((X[:, 1]))
+max_y = np.max(X[:, 1])
+
+#  r1, r2, r3, r4 duoc dat theo
+# cong thuc (10)
+r1 = (max_x, max_y)
+r2 = (min_x, max_y)
+r3 = (min_x, min_y)
+r4 = (max_x, min_y)
+
+# Khoi tao P theo cong thuc (9)
+P = np.array([r1, r2, r3, r4]) 
+
+# STEP II: gan Pdoubt = P
+Pdoubt = P[:]
+Ptest = P[:]
+global count, count4, count1, count2, count3
+# Step III: lap den khi Pdoubt rong
+# Dat bien count de xem so lan chay
+
+# Neu so dinh Pdoubt > 0, tiep tuc lap
+while Pdoubt.shape[0] > 0: 
+count += 1
+pdoubt = Pdoubt[0]  # lay gia tri pdoubt thuoc Pdoubt
+
+# Xac dinh diem lien truoc va lien sau
+# theo chieu kim dong ho cua pdoubt
+pdoubt_index_idx = np.where(
+      np.all(Ptest == pdoubt, axis=1))[0][0]
+pdoubt_minus = Ptest[(pdoubt_index_idx - 1) % len(Ptest)]  # diem lien truoc
+pdoubt_plus = Ptest[(pdoubt_index_idx + 1) % len(Ptest)]  # diem lien sau
+
+# Xac dinh dp
+dp = np.dot(R, ((pdoubt_minus - pdoubt_plus).T)) /
+	 np.linalg.norm(pdoubt_minus - pdoubt_plus)
+
+# xac dinh beta_dp
+beta_dp = np.max(np.dot(dp, X.T))
+
+# kiem tra cong thuc (16)
+
+if beta_dp == np.dot(dp, pdoubt_plus):
+count1 += 1
+# Loai bo cac phan tu cua mang theo (17)
+D.append(dp)  # Them dp vao danh sach D
+
+P = np.delete(P, np.where(
+	np.all(P == pdoubt, axis=1))[0], axis=0)
+Pdoubt = np.delete(Pdoubt, np.where(
+	np.all(Pdoubt == pdoubt, axis=1))[0], axis=0)
+Ptest = np.delete(Ptest, np.where(
+	np.all(Ptest == pdoubt, axis=1))[0], axis=0)
+
+
+# Kiem tra (18) va (19)
+elif np.dot(dp, pdoubt.T) - beta_dp > delta:
+count2 += 1
+
+# Khoi tao cong thuc (20)
+lambda_p = (beta_dp - np.dot(dp, pdoubt_minus.T)) /
+		 (np.dot(dp, pdoubt.T) 
+		 - np.dot(dp, pdoubt_minus.T))  # lambda_p
+p_hat_minus = (1 - lambda_p) * (pdoubt_minus.T) 
+		+ lambda_p * (pdoubt.T)  # p^
+p_hat_plus = (1 - lambda_p) * (pdoubt_plus.T)
+		+ lambda_p * (pdoubt.T)  # p^+
+
+D.append((dp[0], dp[1]))  # Them dp vao danh sach D
+# tim chi so cua pdoubt trong mang Pdoubt
+pdoubt_indexp = np.where(np.all(P == pdoubt, axis=1))[0][0]
+
+# tim chi so cua pdoubt trong mang Pdoubt
+pdoubt_index = np.where(np.all(Pdoubt == pdoubt, axis=1))[0][0]
+
+# Xoa pdoubt khoi mang Pdoubt va
+# them p_hat_minus va p_hat_plus
+Pdoubt = np.delete(Pdoubt, pdoubt_index, axis=0)
+
+if np.allclose(p_hat_plus, pdoubt) 
+    and np.allclose(p_hat_minus, pdoubt):
+count4 += 1
+ptest_index = np.where(
+		 np.all(Ptest == pdoubt, axis=1))[0][0]
+Ptest = np.concatenate((Ptest[:ptest_index],
+		 Ptest[ptest_index + 1:], [Ptest[ptest_index]]))
+
+else:
+# Xoa pdoubt khoi mang P
+P = np.delete(P, pdoubt_indexp, axis=0)
+
+# test voi Ptest
+ptest_index = np.where(np.all(Ptest == pdoubt, axis=1))[0][0]
+Ptest = np.delete(Ptest, ptest_index, axis=0)
+
+if np.allclose(p_hat_plus, pdoubt_plus):
+print("1")
+else:
+P = np.insert(P, pdoubt_indexp, p_hat_plus, axis=0)
+Pdoubt = np.insert(Pdoubt, pdoubt_index, p_hat_plus, axis=0)
+Ptest = np.insert(Ptest, ptest_index, p_hat_plus, axis=0)
+if np.allclose(p_hat_minus, pdoubt_minus):
+print("2")
+else:
+P = np.insert(P, pdoubt_indexp, p_hat_minus, axis=0)
+Pdoubt = np.insert(Pdoubt, pdoubt_index, p_hat_minus, axis=0)
+Ptest = np.insert(Ptest, ptest_index, p_hat_minus, axis=0)
+
+
+# cac truong hop con lai
+else:
+count3 += 1
+Pdoubt = np.delete(Pdoubt, np.where(np.all(Pdoubt == pdoubt, axis=1))[0][0],
+axis=0)  # xoa pboubt khoi Pboubt
+
+ptest_index = np.where(np.all(Ptest == pdoubt, axis=1))[0]
+Ptest = np.concatenate((Ptest[:ptest_index[0]],
+	 Ptest[ptest_index[0] + 1:], [Ptest[ptest_index[0]]]))
+
+# Step V: Tra ve D va P
+return D, P
+
+
+# Kiem tra giai thuat voi du lieu
+p1 = np.array([-130.658, -128])
+p2 = np.array([-87.522, -128])
+p3 = np.array([48.95, -104.547])
+p4 = np.array([97.871, -89.647])
+p5 = np.array([124.452, -69.508])
+p6 = np.array([143.815, -35.205])
+p7 = np.array([168, 62.629])
+p8 = np.array([168, 96])
+p9 = np.array([127.717, 128])
+p10 = np.array([82.477, 128])
+p11 = np.array([-61.85, 109.243])
+p12 = np.array([-102.638, 98.195])
+p13 = np.array([-124.269, 81.396])
+p14 = np.array([-140.644, 46.529])
+p15 = np.array([-168, -67.84])
+p16 = np.array([-168, -99.849])
+
+# Liet ke danh sach cac phan tu trong P
+P = np.array([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
+   p11, p12, p13, p14, p15, p16, p1])
+
+
+alpha = -math.pi / 2
+
+# Ma tran xoay
+R = np.array([[math.cos(alpha), math.sin(alpha)],
+    [-math.sin(alpha), math.cos(alpha)]])
+
+# Xoay mang P
+po = np.dot(P, R)
+
+# Determine min, max of p
+# cong thuc (8)
+x_min = np.nanmin(po[:, 0])
+x_max = np.nanmax(po[:, 0])
+y_min = np.nanmin(po[:, 1])
+y_max = np.nanmax(po[:, 1])
+
+xy_min = [x_min, y_min]
+xy_max = [x_max, y_max]
+
+# Khoi tao X
+X = np.random.uniform(low=xy_min, high=xy_max,
+       size=(N_square, 2))
+
+
+def outside(points, a, b):
+res = np.array([])
+nx = b[1] - a[1]
+ny = a[0] - b[0]
+d = nx * a[0] + ny * a[1]
+l = nx * points[:, 0] + ny * points[:, 1]
+res = np.append(res, l - d >= 0)
+return res
+
+
+# Delete the points outside the polygon to creat a test set
+for j in range(k):
+X = np.delete(X, np.where(outside(X[:], po[j], po[j + 1])), 0)
+X = X[0:50]
+
+delta = 0.0
+D, P = outer_convex_approximation(X, delta)
+print("=====================tap D=====================")
+for i in D:
+print(i)
+print("=====================tap P=====================")
+for i in P:
+print(i)
+print("So dinh P: ", P.shape[0])
+
+# Plotting
+from scipy.spatial import ConvexHull
+
+# Tao cac mang x, y tu tap P
+x = P[:, 0]
+y = P[:, 1]
+
+# Tim bao loi cua tap diem
+points = np.column_stack((x, y))
+hull = ConvexHull(points)
+
+# Lay cac diem tren bao loi
+convex_points = points[hull.vertices]
+
+# Them diem dau tien va diem cuoi cung
+# vao thanh da giac hoan chinh
+convex_points = np.vstack((convex_points, convex_points[0]))
+
+# Plotting
+fig, ax = plt.subplots(figsize=(8, 8))
+ax.plot(X[:, 0], X[:, 1], 'r.')
+ax.plot(P[:, 0], P[:, 1], 'r.')
+ax.plot(convex_points[:, 0], convex_points[:, 1],
+   'k-', linewidth=2)
+ax.set_xlabel('X', fontsize=12)
+ax.set_ylabel('Y', fontsize=12)
+ax.set_title('Outer Convex Approximation', fontsize=14)
+plt.grid(True)
+plt.show()
+\end{lstlisting}
+
+
+Kết quả của thuật toán trên chạy được như sau:
+
+=====================tap D=====================\\
+(1, 0)\\
+(0, 1)\\
+(-1, 0)\\
+(0, -1)\\
+(0.7961489047057314, 0.6051007532104583)\\
+(0.9616657625387172, 0.2742242898811617)\\
+(0.9970047924756573, 0.07733979428839684)\\
+(0.9997125319367726, 0.023976102447383348)\\
+(0.9991870149267179, 0.04031512373582385)\\
+(0.9992238689619551, 0.03939111189978383)\\
+(0.9644107585317357, 0.2644085642112263)\\
+(0.966079763964431, 0.2582438569616504)\\
+(0.8253570386950088, 0.5646111570599768)\\
+(0.8281780808160076, 0.5604650448118191)\\
+(0.06376934956809235, 0.9979646637309673)\\
+$[0.16708673 0.9859422]$\\
+(-0.9549076761020365, 0.2969028967885088)\\
+(-0.3704427977145033, 0.9288552813121382)\\
+(-0.027620690279301655, 0.9996184759539485)\\
+(-0.00775533544633372, 0.9999699269338628)\\
+(-0.9248619391440728, 0.38030302854784814)\\
+$[-0.86108908  0.50845413]$\\
+(-0.9996753207961744, 0.025480443305911808)\\
+(-0.9736272479423732, 0.22814465162295683)\\
+(-0.7456221090230699, -0.6663690197900778)\\
+(-0.9485403472713666, -0.3166562956871619)\\
+(-0.9781544815182065, -0.2078793166379199)\\
+(-0.9851213832260862, -0.17186000206773738)\\
+(-0.9939783191936558, -0.10957691806651215)\\
+(-0.9694661381128835, -0.2452252169995803)\\
+(-0.2404163108063484, -0.9706698705009161)\\
+(-0.41487577608285514, -0.9098780634896353)\\
+(-0.6756181530719187, -0.7372517285430326)\\
+(-0.1108120877182518, -0.993841376284728)\\
+(-0.22747015261849787, -0.9737850531137338)\\
+(0.6453245779421027, -0.7639084952426219)\\
+(0.43292394969208786, -0.9014304486664528)\\
+(0.19846709 -0.98010755)\\
+(0.86030391 -0.50978151)\\
+=====================tap P=====================\\
+$\left[104.33701733 -84.23781101\right]$\\
+$\left[100.49510361  13.21899328\right]$\\
+$\left[92.95447702 41.42817061\right]$\\
+$\left[ 25.06239458 141.74974297\right]$\\
+$\left[-32.11772958 151.44000695\right]$\\
+$\left[-111.3467922   150.82554052\right]$\\
+$\left[-119.19653859  137.5316551 \right]$\\
+$\left[-126.58633802  105.99503996\right]$\\
+$\left[-119.95412846   45.83389818\right]$\\
+$\left[ -81.45280839 -106.37608469\right]$\\
+$\left[ -50.01887509 -135.18216969\right]$\\
+$\left[  23.65812963 -152.39266133\right]$\\
+$\left[  69.44520875 -143.12099702\right]$\\
+So dinh P:  13\\
+
+
+Thuật toán có mã Python như trên, cần phải chuyển đổi về mã CUDA C++ để thay thế thuật toán Jarvis ở trong thư viện mmcv. 
+
+Mã CUDA C++ sẽ được thay thế vào hàm Jarvis của file cuda\_iou\_kernel.cuh. Trước tiên ta có vài hàm dùng chung như sau:
+
+
+\begin{lstlisting}
+#define MAXN_CUSTOM 99999
+#define MAXN 100
+#define NMAX 512
+#define NMIN -999999
+
+__device__ const double EPS = 1E-8;
+
+__device__ inline int sig(double d)
+ { return (d > EPS) - (d < -EPS); }
+
+struct Point {
+	double x, y;
+	__device__ Point() {}
+	__device__ Point(double x, double y) : x(x), y(y) {}
+};
+//====bat dau sua code tu day=====
+// Ham tinh giai thua
+__device__ inline double factorial(int n) {
+	if (n == 0 || n == 1) {
+		return 1;
+	} else {
+		return n * factorial(n - 1);
+	}
+}
+// Ham tinh luy thua
+__device__ inline double power(double base, int exponent) {
+	double result = 1.0;
+	for (int i = 0; i < exponent; ++i) {
+		result *= base;
+	}
+	return result;
+}
+// Ham tinh sin theo phuong phap Taylor
+__device__ inline double sin(double x) {
+	int terms = 10;
+	double result = 0.0;
+	for (int n = 0; n < terms; ++n) {
+		result += power(-1, n) * 
+		power(x, 2 * n + 1) / factorial(2 * n + 1);
+	}
+	return result;
+}
+__device__ inline double sqrt(double x) {
+	if (x < 0) {
+		return -1;
+	}
+	
+	double guess = x / 2;
+	double previous_guess = 0;
+	
+	while (guess != previous_guess) {
+		previous_guess = guess;
+		guess = (guess + x / guess) / 2;
+	}
+	
+	return guess;
+}
+// Ham tinh cos theo phuong phap Taylor
+__device__ inline double cos(double x) {
+	return sqrt(1 - sin(x) * sin(x));
+}
+//tinh max cua hai diem
+__device__ inline double f_max(double x, double y) {
+	if (x > y) {
+		return x;
+	}
+	else {
+		return y;
+	}
+}
+__device__ inline double fabs(double x) {
+	if (x >= 0) {
+		return x;
+	}
+	else {
+		return -x;
+	}
+}
+
+
+//copy phan tu tu mang nay sang mang khac
+__device__ inline void copy_points(
+Point* src, Point* dst, int& n_src, int& n_dst) {
+	// Sao chep tung phan tu cua mang
+	for (int i = 0; i < n_src; i++) {
+		if (src[i].x != NMIN && src[i].y != NMIN) {
+			dst[i].x = src[i].x;
+			dst[i].y = src[i].y;
+		}
+		
+	}
+	//thay doi lai so phan tu cua mang in_poly
+	n_dst = n_src;
+}
+
+__device__ inline void find_all_point(
+Point *P, int n, Point p, int result[]) {
+	// khoi tao mang ket qua
+	
+	for (int i = 0; i < n; i++) {
+		result[i] = NMIN;
+	}
+	
+	//Khoi tao bien dem
+	int count = 0;
+	
+	// Duyet qua mang P
+	for (int i = 0; i < n; i++) {
+		// Neu phan tu P[i] khop voi phan tu can tim
+		if (P[i].x == p.x && P[i].y == p.y) {
+			// Them chi so cua phan tu
+			// P[i] vao mang ket qua
+			result[count++] = i;
+		}
+	}
+}
+
+//chen Point vao Point* theo index
+__device__ inline void insert_point_to_index(
+			Point* P, int& n, int index, Point p) {
+	// Kiem tra index hop le
+	if (index < 0 || index > n) {
+		return;
+	}
+	
+	// Di chuyen cac phan tu sau vi tri 
+	// can chen len 1 vi tri
+	for (int i = n; i > index; i--) {
+		P[i] = P[i - 1];
+	}
+	
+	// Chen phan tu vao vi tri can chen
+	P[index].x = p.x;
+	P[index].y = p.y;
+	
+	// Cap nhat kich thuoc cua mang
+	n++;
+}
+
+//Xoa Point trong mang theo index
+__device__ inline void delete_point_by_index(
+				Point* P, int& n, int index) {
+	// Kiem tra index co hop le
+	if (index < 0 || index >= n) {
+		return;
+	}
+	
+	// di chuyen cac phan tu sau phan tu
+	// can xoa len mot vi tri
+	for (int i = index; i < n - 1; i++) {
+		P[i] = P[i + 1];
+	}
+	P[n - 1].x = NMIN;
+	P[n - 1].y = NMIN;
+	// Cap nhat kich thuoc cua mang
+	n--;
+}
+
+//di chuyen Point xuong cuoi mang
+__device__ inline void move_point_to_end(
+				Point* P, int n, int index) {
+	// Luu tru phan tu can di chuyen 
+	Point temp = P[index];
+	
+	// DI chuyen cac phan tu len mot vi tri
+	for (int i = index; i < n - 1; i++) {
+		P[i] = P[i + 1];
+	}
+	
+	// Dat cac phan tu can di chuyen vao vi tri cuoi cung
+	P[n - 1] = temp;
+}
+
+//kiem tra allclose cua ca hai Point
+__device__ inline bool allclose(
+		const Point& p1, const Point& p2,
+		 double rtol = 1e-5, double atol = 1e-8) {
+	// tinh do lech tuong doi cua hai phan tu x
+	double rel_diff_x = fabs(p1.x - p2.x)
+	    / (atol + rtol * f_max(fabs(p1.x), fabs(p2.x)));
+	
+	//tinh do lech tuong doi cua hai phan tu y
+	double rel_diff_y = fabs(p1.y - p2.y)
+	    / (atol + rtol * f_max(fabs(p1.y), fabs(p2.y)));
+	
+	// kiem tra xem ca hai do lech tuong doi
+	// deu nho hon hoac bang 1
+	return rel_diff_x <= 1.0 && rel_diff_y <= 1.0;
+}
+
+//xoa mot Point trong mang khong dung index
+__device__ inline void delete_point(
+		Point* P, int& n, Point pdoubt) {
+	// Tim chi so cua phan tu can xoa
+	int index = -1;
+	for (int i = 0; i < n; i++) {
+		if (P[i].x == pdoubt.x && P[i].y == pdoubt.y) {
+			index = i;
+			break;
+		}
+	}
+	
+	// Neu tim thay phan tu can xoa
+	if (index != -1) {
+		// di chuyen cac phan tu con lai len tren
+		for (int i = index + 1; i < n; i++) {
+			P[i - 1] = P[i];
+		}
+		
+		// Thay the phan tu cuoi cung nullptr
+		P[n - 1].x = NMIN;
+		P[n - 1].y = NMIN;
+		//giam n di mot don vi
+		n--;
+	}
+}
+
+//tim index cua Point trong mang
+__device__ inline int find_index(
+			Point* P, int n, Point pdoubt) {
+	// Duyet qua tat ca cac phan tu cua P
+	for (int i = 0; i < n; i++) {
+		// Neu phan tu thu i khop voi pdoubt
+		if (P[i].x == pdoubt.x && P[i].y == pdoubt.y) {
+			// Tra ve chi so cua phan tu thu i
+			return i;
+		}
+	}
+	
+	// Phan tu pdoubt khong ton tai
+	return -1;
+}
+
+//cong hai ma tran cung chieu voi nhau
+__device__ inline void add_two_matrix(
+		double A[1][2], double B[1][2],
+		 int m, int n, double C[1][2]) {
+	
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			C[i][j] = 0;
+		}
+	}
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			// Cong cac phan tu
+			// tuong ung cua hai ma tran
+			C[i][j] = A[i][j] + B[i][j];
+		}
+	}
+}
+
+//nhan ma tran hai chieu voi mot so double
+__device__ inline void multiply_matrix_with_double(
+		double matrix[1][2], int n, int m,
+		double scalar, double result[1][2]) {
+	
+	// thuc hien lap
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			result[i][j] = matrix[i][j] * scalar;
+		}
+	}
+	
+}
+
+//xoa Point trong mang
+__device__ inline void deletePoint(
+		Point* arr, int& n, Point p) {
+	// Tim vi tri cua phan tu can xoa
+	int index = 0;
+	for (int i = 0; i < n; i++) {
+		if (arr[i].x == p.x && arr[i].y == p.y) {
+			index = i;
+			break;
+		}
+	}
+	
+	// Di chuyen cac phan tu sau vi tri can xoa len 1 vi tri
+	for (int i = index + 1; i < n; i++) {
+		arr[i - 1] = arr[i];
+	}
+	
+	// Gan null cho phan tu can xoa
+	arr[n - 1].x = NMIN;
+	arr[n - 1].y = NMIN;
+	//giam so phan tu cua mang di
+	n--;
+}
+
+//chuyen ma tran 2x1 ve kieu Point
+__device__ inline void convert_double_to_point(
+			double matrix[1][2], Point& point) {
+	// Gan gia tri cho diem
+	point.x = matrix[0][0];
+	point.y = matrix[0][1];
+}
+
+//tich vo huong cua ma tran va Point
+__device__ inline double dot_product(
+	double matrix[1][2], Point point) {
+	// Khoi tao tich vo huong
+	double dot_product = 0;
+	dot_product += matrix[0][0] * point.x
+	 + matrix[0][1] * point.y;
+	return dot_product;
+}
+
+//Lay ra phan tu lon nhat trong ma tran
+__device__ inline double get_max_value(
+    double mul_dp_xtranspose[1][50], int rows, int n_poly) {
+	// Khoi tao gia tri max
+	double max_value = -DBL_MAX;
+	int max_index = -1;
+	
+	// Lap qua cac phan tu cua mang
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < n_poly; j++) {
+			// So sanh gia tri hien tai
+			// voi gia tri max
+			if (mul_dp_xtranspose[i][j] > max_value) 
+			{
+			max_value = mul_dp_xtranspose[i][j];
+			}
+		}
+	}
+	
+	// Tra ve gia tri max
+	return max_value;
+}
+__device__ inline void transpose_matrix(
+double A[][2], int cols, int rows, double A_transpose[][50]) {
+	
+	// Duyet qua tat ca cac phan tu cua ma tran A
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			// Thuc hien chuyen vi ma tran
+			A_transpose[j][i] = A[i][j];
+		}
+	}
+}
+
+// Ma tran chuyen vi cua con tro double**,
+// chuyen ma tran doc thanh ma tran ngang
+__device__ inline void transpose_dp(
+double matrix[2][1], double transposed_matrix[1][2]) {
+	// Gan gia tri cho ma tran chuyen vi
+	transposed_matrix[0][0] = matrix[0][0];
+	transposed_matrix[0][1] = matrix[1][0];
+}
+
+
+//chuyen Point sang double**
+__device__ inline void convert_point_to_matrix(
+Point* points, int n, double X[][2]) {
+	for (int i = 0; i < n; i++) {
+		X[i][0] = points[i].x;
+		X[i][1] = points[i].y;
+	}
+}
+
+// chia ma tran cho mot so
+__device__ inline void 
+divide_matrix_by_double_and_return_new_matrix
+(double matrix[2][1], double dp[2][1], 
+int rows, int cols, double d) {
+	
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			dp[i][j] = matrix[i][j] / d;
+		}
+	}
+}
+
+//tinh chuan Euclid 
+__device__ inline double norm_2(Point p) {
+	// Tinh binh phuong cua tung phan tu trong ma tran
+	double x2 = p.x * p.x;
+	double y2 = p.y * p.y;
+	return sqrt(x2 + y2);
+}
+
+//nhan hai ma tran voi nhau
+__device__ inline void multiply_matrix(
+double A[2][2], double B[2][1], 
+double C[2][1], int m, int n, int p) {
+	//Khoi tao ma tran ket qua
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < p; j++) {
+			C[i][j] = 0;
+		}
+	}
+	
+	// Nhan hai ma tran
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < p; j++) {
+			for (int k = 0; k < n; k++) {
+				C[i][j] += A[i][k] * B[k][j];
+			}
+		}
+	}
+}
+
+__device__ inline void multiply_matrix(
+double A[1][2], double B[2][50],
+ double C[1][50], int m, int n, int p) {
+	//Khoi tao ma tran ket qua
+	
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < p; j++) {
+			C[i][j] = 0;
+		}
+	}
+	
+	//  Nhan hai ma tran
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < p; j++) {
+			for (int k = 0; k < n; k++) {
+				C[i][j] += A[i][k] * B[k][j];
+			}
+		}
+	}
+}
+//tru hai diem cho nhau
+__device__ inline void subtract_points(
+Point p1, Point p2, Point& p3) {
+	p3.x = p1.x - p2.x;
+	p3.y = p1.y - p2.y;
+}
+
+__device__ inline void convert_point_to_matrix(
+Point p, double matrix[2][1]) {
+	matrix[0][0] = p.x;
+	matrix[1][0] = p.y;
+}
+//chuyen Point sang ma tran cot
+// chi danh cho ma tran kich thuoc 1x2
+__device__ inline void 
+convert_point_to_row_matrix
+(Point p, double matrix[1][2]) {
+	matrix[0][0] = p.x;
+	matrix[0][1] = p.y;
+}
+//Tim chi so cua Point trong mang
+__device__ inline int 
+find_point_index
+(Point* Ptest, Point pdoubt) {
+	
+	int index = -1;
+	for (int i = 0; i < MAXN_CUSTOM; i++) {
+		if (Ptest[i].x == pdoubt.x &&
+		 Ptest[i].y == pdoubt.y) {
+			index = i;
+			break;
+		}
+	}
+	if (index == -1) {
+		return -1;
+	}
+	return index;
+}
+
+
+//====ket thuc them ham=====
+\end{lstlisting}
+
+Hàm Jarvis sẽ được thay thế thành code dưới:
+
+\begin{lstlisting}
+__device__ inline void Jarvis(Point* in_poly, int& n_poly) {
+	
+	
+	
+	//global
+	double delta = 0.0;
+	//Khoi tao mang xoay R
+	double alpha = -M_PI / 2;
+	double R[2][2];
+	
+	R[0][0] = cos(alpha);
+	R[0][1] = sin(alpha);
+	R[1][0] = -sin(alpha);
+	R[1][1] = cos(alpha);
+	
+	Point D[MAXN_CUSTOM];
+	for (int i = 0; i < MAXN_CUSTOM; i++) {
+		D[i].x = NMIN;
+		D[i].y = NMIN;
+	}
+	D[0] = Point(1.0, 0.0);
+	D[1] = Point(0.0, 1.0);
+	D[2] = Point(-1.0, 0.0);
+	D[3] = Point(0.0, -1.0);
+	int D_size = 4;
+	
+	
+	// Khoi tao cac gia tri ban dau
+	double min_x = DBL_MAX;
+	double min_y = DBL_MAX;
+	double max_x = -DBL_MAX;
+	double max_y = -DBL_MAX;
+	
+	for (int i = 0; i < n_poly; i++) {
+		// Cap nhat gia tri nho nhat
+		if (in_poly[i].x < min_x) {
+			min_x = in_poly[i].x;
+		}
+		// Cap nhat gia tri nho nhat
+		if (in_poly[i].y < min_y) {
+			min_y = in_poly[i].y;
+		}
+		
+		// Cap nhat gia tri lon nhat
+		if (in_poly[i].x > max_x) {
+			max_x = in_poly[i].x;
+		}
+		
+		// Cap nhat gia tri lon nhat
+		if (in_poly[i].y > max_y) {
+			max_y = in_poly[i].y;
+		}
+	}
+	
+	//Khoi tao P
+	Point P[MAXN_CUSTOM];
+	for (int i = 0; i < MAXN_CUSTOM; i++) {
+		P[i].x = NMIN;
+		P[i].y = NMIN;
+	}
+	P[0] = Point( max_x, max_y );
+	P[1] = Point( min_x, max_y );
+	P[2] = Point( min_x, min_y );
+	P[3] = Point( max_x, min_y );
+	
+	int size_P = 4;
+	
+	
+	//Khoi tao Pdoubt
+	Point Pdoubt[MAXN_CUSTOM];
+	for (int i = 0; i < MAXN_CUSTOM; i++) {
+		Pdoubt[i].x = NMIN;
+		Pdoubt[i].y = NMIN;
+	}
+	Pdoubt[0] = Point( max_x, max_y );
+	Pdoubt[1] = Point( min_x, max_y );
+	Pdoubt[2] = Point( min_x, min_y );
+	Pdoubt[3] = Point( max_x, min_y );
+	int size_Pdoubt = 4;
+	
+	//Khoi tao Ptest
+	Point Ptest[MAXN_CUSTOM];
+	for (int i = 0; i < MAXN_CUSTOM; i++) {
+		Ptest[i].x = NMIN;
+		Ptest[i].y = NMIN;
+	}
+	Ptest[0] = Point( max_x, max_y );
+	Ptest[1] = Point( min_x, max_y );
+	Ptest[2] = Point( min_x, min_y );
+	Ptest[3] = Point( max_x, min_y );
+	
+	int size_Ptest = 4;
+	
+	int count = 0, count4 = 0, 
+	count1 = 0, count2 = 0, count3 = 0;
+	
+	
+	while (size_Pdoubt > 0) {
+		count += 1;
+		Point pdoubt = Pdoubt[0];
+		int pdoubt_index_idx 
+		= find_point_index(Ptest, pdoubt);
+		int pdoubt_minus_index 
+		= (pdoubt_index_idx + size_Ptest - 1)
+		 % size_Ptest;
+		// Lay chi so cua mang lien sau
+		int pdoubt_plus_index 
+		= (pdoubt_index_idx + 1) % size_Ptest;
+		// Lay phan tu cua mang lien truoc
+		Point pdoubt_minus
+		 = Ptest[pdoubt_minus_index];
+		// Lay phan tu cua mang lien sau
+		Point pdoubt_plus
+		 = Ptest[pdoubt_plus_index];
+		
+		Point result_sub_pminus_plus = { 0, 0 };
+		subtract_points(pdoubt_minus, 
+		pdoubt_plus, result_sub_pminus_plus);
+		
+		// Chuyen doi P thanh ma tran cot
+		double transposed_matrix[2][1];
+		convert_point_to_matrix(
+		result_sub_pminus_plus, transposed_matrix);
+		// Thuc hien nhan ma tran chuyen vi voi R
+		double result_mul_matrix[2][1];
+		multiply_matrix(
+		R, transposed_matrix, 
+		result_mul_matrix, 2, 2, 1);
+		
+		// Tinh chuan norm 2
+		double norm_sub_pminus_pplus
+		 = norm_2(result_sub_pminus_plus);
+		
+		// Tinh dp
+		double dp[2][1];
+		divide_matrix_by_double_and_return_new_matrix(
+		result_mul_matrix, dp,
+		2, 1, norm_sub_pminus_pplus);
+		
+		// Chuyen X ve ma tran
+		double X[50][2];
+		convert_point_to_matrix(in_poly, n_poly, X);
+		
+		double X_transpose[2][50];
+		transpose_matrix(X, 2, n_poly, X_transpose);
+		
+		//dp_tranpose 1x2
+		double dp_transpose[1][2];
+		transpose_dp(dp, dp_transpose);
+		
+		double mul_dp_xtranspose[1][50];
+		multiply_matrix(
+		dp_transpose, X_transpose,
+		 mul_dp_xtranspose, 1, 2, n_poly);
+		
+		//tinh Bdp
+		double beta_dp = get_max_value(
+		mul_dp_xtranspose, 1, n_poly);
+		
+		//kiem tra ket qua cua
+		// tich vo huong
+		if (beta_dp == dot_product(
+		dp_transpose, pdoubt_plus)) {
+		count1 += 1;
+		Point dp_transpose_point = { 0,0 };
+		convert_double_to_point(
+		dp_transpose, dp_transpose_point);
+		D[D_size] = dp_transpose_point;
+		D_size++;
+		deletePoint(P, size_P, pdoubt);
+		deletePoint(Pdoubt, size_Pdoubt, pdoubt);
+		deletePoint(Ptest, size_Ptest, pdoubt);
+		}
+		
+		else if (dot_product(dp_transpose, pdoubt) 
+		- beta_dp > delta) {
+		count2++;
+		double lambda_p = (beta_dp 
+		- dot_product(dp_transpose, pdoubt_minus))
+		/ (dot_product(dp_transpose, pdoubt)
+		 - dot_product(dp_transpose, pdoubt_minus));
+			
+			
+		double pdoubt_minus_convert_to_matrix[1][2];
+		convert_point_to_row_matrix(
+		pdoubt_minus, pdoubt_minus_convert_to_matrix);
+			
+		double pdoubt_convert_to_matrix[1][2];
+		convert_point_to_row_matrix(
+		pdoubt, pdoubt_convert_to_matrix);
+			
+		double A[1][2];
+		multiply_matrix_with_double(
+		pdoubt_minus_convert_to_matrix,
+		 1, 2, (1 - lambda_p), A);
+			
+		double B[1][2];
+		multiply_matrix_with_double(
+		pdoubt_convert_to_matrix,
+		 1, 2, lambda_p, B);
+			
+		double p_hat_minus[1][2];
+		add_two_matrix(A, B, 1, 2, p_hat_minus);
+			
+		double pdoubt_plus_convert_to_matrix[1][2];
+		convert_point_to_row_matrix(
+		pdoubt_plus, pdoubt_plus_convert_to_matrix);
+			
+		double C[1][2];
+		multiply_matrix_with_double(
+		pdoubt_plus_convert_to_matrix,
+		 1, 2, (1 - lambda_p), C);
+			
+		double p_hat_plus[1][2];
+		add_two_matrix(C, B, 1,
+		 2, p_hat_plus);
+			
+		Point dp_transpose_point = { 0,0 };;
+		convert_double_to_point(
+		dp_transpose, dp_transpose_point);
+		D[D_size] = dp_transpose_point;
+		D_size++;
+			
+		int pdoubt_indexp = find_index(
+		P, size_P, pdoubt);
+			
+		int pdoubt_index = find_index(
+		Pdoubt, size_Pdoubt, pdoubt);
+			
+		delete_point(Pdoubt,
+		size_Pdoubt, pdoubt);
+		Point p_hat_minus_point = { 0,0 };
+		Point p_hat_plus_point = { 0,0 };
+		convert_double_to_point(
+		p_hat_minus, p_hat_minus_point);
+		convert_double_to_point(
+		p_hat_plus, p_hat_plus_point);
+		if (allclose(pdoubt,
+		 p_hat_minus_point) &&
+		  allclose(pdoubt,
+		   p_hat_plus_point)) {
+			count4++;
+			int ptest_index =
+			 find_point_index(Ptest, pdoubt);
+			move_point_to_end(Ptest,
+			 size_Ptest, ptest_index);
+		}
+else {
+	delete_point_by_index(P, size_P, pdoubt_indexp);
+	int ptest_index = find_point_index(Ptest, pdoubt);
+	delete_point_by_index(Ptest, size_Ptest, ptest_index);
+	Point p_hat_plus_point(0, 0);
+	convert_double_to_point(p_hat_plus, p_hat_plus_point);
+	if (allclose(p_hat_plus_point, pdoubt_plus)) {
+		//cout << "1" << endl;
+	}
+else {
+	Point p_hat_plus_point = { 0,0 };
+	convert_double_to_point(
+	p_hat_plus, p_hat_plus_point);
+	insert_point_to_index(
+	P, size_P, pdoubt_indexp, p_hat_plus_point);
+	insert_point_to_index(
+	Pdoubt, size_Pdoubt,
+	 pdoubt_index, p_hat_plus_point);
+	insert_point_to_index(
+	Ptest, size_Ptest,
+		 ptest_index, p_hat_plus_point);
+		}
+		Point p_hat_minus_point = { 0,0 };
+		convert_double_to_point(
+		p_hat_minus, p_hat_minus_point);
+		if (allclose(p_hat_minus_point, pdoubt_minus)) {
+			//cout << "2" << endl;
+		}
+		else {
+	Point p_hat_minus_point = { 0,0 };
+	convert_double_to_point(p_hat_minus, p_hat_minus_point);
+	
+	insert_point_to_index(P, size_P,
+	 pdoubt_indexp, p_hat_minus_point);
+	insert_point_to_index(Pdoubt, size_Pdoubt,
+	 pdoubt_index, p_hat_minus_point);
+	insert_point_to_index(Ptest, size_Ptest,
+	 ptest_index, p_hat_minus_point);
+			
+			}
+			
+		}
+	}
+	else {
+	count3++;
+	delete_point(Pdoubt, size_Pdoubt, pdoubt);
+	int ptest_index[MAXN_CUSTOM];
+	find_all_point(Ptest, size_Ptest, pdoubt, ptest_index);
+	int first_index = ptest_index[0];
+	move_point_to_end(Ptest, size_Ptest, first_index);
+	}
+	
+}
+copy_points(P, in_poly, size_P, n_poly);
+\end{lstlisting}
+
+Một hàm khác cần thay thế là Jarvis\_and\_index(). Hàm này tương tự hàm Jarvis, nhưng bảo toàn thứ tự của các điểm trong bao lồi khi chúng còn là một tập hợp các điểm. Ta thêm vào đoạn code này phần đầu của hàm Jarvis\_and\_index():
+
+
+\begin{lstlisting}
+	//global
+int n_input = n_poly;
+Point input_poly[20];
+for (int i = 0; i < n_input; i++) {
+	input_poly[i].x = in_poly[i].x;
+	input_poly[i].y = in_poly[i].y;
+}
+\end{lstlisting}
+Tiếp theo ta thêm đoạn code tương tự đoạn code Jarvis bên trên. Cuối cùng ta thêm đoạn code sau đây để lấy được chỉ số của các điểm nằm trên bao lồi trong tập điểm gốc:
+
+\begin{lstlisting}
+for (int i = 0; i < n_poly; i++) {
+ for (int j = 0; j < n_input; j++) {
+ 	if (point_same(in_poly[i], input_poly[j])) {
+		points_to_convex_ind[i] = j;
+		break;
+  }
+ }
+}
+\end{lstlisting}
+
+\textit{thêm giải thích cho các hàm này}
+
+Tiếp theo ta có file code dùng để tuỳ chỉnh huấn luyện. File code này được viết bằng mã Python:
+\begin{lstlisting}
+# from mmcv import collect_env
+# print(collect_env())
+
+from mmcv import Config
+from mmrotate.datasets.builder import ROTATED_DATASETS
+from mmrotate.datasets.dota import DOTADataset
+
+
+@ROTATED_DATASETS.register_module()
+class CustomDotaDataset(DOTADataset):
+"""SAR ship dataset for detection."""
+CLASSES = ('plane', 'baseball-diamond', 
+'bridge', 'ground-track-field',
+'small-vehicle', 'large-vehicle',
+ 'ship', 'tennis-court',
+'basketball-court', 'storage-tank'
+, 'soccer-ball-field',
+'roundabout', 'harbor',
+ 'swimming-pool', 'helicopter')
+cfg = Config.fromfile('./configs/
+cfa/cfa_r50_fpn_40e_dota_oc.py')
+from mmdet.apis import set_random_seed
+
+#Modify dataset type and path
+cfg.dataset_type = 'CustomDotaDataset'
+cfg.data_root = 'data/dota-dataset/'
+
+cfg.data.test.type = 'CustomDotaDataset'
+cfg.data.test.data_root = 'data/dota-dataset/'
+cfg.data.test.ann_file = 'test_split/test_info.json'
+cfg.data.test.img_prefix = 'test/images'
+
+cfg.data.train.type = 'CustomDotaDataset'
+cfg.data.train.data_root = 'data/dota-dataset/'
+cfg.data.train.ann_file = 'train_split/labelTxt'
+cfg.data.train.img_prefix = 'train_split/images'
+
+cfg.data.val.type = 'CustomDotaDataset'
+cfg.data.val.data_root = 'data/dota-dataset/'
+cfg.data.val.ann_file = 'val_split/labelTxt'
+cfg.data.val.img_prefix = 'val_split/images'
+
+cfg.data.samples_per_gpu = 1
+cfg.data.workers_per_gpu = 1
+# modify num classes of the model in box head
+cfg.model.bbox_head.num_classes = 15
+# We can still use the pre-trained
+# RotateReppoint model though we do not need to
+
+# cfg.load_from = 'cfa_r50_fpn_40e_dota_oc-2f387232.pth'
+cfg.resume_from = './result_custom_mmcv_2/latest.pth'
+# Set up working dir to save files and logs.
+cfg.work_dir = './result_custom_mmcv_2'
+
+cfg.optimizer.lr = 0.001
+cfg.lr_config.warmup = None
+# cfg.runner.max_epochs = 40
+cfg.log_config.interval = 100
+
+# # Change the evaluation metric 
+# since we use customized dataset.
+cfg.evaluation.metric = 'mAP'
+# # We can set the evaluation interval 
+# to reduce the evaluation times
+cfg.evaluation.interval = 1
+# # We can set the checkpoint
+# saving interval to reduce the storage cost
+cfg.checkpoint_config.interval = 1
+
+# Set seed thus the results are more reproducible
+cfg.seed = 0
+set_random_seed(0, deterministic=False)
+cfg.gpu_ids = range(1)
+cfg.device='cuda'
+
+# We can also use tensorboard to log the training process
+cfg.log_config.hooks = [
+dict(type='TextLoggerHook'),
+dict(type='TensorboardLoggerHook')]
+
+
+import os.path as osp
+import os
+import mmcv
+from mmdet.datasets import build_dataset
+from mmdet.models import build_detector
+from mmdet.apis import train_detector
+
+import torch
+torch.cuda.empty_cache()
+
+# Build dataset
+datasets = [build_dataset(cfg.data.train)]
+
+# Build the detector
+model = build_detector(
+cfg.model, train_cfg=cfg.get('train_cfg'),
+ test_cfg=cfg.get('test_cfg'))
+# Add an attribute for visualization convenience
+model.CLASSES = datasets[0].CLASSES
+mmcv.mkdir_or_exist(osp.abspath(cfg.work_dir))
+train_detector(model, datasets,
+ cfg, distributed=False, validate=True)
+
+
+\end{lstlisting}
+
+\chapter{Một số kết quả tính toán }
 Trong nội dung này chúng tôi thử nghiệm số cho thuật toán trong \cite{An-Giang} và thuật toán vừa được trình bày ở mục trước để so sánh tốc độ của chúng. Các thuật toán này được thực thi bởi chương trình C và chạy trên PC Core i5 1.6 GHz 3M với 4 GB RAM.  
 
 Dưới đây Bảng \ref{tab:51} minh họa thời gian chạy (đơn vị tính bằng giây) của thuật toán tính bao lồi dưới được giới thiệu bởi P. T. An và D. T. Giang trong \cite{An-Giang} và Thuật toán \ref{al-matduoi} sử dụng kỹ thuật hạn chế của chúng tôi. Cột cuối cùng liệt kê tỉ lệ tăng tốc của thuật toán của chúng tôi so với thuật toán trong \cite{An-Giang}. Dữ liệu đầu vào của các thuật toán là các tập điểm được tạo trên bề mặt một paraboloid (tất cả các điểm đều là đỉnh của bao lồi và bao lồi dưới) có dạng $P = \{p_i = (x_i, y_i, z_i): x_i, y_i, z_i \in \mathbb{R}, z_i = x_i^2 + y_i^2, i = 1, \ldots, n\} \subset \mathbb{R}^3,$ trong đó tập $\{(x_i, y_i), x_i, y_i \in R, i = 1, \ldots , n \}$ được chọn ngẫu nhiên từ phân bố đều trong hình vuông cỡ 200 $\times$ 200. 
@@ -1346,10 +2666,10 @@ Dưới đây Bảng \ref{tab:51} minh họa thời gian chạy (đơn vị tín
 \chapter*{{Kết luận}}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt} Kết luận}
 
- Trong quá trình thực tập, em đã có cơ hội làm quen một môi trường làm việc mới. Em đã tính lũy những kinh nghiệm về kiến thức trong công việc cũng như các kinh nghiệm về kỹ năng mềm.
+Trong quá trình làm đồ án tốt nghiệp, em đã có cơ hội được trải nghiệm chuyên ngành AI cũng như được thử sức qua các công nghệ nhận diện ảnh mới nhất. Em đã tích luỹ được những kinh nghiệm về kiến thức trong công việc cũng như các kỹ năng mềm trong xử lý các công việc liên quan đến hệ điều hành linux, cách triển khai một dự án trí tuệ nhân tạo, cách tìm hiểu thông tin từ các tài liệu chính thống.
  
- Em được rèn luyện kĩ năng giải quyết công việc theo từng giai đoạn, cố gắng hoàn thành công việc trong thời gian cho phép, mạnh dạn trao đổi và chia sẻ kiến thức. Đồng thời cũng bồi dưỡng thêm rất nhiều kiến thức ngoài các kiến thức đã học trên trường.
- 
+Em được rèn luyện kỹ năng giải quyết các công việc con, cách tương tác với người khác để trao đổi kiến thức, từ đó rút ngắn công sức và thời gian. Đồng thời em cũng được áp dụng lại các kiến thức đã được học từ các môn trên trường vào đồ án thực tế này.
+
 
 
 
