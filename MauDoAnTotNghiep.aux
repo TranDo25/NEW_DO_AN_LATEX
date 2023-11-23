@@ -1,19 +1,20 @@
 \relax 
 \@writefile{toc}{\contentsline {chapter}{\bf  Danh sách hình vẽ}{iv}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\bf  Danh sách bảng}{vi}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Danh sách các ký hiệu và chữ viết tắt}{vii}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\bf  Danh sách bảng}{v}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Danh sách các ký hiệu và chữ viết tắt}{vi}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\vspace  *{-8pt} Mở đầu}{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng}{3}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Giới thiệu}{3}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Minh hoạ vấn đề. (Bên trên) Khi sử dụng cách biểu diễn dạng hộp, các đối tượng có hướng phân bố dày đặc gây ra hiện tượng đặc trưng răng cưa tại các vùng giao của trường tiếp nhận giữa các đối tượng. (Bên dưới) Với cách biểu diễn bao lồi, phương pháp CFA xử lý tốt các đặc trưng nằm trên lưới tích chập thông thường của các đối tượng có hướng phân bố không đều, giải quyết hiện tượng răng cưa đặc trưng hiệu quả}}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Minh hoạ vấn đề. (Bên trên) Sử dụng cách biểu diễn dạng hộp, so với cách biểu diễn bao lồi (Bên dưới), hiện tương răng cưa đã được xử lý}}{4}{}\protected@file@percent }
 \newlabel{fig_dhandang1}{{1.1}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Xây dựng tập bao lồi đầu tiên}{4}{}\protected@file@percent }
 \newlabel{convex_hull_definition}{{1.1}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Biểu đồ luồng quy trình thực hiện của bộ phát hiện CFA.}}{5}{}\protected@file@percent }
 \newlabel{work_flow_cfa}{{1.2}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces So sánh biểu diễn hộp có hướng (bên trên) so với biểu diễn bao lồi (ở dưới).}}{5}{}\protected@file@percent }
+\citation{DCN}
 \newlabel{convex_hull_learn_offset}{{1.2}{6}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Tích chập biến dạng}{6}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces So sánh tích chập thông thường và tích chập biến dạng.}}{6}{}\protected@file@percent }
@@ -23,6 +24,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Quá trình thực hiện tích chập biến dạng.}}{7}{}\protected@file@percent }
 \newlabel{deformable_process}{{1.6}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}Thuật toán Jarvis March}{7}{}\protected@file@percent }
+\citation{Guo_2021CVPR_CFA}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces mô tả các bước thực hiện thuật toán Jarvis March}}{8}{}\protected@file@percent }
 \newlabel{fig_dhandang1}{{1.7}{8}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.5}Đinh nghĩa công thức Convex Intersection over Union (CIoU)}{9}{}\protected@file@percent }
@@ -98,88 +100,66 @@
 \newlabel{fig_dhandang2_1}{{2.1}{19}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces $16$-sided frame polygon ${\cal  P}^\diamond $ of $n$ random points.}}{19}{}\protected@file@percent }
 \newlabel{fig_dhandang2_2}{{2.2}{19}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Số cạnh và số bước 3 lặp lại của từng giải thuật Outer Convex Approximation }}{20}{}\protected@file@percent }
-\newlabel{table02}{{2.1}{20}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Số cạnh của đa giác lồi xấp xỉ ${\cal  P}^{\rm  outer}$ được trả về bởi thuật toán \ref {al-blduoi0}--\ref {al-blduoi1} và số lần thực hiện của bước \ref {stepIIIalg01} khi $X$ gồm $n$ điểm ngẫu nhiên trong khung $16$ cạnh đa giác ${\cal  P}^\diamond $ thể hiện trong hình \ref {fig_dhandang2_2}.}}{21}{}\protected@file@percent }
-\newlabel{table01}{{2.2}{21}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Số cạnh của đa giác lồi xấp xỉ ${\cal  P}^{\rm  outer}$ được trả về bởi thuật toán \ref {al-blduoi0}--\ref {al-blduoi1} và số lần thực hiện của bước \ref {stepIIIalg01} khi $X$ gồm $n$ điểm ngẫu nhiên trong khung $16$ cạnh đa giác ${\cal  P}^\diamond $ thể hiện trong hình \ref {fig_dhandang2_2}.}}{20}{}\protected@file@percent }
+\newlabel{table01}{{2.1}{20}}
 \newlabel{ct2.30}{{2.30}{21}}
 \newlabel{ct2.31}{{2.31}{21}}
 \newlabel{ct2.32}{{2.32}{21}}
 \newlabel{ct2.33}{{2.33}{21}}
 \newlabel{ct2.34}{{2.34}{21}}
-\newlabel{ct2.35}{{2.35}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Tỷ lệ thời gian chạy của thuật toán \ref {al-blduoi1}--\ref {al-blduoi2} và số điểm $n$ của $X$.}}{22}{}\protected@file@percent }
-\newlabel{Figure03}{{2.3}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Inner convex approximation}{22}{}\protected@file@percent }
-\newlabel{InnerConvexApproximation}{{2.2}{22}}
-\newlabel{ct2.37}{{2.37}{22}}
-\newlabel{ct2.38}{{2.38}{22}}
-\newlabel{ct2.39}{{2.39}{22}}
-\newlabel{alg03}{{2.1}{23}}
+\newlabel{ct2.35}{{2.35}{21}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Inner convex approximation}{21}{}\protected@file@percent }
+\newlabel{InnerConvexApproximation}{{2.2}{21}}
+\newlabel{ct2.37}{{2.36}{21}}
+\newlabel{ct2.38}{{2.37}{21}}
+\newlabel{ct2.39}{{2.38}{21}}
+\newlabel{ct2.40}{{2.39}{22}}
+\newlabel{ct2.41}{{2.40}{22}}
+\newlabel{ct2.42}{{2.41}{22}}
+\newlabel{ct2.43}{{2.42}{22}}
+\newlabel{ct2.44}{{2.43}{22}}
+\newlabel{ct2.45}{{2.44}{22}}
+\newlabel{dct2.46}{{2.45}{22}}
+\newlabel{ct2.47}{{2.46}{23}}
+\newlabel{ct2.48}{{2.47}{23}}
+\newlabel{ct2.49}{{2.48}{23}}
+\newlabel{ct2.50}{{2.49}{23}}
+\newlabel{alg04}{{2.2}{23}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces }}{23}{}\protected@file@percent }
-\newlabel{al-blduoi2}{{3}{23}}
-\newlabel{stepIalg03}{{1}{23}}
-\newlabel{stepIIalg03}{{2}{23}}
-\newlabel{stepIIIalg03}{{3}{23}}
-\newlabel{ct2.36}{{3}{23}}
-\newlabel{newPdoubt4+}{{2.36}{23}}
-\newlabel{stepIValg03}{{4}{23}}
-\newlabel{stepValg03}{{5}{23}}
-\newlabel{stepVIalg03}{{6}{23}}
-\newlabel{ct2.40}{{2.40}{24}}
-\newlabel{ct2.41}{{2.41}{24}}
-\newlabel{ct2.42}{{2.42}{24}}
-\newlabel{ct2.43}{{2.43}{24}}
-\newlabel{ct2.44}{{2.44}{24}}
-\newlabel{ct2.45}{{2.45}{24}}
-\newlabel{dct2.46}{{2.46}{24}}
-\newlabel{ct2.47}{{2.47}{25}}
-\newlabel{ct2.48}{{2.48}{25}}
-\newlabel{ct2.49}{{2.49}{25}}
-\newlabel{ct2.50}{{2.50}{25}}
-\newlabel{alg04}{{2.2}{25}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces }}{25}{}\protected@file@percent }
-\newlabel{al-blduoi4}{{4}{25}}
-\newlabel{stepIalg04}{{1}{25}}
-\newlabel{stepIIalg04}{{2}{25}}
-\newlabel{stepIIIalg04}{{3}{25}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal  P}^{\rm  inner}$ Trả về bởi thuật toán \ref {al-blduoi4} và số lần thực hiện trung bình của bước \ref {stepIIalg04} khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh ${\cal  P}^\diamond $ và được hiển thị trong hình \ref {fig_dhandang2_2}.}}{26}{}\protected@file@percent }
-\newlabel{table03}{{2.3}{26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Tỷ lệ thời gian chạy của thuật toán \ref {al-blduoi4} với số điểm $n$ của $X$.}}{26}{}\protected@file@percent }
-\newlabel{Figure04}{{2.4}{26}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Thời gian chạy trung bình $T_{\rm  Alg.\, 4}$ thuật toán \ref {al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref {table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal  P}^\diamond $ hiển thị trong hình \ref {fig_dhandang2_2}.}}{27}{}\protected@file@percent }
-\newlabel{table04}{{2.4}{27}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Thực nghiệm và kết quả}{28}{}\protected@file@percent }
+\newlabel{al-blduoi4}{{3}{23}}
+\newlabel{stepIalg04}{{1}{23}}
+\newlabel{stepIIalg04}{{2}{23}}
+\newlabel{stepIIIalg04}{{3}{23}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal  P}^{\rm  inner}$ Trả về bởi thuật toán \ref {al-blduoi4} và số lần thực hiện trung bình của bước \ref {stepIIalg04} khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh ${\cal  P}^\diamond $ và được hiển thị trong hình \ref {fig_dhandang2_2}.}}{24}{}\protected@file@percent }
+\newlabel{table03}{{2.2}{24}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Thời gian chạy trung bình $T_{\rm  Alg.\,3}$ thuật toán \ref {al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref {table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal  P}^\diamond $ hiển thị trong hình \ref {fig_dhandang2_2}.}}{25}{}\protected@file@percent }
+\newlabel{table04}{{2.3}{25}}
+\citation{MMCV}
+\citation{MMRotate}
+\citation{MMDetection}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Thực nghiệm và kết quả}{26}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Khởi tạo môi trường chạy}{28}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}}{31}{}\protected@file@percent }
-\newlabel{demo_mmrotate_result}{{3.1}{31}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Tập dữ liệu DOTA}{31}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{33}{}\protected@file@percent }
-\newlabel{minh_hoa_hop_bao_dota}{{3.2}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Các bước thực hiện}{33}{}\protected@file@percent }
-\newlabel{lst:command-line}{{3.1}{33}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}Mô tả lệnh command line}{33}{}\protected@file@percent }
-\newlabel{lst:python-code}{{3.2}{34}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}Mô tả mã nguồn Python}{34}{}\protected@file@percent }
-\citation{An-Giang}
-\citation{An-Giang}
-\citation{An-Giang}
-\citation{An-Giang}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{62}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Khởi tạo môi trường chạy}{26}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện MMROTATE.}}{29}{}\protected@file@percent }
+\newlabel{demo_mmrotate_result}{{3.1}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Tập dữ liệu DOTA}{29}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{31}{}\protected@file@percent }
+\newlabel{minh_hoa_hop_bao_dota}{{3.2}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Các bước thực hiện}{31}{}\protected@file@percent }
+\newlabel{lst:command-line}{{3.1}{31}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}Mô tả lệnh command line để tạo môi trường ảo}{31}{}\protected@file@percent }
+\newlabel{lst:python-code}{{3.2}{32}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}Mô tả mã nguồn Python}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{60}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Thời gian chạy tính bao lồi dưới (đơn vị: giây).}}{63}{}\protected@file@percent }
-\newlabel{tab:51}{{4.1}{63}}
-\@writefile{toc}{\contentsline {chapter}{\vspace  *{-8pt} Kết luận}{64}{}\protected@file@percent }
-\bibcite{G2016}{1}
-\bibcite{D2005}{2}
-\bibcite{K1997}{3}
-\bibcite{LDT}{4}
-\bibcite{An-Giang}{5}
-\bibcite{Damerow-2004}{6}
-\bibcite{David-2002}{7}
-\bibcite{Rourke-1998}{8}
-\@writefile{toc}{\contentsline {chapter}{\vspace  *{-8pt} Tài liệu tham khảo}{65}{}\protected@file@percent }
-\gdef \@abspage@last{74}
+\@writefile{toc}{\contentsline {chapter}{\vspace  *{-8pt} Kết luận}{61}{}\protected@file@percent }
+\bibcite{FPN}{1}
+\bibcite{DCN}{2}
+\bibcite{Guo-Zonghao}{3}
+\bibcite{MMCV}{4}
+\bibcite{MMRotate}{5}
+\bibcite{MMDetection}{6}
+\@writefile{toc}{\contentsline {chapter}{\vspace  *{-8pt} Tài liệu tham khảo}{62}{}\protected@file@percent }
+\gdef \@abspage@last{70}

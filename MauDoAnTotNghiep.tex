@@ -14,6 +14,8 @@
 \usepackage[top=3.5cm, bottom=3.0cm, left=3.5cm, right=2cm] {geometry}
 \usepackage{fancybox}
 \usepackage{dirtree}
+
+
 %==================================  
 \newtheorem{dl}{Định lý}[section]
 \newtheorem{dn}[dl]{Định nghĩa} 
@@ -317,7 +319,7 @@ Trong bài toán phát hiện đối tượng, việc định vị và phát hi�
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=400px]{./compare_cfa_with_other.JPG}
-		\caption{Minh hoạ vấn đề. (Bên trên) Khi sử dụng cách biểu diễn dạng hộp, các đối tượng có hướng phân bố dày đặc gây ra hiện tượng đặc trưng răng cưa tại các vùng giao của trường tiếp nhận giữa các đối tượng. (Bên dưới) Với cách biểu diễn bao lồi, phương pháp CFA xử lý tốt các đặc trưng nằm trên lưới tích chập thông thường của các đối tượng có hướng phân bố không đều, giải quyết hiện tượng răng cưa đặc trưng hiệu quả}
+		\caption{Minh hoạ vấn đề. (Bên trên) Sử dụng cách biểu diễn dạng hộp, so với cách biểu diễn bao lồi (Bên dưới), hiện tương răng cưa đã được xử lý}
 		\label{fig_dhandang1}
 	\end{center}
 \end{figure} 
@@ -366,7 +368,7 @@ $O \in R^{H \times W \times W}$ ($H, W, C$ lần lượt tương ứng với chi
 Trong đó: $\theta$ biểu thị là các tham số của mạng. Việc dự đoán offset sẽ thực hiện theo công thức trên.
 
 \section{Tích chập biến dạng}
-Tích chập biến dạng (Deformable convolution - DCN) là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $N\mathrm{x}N$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
+Tích chập biến dạng (Deformable convolution - DCN) \cite{DCN} là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $N\mathrm{x}N$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -407,7 +409,7 @@ Sau khi học được phần bù, việc hoàn thành cập nhật các điểm
 		\label{fig_dhandang1}
 	\end{center}
 \end{figure} 
-Tóm tắt các bước thực hiện thuật toán Jarvis March:
+Tóm tắt các bước thực hiện thuật toán Jarvis March \cite{Guo_2021CVPR_CFA}:
 
 \begin{itemize}
 	\item Bước 1: Chọn điểm xuất phát là v1 nằm trên đường biên. Tìm điểm v2 tiếp theo sao cho mọi điểm khác trong tập hợp nằm ở phía bên trái đoạn thằng nối v1 và v2.
@@ -759,111 +761,57 @@ Bảng \ref{table01} cho thấy một số kết quả thử nghiệm, trong đ�
 	\item $\#_{\rm Step\, III @ Alg.\, 2}$ là số lần thực hiện của bước 3 trong thuật toán \ref{al-blduoi1}.
 \end{itemize}
 
+
 \begin{table}[ht]
 	\begin{center}\renewcommand{\arraystretch}{1.2}\small
 		\setlength\tabcolsep{0.05cm}
-		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
-			%\hline
-			\hline
-			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & 50& 500& 1000& 2500& 5000& 7500& 9000\\ 
-			\hline		
-			\hline
-			{ $\delta = 70$}
-			
-			& \text{Edges@Alg.1}  &  4& 5& 5& 5& 5& 5& 5 \\
-			
-			& Edges@Alg.2  &   5& 5& 5& 5& 5& 5& 5\\
-			
-			& Step III@Alg.1  &4 &6 &6 &6 &6 &6 &6  \\
-			
-			& Step III@Alg.2 &6 &6 &6 &6 &6 &6 &6  \\
-			\hline
-			{ $\delta = 10$}
-			
-			& Edges@Alg.1  & 10 & 13 &14& 14&11&11&11 \\
-			
-			& Edges@Alg.2 &15&23&21&28&28&36&39\\
-			
-			& Step III@Alg.1 &16&22&24&24&18&18&18 \\
-			
-			& Step III@Alg.2&40&47&44&68&58&76&86  \\
-			\hline
-			{ $\delta = 1$}
-			
-			& Edges@Alg.1  &21&32&28&36&33&32&32 \\
-			
-			& Edges@Alg.2 &13&26&33&45&49&53&50 \\
-			
-			& Step III@Alg.1 &48&64&58&70&62&60&60 \\
-			
-			& Step III@Alg.2&48&92&108&136&166&156&160   \\
-			\hline
-			{ $\delta = 0$}
-			
-			& Edges@Alg.1 &13&25&30&40&45&44&45 \\
-			
-			& Edges@Alg.2&13&25&30&40&45&44&45  \\
-			
-			& Step III@Alg.1 &48 &96 &116 &156 &176 &172 &175 \\
-			
-			& Step III@Alg.2&48 &96 &116 &156 &176 &172 &175   \\
-			\hline
-		\end{tabular}
-		\caption{Số cạnh và số bước 3 lặp lại của từng giải thuật Outer Convex Approximation }
-		\label{table02}
-	\end{center}
-\end{table} 
-\textit{do giải thuật 3 chưa có code nên hiện tại bảng vẫn còn trống}
-\begin{table}[ht]
-	\begin{center}\renewcommand{\arraystretch}{1.2}\small
-		\setlength\tabcolsep{0.05cm}
-		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
-			%\hline
-			\hline
-			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
-			\hline		
-			\hline
-			{ $\delta = ???$}
-			
-			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-			{ $\delta = ???$}
-			
-			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-			{ $\delta = ???$}
-			
-			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-			{ $\delta = 0$}
-			
-			& $\#_{\rm Edges@ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Edges@ Alg.\, 2}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 1}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
-			
-			& $\#_{\rm Step\, III @ Alg.\, 2}$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
-			\hline
-		\end{tabular}
+	\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		%\hline
+		\hline
+		\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & 50& 500& 1000& 2500& 5000& 7500& 9000\\ 
+		\hline		
+		\hline
+		{ $\delta = 70$}
+		
+		& \text{Edges@Alg.1}  &  4& 5& 5& 5& 5& 5& 5 \\
+		
+		& Edges@Alg.2  &   5& 5& 5& 5& 5& 5& 5\\
+		
+		& Step III@Alg.1  &4 &6 &6 &6 &6 &6 &6  \\
+		
+		& Step III@Alg.2 &6 &6 &6 &6 &6 &6 &6  \\
+		\hline
+		{ $\delta = 10$}
+		
+		& Edges@Alg.1  & 10 & 13 &14& 14&11&11&11 \\
+		
+		& Edges@Alg.2 &15&23&21&28&28&36&39\\
+		
+		& Step III@Alg.1 &16&22&24&24&18&18&18 \\
+		
+		& Step III@Alg.2&40&47&44&68&58&76&86  \\
+		\hline
+		{ $\delta = 1$}
+		
+		& Edges@Alg.1  &21&32&28&36&33&32&32 \\
+		
+		& Edges@Alg.2 &13&26&33&45&49&53&50 \\
+		
+		& Step III@Alg.1 &48&64&58&70&62&60&60 \\
+		
+		& Step III@Alg.2&48&92&108&136&166&156&160   \\
+		\hline
+		{ $\delta = 0$}
+		
+		& Edges@Alg.1 &13&25&30&40&45&44&45 \\
+		
+		& Edges@Alg.2&13&25&30&40&45&44&45  \\
+		
+		& Step III@Alg.1 &48 &96 &116 &156 &176 &172 &175 \\
+		
+		& Step III@Alg.2&48 &96 &116 &156 &176 &172 &175   \\
+		\hline
+	\end{tabular}
 		\caption{Số cạnh của đa giác lồi xấp xỉ ${\cal P}^{\rm outer}$ được trả về bởi thuật toán \ref{al-blduoi0}--\ref{al-blduoi1} và số lần thực hiện của bước \ref{stepIIIalg01} khi $X$ gồm $n$ điểm ngẫu nhiên trong khung $16$ cạnh đa giác ${\cal P}^\diamond$ thể hiện trong hình \ref{fig_dhandang2_2}.}
 		\label{table01}
 	\end{center}
@@ -915,88 +863,6 @@ và
 \end{equation}
 Với $j \in \{1, 2, 3, 4\}$.
 
-\begin{algorithm}\label{alg03}  \rm 
-	\floatname{algorithm}{Thuật toán}
-	\caption{}  \label{al-blduoi2}
-	\emph{Input:}  Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ  $\delta \geq 0$. \\
-	\emph{Output:} Đa giác xấp xỉ lồi ${\cal P}^{\rm outer}$ được xác định bởi công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
-	\begin{enumerate}
-		\item\label{stepIalg03} 
-		Xác định $D$, $\beta_d$ với $d \in D$, $r_j$ theo $j \in \{1, 2, 3, 4\}$, và $P$ bởi (\ref{ct2.8})--(\ref{ct2.11}). \\
-		Cho $j := 1$ và $q_5 := q_1$. 
-		
-		\item\label{stepIIalg03} 
-		Nếu $q_j = q_{j+1}$ thì đi tới bước \ref{stepValg03}.\\
-		Nếu không thì, xác định $X_j$ bởi (\ref{ct2.30})--(\ref{ct2.32}) và tập $P_{\rm doubt} := \{r_j\}$.
-		
-		\item\label{stepIIIalg03} 
-		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và được xác định ở công thức $d_p$, $\beta_{d_p}$ bởi (\ref{ct2.12}) và (\ref{ct2.34}). \\
-	Nếu
-		\begin{equation*}%\label{betaequal+}
-			\beta_{d_p} = d_p\, p^-
-		\end{equation*}
-		thì thay đổi $D$ và $P$ như (\ref{ct2.18}), và cập nhật
-		\begin{equation*}\label{ct2.36}
-			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\}
-		\end{equation*}
-		và đi tới bước \ref{stepIValg03}.\\
-		Nếu 
-		\begin{equation*}%\label{greaterdelta+}
-			d_{p}\, p^T - \beta_{d_{p}} > \delta
-		\end{equation*}
-		thì thay đổi $D$ và $P$ như (\ref{ct2.22}), và cập nhât 
-		\begin{equation}\label{newPdoubt4+}
-			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\}
-		\end{equation}
-		và đi tới bước \ref{stepIValg03}.\\
-		Nếu (\ref{ct2.35}) đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật $P_{\rm doubt}$ theo (\ref{ct2.36}), và đi tới bước \ref{stepIValg03}.\\
-		Nếu không thì,
-		\begin{equation*}%\label{newPdoubt6+}
-			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
-		\end{equation*}
-		
-		\item\label{stepIValg03} 
-		Nếu $P_{\rm doubt}$ là khác rỗng thì chuyển sang bước \ref{stepIIIalg03}.
-		
-		\item\label{stepValg03} 
-		Nếu $j < 4$ then $j := j+1$ và đi đến bước \ref{stepIIalg03}.
-		
-		\item\label{stepVIalg03} 
-		 Trả về tập hợp các hướng cực đại $D$ và $\beta_d$ với $d \in D$, và tập đỉnh $P$ của ${\cal P}^{\rm outer}$, và kết thúc thuật toán.
-	\end{enumerate}
-\end{algorithm}
-\medskip
-Bảng \ref{table02} và hình\ref{Figure03} cho thấy một số kết quả thử nghiệm về thời gian chay của thuật toán \ref{al-blduoi1}--\ref{al-blduoi2} khi $X$ bao gồm $n$ điểm ngẫu nhiên trong đa giác khung $16$ cạnh của ${\cal P}^\diamond$ được hiển thị trong hình \ref{Figure02}, trong đó
-\begin{itemize}
-	\item $T_{\rm Alg.\, 2}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi1},
-	\item $T_{\rm Alg.\, 3}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi2}.
-\end{itemize}
-
-
-\begin{figure}[ht]
-	\centering
-	???
-	%\includegraphics[width=8cm]{./Figures/???}
-	\caption{Tỷ lệ thời gian chạy của thuật toán \ref{al-blduoi1}--\ref{al-blduoi2} và số điểm $n$ của $X$.}
-	\label{Figure03}
-\end{figure}
-
-
-	\bigskip\noindent
-	{\bf LƯU Ý (liên quan đến bảng \ref{table02} và hình \ref{Figure03}):} 
-	
-	- $n$ điểm ngẫu nhiên được trình bày ở bảng \ref{table02} phải được tạo theo phương trình xoay trong đa giác có khung $16$ cạnh của  ${\cal P}^\diamond$ được hiển thị tỏng hình \ref{fig_dhandang2_2}.
-	
-	- Chỉ có hai tỷ lệ $T_{\rm Alg.\, 2}/n$ và $T_{\rm Alg.\, 3}/n$ được trình bày trong hình \ref{Figure03}.
-	
-	\bigskip
-
-======================================================
-
-
-
-
-
 \section{Inner convex approximation}\label{InnerConvexApproximation}
 
 Cho $X$ thỏa mãn (\ref{ct2.1})--(\ref{ct2.2}) và $\delta \geq 0$, ở đây ta sẽ tìm một xấp xỉ lồi trong ${\cal P}^{\rm inner}$  của $X$, tức là:
@@ -1030,7 +896,7 @@ Trong đó $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ là duy nhất và
 		x^2_{\rm max} &:=& \max \{x^2 \mid (x^1, x^2) \in X\}
 	\end{array}
 \end{equation}
-Và
+
 \begin{equation}\label{ct2.42}
 	\begin{array}{lcl}
 		X^1_{\rm min} &:=& \{(x^1, x^2) \in X \mid x^1 = x^1_{\rm min}\}, \\
@@ -1142,10 +1008,10 @@ Quy trình xấp xỉ được trình bày trong thuật toán sau, trong đó  
 
 
 \medskip
-Bảng \ref{table03}  cho thấy một số kết quả thử nghiệm, trong đó
+Bảng \ref{table03} cho thấy một số kết quả thử nghiệm, trong đó:
 \begin{itemize}
-	\item $\#_{\rm Edges@ Alg.\, 4}$  là số cạnh trung bình của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm inner}$ được trả về bởi thuật toán \ref{al-blduoi4},
-	\item $\#_{\rm Step\, II @ Alg.\, 4}$ à số lần thực hiện trung bình của bước \ref{stepIIalg04} của thuật toán \ref{al-blduoi4}.
+	\item $\#_{\rm Edges@ Alg.\, 3}$  là số cạnh trung bình của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm inner}$ được trả về bởi thuật toán \ref{al-blduoi4},
+	\item $\#_{\rm Step\, II @ Alg.\, 3}$ là số lần thực hiện trung bình của bước \ref{stepIIalg04} của thuật toán \ref{al-blduoi4}.
 \end{itemize}
 
 \begin{table}[ht]
@@ -1159,27 +1025,27 @@ Bảng \ref{table03}  cho thấy một số kết quả thử nghiệm, trong đ
 			\hline
 			{ $\delta = 300$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &6&6&6&6&5&6&6\\
+			& $\#_{\rm Edges@ Alg.\, 3}$  &6&6&6&6&5&6&6\\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$&8&8&8&8&8&8&8   \\
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&8&8&8&8&8&8&8   \\
 			\hline
 			{ $\delta = 150$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &8&8&8&8&7&8&8 \\
+			& $\#_{\rm Edges@ Alg.\, 3}$  &8&8&8&8&7&8&8 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$&12&12&12&12&12&12&12\\
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&12&12&12&12&12&12&12\\
 			\hline
 			{ $\delta = 10$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &11&17&16&20&18&17&17 \\
+			& $\#_{\rm Edges@ Alg.\,3}$  &11&17&16&20&18&17&17 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$&54&54&60&58&58&56&56  \\
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&54&54&60&58&58&56&56  \\
 			\hline
 			{ $\delta = 0$}
 			
-			& $\#_{\rm Edges@ Alg.\, 4}$  &13&25&30&40&45&44&45 \\
+			& $\#_{\rm Edges@ Alg.\, 3}$  &13&25&30&40&45&44&45 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 4}$&74&146&176&236&266&260&266   \\
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&74&146&176&236&266&260&266   \\
 			\hline
 		\end{tabular}
 		\caption{Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal P}^{\rm inner}$ Trả về bởi thuật toán \ref{al-blduoi4} và số lần thực hiện trung bình của bước \ref{stepIIalg04} khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và được hiển thị trong hình \ref{fig_dhandang2_2}.}
@@ -1193,58 +1059,48 @@ Bảng \ref{table03}  cho thấy một số kết quả thử nghiệm, trong đ
 	\bigskip
 
 \medskip
-Bảng \ref{table04} và hình \ref{Figure04}  thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán  \ref{alg04} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}, trong đó
+Bảng \ref{table04}  thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán  \ref{alg04} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}, trong đó
 
-$T_{\rm Alg.\, 4}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi4}.
+$T_{\rm Alg.\, 3}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi4}.
 
 \begin{table}[ht]
 	\begin{center}\renewcommand{\arraystretch}{1.2}\small
 		\setlength\tabcolsep{0.05cm}
-		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|}
 			%\hline
 			\hline
-			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\ 
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & 10& 100& 500& 1000&5000&10000 \\ 
 			\hline		
 			\hline
-			{ $\delta = ???$}
+			{ $\delta = 0$}
 			
-			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $T_{\rm Alg.\, 3}$  &   0.00598&  0.03488& 0.18139& 0.4196& 2.96109& 4.57668 \\
 			
-			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $T_{\rm Alg.\, 3}/n$&0.000598 &  0.0003488 & 0.00036278&0.000419& 0.00059& 0.000457  \\
 			\hline
-			{ $\delta = ???$}
+			{ $\delta = 50$}
 			
-			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $T_{\rm Alg.\, 3}$  &   0.00493&0.01396& 0.00013& 0.08571& 0.39568&0.66178 \\
 			
-			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $T_{\rm Alg.\, 3}/n$&0.000493&0.00013& 9.368.$10^{-5}$& 8.5709.$10^{-5}$& 7.9136.$10^{-5}$& 6.6178.$10^{-5}$  \\
 			\hline
-			{ $\delta = ???$}
+			{ $\delta = 100$}
 			
-			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $T_{\rm Alg.\, 3}$  &0.00299 & 0.00897&0.03986& 0.07575& 0.36578 &0.54522\\
 			
-			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $T_{\rm Alg.\, 3}/n$& 0.000299.$10^{-5}$& 8.970.$10^{-5}$&7.972.$10^{-5}$& 7.575.$10^{-5}$&7.3156.$10^{-5}$  &5.4522.$10^{-5}$\\
 			\hline
-			{ $\delta = ???$}
+			{ $\delta = 500$}
 			
-			& $T_{\rm Alg.\, 4}$  &   ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ??? \\
+			& $T_{\rm Alg.\, 3}$  &    0.00199& 0.00199&0.00797 &0.01395&0.06478& 0.09867 \\
 			
-			& $T_{\rm Alg.\, 4}/n$& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???& ???   \\
+			& $T_{\rm Alg.\, 3}/n$&0.000199.$10^{-5}$ &1.99.$10^{-5}$&1.59.$10^{-5}$4& 1.395.$10^{-5}$&1.2956.$10^{-5}$&9.86699.$10^{-5}$\\
 			\hline
 		\end{tabular}
-		\caption{Thời gian chạy trung bình $T_{\rm Alg.\, 4}$  thuật toán \ref{al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh  ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}.}
+		\caption{Thời gian chạy trung bình $T_{\rm Alg.\,3}$  thuật toán \ref{al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh  ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}.}
 		\label{table04}
 	\end{center}
 \end{table} 	
-
-\begin{figure}[ht]
-	\centering
-	???
-	%\includegraphics[width=8cm]{./Figures/???}
-	\caption{Tỷ lệ thời gian chạy của thuật toán \ref{al-blduoi4} với số điểm $n$ của $X$.}
-	\label{Figure04}
-\end{figure}
-
-
 
 
 \chapter{Thực nghiệm và kết quả}
@@ -1254,15 +1110,15 @@ Chương này trình bày cách thức triển khai của đồ án:khởi tạo
 
 Môi trường được sử dụng trong đồ án là Linux, bản phân phối Ubuntu 20.04.06 LTS, sử dụng 2 máy có thông số khác nhau để chạy. Một máy laptop với GTX 1650 4GB RAM và một máy pc RTX 3060 12GB RAM. CUDA Toolkit sử dụng phiên bản 11.6, cài đặt CUDNN.
 
-Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản mmcv hiện đại, tôi đã chuyển qua sử dụng thư viện Mmrotate, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện mmcv==1.7.1, Mmdetection==2.28.2 và Mmrotate==0.3.4. Riêng 2 thư viện mmcv và mmrotate thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMMlab. Thư viện mmcv đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA C++ để lập trình tính toán cho card đồ hoạ). Thư viện mmdetection là một bộ thư viện chủ đạo (ngoài ra còn có MMYolo) của phòng nghiên cứu Openmmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện mmrotate. 
+Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản MMCV \cite{MMCV} hiện đại, tôi đã chuyển qua sử dụng thư viện MMROTATE, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện MMCV==1.7.1, MMDETECTION==2.28.2 và MMROTATE==0.3.4. Riêng 2 thư viện MMCV và MMROTATE \cite{MMRotate} thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMmlab. Thư viện MMCV đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA C++ để lập trình tính toán cho card đồ hoạ). Thư viện MMDETECTION \cite{MMDetection} là một bộ thư viện chủ đạo (ngoài ra còn có MMYolo) của phòng nghiên cứu OpenMmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện MMROTATE. 
 
-OpenMMLab là một dự án mã nguồn mở phục vụ cho nghiên cứu học thuật và ứng dụng công nghiệp, bao gồm nhiều chủ đề nghiên cứu trong lĩnh vực thị giác máy tính như: phân loại hình ảnh, phát hiện mục tiêu, phân đoạn mục tiêu, tạo hình ảnh siêu phân giải, và nhiều hơn nữa.
+OpenMmlab là một dự án mã nguồn mở phục vụ cho nghiên cứu học thuật và ứng dụng công nghiệp, bao gồm nhiều chủ đề nghiên cứu trong lĩnh vực thị giác máy tính như: phân loại hình ảnh, phát hiện mục tiêu, phân đoạn mục tiêu, tạo hình ảnh siêu phân giải, và nhiều hơn nữa.
 
-Từ khi được mở cửa vào năm 2018, OpenMMLab đã phát hành hơn 20 thư viện thuật toán, bao gồm hơn 250 cách triển khai thuật toán và 2000 mô hình được huấn luyện trước1. OpenMMLab đã thu hút được hơn 60,000+ người theo dõi trên GitHub, với sự tham gia của hơn 1,300 nhà phát triển cộng đồng.
+Từ khi được mở cửa vào năm 2018, OpenMmlab đã phát hành hơn 20 thư viện thuật toán, bao gồm hơn 250 cách triển khai thuật toán và 2000 mô hình được huấn luyện trước. OpenMmlab đã thu hút được hơn 60,000+ người theo dõi trên GitHub, với sự tham gia của hơn 1,300 nhà phát triển cộng đồng.
 
-OpenMMLab cung cấp các thư viện chất lượng cao để giảm khó khăn trong việc tái cài đặt thuật toán, tạo ra chuỗi công cụ triển khai hiệu quả hướng đến nhiều backend và thiết bị khác nhau2. Dựa trên PyTorch, OpenMMLab phát triển MMEngine để cung cấp động cơ đào tạo và đánh giá phổ biến, và MMCV để cung cấp các toán tử mạng nơ-ron và biến đổi dữ liệu, phục vụ như một nền tảng cho toàn bộ dự án.
+OpenMmlab cung cấp các thư viện chất lượng cao để giảm khó khăn trong việc tái cài đặt thuật toán, tạo ra chuỗi công cụ triển khai hiệu quả hướng đến nhiều backend và thiết bị khác nhau2. Dựa trên PyTorch, OpenMmlab phát triển MMEngine để cung cấp động cơ đào tạo và đánh giá phổ biến, và MMCV để cung cấp các toán tử mạng nơ-ron và biến đổi dữ liệu, phục vụ như một nền tảng cho toàn bộ dự án.
 
-OpenMMLab đã phát hành hơn 30 thư viện thị giác, đã triển khai hơn 300 thuật toán, và chứa hơn 2000 mô hình được huấn luyện trước.
+OpenMmlab đã phát hành hơn 30 thư viện thị giác, đã triển khai hơn 300 thuật toán, và chứa hơn 2000 mô hình được huấn luyện trước.
 
 MMCV là một thư viện nền tảng cho nghiên cứu thị giác máy tính cung cấp các chức năng chính như sau:
 \begin{itemize}
@@ -1289,12 +1145,12 @@ MMDectection là một hộp công cụ phát hiện đối tượng chứa tậ
 	\item \textbf{data\_preprocessors} \text{tiền xử lý dữ liệu đầu vào của mô hình}
 	\item \textbf{backbones} \text{chứa nhiều mạng xương sống khác nhau} 
 	\item \textbf{nexts} chứa \text{các thành phần cổ khác nhau của bộ phát hiện} 
-	\item \textbf{dense\_heads} \text{ chứa phần đầu của bộ phát hiện thực hiện dự đoán dày đặc}
+	\item \textbf{dense\_heads} chứa phần đầu của bộ phát hiện thực hiện dự đoán dày đặc
 	\item \textbf{roi\_heads} \text{chứa các phần đầu của bộ phát hiện dự đoán từ RoIs} 
 	\item \textbf{seg\_heads} \text{chứa nhiều các head dành cho bài toán phân đoạn} 
 	\item \textbf{losses} \text{ chứa các hàm loss khác nhau}
-	\item \textbf{task\_modules} \text{ cung cấp các module cho các tác vụ phát hiện cụ thể 
-		 ví dụ: assigners, samplers, box coders và prior generators.}
+	\item \textbf{task\_modules}  cung cấp các module cho các tác vụ phát hiện cụ thể 
+		 ví dụ: assigners, samplers, box coders và prior generators.
 	\item \textbf{layers} \text{cung cấp một vài lớp mạng cơ bản}
 	\end{itemize}
 	\item \textbf{engine} là một phần của của các thành phần chạy
@@ -1314,7 +1170,7 @@ MMDectection là một hộp công cụ phát hiện đối tượng chứa tậ
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./demo_mmrotate_result.jpg}
-		\caption{Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}
+		\caption{Minh hoạ kết quả hình ảnh output của thư viện MMROTATE.}
 		\label{demo_mmrotate_result}
 	\end{center}
 \end{figure} 
@@ -1370,26 +1226,27 @@ Với labelTxt chứa các file annotation dạng txt của từng ảnh, images
 Tiếp theo thực hiện cài đặt miniconda, là một phiên bản thu gọn của Anaconda. Sau đó chạy các câu lệnh sau:
 
 
-\begin{lstlisting}[language=bash, caption={Mô tả lệnh command line}, label={lst:command-line}]
+\begin{lstlisting}[language=bash, caption={Mô tả lệnh command line để tạo môi trường ảo}, label={lst:command-line}]
 
-conda create -n mmrotate_v26_beta1 --no-default-packages \
+$ conda create -n mmrotate_v26_beta1 --no-default-packages \
  python==3.9 -y 
-conda activate mmrotate_v26_beta1 
-conda config --add channels conda-forge 
-conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 \
- cudatoolkit=11.6 -c pytorch -c conda-forge 
-cd mmcv
-git checkout v1.7.1
-pip install -r requirements/optional.txt 
-MMCV_WITH_OPS=1 pip install -e . -v 
-pip install mmdet==2.28.2 
-cd ../mmrotate 
-git checkout v0.3.4
-pip install -v -e . 
-conda install packaging 
-conda install scipy 
-conda install python-dateutil
-pip install future tensorboard
+$ conda activate mmrotate_v26_beta1 
+$ conda config --add channels conda-forge 
+$ conda install pytorch==1.12.1 torchvision==0.13.1\ 
+torchaudio==0.12.1 \
+cudatoolkit=11.6 -c pytorch -c conda-forge 
+$ cd mmcv
+$ git checkout v1.7.1
+$ pip install -r requirements/optional.txt 
+$ MMCV_WITH_OPS=1 pip install -e . -v 
+$ pip install mmdet==2.28.2 
+$ cd ../mmrotate 
+$ git checkout v0.3.4
+$ pip install -v -e . 
+$ conda install packaging 
+$ conda install scipy 
+$ conda install python-dateutil
+$ pip install future tensorboard
 
 \end{lstlisting}
 
@@ -1713,7 +1570,7 @@ $\left[  69.44520875 -143.12099702\right]$\\
 So dinh P:  13\\
 
 
-Thuật toán có mã Python như trên, cần phải chuyển đổi về mã CUDA C++ để thay thế thuật toán Jarvis ở trong thư viện mmcv. 
+Thuật toán có mã Python như trên, cần phải chuyển đổi về mã CUDA C++ để thay thế thuật toán Jarvis ở trong thư viện MMCV. 
 
 Mã CUDA C++ sẽ được thay thế vào hàm Jarvis của file cuda\_iou\_kernel.cuh. Trước tiên ta có vài hàm dùng chung như sau:
 
@@ -2628,34 +2485,8 @@ train_detector(model, datasets,
 \end{lstlisting}
 
 \chapter{Một số kết quả tính toán }
-Trong nội dung này chúng tôi thử nghiệm số cho thuật toán trong \cite{An-Giang} và thuật toán vừa được trình bày ở mục trước để so sánh tốc độ của chúng. Các thuật toán này được thực thi bởi chương trình C và chạy trên PC Core i5 1.6 GHz 3M với 4 GB RAM.  
+\textit{chưa có kết quả tính toán!!!}
 
-Dưới đây Bảng \ref{tab:51} minh họa thời gian chạy (đơn vị tính bằng giây) của thuật toán tính bao lồi dưới được giới thiệu bởi P. T. An và D. T. Giang trong \cite{An-Giang} và Thuật toán \ref{al-matduoi} sử dụng kỹ thuật hạn chế của chúng tôi. Cột cuối cùng liệt kê tỉ lệ tăng tốc của thuật toán của chúng tôi so với thuật toán trong \cite{An-Giang}. Dữ liệu đầu vào của các thuật toán là các tập điểm được tạo trên bề mặt một paraboloid (tất cả các điểm đều là đỉnh của bao lồi và bao lồi dưới) có dạng $P = \{p_i = (x_i, y_i, z_i): x_i, y_i, z_i \in \mathbb{R}, z_i = x_i^2 + y_i^2, i = 1, \ldots, n\} \subset \mathbb{R}^3,$ trong đó tập $\{(x_i, y_i), x_i, y_i \in R, i = 1, \ldots , n \}$ được chọn ngẫu nhiên từ phân bố đều trong hình vuông cỡ 200 $\times$ 200. 
-
-{\fontsize{12pt}{12pt}\selectfont \baselineskip 0.65cm
-	\renewcommand{\baselinestretch}{1}
-	\begin{table}[ht!]
-		\begin{center}
-			\caption{Thời gian chạy tính bao lồi dưới (đơn vị: giây).}
-			\label{tab:51}
-			\begin{tabular}{cccc}
-				\hline
-				{Đầu vào} &{Thuật toán trong} \cite{An-Giang} & {Thuật toán} \ref{al-blduoi}& Tỉ số thăng tốc\\
-				\hline
-				1.000 & 0,136& 0,061&2,23\\ 
-				2.000 & 0,454& 0,248 &1,83\\  
-				5.000 & 2,684& 1,500 &1,79\\  
-				7.000 & 7,014& 3,129 &2,24\\ 
-				11.000  & 14,321& 8,484 &1,69\\ 
-				17.000  & 41,307& 24,666 &1,67\\ 
-				20.000 & 63,197& 37,332 &1,69\\  
-				22.000 & 70,866& 40,235 & 1,76\\ 
-				30.000 & 153,240& 96,738 &1,58\\ 
-				35.000& 200,496& 125,490& 1,60\\ \hline	
-			\end{tabular}	
-		\end{center}
-	\end{table}	
-}
 
 
 
@@ -2679,24 +2510,15 @@ Em được rèn luyện kỹ năng giải quyết các công việc con, cách 
 	
 \subsection*{Tiếng Việt}
 
-\bibitem{G2016} Vũ Thị Gái (2016), \textit{Luật thuận nghịch bậc hai và điểm nguyên}, trường Đại học Khoa học, Đại học Thái Nguyên.
+\bibitem{FPN} Trần Văn Huy (2021), \textit{Feature Pyramid Network (FPN) Understanding}, https://huytranvan2010.github.io/Feature-Pyramid-Network/
 
-\bibitem{D2005} Nguyễn Tiến Hùng (2016), \textit{Luật thuận nghịch bậc hai và hoán vị}, trường Đại học Khoa học, Đại học Thái Nguyên.
-
-
-\bibitem{K1997} Hà Huy Khoái (1997), \textit{Nhập môn số học thuật toán}, Nhà xuất bản Khoa học Kỹ thuật.
-
-\bibitem{LDT} Lại Đức Thịnh (1977), {\it Giáo trình số học}, Nhà xuất bản Giáo dục.
-	
+\bibitem{DCN} Nguyễn Tiến Đạt (2022) ,\textit{tìm hiểu về Deformable Convolution Networks}, https://viblo.asia/p/tim-hieu-ve-deformable-convolution-networks-Ljy5VROb5ra
 \subsection*{Tiếng Anh}
-	\bibitem{An-Giang} P. T. An and D. T. Giang (2015), ``A direct method for determining the lower convex hull of a finite point set in 3D'', Advances in Intelligent Systems and Computing, \textit{Springer}, Proceedings of 3rd International Conference on Computer Science, Applied Mathematics and Applications (ICCSAMA, May 11-13, Metz, France) \textbf{358},  pp. 15--26.
 
-
-\bibitem{Damerow-2004} V. Damerow and C. Sohler (2004), ``Extreme points under random noise'', \textit{Eropean Symposium on Algorithms} {\bf 3221}, pp. 264--274.
-\bibitem{David-2002}  M. M. David (2002), \textit{Computation geometry}, Department of Computer Science.
-
-\bibitem{Rourke-1998} J. O' Rourke (1998), \textit{Computational geometry in C}, 2nd edition, Cambridge University Press, Cambridge. 
-	
+	\bibitem{Guo-Zonghao} Zonghao Guo, Chang Liu, Xiaosong Zhang, Jianbin Jiao, Xiangyang Ji and Qixiang Ye (2021), \textit{Beyond Bounding-Box: Convex-hull Feature Adaptation for Oriented and Densely Packed Object Detection} , IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).
+	\bibitem{MMCV} MMCV Contributors (2018), OpenMMLab Computer Vision Foundation, \textit{https://github.com/open-mmlab/mmcv}
+	\bibitem{MMRotate} MMRotate Contributors (2022),OpenMMLab rotated object detection toolbox and benchmark, \textit{https://github.com/open-mmlab/mmrotate}
+	\bibitem{MMDetection} MMDetection Contributors (2018), OpenMMLab Detection Toolbox and Benchmark, \textit{https://github.com/open-mmlab/mmdetection}
 \end{thebibliography} 
 \end{document}
  
