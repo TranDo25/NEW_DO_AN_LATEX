@@ -15,3 +15,6 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện MMROTATE.}}{29}{}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{31}{}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Kết quả huấn luyện khi thay thuật toán vào cả 2 hàm và chạy với dataset nhỏ.}}{61}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Cấu trúc thư muc results lưu trữ file checkpoint và file log quá trình huấn luyện.}}{62}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Một đoạn nội dung trong file None.log.json.}}{63}{}%

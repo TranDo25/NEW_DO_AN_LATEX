@@ -1,6 +1,6 @@
 \contentsline {chapter}{\bf Danh sách hình vẽ}{iv}{}%
-\contentsline {chapter}{\bf Danh sách bảng}{v}{}%
-\contentsline {chapter}{Danh sách các ký hiệu và chữ viết tắt}{vi}{}%
+\contentsline {chapter}{\bf Danh sách bảng}{vi}{}%
+\contentsline {chapter}{Danh sách các ký hiệu và chữ viết tắt}{vii}{}%
 \contentsline {chapter}{\vspace *{-8pt} Mở đầu}{1}{}%
 \contentsline {chapter}{\numberline {1}Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng}{3}{}%
 \contentsline {section}{\numberline {1.1}Giới thiệu}{3}{}%
@@ -20,5 +20,8 @@
 \contentsline {section}{\numberline {3.2}Tập dữ liệu DOTA}{29}{}%
 \contentsline {subsection}{\numberline {3.2.1}Các bước thực hiện}{31}{}%
 \contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{60}{}%
-\contentsline {chapter}{\vspace *{-8pt} Kết luận}{61}{}%
-\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{62}{}%
+\contentsline {section}{\numberline {4.1}Thay thuật toán vào cả 2 hàm Jarvis và\\ Jarvis\_and\_index với bộ dữ liệu đầy đủ}{60}{}%
+\contentsline {section}{\numberline {4.2}Thay thế thuật toán vào cả hai hàm nhưng sử dụng dataset nhỏ hơn}{61}{}%
+\contentsline {section}{\numberline {4.3}Thay thế mỗi thuật toán Jarvis và sử dụng bộ dataset nhỏ}{61}{}%
+\contentsline {chapter}{\vspace *{-8pt} Kết luận}{64}{}%
+\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{65}{}%

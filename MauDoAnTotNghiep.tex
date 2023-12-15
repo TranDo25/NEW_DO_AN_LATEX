@@ -2485,15 +2485,44 @@ train_detector(model, datasets,
 \end{lstlisting}
 
 \chapter{Một số kết quả tính toán }
-\textit{chưa có kết quả tính toán!!!}
+Do thời gian và yêu cầu phần cứng có hạn, ở đây em chỉ thay thế được thuật toán Outer Convex Approximation, còn thuật toán Inner Convex Approximation em chưa thay thế được.\\
+Ở đây cần quan tâm đến các yếu tố sau:\\
+Về vị trí cần thay hàm: Có hai hàm cần thay là Jarvis() và Jarvis\_and\_index().\\
+Về bộ dataset sử dụng: Có hai bộ đó là bộ hoàn chỉnh và bộ có 1000 ảnh trainval và 500 ảnh test.\\
+Với mỗi yếu tố trên em sẽ thử với nhiều lần, trong đó có các lần thử tiêu biểu như sau:
+\section{Thay thuật toán vào cả 2 hàm Jarvis và\\
+	 Jarvis\_and\_index với bộ dữ liệu đầy đủ}
+Sử dụng thuật toán Outer Convex Approximation để thay thế vào hai hàm trên, sau đó cho thuật toán huấn luyện với bộ dữ liệu DOTA đã được chia cắt tỷ lệ ảnh\\
+\textit{quên mất bộ dữ liệu này từng ở đâu, phải cho chạy lại trên máy cây}\\
+Kết quả huấn luyện: Bị lỗi illegal memory. Dự đoán nguyên nhân do tính toán bị sai hoặc máy hết dung lượng. Thực hiện restart máy và cho chạy lại từ file checkpoint mới nhất, tuy nhiên kết quả vẫn tương tự và không chạy thêm được epoch nào.
+\section{Thay thế thuật toán vào cả hai hàm nhưng sử dụng dataset nhỏ hơn}
+Do cần có kết quả sớm để xem thuật toán có thực hiện được hay không, em sẽ sử dụng với bộ dataset nhỏ hơn. Bộ dataset này được lấy từ bộ dataset đầy đủ với 1000 ảnh và nhãn dành cho tập trainval, 500 ảnh dành cho tập test. Kết quả là thuật toán chạy được đến epoch số 20 là bị sập, báo lỗi illigal memory (Hình \ref{mmrotate8_1000p_epoch20}). Ngoài ra quá trình huấn luyện thu được file checkpoint tại epoch số 20 (Hình \ref{cau_truc_thu_muc_result}) và file log (Hình \ref{ket_qua_file_none_log_json}).
 
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=450px]{./mmrotate8_1000p_epoch20.JPG}
+		\caption{Kết quả huấn luyện khi thay thuật toán vào cả 2 hàm và chạy với dataset nhỏ.}
+		\label{mmrotate8_1000p_epoch20}
+	\end{center}
+\end{figure} 
 
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=200px]{./cau_truc_thu_muc_result.JPG}
+		\caption{Cấu trúc thư muc results lưu trữ file checkpoint và file log quá trình huấn luyện.}
+		\label{cau_truc_thu_muc_result}
+	\end{center}
+\end{figure} 
 
-
-
-
-
-
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=450px]{./ket_qua_file_none_log_json.JPG}
+		\caption{Một đoạn nội dung trong file None.log.json.}
+		\label{ket_qua_file_none_log_json}
+	\end{center}
+\end{figure} 
+\section{Thay thế mỗi thuật toán Jarvis và sử dụng bộ dataset nhỏ}
+Do nghi ngờ kết quả lỗi xuất hiện ở hàm Jarvis\_and\_index(), em chỉ thay thuật toán vào hàm Jarvis, tức là trong quá trình huấn luyện sẽ có sử dụng cả thuật toán Jarvis March và thuật toán Outer Convex Approximation. Kết quả quá trình huấn luyện diễn ra được thuận lợi, thuật toán chạy hết được 40 epochs mà không gặp lỗi gì. Tuy nhiên do bộ dataset quá nhỏ, cùng với giới hạn các class trong dataset bị mất cân bằng nên không sử dụng được kết quả này, chỉ có thể chứng minh được là thuật toán đã hoạt động được và cho kết quả chạy chính xác. Tuy nhiên kết luận này vẫn cần phải kiểm tra và xác minh lại tính chính xác khách quan hơn. 
 \chapter*{{Kết luận}}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt} Kết luận}
 
