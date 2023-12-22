@@ -6,22 +6,24 @@
 \contentsline {section}{\numberline {1.1}Giới thiệu}{3}{}%
 \contentsline {section}{\numberline {1.2}Xây dựng tập bao lồi đầu tiên}{4}{}%
 \contentsline {section}{\numberline {1.3}Tích chập biến dạng}{6}{}%
-\contentsline {section}{\numberline {1.4}Thuật toán Jarvis March}{7}{}%
+\contentsline {section}{\numberline {1.4}Thuật toán Convex Approximation}{7}{}%
+\contentsline {subsection}{\numberline {1.4.1}Thuật toán Outer Convex Approximation}{8}{}%
+\contentsline {subsection}{\numberline {1.4.2}Inner Convex Approximation}{8}{}%
 \contentsline {section}{\numberline {1.5}Đinh nghĩa công thức Convex Intersection over Union (CIoU)}{9}{}%
 \contentsline {section}{\numberline {1.6}Hàm mất mát}{9}{}%
 \contentsline {section}{\numberline {1.7}Thích ứng bao lồi}{10}{}%
-\contentsline {subsection}{\numberline {1.7.1}Xây dựng tập các bao lồi}{10}{}%
-\contentsline {subsection}{\numberline {1.7.2}Chiến lược phân đoạn tập các bao lồi}{11}{}%
+\contentsline {subsection}{\numberline {1.7.1}Xây dựng tập các bao lồi}{11}{}%
+\contentsline {subsection}{\numberline {1.7.2}Chiến lược phân đoạn tập các bao lồi}{12}{}%
 \contentsline {chapter}{\numberline {2}Thuật toán tính bao lồi xấp xỉ}{14}{}%
 \contentsline {section}{\numberline {2.1}Outer convex approximation}{14}{}%
 \contentsline {section}{\numberline {2.2}Inner convex approximation}{21}{}%
-\contentsline {chapter}{\numberline {3}Thực nghiệm và kết quả}{26}{}%
-\contentsline {section}{\numberline {3.1}Khởi tạo môi trường chạy}{26}{}%
-\contentsline {section}{\numberline {3.2}Tập dữ liệu DOTA}{29}{}%
-\contentsline {subsection}{\numberline {3.2.1}Các bước thực hiện}{31}{}%
-\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{60}{}%
-\contentsline {section}{\numberline {4.1}Thay thuật toán vào cả 2 hàm Jarvis và\\ Jarvis\_and\_index với bộ dữ liệu đầy đủ}{60}{}%
-\contentsline {section}{\numberline {4.2}Thay thế thuật toán vào cả hai hàm nhưng sử dụng dataset nhỏ hơn}{61}{}%
-\contentsline {section}{\numberline {4.3}Thay thế mỗi thuật toán Jarvis và sử dụng bộ dataset nhỏ}{61}{}%
-\contentsline {chapter}{\vspace *{-8pt} Kết luận}{64}{}%
-\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{65}{}%
+\contentsline {chapter}{\numberline {3}Thực nghiệm và kết quả}{25}{}%
+\contentsline {section}{\numberline {3.1}Khởi tạo môi trường chạy}{25}{}%
+\contentsline {section}{\numberline {3.2}Tập dữ liệu DOTA}{28}{}%
+\contentsline {subsection}{\numberline {3.2.1}Các bước thực hiện}{30}{}%
+\contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{81}{}%
+\contentsline {section}{\numberline {4.1}Thay thuật toán vào cả 2 hàm Jarvis và\\ Jarvis\_and\_index với bộ dữ liệu đầy đủ}{81}{}%
+\contentsline {section}{\numberline {4.2}Thay thế thuật toán vào cả hai hàm nhưng sử dụng dataset nhỏ hơn}{82}{}%
+\contentsline {section}{\numberline {4.3}Thay thế mỗi thuật toán Jarvis và sử dụng bộ dataset nhỏ}{82}{}%
+\contentsline {chapter}{\vspace *{-8pt} Kết luận}{85}{}%
+\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{86}{}%

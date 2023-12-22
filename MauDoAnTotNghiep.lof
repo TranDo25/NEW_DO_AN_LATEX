@@ -5,16 +5,20 @@
 \contentsline {figure}{\numberline {1.4}{\ignorespaces So sánh tích chập thông thường và tích chập biến dạng.}}{6}{}%
 \contentsline {figure}{\numberline {1.5}{\ignorespaces a) lấy mẫu tích chập với 9 điểm lấy mẫu. b) để có tích chập biến dạng, thêm độ dịch chuyển vào mỗi điểm lấy mẫu (mũi tên xanh). c) phép biến đổi tỷ lệ. d) phép quay }}{7}{}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Quá trình thực hiện tích chập biến dạng.}}{7}{}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces mô tả các bước thực hiện thuật toán Jarvis March}}{8}{}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc}}{11}{}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc.}}{12}{}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Minh họa thuật toán Outer Convex Approximation.}}{8}{}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Minh họa thuật toán Inner Convex Approximation với đầu vào gồm 100 điểm ngẫu nhiên.}}{9}{}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc}}{11}{}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc.}}{12}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces $X = \{x_1, x_2, \dots , x_n\}$ with $\ conv X = \ conv\{x_1, x_2, \dots , x_m\}$ and $m = 10$.}}{19}{}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces $16$-sided frame polygon ${\cal P}^\diamond $ of $n$ random points.}}{19}{}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Đa giác n điểm ngẫu nhiên có khung 16 cạnh ${\cal P}^\diamond $.}}{19}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 0.}}{19}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 5.}}{20}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 10.}}{20}{}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 30.}}{21}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện MMROTATE.}}{29}{}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{31}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện MMROTATE.}}{28}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{30}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Kết quả huấn luyện khi thay thuật toán vào cả 2 hàm và chạy với dataset nhỏ.}}{61}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Cấu trúc thư muc results lưu trữ file checkpoint và file log quá trình huấn luyện.}}{62}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Một đoạn nội dung trong file None.log.json.}}{63}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Kết quả huấn luyện khi thay thuật toán vào cả 2 hàm và chạy với dataset nhỏ.}}{82}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Cấu trúc thư muc results lưu trữ file checkpoint và file log quá trình huấn luyện.}}{83}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Một đoạn nội dung trong file None.log.json.}}{84}{}%

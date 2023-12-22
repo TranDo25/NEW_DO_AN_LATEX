@@ -399,27 +399,26 @@ Phép tích chập biến dạng thực ra là thêm phần bù cho các điểm
 
 
 Cho đầu vào là một bản đồ đặc trưng, giả sử phép tích chập là 3x3. Để học được phần bù, định nghĩa một lớp tích chập 3x3 khác, chiều của đầu ra là kích thước của bản đồ đặc trưng ban đầu, số kênh = $2N$. (Hình \ref{deformable_process}) Tiếp theo thực hiện tích chập biến dạng, dựa trên độ bù của các phần đã được tính trước đó, sau đó thực hiện phép tích chập như thông thường.
-\section{Thuật toán Jarvis March}
-Sau khi học được phần bù, việc hoàn thành cập nhật các điểm đặc trưng của bao lồi được thực hiện bởi thuật toán Jarvis March, bao lồi nhỏ nhất phù hợp với điều kiện sẽ được tạo ra sau mỗi vòng lặp.
-
+\section{Thuật toán Convex Approximation}
+Sau khi học được phần bù, việc hoàn thành cập nhật các điểm đặc trưng của bao lồi được thực hiện bởi thuật toán Outer Convex Approximation, hoặc Inner Convex Approximation (cả hai thuật toán đều sử dụng $\delta$ = 0, không lấy bao lồi xấp xỉ). Bao lồi nhỏ nhất phù hợp điều kiện sẽ được chọn ra sau mỗi lần lặp.
+\subsection{Thuật toán Outer Convex Approximation}
 \begin{figure}[ht!]
 	\begin{center}
-		\includegraphics[width=435px]{./jarvis_march_steps.jpg}
-		\caption{mô tả các bước thực hiện thuật toán Jarvis March}
-		\label{fig_dhandang1}
+		\includegraphics[width=350px]{./outer_convex_approximation_brief.png}
+		\caption{Minh họa thuật toán Outer Convex Approximation.}
+		\label{outer_convex_approximation_brief}
 	\end{center}
 \end{figure} 
-Tóm tắt các bước thực hiện thuật toán Jarvis March \cite{Guo_2021CVPR_CFA}:
-
-\begin{itemize}
-	\item Bước 1: Chọn điểm xuất phát là v1 nằm trên đường biên. Tìm điểm v2 tiếp theo sao cho mọi điểm khác trong tập hợp nằm ở phía bên trái đoạn thằng nối v1 và v2.
-	\item Bước 2: Tìm điểm v3 tiếp theo trong tập các điểm còn lại, sao cho v1, v2, v3 thỏa mãn góc ngược chiều kim đồng hồ (Counter Clock Wise - CCW). Điền này có nghĩa là v3 nằm ở bên trái đoạn thẳng nối v1 và v2. Nếu điều kiện này được đáp ứng, tức là v3 là 1 điểm nằm ở ngoại vi hơn.
-	\item Bước 3: Nếu điều kiện bước trên thỏa mãn, ghi đè giá trị của v3 lên v2. Gán giá trị của v3 cho v2, tức v2 = v3. Quay lại bước 2 để tìm điểm ngoại vi tiếp theo.
-	\item Bước 4: Lặp lại bước 3 cho đến khi tất cả các điểm đã được duyệt qua, tức là tìm thấy điểm ngoại vi tiếp theo được tìm thấy. Quá trình này tạo ra một chuỗi các điểm trên đường biên của bao lồi.
-	\item Bước 5: Ghi đè giá trị của v2 lên v1. Sau khi tìm thấy điểm ngoại vi tiếp theo, gán giá trị của v2 lên v1, tức v1 = v2.
-	\item  Bước 6: Lặp lại bước 2 cho đến khi điểm tiếp theo trả về chính là điểm xuất phát. Quá trình này sẽ tiếp tục cho đến khi ta quay trở lại điểm xuất phát ban đầu, hoàn thành toàn bộ quá trình tìm bao lồi.
-\end{itemize}
-
+Tóm tắt thuật toán Outer Convex Approximation (Hình \ref{outer_convex_approximation_brief}): Xuất phát từ một hình chữ nhật nhỏ nhất bao quanh tất cả các điểm (màu xanh dương), thuật toán duyệt lần lượt các đỉnh được chọn, xác định hướng cực đại (direction) nhờ hai điểm liền trước (predecessor) và điểm liền sau (successor), để quyết định việc lấy thêm đỉnh mới cho bao lồi. Kết quả cuối cùng sẽ là hình chữ nhật được cải thiện dần thành bao lồi (màu đỏ) phù hợp với toàn bộ tập điểm. 
+\subsection{Inner Convex Approximation}
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=350px]{./inner_convex_brief.png}
+		\caption{Minh họa thuật toán Inner Convex Approximation với đầu vào gồm 100 điểm ngẫu nhiên.}
+		\label{inner_convex_brief}
+	\end{center}
+\end{figure} 
+Tóm tắt thuật toán (Hình \ref{inner_convex_brief}): Xuất phát từ hình tứ giác ban đầu (màu cam), ứng với mỗi cạnh sẽ chọn các điểm phù hợp trong tập các điểm phía trên cạnh đó để mở rộng tứ giác. Sau cùng khi không còn điểm nào nằm phía trên các cạnh, thuật toán sẽ kết thúc, trả về bao lồi (màu xanh lam).
 \section{Đinh nghĩa công thức Convex Intersection over Union (CIoU)}
 Dựa vào mỗi bao lồi dự đoán, có thể tính toán được hàm mất mát vị trí và phân lớp của một đối tượng. Công thức CIoU giữa bao lồi dự đoán thứ $i$:  $C_i(\theta)$ và hộp bao thật sự $\mathcal{B}_j$ của đối tượng thứ $j$ được tính như sau:
 
@@ -512,13 +511,13 @@ Hàm mất mát này xem xét sự tương ứng về đặc trưng của nhiề
 \end{align}
 
 \chapter{Thuật toán tính bao lồi xấp xỉ}
-Thuật toán tìm bao lồi xấp xỉ nhận đầu vào là một tập các điểm ngẫu nhiên, đầu ra trả về 1 tập điểm biểu diễn một bao lồi bao quanh tất cả các điểm còn lại. Với ngưỡng $\delta$ tuỳ chỉnh, sẽ cho ra được dạng bao lồi khác nhau. Lưu ý, đây là thuật toán mới còn chưa được công bố rộng rãi.
+Thuật toán tìm bao lồi xấp xỉ nhận đầu vào là một tập các điểm ngẫu nhiên, đầu ra trả về một tập điểm biểu diễn một bao lồi bao quanh tất cả các điểm còn lại. Với ngưỡng $\delta$ tuỳ chỉnh, sẽ cho ra được dạng bao lồi khác nhau.
 \section{Outer convex approximation}
-Cho:
+Cho tập X được định nghĩa như sau:
 \begin{align} \label{ct2.1} 
 	X:=\left\{x_1, x_2, \ldots, x_n\right\} \subset \mathbb{R}^2
 \end{align}
-Giả sử không mất tính tổng quát rằng
+Giả sử không mất tính tổng quát rằng:
 \begin{align} \label{ct2.2} 
 	x_1, x_2, \ldots, x_n  \text{ không cùng nằm trên cùng một đường thẳng.}
 \end{align}
@@ -530,24 +529,24 @@ Ta viết tất cả các vector thành dạng vector hàng, những vector này
 	\end{aligned}
 \end{equation}
 
-Cho $X$ thỏa mãn (\ref{ct2.1}) - (\ref{ct2.2}) và $\delta \geq 0$, trong phần này em muốn tìm một bao lồi xấp xỉ của $X$, nghĩa là:
+Cho $X$ thỏa mãn (\ref{ct2.1}) - (\ref{ct2.2}) và $\delta \geq 0$, trong phần này ta muốn tìm một bao lồi xấp xỉ của $X$, ký hiệu:
 \begin{align}\label{ct2.4}
-	\text{Một đa giác lồi }\mathcal{P}^{outer} \text{thỏa mãn bao lồi }X\subset\mathcal{P}^{outer}
+	\text{Đa giác lồi }\mathcal{P}^{outer} \text{thỏa mãn bao lồi }X\subset\mathcal{P}^{outer}
 \end{align}
-sao cho
+sao cho:
 \begin{align}\label{ct2.5}
 	dist_H\left(conv\ X, \mathcal{P}^{outer}\right) \leq \delta
 \end{align}
-$P^{outer}$ đươc xác định bởi:
+$\mathcal{P}^{outer}$ đươc xác định bởi:
 \begin{align}\label{ct2.6}
-	P^{outer} := \{x\in\mathbb{R}^2 | dx^T \leq \beta_d\ \text{ với tất cả d} \in D\}
+	\mathcal{P}^{outer} := \{x\in\mathbb{R}^2 |\ dx^T \leq \beta_d\ \text{ với tất cả d} \in D\}
 \end{align}
-Trong đó $D \subset \mathbb{R^2}$ biểu thị tập các hướng tối đa và $\beta_d \in \mathbb{R}$ biểu thị ngưỡng tương ứng với hướng $d \in D$. Với D cho trước, $\mathcal{P}^{outer}$ là bao lồi xấp xỉ phù hợp nhất chứa $X$ nếu:
+Trong đó $D \subset \mathbb{R}^2$ biểu thị tập các hướng tối đa, $\beta_d \in \mathbb{R}$ biểu thị ngưỡng tương ứng với hướng $d \in D$. Với tập D cho trước, $\mathcal{P}^{outer}$ là bao lồi xấp xỉ phù hợp nhất chứa $X$ nếu như:
 \begin{equation}\label{ct2.7}
-	\beta_d:=\max _{x \in X} d x^T \text{với tất cả d }\in D
+	\beta_d:=\max _{x \in X}\ d x^T \text{với tất cả d }\in D
 \end{equation}
-Cho P là tập các đỉnh của $\mathcal{P}^{outer}$.
-Ta bắt đầu quá trình xác định bao lồi xấp xỉ ngoài với hình chữ nhật nhỏ nhất có chứa $X$, tập $X$ này có chứa cạnh song song với trục tọa độ. Theo công thức (\ref{ct2.5}) - (\ref{ct2.6}), hình chữ nhật $\mathcal{P}^{outer}$ được xác định bởi:
+Cho P là tập các đỉnh của $\mathcal{P}^{outer}$.\\
+Ta bắt đầu quá trình xác định bao lồi xấp xỉ ngoài với hình chữ nhật nhỏ nhất chứa $X$, có chứa cạnh song song với trục tung và trục hoành. Theo công thức (\ref{ct2.5}) - (\ref{ct2.6}), hình chữ nhật $\mathcal{P}^{outer}$ được xác định như sau:
 \begin{align}\label{ct2.8}
 	D:=\{(1, 0), (0, 1), (-1, 0), (0, -1)\}
 \end{align}
@@ -565,7 +564,7 @@ Theo công thức (\ref{ct2.2}) ta có:
 \begin{center}
 	$\beta_{(-1, 0)} \textless \beta_{(1, 0)}$ \text{ và } $\beta_{(0, -1)} \textless \beta_{(0, 1)}$
 \end{center}
-Vì vậy, ${P}^{outer}$ là một hình chữ nhật phù hợp với 4 đỉnh phân biệt, có tập đỉnh là:
+Vì vậy, $\mathcal{P}^{outer}$ là một hình chữ nhật phù hợp với 4 đỉnh phân biệt, có tập đỉnh là:
 \begin{align}\label{ct2.10}
 	P := \{r_1, r_2, r_3, r_4\}
 \end{align}
@@ -578,13 +577,13 @@ Trong đó:
 		& r_4:=\left(\beta_{(1,0)}, \beta_{(0,-1)}\right) .
 	\end{aligned}
 \end{equation}
-Trong các bước xấp xỉ tiếp theo, việc xây dựng đa giác ${P}^{outer}$ lần lượt được cải thiện như sau:
+Trong các bước xấp xỉ tiếp theo, xây dựng đa giác $\mathcal{P}^{outer}$ được cải thiện dần dần như sau:
 
-$\text{Với 1 đỉnh }p \in P, \text{cho } p^{-} \in P \text{ và } p^{+} \in P \text{ lần lượt là}$
+$\text{Với mỗi }p \in P, \text{lấy } p^{-} \in P \text{ và } p^{+} \in P \text{ lần lượt là}$
 \begin{align} \label{ct2.12}
-\text {điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của } p \in P.
+\text {điểm liền trước ngược chiều kim đồng hồ và điểm liền sau của } p.
 \end{align}
-Ta có công thức sau:
+Xét công thức sau:
 \begin{equation}\label{ct2.13}
 	\begin{array}{lcl}
 		d_{p}^T &:=& \|p^+ - p^-\|^{-1}\, R \, (p^+ - p^-)^T, \\
@@ -594,31 +593,31 @@ Ta có công thức sau:
 Trong đó:
 \begin{equation}\label{ct2.14}
 	R := \begin{pmatrix}
-		0 & 1 \\
-		-1 & 0
+		0 & -1 \\
+		1 & 0
 	\end{pmatrix}
 \end{equation}
-là ma trận xoay chiều theo hướng kim đồng hồ với góc xoay $\pi/2$. Vì $R$ là ma trận xoay, ta có:
+là ma trận xoay ngược chiều theo hướng kim đồng hồ với góc xoay $\pi/2$. Vì $R$ là ma trận xoay, ta có:
 \begin{equation}\label{ct2.15}
 	\|d_{p}\| = \|p^+ - p^-\|^{-1}\, \|(p^+ - p^-) R^T\| = \|p^+ - p^-\|^{-1}\, \|p^+ - p^-\| = 1.
 \end{equation}
-Sẽ có hai trường hợp xảy ra khi ta thêm các ràng buộc tuyến tính sau đây vào định nghĩa của ${P}^{outer}$ trong công thức (\ref{ct2.6}):
+Có hai trường hợp xảy ra khi ta thêm các ràng buộc tuyến tính sau vào định nghĩa của $\mathcal{P}^{outer}$ trong công thức (\ref{ct2.6}):
 \begin{equation}\label{ct2.16}
 	d_p\, x^T \leq \beta_{d_p}.
 \end{equation}
 
-Đầu tiên, nếu:
+Trường hợp 1, nếu:
 \begin{equation}\label{ct2.17}
 	\beta_{d_p} = d_p\, p^+
 \end{equation}
-thì công thức (\ref{ct2.15}) không tạo thêm đỉnh mới nhưng sẽ thêm 2 cạnh mới  $[p^-, p^+]$ của ${\cal P}^{\rm outer}$. Cho  $d_{[p^-, p]}$ và $d_{[p, p^+]}$ biểu thị 2 hướng cực đại từ D, định nghĩa hai cạnh $[p^-, p]$ và $[ p, p^+]$ của ${\cal P}^{\rm outer}$. Sau đó $d_{[p^-, p]}$ and $d_{[p, p^+]}$ sẽ trở nên vô dụng. Vì vậy, trong khi thêm $d_p$ vào tập $D$ cần phải loại bỏ $d_{[p^-, p]}$ và $d_{[p, p^+]}$ và $p$ trong $P$, nghĩa là:
+thì công thức (\ref{ct2.15}) sẽ không tạo thêm đỉnh mới mà thêm cạnh mới  $[p^-, p^+]$ vào ${\cal P}^{\rm outer}$. Xét $d_{[p^-, p]}$ và $d_{[p, p^+]}$ là 2 hướng cực đại trong D, định nghĩa hai cạnh $[p^-, p]$ và $[ p, p^+]$ của ${\cal P}^{\rm outer}$. Sau đó $d_{[p^-, p]}$ and $d_{[p, p^+]}$ sẽ trở nên vô dụng. Vậy nên khi thêm $d_p$ vào tập $D$ cần phải loại bỏ $d_{[p^-, p]}$ và đỉnh $d_{[p, p^+]}$ và $p$ trong $P$:
 \begin{equation}\label{ct2.18}
 	\begin{array}{lcl}
 		D &:=& (D \cup \{d_{p}\})\setminus \{d_{[p^-,p]}, d_{[p,p^+]}\}, \\
 		P &:=& P \setminus \{p\}.
 	\end{array}
 \end{equation}
-Thứ hai, nếu
+Trường hợp 2, nếu
 \begin{equation}\label{ct2.19}
 	\beta_{d_p} > d_p\, p^+
 \end{equation}
@@ -626,7 +625,7 @@ và:
 \begin{equation}\label{ct2.20}
 	d_{p}\, p^T - \beta_{d_{p}} > \delta
 \end{equation}
-thì ràng buộc mới (\ref{ct2.16}) tạo ra hai đỉnh mới của ${\cal P}^{\rm outer}$ có tên $\hat p^-$ và $\hat p^+$ sẽ được tính như sau:
+thì ràng buộc (\ref{ct2.16}) tạo ra hai đỉnh mới của ${\cal P}^{\rm outer}$ có tên $\hat p^-$ và $\hat p^+$, được tính như sau:
 \begin{equation}\label{ct2.21}
 	\begin{array}{lcl}
 		\lambda_p &:=& (\beta_{d_p} - d_p\, p^{-T})/(d_p\, p^T - d_p\, p^{-T}) \in (0, 1), \\
@@ -635,7 +634,7 @@ thì ràng buộc mới (\ref{ct2.16}) tạo ra hai đỉnh mới của ${\cal P
 	\end{array}
 \end{equation}
 
-Do đó, ta sẽ cộng $d_p$ vào $D$ và thay $p \in P$ bằng $\hat p^-$ và $\hat p^+$.
+Ta thêm $d_p$ vào $D$ và thay $p \in P$ bởi $\hat p^-$ và $\hat p^+$:
 \begin{equation}\label{ct2.22}
 	\begin{array}{lcl}
 		D &:=& D \cup \{d_{p}\}, \\
@@ -643,7 +642,7 @@ Do đó, ta sẽ cộng $d_p$ vào $D$ và thay $p \in P$ bằng $\hat p^-$ và 
 	\end{array}
 \end{equation}
 
-Quy trình xấp xỉ được mô tả trong thuật toán sau, trong đó $P_{\rm doubt}$ biểu thị tập hợp các đỉnh vẫn cần được kiểm tra.
+Quy trình thực hiện được mô tả bên dưới, trong đó $P_{\rm doubt}$ biểu thị tập hợp các đỉnh vẫn cần được kiểm tra.
 
 \begin{algorithm}\label{alg01}  \rm 
 		\floatname{algorithm}{Thuật toán}
@@ -657,237 +656,183 @@ Quy trình xấp xỉ được mô tả trong thuật toán sau, trong đó $P_{
 		\item\label{stepIIalg01} Đặt $P_{\rm doubt} := P$.
 		
 		\item\label{stepIIIalg01} 
-		 Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$  và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{ct2.12})--(\ref{ct2.14}). \\
-		Nếu (\ref{ct2.17}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.18}), và cập nhập
+		 Chọn một đỉnh bất kỳ $p \in P_{\rm doubt}$, tính toán $d_p$, $\beta_{d_p}$ theo (\ref{ct2.12})--(\ref{ct2.14}). \\
+		Nếu (\ref{ct2.17}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.18}), thay đổi $P_{doubt}$ thành:
 		\begin{equation}\label{ct2.23}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
 		\end{equation}
-		Và đi tới bước \ref{stepIValg01}.\\
+		sau đó chuyển sang bước \ref{stepIValg01}.\\
 		Nếu % (\ref{betagreater}) and 
-		(\ref{ct2.20}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), cập nhật
+		(\ref{ct2.20}) là đúng, thay đổi $D$, $P$ như (\ref{ct2.22}), cập nhật:
 		\begin{equation}\label{ct2.24}
 			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
 		\end{equation}
-		Và đi tới bước \ref{stepIValg01}.\\
-		Nếu không thì, 
+		sau đó chuyển sang bước \ref{stepIValg01}.\\
+		Nếu hai trường hợp trên không đúng thì, 
 		\begin{equation}\label{ct2.25}
 			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
 		\end{equation}
 		
 		\item\label{stepIValg01} 
-		Nếu $P_{\rm doubt}$ chưa rỗng thì quay lại bước \ref{stepIIIalg01}.
+		Nếu $P_{\rm doubt} \ne \emptyset$  thì quay lại bước \ref{stepIIIalg01}.
 		
 		\item
-		 Trả về tập hợp các hướng cực đại $D$ và $\beta_d$ với $d \in D$, tập đỉnh $P$ của ${\cal P}^{\rm outer}$, và kết thúc thuật toán.
+		 Kết quả trả về tập hợp các hướng cực đại $D$ và $\beta_d$ với $d \in D$, tập đỉnh $P$ của ${\cal P}^{\rm outer}$, kết thúc thuật toán.
 	\end{enumerate}
 \end{algorithm}
 
-Với (\ref{ct2.6}) - (\ref{ct2.7}), mỗi cạnh $\left[p, p^{+}\right]$ của $\mathcal{P}$ chứa ít nhất một điểm của tập $X$. Do đó, (\ref{ct2.11}) suy ra:
-$$
-\beta_{d_p} \geq d_p p^{-}=d_p p^{+} .
-$$
-Do đó, nếu (\ref{ct2.17}) sai thì (\ref{ct2.19}) hiển nhiên đúng. Điều này giải thích tại sao (\ref{ct2.19}) không cần kiểm tra cùng với (\ref{ct2.20}) ở bước \ref{stepIIIalg01}.
-Thuật toán 1 có thể nhanh chóng tạo ra một đa giác lồi xấp xỉ $\mathcal{P}^{\text {outer }}$ với $d_p p^T-\beta_{d_p} \leq \delta$ với tất cả $p \in P$.
-Tính chất này là cần thiết nhưng không đủ cho (\ref{ct2.5}). Để đảm bảo (\ref{ct2.5}), trong thuật toán tiếp theo chúng ta cũng kiểm tra xem nếu 
-\begin{equation}\label{ct2.26}
-	\begin{array}{lcl}
-	 \|p-x\|>\delta \text { với mọi } x \in X_p, \quad \text { trong đó } \\
-	 X_p:=\left\{x \in X \mid d_p x^T=\beta_{d_p}\right\} .
-	\end{array}
-\end{equation}
 
-\begin{algorithm}\label{alg02}  \rm 
-	\floatname{algorithm}{Thuật toán}
-	\caption{}  \label{al-blduoi1}
-	\emph{Input:}  Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ $\delta \geq 0$. \\
-	\emph{Output:} Đa giác xấp xỉ lồi  ${\cal P}^{\rm outer}$  được xác định ở công thức (\ref{ct2.6}) bởi $D$ và $\beta_d$ cho $d \in D$ và tập đỉnh $P$.
-	\begin{enumerate}
-		\item\label{stepIalg02} 
-		Xác định $D$, $\beta_d$ với $d \in D$, và $P$ theo (\ref{ct2.8})--(\ref{ct2.11}).
-		
-		\item\label{stepIIalg02} Đặt $P_{\rm doubt} := P$.
-		
-		\item\label{stepIIIalg02} 
-		Chọn ngẫu nhiên một đỉnh $p \in P_{\rm doubt}$ và tham chiếu lên $d_p$, $\beta_{d_p}$ theo (\ref{ct2.12})--(\ref{ct2.14}). \\
-		Nếu (\ref{ct2.17}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.18}), và cập nhật
-		\begin{equation}\label{ct2.27}
-			P_{\rm doubt} := P_{\rm doubt} \setminus \{p, p^-, p^+\},
-		\end{equation}
-		Và đi tới bước \ref{stepIValg02}.\\
-		Nếu (\ref{ct2.20}) à đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật
-		\begin{equation}\label{ct2.28}
-			P_{\rm doubt} := (P_{\rm doubt} \setminus \{p\}) \cup \{\hat p^-, \hat p^+\},
-		\end{equation}
-		Và đi tới bước \ref{stepIValg02}.\\
-		Nếu (\ref{ct2.26}) là đúng thì thay đổi $D$, $P$ như (\ref{ct2.22}), và cập nhật $P_{\rm doubt}$ theo (\ref{ct2.28}), và đi tới bước \ref{stepIValg02}.\\
-		Nếu không thì cập nhập, 
-		\begin{equation}\label{ct2.29}
-			P_{\rm doubt} := P_{\rm doubt} \setminus \{p\}.
-		\end{equation}
-		
-		\item\label{stepIValg02} 
-		Nếu $P_{\rm doubt}$ chưa rỗng thì quay lại bước \ref{stepIIIalg02}.
-		
-		\item
-		Trả về tập hợp các hướng cực đại $D$ và $\beta_d$ với $d \in D$, tập đỉnh $P$ của ${\cal P}^{\rm outer}$, kết thúc thuật toán.
-	\end{enumerate}
-\end{algorithm}
-
-\begin{figure}[ht!]
-	\begin{center}
-		\includegraphics[width=300px]{./convex X.jpg}
-		\caption{$X = \{x_1, x_2, \dots, x_n\}$ with $\ conv X = \ conv\{x_1, x_2, \dots, x_m\}$ and $m = 10$.}
-		\label{fig_dhandang2_1}
-	\end{center}
-\end{figure}
 
 \medskip
-Để minh họa tác dụng của thuật toán \ref{al-blduoi0}--\ref{al-blduoi1}, chúng ta hãy coi $X$ là một tập hợp $n$ các điểm ngẫu nhiên trong đa giác khung $16$ cạnh ${\cal P}^\diamond$ được thể hiện 
-trong hình \ref{fig_dhandang2_2}.\\
-
-\begin{figure}[ht!]
-	\begin{center}
-		\includegraphics[width=300px]{./Frame pylogon.jpg}
-		\caption{$16$-sided frame polygon ${\cal P}^\diamond$ of $n$ random points.}
-		\label{fig_dhandang2_2}
-	\end{center}
-\end{figure}
-\medskip
-Bảng \ref{table01} cho thấy một số kết quả thử nghiệm, trong đó
+Bảng \ref{table02} cho thấy một số kết quả thử nghiệm, trong đó:
 \begin{itemize}
-	\item $\#_{\rm Edges@ Alg.\, 1}$ là số cạnh của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm outer}$ được trả về bởi thuật toán \ref{al-blduoi0},
-	\item $\#_{\rm Edges@ Alg.\, 2}$ là số cạnh của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm outer}$ được tả về bởi thuật toán \ref{al-blduoi1},
-	\item $\#_{\rm Step\, III @ Alg.\, 1}$  là số lần thực hiện của bước 3 trong thuật toán \ref{al-blduoi0}
-	\item $\#_{\rm Step\, III @ Alg.\, 2}$ là số lần thực hiện của bước 3 trong thuật toán \ref{al-blduoi1}.
+	\item $\#_{\rm Vertices @ Alg.\, 1}$  là số cạnh trung bình của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm outer}$ được trả về bởi thuật toán 1,
+	\item $\#_{\rm Step\, III @ Alg.\, 1}$ là số lần thực hiện trung bình của bước III của thuật toán 1.
 \end{itemize}
 
+\begin{table}[ht]
+	\begin{center}\renewcommand{\arraystretch}{1.2}\small
+		\setlength\tabcolsep{0.2cm}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|}
+			%\hline
+			\hline
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & 50 & 500 & 1000 & 2500 & 5000 & 7500\\ 
+			\hline		
+			\hline
+			{ $\delta = 70$}
+			
+			& $\#_{\rm Edges@ Alg.\, 1}$  &5 & 5 & 5 & 5 & 5 & 5 \\
+			
+			& $\#_{\rm Step\, III @ Alg.\,1}$ &6 & 6 & 6 & 6 & 6 & 6   \\
+			\hline
+			{ $\delta = 10$}
+			
+			& $\#_{\rm Edges@ Alg.\,1}$  &11 & 11 & 14 & 13 & 11 & 11 \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 1}$&18 & 18 & 24 & 22 & 18 & 18\\
+			\hline
+			{ $\delta = 1$}
+			
+			& $\#_{\rm Edges@ Alg.\,1}$  &15 & 33 & 36 & 33 & 32 & 33 \\
+			
+			& $\#_{\rm Step\, III @ Alg.\, 1}$&38 & 70 & 70 & 62 & 60 & 64  \\
+			\hline
+			{ $\delta = 0$}
+			
+			& $\#_{\rm Edges@ Alg.\, 1}$  &12 & 23 & 30 & 38 & 43 & 43  \\
+			
+			& $\#_{\rm Step\, II @ Alg.\, 1}$&44 & 88 & 116 & 148 & 168 & 168  \\
+			\hline
+		\end{tabular}
+		\caption{Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal P}^{\rm outer}$ trả về bởi thuật toán 1 và số lần thực hiện trung bình của bước 3 khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh (Hình \ref{frame_polygon}).}
+		\label{table03}
+	\end{center}
+\end{table} 	
+\medskip
+Bảng \ref{table02} thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán Outer Convex Approximation khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table02} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{frame_polygon}.
 
 \begin{table}[ht]
 	\begin{center}\renewcommand{\arraystretch}{1.2}\small
 		\setlength\tabcolsep{0.05cm}
-	\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
-		%\hline
-		\hline
-		\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & 50& 500& 1000& 2500& 5000& 7500& 9000\\ 
-		\hline		
-		\hline
-		{ $\delta = 70$}
-		
-		& \text{Edges@Alg.1}  &  4& 5& 5& 5& 5& 5& 5 \\
-		
-		& Edges@Alg.2  &   5& 5& 5& 5& 5& 5& 5\\
-		
-		& Step III@Alg.1  &4 &6 &6 &6 &6 &6 &6  \\
-		
-		& Step III@Alg.2 &6 &6 &6 &6 &6 &6 &6  \\
-		\hline
-		{ $\delta = 10$}
-		
-		& Edges@Alg.1  & 10 & 13 &14& 14&11&11&11 \\
-		
-		& Edges@Alg.2 &15&23&21&28&28&36&39\\
-		
-		& Step III@Alg.1 &16&22&24&24&18&18&18 \\
-		
-		& Step III@Alg.2&40&47&44&68&58&76&86  \\
-		\hline
-		{ $\delta = 1$}
-		
-		& Edges@Alg.1  &21&32&28&36&33&32&32 \\
-		
-		& Edges@Alg.2 &13&26&33&45&49&53&50 \\
-		
-		& Step III@Alg.1 &48&64&58&70&62&60&60 \\
-		
-		& Step III@Alg.2&48&92&108&136&166&156&160   \\
-		\hline
-		{ $\delta = 0$}
-		
-		& Edges@Alg.1 &13&25&30&40&45&44&45 \\
-		
-		& Edges@Alg.2&13&25&30&40&45&44&45  \\
-		
-		& Step III@Alg.1 &48 &96 &116 &156 &176 &172 &175 \\
-		
-		& Step III@Alg.2&48 &96 &116 &156 &176 &172 &175   \\
-		\hline
-	\end{tabular}
-		\caption{Số cạnh của đa giác lồi xấp xỉ ${\cal P}^{\rm outer}$ được trả về bởi thuật toán \ref{al-blduoi0}--\ref{al-blduoi1} và số lần thực hiện của bước \ref{stepIIIalg01} khi $X$ gồm $n$ điểm ngẫu nhiên trong khung $16$ cạnh đa giác ${\cal P}^\diamond$ thể hiện trong hình \ref{fig_dhandang2_2}.}
-		\label{table01}
+		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|}
+			%\hline
+			\hline
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$} & 50 & 500 & 1000 & 2500 & 5000 & 7500 \\ 
+			\hline		
+			\hline
+			{ $\delta = 70$}
+			
+			& $T_{\rm Alg.\, 1}$  &0.001531 & 0.001005 & 0.0 & 0.001025 & 0.000975 & 0.001025\\
+			
+			& $T_{\rm Alg.\, 1}/n$&3.06273e-05 & 2.0099e-06 & 0.0 & 4.102e-07 & 1.949e-07 & 1.367e-07 \\
+			\hline
+			{ $\delta = 10$}
+			
+			& $T_{\rm Alg.\, 3}$  &0.003005 & 0.003535 & 0.008002 & 0.006525 & 0.003 & 0.006528 \\
+			
+			& $T_{\rm Alg.\, 3}/n$&6.01006e-05 & 7.0691e-06 & 8.0023e-06 & 2.61e-06 & 6.001e-07 & 8.705e-07  \\
+			\hline
+			{ $\delta = 1$}
+			
+			& $T_{\rm Alg.\, 3}$  &0.012033 & 0.016051 & 0.014219 & 0.01155 & 0.013153 & 0.013655\\
+			
+			& $T_{\rm Alg.\, 3}/n$&0.0002406549 & 3.21026e-05 & 1.42186e-05 & 4.62e-06 & 2.6307e-06 & 1.8206e-06\\
+			\hline
+			{ $\delta = 0$}
+			
+			& $T_{\rm Alg.\, 3}$  &0.009627 & 0.019119 & 0.027318 & 0.036492 & 0.060799 & 0.054085 \\
+			
+			& $T_{\rm Alg.\, 3}/n$&0.0001925468 & 3.82371e-05 & 2.7318e-05 & 1.45967e-05 & 1.21599e-05 & 7.2113e-06\\
+			\hline
+		\end{tabular}
+		\caption{Thời gian chạy trung bình $T_{\rm Alg.\,3}$  thuật toán \ref{al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{frame_polygon}.}
+		\label{table02}
 	\end{center}
 \end{table} 	
 
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=350px]{./frame_polygon.jpg}
+		\caption{Đa giác n điểm ngẫu nhiên có khung 16 cạnh ${\cal P}^\diamond$.}
+		\label{frame_polygon}
+	\end{center}
+\end{figure} 	
 
 
-	\bigskip\noindent
-	{\bf LƯU Ý: (Liên quan đến bảng \ref{table01}):} 
-	 $n$ điểm ngẫu nhiên trong bảng \ref{table01} phải được tạo ra trong đa giác ${\cal P}^\diamond$ với khung 16 cạnh như trong hình \ref{fig_dhandang2_2}.
-	
-	\bigskip
-
-
-Nếu số điểm $n$ của $X$ rất lớn thì việc tính toán $\beta_{d_{p}}$ xác định trong (\ref{ct2.13}) sẽ tốn kém, có thể giảm đang kể như sau. Lấy bốn điểm  $q_1$, $q_2$, $q_3$, và $q_4$ của $X$ nằm trên bốn cạnh của hình chữ nhập ban đầu ${\cal P}^{\rm outer}$, tức là.
-\begin{equation}\label{ct2.30}
-	q_1, q_2, q_3, q_4 \in X
-\end{equation}
-and
-\begin{equation}\label{ct2.31}
-	\begin{array}{lcl}
-		(1, 0)\, q_1^T &=& \beta_{(1, 0)}, \\
-		(0, 1)\, q_2^T &=& \beta_{(0, 1)}, \\
-		(-1, 0)\, q_3^T &=& \beta_{(-1, 0)}, \\
-		(0, -1)\, q_4^T &=& \beta_{(0, -1)}.
-	\end{array}
-\end{equation}
-Với $j \in \{1, 2, 3, 4\}$ và $q_5 := q_1$, nếu $q_j \not= q_{j+1}$ thì xác định
-\begin{equation}\label{ct2.32}
-	X_j := \{x \in X \mid \bar d_{[q_j, q_{j+1}]}\, (x - q_j)^T \geq 0\}, 
-\end{equation}
-Trong đó
-\begin{equation}\label{ct2.33}
-	\bar d_{[q_j, q_{j+1}]}^{\, T} := \|q_{j+1} - q_j\|^{-1} R\, (q_{j+1} - q_j)^T.
-\end{equation}
-Trong thuật toán tiếp thep, $X$ trong (\ref{ct2.12}) và (\ref{ct2.26}) được thay thế bằng $X_j$, tức là
-\begin{equation}\label{ct2.34}
-	\begin{array}{lcl}
-		d_{p}^T &:=& \|p^+ - p^-\|^{-1} R \, (p^+ - p^-)^T, \\
-		\beta_{d_{p}} &:=& \max\{d_{p}\, x^T \mid x \in X_j\}, 
-	\end{array}
-\end{equation}
-và
-\begin{equation}\label{ct2.35}
-	\begin{array}{lcl}
-		&& \|p - x\| > \delta \ \mbox{ với mọi } x \in X_p, \ \mbox{ trong đó} \\
-		&& X_p := \{x \in X_j \mid d_{p}\, x^T = \beta_{d_{p}}\},
-	\end{array}
-\end{equation}
-Với $j \in \{1, 2, 3, 4\}$.
-
+Một vài hình ảnh kết quả chạy thuật toán Outer Convex Approximation với số điểm đầu vào bằng 100 được sinh ngẫu nhiên, và được đa giác 16 cạnh cắt thành tập các điểm nằm trong giới hạn kích thước nhỏ bao quanh mốc 150, với $\delta$ khác nhau (Hình \ref{outer_res_delta0}, \ref{outer_res_delta5}, \ref{outer_res_delta10}, \ref{outer_res_delta30}):
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=350px]{./outer_res_delta0.png}
+		\caption{Bao lồi kết quả khi chạy với $\delta$ = 0.}
+		\label{outer_res_delta0}
+	\end{center}
+\end{figure} 	
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=350px]{./outer_res_delta5.png}
+		\caption{Bao lồi kết quả khi chạy với $\delta$ = 5.}
+		\label{outer_res_delta5}
+	\end{center}
+\end{figure} 	
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=350px]{./outer_res_delta10.png}
+		\caption{Bao lồi kết quả khi chạy với $\delta$ = 10.}
+		\label{outer_res_delta10}
+	\end{center}
+\end{figure} 	
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=350px]{./outer_res_delta30.png}
+		\caption{Bao lồi kết quả khi chạy với $\delta$ = 30.}
+		\label{outer_res_delta30}
+	\end{center}
+\end{figure} 	
 \section{Inner convex approximation}\label{InnerConvexApproximation}
 
-Cho $X$ thỏa mãn (\ref{ct2.1})--(\ref{ct2.2}) và $\delta \geq 0$, ở đây ta sẽ tìm một xấp xỉ lồi trong ${\cal P}^{\rm inner}$  của $X$, tức là:
+Cho $X$ thỏa mãn (\ref{ct2.1})--(\ref{ct2.2}) và $\delta \geq 0$, ở đây ta sẽ tìm một bao lồi xấp xỉ lồi trong ${\cal P}^{\rm inner}$  của $X$, tức là:
 \begin{equation}\label{ct2.37}
 	{\cal P}^{\rm inner} := \ conv X', \ \mbox{ với} X' \subset X,
 \end{equation}
-Thật vậy
+Sao cho:
 \begin{equation}\label{ct2.38}
 	\ dist_{\rm H}(\ conv X, {\cal P}^{\rm inner}) \leq \delta.
 \end{equation}
 
-Ta mô tả ${\cal P}^{\rm inner}$ bởi tập $E$ của các cạnh có hướng của nó $[p, p^+]$, trong đó $p^+$  là cạnh kế tiếp ngược chiều kim đồng hồ của $p$, tức là:
+Ta mô tả ${\cal P}^{\rm inner}$ bởi tập $E$ của các cạnh có hướng của nó $[p, p^+]$, trong đó $p^+$  là đỉnh kế tiếp ngược chiều kim đồng hồ của $p$, tức là:
 \begin{equation}\label{ct2.39}
 	E := \{[p, p^+] \mid p, p^+ \in X', \mbox{ $[p, p^+]$ là một cạnh của ${\cal P}^{\rm inner}$}\}.
 \end{equation}
 
 
-Ta bắt đầu quá trình xấp xỉ lồi trong với tứ giác $\bar q_1 \bar q_2 \bar q_3 \bar q_4$, tức là:
+Ta bắt đầu quá trình tìm bao lồi xấp xỉ trong với tứ giác $\bar q_1 \bar q_2 \bar q_3 \bar q_4$, tức là:
 \begin{equation}\label{ct2.40}
 	\begin{array}{lcl}
 		X' &:=& \{\bar q_1, \bar q_2, \bar q_3, \bar q_4\}, \\
 		E &:=& \{[\bar q_1, \bar q_2], \, [\bar q_2, \bar q_3], \, [\bar q_3, \bar q_4], \, [\bar q_4, \bar q_1]\},
 	\end{array}
 \end{equation}
-Trong đó $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ là duy nhất và được xác định bởi:
+Trong đó $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ là độc nhất và được xác định bởi:
 \begin{equation}\label{ct2.41}
 	\begin{array}{lcl}
 		x^1_{\rm min} &:=& \min \{x^1 \mid (x^1, x^2) \in X\}, \\
@@ -914,11 +859,11 @@ Và
 		&& \bar q_4 = (\bar q_4^1, \bar q_4^2) \in X^2_{\rm min} \mbox{  thỏa mãn } \bar q_4^1 = \max\{x^1 \mid (x^1, x^2) \in X^2_{\rm min}\}.
 	\end{array}
 \end{equation}
-Lưu ý rằng hai trong số bốn điểm $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ có thể trùng nhau, nhưng (\ref{ct2.2}) ngụ ý rằng ít nhất ba trong số chúng khác nhau.
+Lưu ý rằng hai trong số bốn điểm $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ có thể trùng nhau, nhưng (\ref{ct2.2}) ngầm định rằng phải ít nhất ba trong số chúng khác nhau.
 
-Trong các bước xấp xỉ sau đây, đa giác ${\cal P}^{\rm inner}$ được xây dựng và cải thiện 
-như sau.
-Với bất kỳ $[p, p^+] \in E$ ($p \not= p^+$), ta các định:
+Trong các bước tiếp theo, đa giác ${\cal P}^{\rm inner}$ được xây dựng và cải thiện 
+như sau.\\
+Với cạnh bất kỳ $[p, p^+] \in E$ ($p \not= p^+$), ta xác định:
 \begin{equation}\label{ct2.44}
 	\begin{array}{lcl}
 		\bar d_{[p, p^+]}^{\, T} &:=& \|p^+ - p\|^{-1} R \, (p^+ - p)^T, \\
@@ -933,24 +878,24 @@ Với
 	\end{pmatrix}.
 \end{equation*}
 
-Nếu $X_{[p, p^+]} \not= \emptyset$ thì xác định
+Nếu $X_{[p, p^+]} \not= \emptyset$ thì xác định:
 \begin{equation}\label{ct2.45}
 	\begin{array}{lcl}
 		\beta_{[p, p^+]} &:=& \max \{\bar d_{[p, p^+]}\, x^T \mid x \in X_{[p, p^+]}\}, \\
 		B_{[p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, p^+]}\, x^T = \beta_{[p, p^+]}\}.
 	\end{array}
 \end{equation}
-Nếu
+Nếu:
 \begin{equation}\label{dct2.46}
 	\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T \leq \delta
 \end{equation}
-Thì ta không cần phải mở rộng ${\cal P}^{\rm inner }$ theo hướng $\bar d_{[p, p^+]}$.
+Thì ta không cần phải mở rộng ${\cal P}^{\rm inner }$ theo hướng $\bar d_{[p, p^+]}$ nữa.
 
-Ngược lại, nếu
+Ngược lại, nếu:
 \begin{equation}\label{ct2.47}
 	\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T > \delta
 \end{equation}
-thì lấy  
+thì xác định điểm:
 \begin{equation}\label{ct2.48}
 	\hat p \in B_{[p, p^+]} \hbox{ thỏa mãn } \|\hat p - p\| = \max\{\|x - p\| \mid x \in B_{[p, p^+]}\},
 \end{equation}
@@ -961,48 +906,48 @@ Và cập nhập $X'$ và $B$ bởi
 		E &:=& E \cup \{[p, \hat p], \, [\hat p, p^+]\},
 	\end{array}
 \end{equation}
-Và xác định
+Và xác định: 
 \begin{equation}\label{ct2.50}
 	\begin{array}{lcl}
 		X_{[p, \hat p]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[p, \hat p]}\, x^T > \bar d_{[p, \hat p]}\, p^T \}, \\
 		X_{[\hat p, p^+]} &:=& \{x \in X_{[p, p^+]} \mid \bar d_{[\hat p, p^+]}\, x^T > \bar d_{[\hat p, p^T]}\, {\hat p}^T \}.
 	\end{array}
 \end{equation}
-Lưu ý rằng ta chỉ xem xét $x \in X_{[p, p^+]}$ trong định nghĩa này của $X_{[p, \hat p]}$ vaf $X_{[\hat p, p^+]}$, nhưng tất cả $x \in X$ trong định nghĩa (\ref{ct2.44}) của $X_{[p, p^+]}$.
+Lưu ý rằng ta chỉ xem xét $x \in X_{[p, p^+]}$ trong định nghĩa này của $X_{[p, \hat p]}$ và $X_{[\hat p, p^+]}$, nhưng tất cả $x \in X$ đều được định nghĩa (\ref{ct2.44}) của $X_{[p, p^+]}$.
 
-Quy trình xấp xỉ được trình bày trong thuật toán sau, trong đó  $E_{\rm doubt}$ biểu thị tập hợp các cạnh vẫn cần được kiểm tra.
+Quy trình tìm bao lồi được trình bày trong thuật toán sau, trong đó  $E_{\rm doubt}$ biểu thị tập hợp các cạnh cần được kiểm tra.
 
 \begin{algorithm}\label{alg04}  \rm 
 	\floatname{algorithm}{Thuật toán}
 	\caption{}  \label{al-blduoi4}
 	\emph{Input:} Tập hữu hạn $X \subset \R^2$ và tham số xấp xỉ $\delta \geq 0$. \\
-	\emph{Output:} Đa giác xấp xỉ lồi trong ${\cal P}^{\rm inner}$ được mô tả bởi $X'$ và $E$.
+	\emph{Output:} Đa giác lồi xấp xỉ trong ${\cal P}^{\rm inner}$ được mô tả bởi $X'$ và $E$.
 	\begin{enumerate}
 		\item\label{stepIalg04} 
-		Xác định $X'$ và $E$ theo (\ref{ct2.40})--(\ref{ct2.43}).\\
-		Với mọi $[p, p^+] \in E$ xác định $d_{[p, p^+]}$ và $X_{[p, p^+]}$ theo (\ref{ct2.44}).\\
+		Tìm $X'$ và $E$ theo (\ref{ct2.40})--(\ref{ct2.43}).\\
+		Với mọi ${[p, p^+]} \in E$ xác định $d_{[p, p^+]}$ và $X_{[p, p^+]}$ theo (\ref{ct2.44}).\\
 		Cho $E_{\rm doubt} := E$.
 		
 		\item\label{stepIIalg04} 
-		 Chọn tùy ý $[p, p^+] \in E_{\rm doubt}$. \\
-		Nếu $X_{[p, p^+]} = \emptyset$ thì đặt
+		 Chọn một cạnh $[p, p^+] \in E_{\rm doubt}$. \\
+		Nếu $X_{[p, p^+]} = \emptyset$, đặt
 		$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
 		và đi tới bước \ref{stepIIIalg04}.\\
-		Định nghĩa $\beta_{[p, p^+]}$ và $B_{[p, p^+]}$ theo (\ref{ct2.45}). \\
-		Nếu (\ref{dct2.46}) đúng thì đặt
+		Tìm $\beta_{[p, p^+]}$ và $B_{[p, p^+]}$ theo (\ref{ct2.45}). \\
+		Nếu (\ref{dct2.46}) đúng, đặt
 		$E_{\rm doubt} := E_{\rm doubt} \setminus \{[p, p^+]\}$
 		Và đi tới bước \ref{stepIIIalg04}.\\
 		Trường hợp còn lại, lấy $\hat p$ định nghĩa theo (\ref{ct2.48}),
-		và cập nhật $X'$ và $E$ theo (\ref{ct2.49}), và xác định $X_{[p, \hat p]}$ và $X_{[\hat p, p^+]}$ theo (\ref{ct2.50}),	và đặt
+		 cập nhật $X'$ và $E$ theo (\ref{ct2.49}), và xác định $X_{[p, \hat p]}$ và $X_{[\hat p, p^+]}$ theo (\ref{ct2.50}), đặt
 		\begin{equation*}%\label{newBdoubt3}
 			E_{\rm doubt} := (E_{\rm doubt} \setminus \{[p, p^+])\}) \cup \{[p, \hat p], \, [\hat p, p^+]\}.
 		\end{equation*}
 		
 		\item\label{stepIIIalg04} 
-		Nếu $E_{\rm doubt}$ chưa rỗng thì quay lại bước \ref{stepIIalg04}.
+		Nếu $E_{\rm doubt} \ne \emptyset$  thì quay lại bước \ref{stepIIalg04}.
 		
 		\item
-		Trả về $X'$, $E$, và kết thúc thuật toán
+		Trả về $X'$, $E$ và kết thúc thuật toán.
 	\end{enumerate}
 \end{algorithm}
 
@@ -1010,58 +955,58 @@ Quy trình xấp xỉ được trình bày trong thuật toán sau, trong đó  
 \medskip
 Bảng \ref{table03} cho thấy một số kết quả thử nghiệm, trong đó:
 \begin{itemize}
-	\item $\#_{\rm Edges@ Alg.\, 3}$  là số cạnh trung bình của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm inner}$ được trả về bởi thuật toán \ref{al-blduoi4},
-	\item $\#_{\rm Step\, II @ Alg.\, 3}$ là số lần thực hiện trung bình của bước \ref{stepIIalg04} của thuật toán \ref{al-blduoi4}.
+	\item $\#_{\rm Edges@ Alg.\, 2}$  là số cạnh trung bình của đa giác xấp xỉ lồi bao ngoài ${\cal P}^{\rm inner}$ được trả về bởi thuật toán \ref{al-blduoi4},
+	\item $\#_{\rm Step\, II @ Alg.\, 2}$ là số lần thực hiện trung bình của bước II của thuật toán \ref{al-blduoi4}.
 \end{itemize}
 
 \begin{table}[ht]
 	\begin{center}\renewcommand{\arraystretch}{1.2}\small
-		\setlength\tabcolsep{0.05cm}
+		\setlength\tabcolsep{0.3cm}
 		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}
 			%\hline
 			\hline
-			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  &50& 500& 1000& 2500& 5000& 7500& 9000\\ 
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  &50& 500& 1000& 2500& 5000& 7500\\ 
 			\hline		
 			\hline
-			{ $\delta = 300$}
+			{ $\delta = 70$}
 			
-			& $\#_{\rm Edges@ Alg.\, 3}$  &6&6&6&6&5&6&6\\
+			& $\#_{\rm Edges@ Alg.\, 3}$  &6 & 6 & 6 & 6 & 6 & 6\\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 3}$&8&8&8&8&8&8&8   \\
-			\hline
-			{ $\delta = 150$}
-			
-			& $\#_{\rm Edges@ Alg.\, 3}$  &8&8&8&8&7&8&8 \\
-			
-			& $\#_{\rm Step\, II @ Alg.\, 3}$&12&12&12&12&12&12&12\\
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&8 & 8 & 8 & 8 & 8 & 8  \\
 			\hline
 			{ $\delta = 10$}
 			
-			& $\#_{\rm Edges@ Alg.\,3}$  &11&17&16&20&18&17&17 \\
+			& $\#_{\rm Edges@ Alg.\, 3}$  &9 & 10 & 10 & 11 & 12 & 11 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 3}$&54&54&60&58&58&56&56  \\
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&14 & 16 & 16 & 18 & 20 & 18\\
+			\hline
+			{ $\delta = 1$}
+			
+			& $\#_{\rm Edges@ Alg.\,3}$  &12 & 19 & 22 & 23 & 26 & 22 \\
+			
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&20 & 34 & 40 & 42 & 48 & 40  \\
 			\hline
 			{ $\delta = 0$}
 			
-			& $\#_{\rm Edges@ Alg.\, 3}$  &13&25&30&40&45&44&45 \\
+			& $\#_{\rm Edges@ Alg.\, 3}$  &12 & 23 & 30 & 38 & 43 & 43 \\
 			
-			& $\#_{\rm Step\, II @ Alg.\, 3}$&74&146&176&236&266&260&266   \\
+			& $\#_{\rm Step\, II @ Alg.\, 3}$&20 & 42 & 56 & 72 & 82 & 82  \\
 			\hline
 		\end{tabular}
-		\caption{Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal P}^{\rm inner}$ Trả về bởi thuật toán \ref{al-blduoi4} và số lần thực hiện trung bình của bước \ref{stepIIalg04} khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và được hiển thị trong hình \ref{fig_dhandang2_2}.}
+		\caption{Số cạnh trung bình của đa giác lồi xấp xỉ lồi trong ${\cal P}^{\rm inner}$ trả về bởi thuật toán \ref{al-blduoi4} và số lần thực hiện trung bình của bước \ref{stepIIalg04} khi $X$ gồm $n$ điểm ngẫu nhiên trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và được hiển thị trong hình \ref{frame_polygon}.}
 		\label{table03}
 	\end{center}
 \end{table} 	
 
 	\bigskip\noindent
-	{\bf LƯU Ý (Liên quan đến bảng \ref{table03}):}  $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và hiển thị trong hình \ref{fig_dhandang2_2}.
+	{\bf LƯU Ý (Liên quan đến bảng \ref{table03}):}  $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ và hiển thị trong hình \ref{frame_polygon}.
 	
 	\bigskip
 
 \medskip
-Bảng \ref{table04}  thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán  \ref{alg04} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}, trong đó
+Bảng \ref{table04}  thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán Outer Convex Approximation khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{frame_polygon}, trong đó
 
-$T_{\rm Alg.\, 3}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi4}.
+$T_{\rm Alg.\, 2}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi4}.
 
 \begin{table}[ht]
 	\begin{center}\renewcommand{\arraystretch}{1.2}\small
@@ -1069,35 +1014,35 @@ $T_{\rm Alg.\, 3}$ là thời gian chạy trung bình của thuật toán \ref{a
 		\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|}
 			%\hline
 			\hline
-			\multicolumn {2}{|c||}{\footnotesize $\#X=n$}  & 10& 100& 500& 1000&5000&10000 \\ 
+			\multicolumn {2}{|c||}{\footnotesize $\#X=n$} &50& 500& 1000& 2500& 5000& 7500\\ 
 			\hline		
+			\hline
+			{ $\delta = 70$}
+			
+			& $T_{\rm Alg.\, 2}$  &0.002035 & 0.01511 & 0.03 & 0.065514 & 0.145027 & 0.197571 \\
+			
+			& $T_{\rm Alg.\, 2}/n$&4.06981e-05 & 3.02205e-05 & 3e-05 & 2.62054e-05 & 2.90054e-05 & 2.63428e-05 \\
+			\hline
+			{ $\delta = 10$}
+			
+			& $T_{\rm Alg.\, 2}$  &0.005001 & 0.026086 & 0.047984 & 0.13192 & 0.283488 & 0.402505 \\
+			
+			& $T_{\rm Alg.\, 2}/n$&0.0001000214 & 5.21712e-05 & 4.79844e-05 & 5.27678e-05 & 5.66977e-05 & 5.36673e-05 \\
+			\hline
+			{ $\delta = 1$}
+			
+			& $T_{\rm Alg.\, 2}$  &0.005164 & 0.052596 & 0.127814 & 0.291402 & 0.645425 & 0.814138\\
+			
+			& $T_{\rm Alg.\, 2}/n$&0.0001032829 & 0.0001051922 & 0.0001278136 & 0.0001165608 & 0.000129085 & 0.0001085517\\
 			\hline
 			{ $\delta = 0$}
 			
-			& $T_{\rm Alg.\, 3}$  &   0.00598&  0.03488& 0.18139& 0.4196& 2.96109& 4.57668 \\
+			& $T_{\rm Alg.\, 2}$  &0.006178 & 0.063702 & 0.158502 & 0.486671 & 1.094417 & 1.650608 \\
 			
-			& $T_{\rm Alg.\, 3}/n$&0.000598 &  0.0003488 & 0.00036278&0.000419& 0.00059& 0.000457  \\
-			\hline
-			{ $\delta = 50$}
-			
-			& $T_{\rm Alg.\, 3}$  &   0.00493&0.01396& 0.00013& 0.08571& 0.39568&0.66178 \\
-			
-			& $T_{\rm Alg.\, 3}/n$&0.000493&0.00013& 9.368.$10^{-5}$& 8.5709.$10^{-5}$& 7.9136.$10^{-5}$& 6.6178.$10^{-5}$  \\
-			\hline
-			{ $\delta = 100$}
-			
-			& $T_{\rm Alg.\, 3}$  &0.00299 & 0.00897&0.03986& 0.07575& 0.36578 &0.54522\\
-			
-			& $T_{\rm Alg.\, 3}/n$& 0.000299.$10^{-5}$& 8.970.$10^{-5}$&7.972.$10^{-5}$& 7.575.$10^{-5}$&7.3156.$10^{-5}$  &5.4522.$10^{-5}$\\
-			\hline
-			{ $\delta = 500$}
-			
-			& $T_{\rm Alg.\, 3}$  &    0.00199& 0.00199&0.00797 &0.01395&0.06478& 0.09867 \\
-			
-			& $T_{\rm Alg.\, 3}/n$&0.000199.$10^{-5}$ &1.99.$10^{-5}$&1.59.$10^{-5}$4& 1.395.$10^{-5}$&1.2956.$10^{-5}$&9.86699.$10^{-5}$\\
+			& $T_{\rm Alg.\, 2}/n$&0.0001235676 & 0.0001274037 & 0.0001585019 & 0.0001946683 & 0.0002188833 & 0.000220081\\
 			\hline
 		\end{tabular}
-		\caption{Thời gian chạy trung bình $T_{\rm Alg.\,3}$  thuật toán \ref{al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh  ${\cal P}^\diamond$ hiển thị trong hình \ref{fig_dhandang2_2}.}
+		\caption{Thời gian chạy trung bình $T_{\rm Alg.\,2}$  thuật toán \ref{al-blduoi4} khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table04} phải được tạo ra trong đa giác có khung $16$ cạnh  ${\cal P}^\diamond$ hiển thị trong hình \ref{frame_polygon}.}
 		\label{table04}
 	\end{center}
 \end{table} 	
@@ -1105,12 +1050,12 @@ $T_{\rm Alg.\, 3}$ là thời gian chạy trung bình của thuật toán \ref{a
 
 \chapter{Thực nghiệm và kết quả}
 
-Chương này trình bày cách thức triển khai của đồ án:khởi tạo môi trường chạy, lấy tập dữ liệu DOTA, chuyển đổi thuật toán từ mã Python sang mã C++, thay thế thuật toán mới cho thuật toán cũ, cấu hình file config để thực hiện huấn luyện, một vài kết quả số.
+Chương này trình bày cách thức triển khai của đồ án: khởi tạo môi trường chạy, lấy tập dữ liệu DOTA, chuyển đổi thuật toán từ mã Python sang mã C++, thay thế thuật toán mới cho thuật toán cũ, cấu hình file config để thực hiện huấn luyện, một vài kết quả số.
 \section{Khởi tạo môi trường chạy} 
 
 Môi trường được sử dụng trong đồ án là Linux, bản phân phối Ubuntu 20.04.06 LTS, sử dụng 2 máy có thông số khác nhau để chạy. Một máy laptop với GTX 1650 4GB RAM và một máy pc RTX 3060 12GB RAM. CUDA Toolkit sử dụng phiên bản 11.6, cài đặt CUDNN.
 
-Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản MMCV \cite{MMCV} hiện đại, tôi đã chuyển qua sử dụng thư viện MMROTATE, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện MMCV==1.7.1, MMDETECTION==2.28.2 và MMROTATE==0.3.4. Riêng 2 thư viện MMCV và MMROTATE \cite{MMRotate} thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMmlab. Thư viện MMCV đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA C++ để lập trình tính toán cho card đồ hoạ). Thư viện MMDETECTION \cite{MMDetection} là một bộ thư viện chủ đạo (ngoài ra còn có MMYolo) của phòng nghiên cứu OpenMmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện MMROTATE. 
+Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản MMCV \cite{MMCV} hiện đại, em đã chuyển qua sử dụng thư viện MMROTATE, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện MMCV==1.7.1, MMDETECTION==2.28.2 và MMROTATE==0.3.4. Riêng 2 thư viện MMCV và MMROTATE \cite{MMRotate} thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMmlab. Thư viện MMCV đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA C++ để lập trình tính toán cho card đồ hoạ). Thư viện MMDETECTION \cite{MMDetection} là một bộ thư viện chủ đạo (ngoài ra còn có MMYolo) của phòng nghiên cứu OpenMmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện MMROTATE. 
 
 OpenMmlab là một dự án mã nguồn mở phục vụ cho nghiên cứu học thuật và ứng dụng công nghiệp, bao gồm nhiều chủ đề nghiên cứu trong lĩnh vực thị giác máy tính như: phân loại hình ảnh, phát hiện mục tiêu, phân đoạn mục tiêu, tạo hình ảnh siêu phân giải, và nhiều hơn nữa.
 
@@ -1191,30 +1136,35 @@ $x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4$, category, difficult
 
 ...
 
-Sau khi download được tập dữ liệu DOTA về máy, thực hiện tiền xử lý dữ liệu. Ở đây sử dụng bộ tool dotadevkit (dùng lệnh pip install dotadevkit để cài đặt). Sử dụng lệnh để chia ảnh ra với 8 process, kích thước ảnh 1024 pixels, overlaps 200. Sau khi chia ta có cây thư mục của tập dữ liệu như sau:
+Sau khi download được tập dữ liệu DOTA về máy, thực hiện tiền xử lý dữ liệu. Ở đây có thể sử dụng tool split ảnh có sẵn trong source code Mmrotate. Sử dụng lệnh để chia ảnh ra với 8 process, kích thước ảnh 1024 pixels, overlaps 200. Sau khi chia ta có cây thư mục của tập dữ liệu như sau:\\
+\\
+\\
+\\
+\\
+\\
+
 
 \dirtree{%
-	.1 dota-dataset.
-	.2 train\_split.
-	.3 images.
-	.4 P001.png.
-	.4 P003.png.
-	.4 ....
-	.3 labelTxt.
-	.4 P001.txt.
-	.4 P002.txt.
-	.4 ....
-	.3 images.txt.
+	.1 DOTA.
+	.2 trainval.
+		.3 images.
+			.4 P001.png.
+			.4 P003.png.
+			.4 ....
+		.3 annfiles.
+			.4 P001.txt.
+			.4 P003.txt.
+			.4 ....
 	.2 test.
-	.3 test\_info.json.
-	.3 images.
-	.2 val\_split.
-	.3 images.
-	.3 labelTxt.
-	.3 images.txt.
+		.3 images.	
+			.4 P001.png.
+			.4 P003.png.
+		.3 annfiles.
+			.4 P001.txt.
+			.4 P003.txt.
 }
 
-Với labelTxt chứa các file annotation dạng txt của từng ảnh, images là thư mục chứa các ảnh, còn images.txt là thư mục dùng cho việc evaluate bằng dotadevkit.
+Với annfiles chứa các file annotation của từng ảnh, images là thư mục chứa các ảnh.
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./minh_hoa_hop_bao_dota.jpg}
@@ -2373,8 +2323,6 @@ for (int i = 0; i < n_poly; i++) {
 }
 \end{lstlisting}
 
-\textit{thêm giải thích cho các hàm này}
-
 Tiếp theo ta có file code dùng để tuỳ chỉnh huấn luyện. File code này được viết bằng mã Python:
 \begin{lstlisting}
 # from mmcv import collect_env
@@ -2400,50 +2348,28 @@ cfg = Config.fromfile('./configs/
 cfa/cfa_r50_fpn_40e_dota_oc.py')
 from mmdet.apis import set_random_seed
 
-#Modify dataset type and path
 cfg.dataset_type = 'CustomDotaDataset'
-cfg.data_root = 'data/dota-dataset/'
+cfg.data_root = 'data/split_ss_dota/'
 
 cfg.data.test.type = 'CustomDotaDataset'
-cfg.data.test.data_root = 'data/dota-dataset/'
-cfg.data.test.ann_file = 'test_split/test_info.json'
-cfg.data.test.img_prefix = 'test/images'
+cfg.data.test.data_root = 'data/split_ss_dota/'
+cfg.data.test.ann_file = 'test/annfiles/'
+cfg.data.test.img_prefix = 'test/images/'
 
 cfg.data.train.type = 'CustomDotaDataset'
-cfg.data.train.data_root = 'data/dota-dataset/'
-cfg.data.train.ann_file = 'train_split/labelTxt'
-cfg.data.train.img_prefix = 'train_split/images'
+cfg.data.train.data_root = 'data/split_ss_dota/'
+cfg.data.train.ann_file = 'trainval/annfiles/'
+cfg.data.train.img_prefix = 'trainval/images/'
 
 cfg.data.val.type = 'CustomDotaDataset'
-cfg.data.val.data_root = 'data/dota-dataset/'
-cfg.data.val.ann_file = 'val_split/labelTxt'
-cfg.data.val.img_prefix = 'val_split/images'
+cfg.data.val.data_root = 'data/split_ss_dota/'
+cfg.data.val.ann_file = 'trainval/annfiles/'
+cfg.data.val.img_prefix = 'trainval/images/'
 
-cfg.data.samples_per_gpu = 1
-cfg.data.workers_per_gpu = 1
-# modify num classes of the model in box head
-cfg.model.bbox_head.num_classes = 15
-# We can still use the pre-trained
-# RotateReppoint model though we do not need to
+cfg.work_dir = './results'
+cfg.log_config.interval = 50
 
-# cfg.load_from = 'cfa_r50_fpn_40e_dota_oc-2f387232.pth'
-cfg.resume_from = './result_custom_mmcv_2/latest.pth'
-# Set up working dir to save files and logs.
-cfg.work_dir = './result_custom_mmcv_2'
-
-cfg.optimizer.lr = 0.001
-cfg.lr_config.warmup = None
-# cfg.runner.max_epochs = 40
-cfg.log_config.interval = 100
-
-# # Change the evaluation metric 
-# since we use customized dataset.
-cfg.evaluation.metric = 'mAP'
-# # We can set the evaluation interval 
-# to reduce the evaluation times
-cfg.evaluation.interval = 1
-# # We can set the checkpoint
-# saving interval to reduce the storage cost
+cfg.evaluation.interval = 5
 cfg.checkpoint_config.interval = 1
 
 # Set seed thus the results are more reproducible
@@ -2451,12 +2377,6 @@ cfg.seed = 0
 set_random_seed(0, deterministic=False)
 cfg.gpu_ids = range(1)
 cfg.device='cuda'
-
-# We can also use tensorboard to log the training process
-cfg.log_config.hooks = [
-dict(type='TextLoggerHook'),
-dict(type='TensorboardLoggerHook')]
-
 
 import os.path as osp
 import os
@@ -2484,11 +2404,1038 @@ train_detector(model, datasets,
 
 \end{lstlisting}
 
+
+
+
+\textbf{Đây là các hàm hỗ trợ cho Inner Convex Appoximation:}
+\begin{lstlisting}
+	
+	struct Edge {
+		Point first_point;
+		Point second_point;
+	};
+	__device__ inline int findMinPointIndex(
+	const Point points[], int n) {
+	if (n <= 0) {
+		return -1;
+	}
+	
+	int minIndex = 0;
+	
+	for (int i = 1; i < n; ++i) {
+		if (points[i].y < points[minIndex].y) {
+			minIndex = i;
+		}
+		else if (points[i].y == points[minIndex].y &&
+		 points[i].x < points[minIndex].x) {
+			minIndex = i;
+		}
+	}
+	
+		return minIndex;
+	}
+	
+__device__ inline void moveMinPointsToFront(
+	Point points[], int n) {
+	int minIndex = findMinPointIndex(points, n);
+	Point points_premitive[20];
+	for (int i = 0; i < n; i++) {
+		points_premitive[i] = points[i];
+	}
+	if (minIndex != -1) {
+		Point temp[20];
+		int tempIndex = 0;
+
+		for (int i = minIndex; i < n; ++i) {
+			temp[tempIndex++] = points[i];
+		}
+		
+		for (int i = 0; i < minIndex; ++i) {
+			points[i + n - minIndex] 
+			= points_premitive[i];
+		}
+		
+		for (int i = 0; i < tempIndex; ++i) {
+			points[i] = temp[i];
+		}
+	}
+}
+__device__ inline void reversePoints(
+		Point* points, int size) {
+	int start = 0;
+	int end = size - 1;
+	
+	while (start < end) {
+		Point temp = points[start];
+		points[start] = points[end];
+		points[end] = temp;
+		
+		++start;
+		--end;
+	}
+}
+__device__ inline void copy_points(
+Point* src, Point* dst, int& n_src,
+ int& n_dst) {
+for (int i = 0; i < n_src; i++) {
+	dst[i].x = src[i].x;
+		dst[i].y = src[i].y;
+		
+	}
+	n_dst = n_src;
+}
+__device__ inline bool pointExists(
+const Point* uniquePoints,
+ int size, const Point& p) {
+	for (int i = 0; i < size; ++i) {
+		if (uniquePoints[i].x == p.x && 
+		uniquePoints[i].y == p.y) {
+			return true;
+		}
+	}
+	return false;
+}
+
+__device__ inline void uniquePoints(
+const Edge* edges, int size,
+ Point* uniquePoints, int& uniqueSize) {
+	for (int i = 0; i < size; ++i) {
+			if (!pointExists(uniquePoints,
+	 uniqueSize, edges[i].first_point)) {
+	 	uniquePoints[uniqueSize]
+	 	 = edges[i].first_point;
+				++uniqueSize;
+			}
+			
+	if (!pointExists(uniquePoints, 
+	uniqueSize, edges[i].second_point)) {
+		uniquePoints[uniqueSize]
+		 = edges[i].second_point;
+		++uniqueSize;
+	}
+		}
+	}
+	
+	//chen 1 canh vao phan tu
+	__device__ inline void insert_edge(
+	Edge* edges, int& n, 
+	const Edge& edge, int index) {
+		
+		if (index == -1) {
+			index = n;
+		}
+		for (int i = n - 1; i >= index; i--) {
+			edges[i + 1] = edges[i];
+		}
+		
+		edges[index] = edge;
+		n++;
+	}
+	
+	//xoa canh theo chi so
+	__device__ inline void erase_edge(
+	Edge* edges, int& n, int index) {
+		if (index < 0 || index >= n) {
+			return;
+		}
+		
+		for (int i = index + 1; i < n; i++) {
+			edges[i - 1] = edges[i];
+		}
+		
+		n--;
+	}
+	
+	//tim chi so cua 1 canh trong mang
+	__device__ inline int find_edge_index(
+	Edge* edges, int n, Edge& edge) {
+		int index = -1;
+		for (int i = 0; i < n; i++) {
+			if (
+	edges[i].first_point.x == edge.first_point.x &&
+	edges[i].first_point.y == edge.first_point.y &&
+	edges[i].second_point.x == edge.second_point.x &&
+	edges[i].second_point.y == edge.second_point.y
+	) {
+				index = i;
+				break;
+			}
+		}
+		return index;
+	}
+	
+__device__ inline double f_max(double x, double y) {
+	if (x > y) {
+		return x;
+	}
+	else {
+		return y;
+	}
+}
+	
+__device__ inline void divide_colmatrix_by_double(
+double matrix[2][1], double d) {
+	
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 1; j++) {
+			matrix[i][j] = matrix[i][j] / d;
+		}
+	}
+}
+
+__device__ inline void multiply_R_matrix(
+double R[2][2], double B[2][1], 
+double C[2][1], int m = 2, int n = 2,
+ int p = 1) {
+		
+for (int i = 0; i < m; i++) {
+	for (int j = 0; j < p; j++) {
+		C[i][j] = 0;
+	}
+}
+
+for (int i = 0; i < m; i++) {
+	for (int j = 0; j < p; j++) {
+		for (int k = 0; k < n; k++) {
+			C[i][j] += R[i][k] * B[k][j];
+		}
+	}
+		}
+	}
+	
+__device__ inline bool allclose(
+const Point& p1, const Point& p2, 
+double rtol = 1e-5, double atol = 1e-8) {
+	double rel_diff_x = fabs(p1.x - p2.x) / 
+	(atol + rtol * f_max(fabs(p1.x), fabs(p2.x)));
+	
+	double rel_diff_y = fabs(p1.y - p2.y) / 
+	(atol + rtol * f_max(fabs(p1.y), fabs(p2.y)));
+	
+	return rel_diff_x <= 1.0 && rel_diff_y <= 1.0;
+}
+
+__device__ inline double findMaxValue(
+double arr[], int size) {
+		if (size <= 0) {
+			return 0.0; 
+		}
+		
+		double maxVal = arr[0];
+		for (int i = 1; i < size; ++i) {
+			if (arr[i] > maxVal) {
+				maxVal = arr[i];
+			}
+		}
+		
+		return maxVal;
+	}
+	__device__ inline void delete_edges(
+	Edge* edges, int& n, Edge edoubt) {
+		int count = 0;
+		
+		for (int i = 0; i < n; i++) {
+			if (
+	(edges[i].first_point.x == edoubt.first_point.x &&
+	edges[i].first_point.y == edoubt.first_point.y &&
+	edges[i].second_point.x == edoubt.second_point.x &&
+	edges[i].second_point.y == edoubt.second_point.y) ||
+	(edges[i].first_point.x == edoubt.second_point.x &&
+	edges[i].first_point.y == edoubt.second_point.y &&
+	edges[i].second_point.x == edoubt.first_point.x &&
+	edges[i].second_point.y == edoubt.first_point.y)
+			) {
+				count++;
+			}
+			else {
+				edges[i - count] = edges[i];
+			}
+		}
+		n -= count;
+	}
+	
+__device__ inline void convert_point_to_colmatrix(
+Point p, double matrix[2][1]) {
+	matrix[0][0] = p.x;
+	matrix[1][0] = p.y;
+}
+	
+__device__ inline void transpose_to_colmatrix(
+double matrix[1][2], double transposed_matrix[2][1]) {
+	transposed_matrix[0][0] = matrix[0][0];
+	transposed_matrix[1][0] = matrix[0][1];
+}
+
+__device__ inline void transpose_to_rowmatrix(
+double matrix[2][1], double transposed_matrix[1][2]) {
+	transposed_matrix[0][0] = matrix[0][0];
+	transposed_matrix[0][1] = matrix[1][0];
+}
+	
+__device__ inline double dot_product(
+double matrix1[1][2], double matrix2[2][1]) {
+double dot_product = 0;
+dot_product += matrix1[0][0] * matrix2[0][0] +
+ matrix1[0][1] * matrix2[1][0];
+return dot_product;
+}
+	
+__device__ inline void convert_many_points_to_matrix(
+Point* points, int n, double X[][2]) {
+	for (int i = 0; i < n; i++) {
+		X[i][0] = points[i].x;
+		X[i][1] = points[i].y;
+	}
+}
+	
+__device__ inline void 
+divide_matrix_by_double_and_return_new_matrix(
+double matrix[2][1], double dp[2][1], 
+int rows, int cols, double d) {
+	
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			dp[i][j] = matrix[i][j] / d;
+		}
+	}
+}
+	
+__device__ inline double norm_2(Point p) {
+	double x2 = p.x * p.x;
+	double y2 = p.y * p.y;
+	
+	return sqrt(x2 + y2);
+}
+	
+__device__ inline double norm_2(Point p1, Point p2) {
+	Point tmp = { 0, 0 };
+	tmp.x = p1.x - p2.x;
+	tmp.y = p1.y - p2.y;
+	double x2 = tmp.x * tmp.x;
+	double y2 = tmp.y * tmp.y;
+	
+	return sqrt(x2 + y2);
+}
+	
+	
+__device__ inline void
+ convert_point_to_rowmatrix(
+ Point p, double matrix[1][2]) {
+	matrix[0][0] = p.x;
+	matrix[0][1] = p.y;
+}
+
+__device__ inline void
+ subtract_points(
+ Point p1, Point p2, Point& p3) {
+	p3.x = p1.x - p2.x;
+	p3.y = p1.y - p2.y;
+}
+	
+__device__ inline double
+ find_max_x(Point X[], int n) {
+	double max_x = X[0].x;
+	
+	for (int i = 1; i < n; i++) {
+		if (X[i].x > max_x) {
+			max_x = X[i].x;
+		}
+	}
+	
+	return max_x;
+}
+	
+__device__ inline double
+ find_min_x(Point X[], int n) {
+	double min_x = X[0].x;
+	for (int i = 1; i < n; i++) {
+		if (X[i].x < min_x) {
+			min_x = X[i].x;
+		}
+	}
+	
+	return min_x;
+}
+	
+__device__ inline 
+double find_max_y(Point X[], int n) {
+	double max_y = X[0].y;
+	for (int i = 1; i < n; i++) {
+		if (X[i].y > max_y) {
+			max_y = X[i].y;
+		}
+	}
+	
+	return max_y;
+}
+	
+__device__ inline double
+ find_min_y(Point X[], int n) {
+	double min_y = X[0].y;
+	for (int i = 1; i < n; i++) {
+		if (X[i].y < min_y) {
+			min_y = X[i].y;
+		}
+	}
+	return min_y;
+}
+	
+__device__ inline void find_points_by_x(
+Point* X, int& n, double min_x,
+ Point points[], int& size_point) {
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (X[i].x == min_x) {
+			points[count].x = X[i].x;
+			points[count].y = X[i].y;
+			count++;
+		}
+	}
+	size_point = count;
+}
+	
+__device__ inline void find_points_by_y(
+Point* X, int n, double min_y,
+ Point points[], int& size_point) {
+	
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (X[i].y == min_y) {
+			points[count].x = X[i].x;
+			points[count].y = X[i].y;
+			count++;
+		}
+	}
+	size_point = count;
+}
+\end{lstlisting}	
+\textbf{Ta có hai hàm thay mới tương tự dành cho thuật toán Inner Convex Approximation:}
+
+\begin{lstlisting}
+__device__ inline void Jarvis(Point* in_poly, int& n_poly) {
+	
+	//global
+	double delta = 0.0;
+	double alpha = PI / 2;
+	double R[2][2];
+	
+	R[0][0] = cos(alpha);
+	R[0][1] = sin(alpha);
+	R[1][0] = -sin(alpha);
+	R[1][1] = cos(alpha);
+	double min_x = in_poly[0].x;
+	double max_x = in_poly[0].x;
+	double min_y = in_poly[0].y;
+	double max_y = in_poly[0].y;
+	
+	for (int i = 1; i < n_poly; i++) {
+		if (in_poly[i].x < min_x) {
+			min_x = in_poly[i].x;
+		}
+		
+		if (in_poly[i].y < min_y) {
+			min_y = in_poly[i].y;
+		}
+		if (in_poly[i].x > max_x) {
+			max_x = in_poly[i].x;
+		}
+		
+		if (in_poly[i].y > max_y) {
+			max_y = in_poly[i].y;
+		}
+	}
+	Point min_X[100];
+	Point max_X[100];
+	Point min_Y[100];
+	Point max_Y[100];
+	int size_min_X = 0;
+	int size_max_X = 0;
+	int size_min_Y = 0;
+	int size_max_Y = 0;
+	
+	//tim cac diem co hoanh do nho nhat
+find_points_by_x(in_poly, n_poly, min_x, min_X, size_min_X);
+//tim cac diem co hoanh do lon nhat
+find_points_by_x(in_poly, n_poly, max_x, max_X, size_max_X);
+//tim cac diem co tung do nho nhat
+find_points_by_y(in_poly, n_poly, min_y, min_Y, size_min_Y);
+//tim cac diem co tung do lon nhat
+find_points_by_y(in_poly, n_poly, max_y, max_Y, size_max_Y);
+
+double q12 = find_max_y(max_X, size_max_X);
+double q21 = find_min_x(max_Y, size_max_Y);
+double q32 = find_min_y(min_X, size_min_X);
+double q41 = find_max_x(min_Y, size_min_Y);
+
+Point q1 = { max_x, q12 };
+Point q2 = { q21, max_y };
+Point q3 = { min_x, q32 };
+Point q4 = { q41, min_y };
+
+Point Xcomma[100];
+Xcomma[0] = q1;
+Xcomma[1] = q2;
+Xcomma[2] = q3;
+Xcomma[3] = q4;
+int size_X_comma = 4;
+
+Edge edge0 = { q1, q2 };
+Edge edge1 = { q2, q3 };
+Edge edge2 = { q3, q4 };
+Edge edge3 = { q4, q1 };
+//khoi tao E_test
+Edge E_test[100];
+E_test[0] = edge0;
+E_test[1] = edge1;
+E_test[2] = edge2;
+E_test[3] = edge3;
+int size_E_test = 4;
+
+//khoi tao Edoubt
+Edge Edoubt[100];
+for (int i = 0; i < size_E_test; i++) {
+	Edoubt[i] = E_test[i];
+}
+int size_Edoubt = size_E_test;
+
+while (size_Edoubt > 0) {
+Edge edoubt = Edoubt[0];
+Point p = edoubt.first_point;
+Point p_plus = edoubt.second_point;
+
+//tinh dpp_plus theo cong thuc (44)
+Point result_sub_pplus_p = { 0, 0 };
+subtract_points(p_plus, p, result_sub_pplus_p);
+double transposed_matrix[2][1];
+convert_point_to_colmatrix(result_sub_pplus_p,
+transposed_matrix);
+double result_mul_matrix[2][1];
+multiply_R_matrix(R, transposed_matrix, result_mul_matrix);
+double norm_sub_pplus_p = norm_2(result_sub_pplus_p);
+double dpp_plus[2][1];
+divide_matrix_by_double_and_return_new_matrix(
+result_mul_matrix, dpp_plus, 2, 1, norm_sub_pplus_p);
+double X[100][2];
+convert_many_points_to_matrix(in_poly, n_poly, X);
+	
+Point Xp_pplus[100];
+int size_Xpp_plus = 0;
+double dpp_plus_T[1][2];
+transpose_to_rowmatrix(dpp_plus, dpp_plus_T);
+double p_T[2][1];
+convert_point_to_colmatrix(p, p_T);
+double dpp_plus_mul_p_T = dot_product(dpp_plus_T, p_T);
+for (int i = 0; i < n_poly; i++) {
+double item_X_T[2][1];
+item_X_T[0][0] = X[i][0];
+item_X_T[1][0] = X[i][1];
+
+double tmp = dot_product(dpp_plus_T, item_X_T);
+if (tmp > dpp_plus_mul_p_T) {
+Xp_pplus[size_Xpp_plus].x = X[i][0];
+Xp_pplus[size_Xpp_plus].y = X[i][1];
+size_Xpp_plus++;
+}
+}
+if (size_Xpp_plus != 0) {
+double X_p_pplus0[1][2];
+X_p_pplus0[0][0] = Xp_pplus[0].x;
+X_p_pplus0[0][1] = Xp_pplus[0].y;
+double X_p_pplus0_T[2][1];
+transpose_to_colmatrix(X_p_pplus0, X_p_pplus0_T);
+double beta_p_pplus = dot_product(dpp_plus_T, X_p_pplus0_T);
+for (int i = 0; i < size_Xpp_plus; i++) {
+double item_X_p_pplus[1][2];
+item_X_p_pplus[0][0] = Xp_pplus[i].x;
+item_X_p_pplus[0][1] = Xp_pplus[i].y;
+double item_X_p_pplus_T[2][1];
+transpose_to_colmatrix(item_X_p_pplus, item_X_p_pplus_T);
+double tmp = dot_product(dpp_plus_T, item_X_p_pplus_T);
+if (tmp > beta_p_pplus) {
+	beta_p_pplus = tmp;
+}
+}
+
+Point Bpp_plus[100];
+int size_Bpp_plus = 0;
+for (int i = 0; i < size_Xpp_plus; i++) {
+double item_Xpp_plus[1][2];
+item_Xpp_plus[0][0] = Xp_pplus[i].x;
+item_Xpp_plus[0][1] = Xp_pplus[i].y;
+double item_Xpp_plus_T[2][1];
+transpose_to_colmatrix(item_Xpp_plus, item_Xpp_plus_T);
+if (dot_product(dpp_plus_T, item_Xpp_plus_T) == beta_p_pplus) {
+Bpp_plus[size_Bpp_plus].x = Xp_pplus[i].x;
+Bpp_plus[size_Bpp_plus].y = Xp_pplus[i].y;
+size_Bpp_plus++;
+}
+}
+if (beta_p_pplus - dot_product(dpp_plus_T, p_T) <= delta) {
+	delete_edges(Edoubt, size_Edoubt, edoubt);
+}
+else {
+Point p_hat[100];
+int size_p_hat = 0;
+Point p_hat_calc[100];
+int size_p_hat_calc = 0;
+for (int i = 0; i < size_Bpp_plus; i++) {
+	p_hat_calc[size_p_hat_calc].x = Bpp_plus[i].x;
+	p_hat_calc[size_p_hat_calc].y = Bpp_plus[i].y;
+	size_p_hat_calc++;
+}
+Point X_calc[100];
+int size_X_calc = 0;
+for (int i = 0; i < size_Bpp_plus; i++) {
+X_calc[size_X_calc].x = Bpp_plus[i].x;
+X_calc[size_X_calc].y = Bpp_plus[i].y;
+size_X_calc++;
+}
+Point p_hat_calc_sub_p = { 0, 0 };
+subtract_points(p_hat_calc[0], p, p_hat_calc_sub_p);
+//mang nay dung de tim max cua norm(x_calc - p)
+double arr_norm_xcalc_p[100];
+
+int size_arr_norm_xcalc_p = 0;
+for (int i = 0; i < size_Bpp_plus; i++) {
+Point x_calc_sub_p = { 0, 0 };
+subtract_points(X_calc[i], p, x_calc_sub_p);
+double res_norm = norm_2(x_calc_sub_p);
+arr_norm_xcalc_p[size_arr_norm_xcalc_p++] = res_norm;
+}
+double max_arr_norm_xcalc_p = 
+findMaxValue(arr_norm_xcalc_p, size_arr_norm_xcalc_p);
+for (int i = 0; i < size_Bpp_plus; i++) {
+Point tmp = { 0, 0 };
+subtract_points(Bpp_plus[i], p, tmp);
+if (norm_2(tmp) == max_arr_norm_xcalc_p) {
+	p_hat[size_p_hat++] = Bpp_plus[i];
+}
+}
+Point p_hat_point = p_hat[0];
+if (allclose(p_hat_point, p)
+&& !allclose(p_hat_point, p_plus)) {
+int edoubt_index = find_edge_index(Edoubt,
+size_Edoubt, edoubt);
+erase_edge(Edoubt, size_Edoubt, edoubt_index);
+}
+else if (allclose(p_hat_point, p_plus)
+&& !allclose(p_hat_point, p)) {
+int edoubt_index = find_edge_index(Edoubt,
+size_Edoubt, edoubt);
+erase_edge(Edoubt, size_Edoubt, edoubt_index);
+}
+else if (allclose(p_hat_point, p_plus)
+&& allclose(p_hat_point, p)) {
+	//nothing to do
+}
+else {
+// tinh d[p, p^]
+double dpp_hat[2][1];
+Point tmp = { 0, 0 };
+subtract_points(p_hat_point, p, tmp);
+double tmp2[1][2];
+convert_point_to_rowmatrix(tmp, tmp2);
+double tmp3[2][1];
+transpose_to_colmatrix(tmp2, tmp3);
+multiply_R_matrix(R, tmp3, dpp_hat);
+divide_colmatrix_by_double(dpp_hat,
+ norm_2(p_hat_point, p));
+
+//tinh d[p^, p+]
+double dp_hat_p_plus[2][1];
+Point tmp7 = { 0, 0 };
+subtract_points(p_plus, p_hat_point, tmp7);
+double tmp8[1][2];
+convert_point_to_rowmatrix(tmp7, tmp8);
+double tmp9[2][1];
+transpose_to_colmatrix(tmp8, tmp9);
+multiply_R_matrix(R, tmp9, dp_hat_p_plus);
+divide_colmatrix_by_double(dp_hat_p_plus,
+ norm_2(p_plus, p_hat_point));
+
+//tinh d[p^, p.T]
+double dp_hat_p_T[2][1];
+Point tmp4 = { 0, 0 };
+subtract_points(p, p_hat_point, tmp4);
+double tmp5[1][2];
+convert_point_to_rowmatrix(tmp4, tmp5);
+double tmp6[2][1];
+transpose_to_colmatrix(tmp5, tmp6);
+multiply_R_matrix(R, tmp6, dp_hat_p_T);
+divide_colmatrix_by_double(dp_hat_p_T, 
+norm_2(p, p_hat_point));
+
+
+//tim tap X[p, p^] va X[p^, p+]. 
+//Tuy nhien lai thay trong code python
+// khong dung
+//den hai tap nay, nen khong can thuc 
+//thi cho mat thoi gian
+
+//them p_hat_point vao XComma
+Xcomma[size_X_comma++] = p_hat_point;
+
+Edge A = { p, p_hat_point };
+Edge B = { p_hat_point, p_plus };
+//xoa canh cu, them 2 canh moi vao mang E_test
+int e_index = find_edge_index(E_test,
+ size_E_test, edoubt);
+erase_edge(E_test, size_E_test, e_index);
+insert_edge(E_test, size_E_test, A, e_index);
+insert_edge(E_test, size_E_test, B, e_index + 1);
+//xoa canh cu, them 2 canh moi vao mang E_test
+int edoubt_index = find_edge_index(Edoubt, 
+size_Edoubt, edoubt);
+erase_edge(Edoubt, size_Edoubt, edoubt_index);
+insert_edge(Edoubt, size_Edoubt,
+ A, edoubt_index);
+insert_edge(Edoubt, size_Edoubt,
+ B, edoubt_index + 1);
+	
+}
+	}
+	
+	
+}
+else {
+delete_edges(Edoubt, 
+size_Edoubt, edoubt);
+}
+}
+
+int uniqueSize = 0;
+Point in_uniquePoints[20];
+uniquePoints(E_test, size_E_test,
+ in_uniquePoints, uniqueSize);
+copy_points(in_uniquePoints,
+ in_poly, uniqueSize, n_poly);
+
+}
+// convex_find and get the polygon_index_box_index
+__device__ inline void Jarvis_and_index(
+Point* in_poly, int& n_poly,
+int* points_to_convex_ind) {
+int n_input = n_poly;
+Point input_poly[20];
+for (int i = 0; i < n_input; i++) {
+	input_poly[i].x = in_poly[i].x;
+	input_poly[i].y = in_poly[i].y;
+}
+//============hay thay the loi Jarvis vao duoi===========
+//global
+double delta = 0.0;
+double alpha = PI / 2;
+double R[2][2];
+
+R[0][0] = cos(alpha);
+R[0][1] = sin(alpha);
+R[1][0] = -sin(alpha);
+R[1][1] = cos(alpha);
+
+double min_x = in_poly[0].x;
+double max_x = in_poly[0].x;
+double min_y = in_poly[0].y;
+double max_y = in_poly[0].y;
+
+for (int i = 1; i < n_poly; i++) {
+if (in_poly[i].x < min_x) {
+	min_x = in_poly[i].x;
+}
+if (in_poly[i].y < min_y) {
+	min_y = in_poly[i].y;
+}
+if (in_poly[i].x > max_x) {
+	max_x = in_poly[i].x;
+}
+if (in_poly[i].y > max_y) {
+	max_y = in_poly[i].y;
+}
+}
+Point min_X[100];
+Point max_X[100];
+Point min_Y[100];
+Point max_Y[100];
+int size_min_X = 0;
+int size_max_X = 0;
+int size_min_Y = 0;
+int size_max_Y = 0;
+
+//tim cac diem co hoanh do nho nhat
+find_points_by_x(in_poly, n_poly,
+min_x, min_X, size_min_X);
+//tim cac diem co hoanh do lon nhat
+find_points_by_x(in_poly, n_poly,
+max_x, max_X, size_max_X);
+//tim cac diem co tung do nho nhat
+find_points_by_y(in_poly, n_poly,
+min_y, min_Y, size_min_Y);
+//tim cac diem co tung do lon nhat
+find_points_by_y(in_poly, n_poly,
+max_y, max_Y, size_max_Y);
+
+double q12 = find_max_y(max_X, size_max_X);
+double q21 = find_min_x(max_Y, size_max_Y);
+double q32 = find_min_y(min_X, size_min_X);
+double q41 = find_max_x(min_Y, size_min_Y);
+
+Point q1 = { max_x, q12 };
+Point q2 = { q21, max_y };
+Point q3 = { min_x, q32 };
+Point q4 = { q41, min_y };
+
+Point Xcomma[100];
+Xcomma[0] = q1;
+Xcomma[1] = q2;
+Xcomma[2] = q3;
+Xcomma[3] = q4;
+int size_X_comma = 4;
+
+Edge edge0 = { q1, q2 };
+Edge edge1 = { q2, q3 };
+Edge edge2 = { q3, q4 };
+Edge edge3 = { q4, q1 };
+//khoi tao E_test
+Edge E_test[100];
+E_test[0] = edge0;
+E_test[1] = edge1;
+E_test[2] = edge2;
+E_test[3] = edge3;
+int size_E_test = 4;
+
+//khoi tao Edoubt
+Edge Edoubt[100];
+for (int i = 0; i < size_E_test; i++) {
+	Edoubt[i] = E_test[i];
+}
+int size_Edoubt = size_E_test;
+while (size_Edoubt > 0) {
+Edge edoubt = Edoubt[0];
+Point p = edoubt.first_point;
+Point p_plus = edoubt.second_point;
+
+//tinh dpp_plus theo cong thuc (44)
+Point result_sub_pplus_p = { 0, 0 };
+subtract_points(p_plus, p, result_sub_pplus_p);
+double transposed_matrix[2][1];
+convert_point_to_colmatrix(
+result_sub_pplus_p, transposed_matrix);
+double result_mul_matrix[2][1];
+multiply_R_matrix(
+R, transposed_matrix, result_mul_matrix);
+double norm_sub_pplus_p =
+ norm_2(result_sub_pplus_p);
+double dpp_plus[2][1];
+divide_matrix_by_double_and_return_new_matrix(
+result_mul_matrix, dpp_plus, 2, 1, norm_sub_pplus_p);
+double X[100][2];
+convert_many_points_to_matrix(in_poly, n_poly, X);
+
+Point Xp_pplus[100];
+int size_Xpp_plus = 0;
+double dpp_plus_T[1][2];
+transpose_to_rowmatrix(dpp_plus, dpp_plus_T);
+double p_T[2][1];
+convert_point_to_colmatrix(p, p_T);
+double dpp_plus_mul_p_T = dot_product(dpp_plus_T, p_T);
+for (int i = 0; i < n_poly; i++) {
+double item_X_T[2][1];
+item_X_T[0][0] = X[i][0];
+item_X_T[1][0] = X[i][1];
+
+double tmp = dot_product(dpp_plus_T, item_X_T);
+if (tmp > dpp_plus_mul_p_T) {
+	Xp_pplus[size_Xpp_plus].x = X[i][0];
+	Xp_pplus[size_Xpp_plus].y = X[i][1];
+	size_Xpp_plus++;
+}
+}
+if (size_Xpp_plus != 0) {
+double X_p_pplus0[1][2];
+X_p_pplus0[0][0] = Xp_pplus[0].x;
+X_p_pplus0[0][1] = Xp_pplus[0].y;
+double X_p_pplus0_T[2][1];
+transpose_to_colmatrix(X_p_pplus0, X_p_pplus0_T);
+double beta_p_pplus = dot_product(dpp_plus_T, X_p_pplus0_T);
+for (int i = 0; i < size_Xpp_plus; i++) {
+double item_X_p_pplus[1][2];
+item_X_p_pplus[0][0] = Xp_pplus[i].x;
+item_X_p_pplus[0][1] = Xp_pplus[i].y;
+double item_X_p_pplus_T[2][1];
+transpose_to_colmatrix(item_X_p_pplus, item_X_p_pplus_T);
+double tmp = dot_product(dpp_plus_T, item_X_p_pplus_T);
+if (tmp > beta_p_pplus) {
+	beta_p_pplus = tmp;
+}
+}
+
+Point Bpp_plus[100];
+int size_Bpp_plus = 0;
+for (int i = 0; i < size_Xpp_plus; i++) {
+double item_Xpp_plus[1][2];
+item_Xpp_plus[0][0] = Xp_pplus[i].x;
+item_Xpp_plus[0][1] = Xp_pplus[i].y;
+double item_Xpp_plus_T[2][1];
+transpose_to_colmatrix(item_Xpp_plus, item_Xpp_plus_T);
+if (dot_product(dpp_plus_T, item_Xpp_plus_T) == beta_p_pplus) {
+Bpp_plus[size_Bpp_plus].x = Xp_pplus[i].x;
+Bpp_plus[size_Bpp_plus].y = Xp_pplus[i].y;
+size_Bpp_plus++;
+}
+
+}
+if (beta_p_pplus - dot_product(dpp_plus_T, p_T) <= delta) {
+	delete_edges(Edoubt, size_Edoubt, edoubt);
+}
+else {
+Point p_hat[100];
+int size_p_hat = 0;
+Point p_hat_calc[100];
+int size_p_hat_calc = 0;
+for (int i = 0; i < size_Bpp_plus; i++) {
+p_hat_calc[size_p_hat_calc].x = Bpp_plus[i].x;
+p_hat_calc[size_p_hat_calc].y = Bpp_plus[i].y;
+size_p_hat_calc++;
+}
+Point X_calc[100];
+int size_X_calc = 0;
+for (int i = 0; i < size_Bpp_plus; i++) {
+	X_calc[size_X_calc].x = Bpp_plus[i].x;
+	X_calc[size_X_calc].y = Bpp_plus[i].y;
+	size_X_calc++;
+}
+Point p_hat_calc_sub_p = { 0, 0 };
+subtract_points(p_hat_calc[0], p, p_hat_calc_sub_p);
+//mang nay dung de tim max cua norm(x_calc - p)
+double arr_norm_xcalc_p[100];
+
+int size_arr_norm_xcalc_p = 0;
+for (int i = 0; i < size_Bpp_plus; i++) {
+Point x_calc_sub_p = { 0, 0 };
+subtract_points(X_calc[i], p, x_calc_sub_p);
+double res_norm = norm_2(x_calc_sub_p);
+arr_norm_xcalc_p[size_arr_norm_xcalc_p++] = res_norm;
+}
+double max_arr_norm_xcalc_p =
+ findMaxValue(arr_norm_xcalc_p,
+  size_arr_norm_xcalc_p);
+for (int i = 0; i < size_Bpp_plus; i++) {
+Point tmp = { 0, 0 };
+subtract_points(Bpp_plus[i], p, tmp);
+if (norm_2(tmp) == max_arr_norm_xcalc_p) {
+	p_hat[size_p_hat++] = Bpp_plus[i];
+}
+}
+Point p_hat_point = p_hat[0];
+if (allclose(p_hat_point, p) 
+&& !allclose(p_hat_point, p_plus)) {
+int edoubt_index = find_edge_index(
+Edoubt, size_Edoubt, edoubt);
+erase_edge(Edoubt, size_Edoubt, edoubt_index);
+}
+else if (allclose(p_hat_point, p_plus)
+ && !allclose(p_hat_point, p)) {
+int edoubt_index = find_edge_index(
+Edoubt, size_Edoubt, edoubt);
+erase_edge(Edoubt, size_Edoubt, edoubt_index);
+}
+else if (allclose(p_hat_point, p_plus)
+ && allclose(p_hat_point, p)) {
+//nothing to do
+}
+else {
+// tinh d[p, p^]
+double dpp_hat[2][1];
+Point tmp = { 0, 0 };
+subtract_points(p_hat_point, p, tmp);
+double tmp2[1][2];
+convert_point_to_rowmatrix(tmp, tmp2);
+double tmp3[2][1];
+transpose_to_colmatrix(tmp2, tmp3);
+multiply_R_matrix(R, tmp3, dpp_hat);
+divide_colmatrix_by_double(
+dpp_hat, norm_2(p_hat_point, p));
+
+//tinh d[p^, p+]
+double dp_hat_p_plus[2][1];
+Point tmp7 = { 0, 0 };
+subtract_points(p_plus, p_hat_point, tmp7);
+double tmp8[1][2];
+convert_point_to_rowmatrix(tmp7, tmp8);
+double tmp9[2][1];
+transpose_to_colmatrix(tmp8, tmp9);
+multiply_R_matrix(R, tmp9, dp_hat_p_plus);
+divide_colmatrix_by_double(
+dp_hat_p_plus, norm_2(p_plus, p_hat_point));
+
+//tinh d[p^, p.T]
+double dp_hat_p_T[2][1];
+Point tmp4 = { 0, 0 };
+subtract_points(p, p_hat_point, tmp4);
+double tmp5[1][2];
+convert_point_to_rowmatrix(tmp4, tmp5);
+double tmp6[2][1];
+transpose_to_colmatrix(tmp5, tmp6);
+multiply_R_matrix(R, tmp6, dp_hat_p_T);
+divide_colmatrix_by_double(dp_hat_p_T,
+ norm_2(p, p_hat_point));
+
+
+//tim tap X[p, p^] va X[p^, p+].
+// Tuy nhien lai thay trong code python
+// khong dung
+//den hai tap nay, nen khong can 
+//thuc thi cho mat thoi gian
+
+//them p_hat_point vao XComma
+Xcomma[size_X_comma++] = p_hat_point;
+
+Edge A = { p, p_hat_point };
+Edge B = { p_hat_point, p_plus };
+//xoa canh cu, them 2 canh moi vao mang E_test
+int e_index = find_edge_index(E_test, size_E_test, edoubt);
+erase_edge(E_test, size_E_test, e_index);
+insert_edge(E_test, size_E_test, A, e_index);
+insert_edge(E_test, size_E_test, B, e_index + 1);
+//xoa canh cu, them 2 canh moi vao mang E_test
+int edoubt_index = find_edge_index(
+Edoubt, size_Edoubt, edoubt);
+erase_edge(Edoubt, size_Edoubt, edoubt_index);
+insert_edge(Edoubt, size_Edoubt, A, edoubt_index);
+insert_edge(Edoubt, size_Edoubt, B, edoubt_index + 1);
+		
+	}
+}
+
+
+}
+else {
+	delete_edges(Edoubt, size_Edoubt, edoubt);
+}
+}
+
+int uniqueSize = 0;
+Point in_uniquePoints[20];
+uniquePoints(E_test, size_E_test, in_uniquePoints, uniqueSize);
+copy_points(in_uniquePoints, in_poly, uniqueSize, n_poly);
+
+//===============================
+
+for (int i = 0; i < n_poly; i++) {
+for (int j = 0; j < n_input; j++) {
+if (point_same(in_poly[i], input_poly[j])) {
+points_to_convex_ind[i] = j;
+break;
+}
+}
+}                                          
+
+}
+\end{lstlisting}	
 \chapter{Một số kết quả tính toán }
-Do thời gian và yêu cầu phần cứng có hạn, ở đây em chỉ thay thế được thuật toán Outer Convex Approximation, còn thuật toán Inner Convex Approximation em chưa thay thế được.\\
+
 Ở đây cần quan tâm đến các yếu tố sau:\\
 Về vị trí cần thay hàm: Có hai hàm cần thay là Jarvis() và Jarvis\_and\_index().\\
-Về bộ dataset sử dụng: Có hai bộ đó là bộ hoàn chỉnh và bộ có 1000 ảnh trainval và 500 ảnh test.\\
+Về bộ dataset sử dụng: Có hai bộ đó là bộ hoàn chỉnh và bộ có 1000 ảnh trainval, 500 ảnh test.\\
 Với mỗi yếu tố trên em sẽ thử với nhiều lần, trong đó có các lần thử tiêu biểu như sau:
 \section{Thay thuật toán vào cả 2 hàm Jarvis và\\
 	 Jarvis\_and\_index với bộ dữ liệu đầy đủ}
