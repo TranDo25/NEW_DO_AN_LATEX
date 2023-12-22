@@ -383,7 +383,7 @@ Phép tích chập biến dạng thực ra là thêm phần bù cho các điểm
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./feature_offset_type.jpg}
-		\caption{a) lấy mẫu tích chập với 9 điểm lấy mẫu. b) để có tích chập biến dạng, thêm độ dịch chuyển vào mỗi điểm lấy mẫu (mũi tên xanh). c) phép biến đổi tỷ lệ. d) phép quay
+		\caption{Các phép biến đổi tích chập biến dạng khác nhau
 		}
 		\label{offset_deformable_convolution}
 	\end{center}
@@ -458,11 +458,11 @@ Bộ phát hiện cho xây dựng một tập các bao lồi với mỗi đối 
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./construction_convex_hull_set.jpg}
-		\caption{xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc}
+		\caption{Minh họa xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc.}
 		\label{fig_dhandang1}
 	\end{center}
 \end{figure} 
-Với mỗi mục tiêu, ý tưởng xây dựng tập bao lồi tương ứng là: theo như hệ số CIoU giữa bao lồi dự đoán và bao lồi thực tế, chọn I bao lồi đứng đầu là ứng cử viên cho bao lồi dương để xây dựng tập các bao lồi. Ngoài ra cũng có thể xây dựng tập bao lồi sử dụng ngưỡng CIoU xác định bằng thực nghiệm. Các bao lồi còn lại không thuộc vào bất kỳ tập bao lồi nào sẽ được gộp lại thành tập bao lồi âm $S$.
+Với mỗi một đối tượng, ý tưởng xây dựng tập bao lồi tương ứng là: theo như hệ số CIoU giữa bao lồi dự đoán và bao lồi thực tế, chọn I bao lồi đứng đầu là ứng cử viên cho bao lồi dương để xây dựng tập các bao lồi. Ngoài ra cũng có thể xây dựng tập bao lồi sử dụng ngưỡng CIoU xác định bằng thực nghiệm. Các bao lồi còn lại không thuộc vào bất kỳ tập bao lồi nào sẽ được gộp lại thành tập bao lồi âm $S$.
 \begin{align} \label{construct_convex_hull_set}
 \mathcal{L}_{S_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \omega_i \mathcal{L}_i^{+}(\theta)
 \end{align}
