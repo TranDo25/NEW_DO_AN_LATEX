@@ -1,44 +1,44 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2023.12.10)  22 DEC 2023 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.11)  23 DEC 2023 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **MauDoAnTotNghiep.tex
 (./MauDoAnTotNghiep.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
-(c:/texlive/2021/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
-(c:/texlive/2021/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+(c:/texlive/2023/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
+(c:/texlive/2023/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count179
-\c@chapter=\count180
-\c@section=\count181
-\c@subsection=\count182
-\c@subsubsection=\count183
-\c@paragraph=\count184
-\c@subparagraph=\count185
-\c@figure=\count186
-\c@table=\count187
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
 )
-(c:/texlive/2021/texmf-dist/tex/latex/vntex/vietnam.sty
+(c:/texlive/2023/texmf-dist/tex/latex/vntex/vietnam.sty
 Package: vietnam 2009/07/12 v1.3 support for Vietnamese
 
-(c:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(c:/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-(c:/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
+(c:/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 
-(c:/texlive/2021/texmf-dist/tex/latex/vntex/t5enc.def
+(c:/texlive/2023/texmf-dist/tex/latex/vntex/t5enc.def
 File: t5enc.def 2006/11/21 v1.4 Vietnamese T5 encoding
 Now handling font encoding T5 ...
 ... processing UTF-8 mapping file for font encoding T5
 
-(c:/texlive/2021/texmf-dist/tex/latex/vntex/t5enc.dfu
+(c:/texlive/2023/texmf-dist/tex/latex/vntex/t5enc.dfu
 File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+00AB (decimal 171)
    defining Unicode char U+00BB (decimal 187)
@@ -195,91 +195,101 @@ File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
 LaTeX Font Info:    Trying to load font information for T5+cmr on input line 11
 2.
 
-(c:/texlive/2021/texmf-dist/tex/latex/vntex/t5cmr.fd
+(c:/texlive/2023/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ))
-(c:/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+(c:/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
 )
-(c:/texlive/2021/texmf-dist/tex/latex/vntex/vncaps.tex
+(c:/texlive/2023/texmf-dist/tex/latex/vntex/vncaps.tex
 File: vncaps.tex 2006/06/07 v1.1 Captions in Vietnamese
 ))
-(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip49
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
-(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
 
-(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen139
+\@emptytoks=\toks18
+\ex@=\dimen141
 ))
-(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen140
+\pmbraise@=\dimen142
 )
-(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count188
+\inf@bad=\count194
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count189
-\leftroot@=\count190
+\uproot@=\count195
+\leftroot@=\count196
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count191
-\DOTSCASE@=\count192
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count197
+\DOTSCASE@=\count198
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
-\big@size=\dimen141
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count193
-\c@MaxMatrixCols=\count194
+\macc@depth=\count199
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count266
 \dotsspace@=\muskip16
-\c@parentequation=\count195
-\dspbrk@lvl=\count196
-\tag@help=\toks18
-\row@=\count197
-\column@=\count198
-\maxfields@=\count199
-\andhelp@=\toks19
-\eqnshift@=\dimen142
-\alignsep@=\dimen143
-\tagshift@=\dimen144
-\tagwidth@=\dimen145
-\totwidth@=\dimen146
-\lineht@=\dimen147
-\@envbody=\toks20
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
+\tag@help=\toks19
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
+\andhelp@=\toks20
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
 )
-(c:/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks22
-\thm@bodyfont=\toks23
-\thm@headfont=\toks24
-\thm@notefont=\toks25
-\thm@headpunct=\toks26
-\thm@preskip=\skip52
-\thm@postskip=\skip53
-\thm@headsep=\skip54
-\dth@everypar=\toks27
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks28
 )
-(c:/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(c:/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -287,463 +297,458 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsxtra.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsxtra.sty
 Package: amsxtra 1999/11/15 v1.2c AMS extra commands
 LaTeX Info: Redefining \nobreakspace on input line 54.
 )
-(c:/texlive/2021/texmf-dist/tex/latex/base/latexsym.sty
+(c:/texlive/2023/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amscd.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amscd.sty
 Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
-\athelp@=\toks28
-\minaw@=\dimen148
-\bigaw@=\dimen149
-\minCDarrowwidth=\dimen150
+\athelp@=\toks29
+\minaw@=\dimen150
+\bigaw@=\dimen151
+\minCDarrowwidth=\dimen152
 )
-(c:/texlive/2021/texmf-dist/tex/latex/base/graphpap.sty
+(c:/texlive/2023/texmf-dist/tex/latex/base/graphpap.sty
 Package: graphpap 1994/08/09 v1.0c Standard LaTeX graphpap package (LL)
 )
-(c:/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+(c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
 )
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks29
-\pgfutil@tempdima=\dimen151
-\pgfutil@tempdimb=\dimen152
-
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)
-) (c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box49
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks30
+\pgfutil@tempdima=\dimen153
+\pgfutil@tempdimb=\dimen154
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box53
+)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
-Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks30
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks31
 )
-(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 107.
 
-(c:/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen153
-\Gin@req@width=\dimen154
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
 )
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks31
-\pgfkeys@temptoks=\toks32
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks32
+\pgfkeys@temptoks=\toks33
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks33
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.co
+de.tex
+\pgfkeys@tmptoks=\toks34
 ))
-\pgf@x=\dimen155
-\pgf@y=\dimen156
-\pgf@xa=\dimen157
-\pgf@ya=\dimen158
-\pgf@xb=\dimen159
-\pgf@yb=\dimen160
-\pgf@xc=\dimen161
-\pgf@yc=\dimen162
-\pgf@xd=\dimen163
-\pgf@yd=\dimen164
+\pgf@x=\dimen157
+\pgf@y=\dimen158
+\pgf@xa=\dimen159
+\pgf@ya=\dimen160
+\pgf@xb=\dimen161
+\pgf@yb=\dimen162
+\pgf@xc=\dimen163
+\pgf@yc=\dimen164
+\pgf@xd=\dimen165
+\pgf@yd=\dimen166
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count266
-\c@pgf@countb=\count267
-\c@pgf@countc=\count268
-\c@pgf@countd=\count269
-\t@pgf@toka=\toks34
-\t@pgf@tokb=\toks35
-\t@pgf@tokc=\toks36
-\pgf@sys@id@count=\count270
- (c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
+\c@pgf@counta=\count272
+\c@pgf@countb=\count273
+\c@pgf@countc=\count274
+\c@pgf@countd=\count275
+\t@pgf@toka=\toks35
+\t@pgf@tokb=\toks36
+\t@pgf@tokc=\toks37
+\pgf@sys@id@count=\count276
+ (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfsyssoftpath@smallbuffer@items=\count271
-\pgfsyssoftpath@bigbuffer@items=\count272
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count277
+\pgfsyssoftpath@bigbuffer@items=\count278
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)) (c:/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
-(c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen165
-\pgfmath@count=\count273
-\pgfmath@box=\box50
-\pgfmath@toks=\toks37
-\pgfmath@stack@operand=\toks38
-\pgfmath@stack@operation=\toks39
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen167
+\pgfmath@count=\count279
+\pgfmath@box=\box54
+\pgfmath@toks=\toks38
+\pgfmath@stack@operand=\toks39
+\pgfmath@stack@operation=\toks40
+)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
 x)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
 .code.tex)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
 ex)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
 de.tex)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
 x)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
-etics.code.tex)))
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count274
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
+etics.code.tex)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count280
 ))
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@picminx=\dimen166
-\pgf@picmaxx=\dimen167
-\pgf@picminy=\dimen168
-\pgf@picmaxy=\dimen169
-\pgf@pathminx=\dimen170
-\pgf@pathmaxx=\dimen171
-\pgf@pathminy=\dimen172
-\pgf@pathmaxy=\dimen173
-\pgf@xx=\dimen174
-\pgf@xy=\dimen175
-\pgf@yx=\dimen176
-\pgf@yy=\dimen177
-\pgf@zx=\dimen178
-\pgf@zy=\dimen179
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen168
+\pgf@picmaxx=\dimen169
+\pgf@picminy=\dimen170
+\pgf@picmaxy=\dimen171
+\pgf@pathminx=\dimen172
+\pgf@pathmaxx=\dimen173
+\pgf@pathminy=\dimen174
+\pgf@pathmaxy=\dimen175
+\pgf@xx=\dimen176
+\pgf@xy=\dimen177
+\pgf@yx=\dimen178
+\pgf@yy=\dimen179
+\pgf@zx=\dimen180
+\pgf@zy=\dimen181
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
 e.tex
-File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@path@lastx=\dimen180
-\pgf@path@lasty=\dimen181
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen182
+\pgf@path@lasty=\dimen183
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
 x
-File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@shorten@end@additional=\dimen182
-\pgf@shorten@start@additional=\dimen183
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen184
+\pgf@shorten@start@additional=\dimen185
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfpic=\box51
-\pgf@hbox=\box52
-\pgf@layerbox@main=\box53
-\pgf@picture@serial@count=\count275
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count281
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
-File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgflinewidth=\dimen184
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen186
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
 ode.tex
-File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@pt@x=\dimen185
-\pgf@pt@y=\dimen186
-\pgf@pt@temp=\dimen187
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen187
+\pgf@pt@y=\dimen188
+\pgf@pt@temp=\dimen189
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
 de.tex
-File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfarrowsep=\dimen188
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen190
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@max=\dimen189
-\pgf@sys@shading@range@num=\count276
-\pgf@shadingcount=\count277
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen191
+\pgf@sys@shading@range@num=\count282
+\pgf@shadingcount=\count283
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfexternal@startupbox=\box54
-))
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box58
+) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
 .tex
-File: pgfcoretransparency.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-) (c:/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
-File: pgfcorerdf.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-))) (c:/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.te
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.te
 x
-File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfnodeparttextbox=\box55
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box59
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
 y
-Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@nodesepstart=\dimen190
-\pgf@nodesepend=\dimen191
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen192
+\pgf@nodesepend=\dimen193
 )
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
 y
-Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
-)) (c:/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(c:/texlive/2021/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
-
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen192
-\pgffor@skip=\dimen193
-\pgffor@stack=\toks40
-\pgffor@toks=\toks41
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(c:/texlive/2023/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen194
+\pgffor@skip=\dimen195
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
 ))
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
-File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count278
-\pgfplotmarksize=\dimen194
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count284
+\pgfplotmarksize=\dimen196
 )
-\tikz@lastx=\dimen195
-\tikz@lasty=\dimen196
-\tikz@lastxsaved=\dimen197
-\tikz@lastysaved=\dimen198
-\tikz@lastmovetox=\dimen199
-\tikz@lastmovetoy=\dimen256
-\tikzleveldistance=\dimen257
-\tikzsiblingdistance=\dimen258
-\tikz@figbox=\box56
-\tikz@figbox@bg=\box57
-\tikz@tempbox=\box58
-\tikz@tempbox@bg=\box59
-\tikztreelevel=\count279
-\tikznumberofchildren=\count280
-\tikznumberofcurrentchild=\count281
-\tikz@fig@count=\count282
+\tikz@lastx=\dimen197
+\tikz@lasty=\dimen198
+\tikz@lastxsaved=\dimen199
+\tikz@lastysaved=\dimen256
+\tikz@lastmovetox=\dimen257
+\tikz@lastmovetoy=\dimen258
+\tikzleveldistance=\dimen259
+\tikzsiblingdistance=\dimen260
+\tikz@figbox=\box60
+\tikz@figbox@bg=\box61
+\tikz@tempbox=\box62
+\tikz@tempbox@bg=\box63
+\tikztreelevel=\count285
+\tikznumberofchildren=\count286
+\tikznumberofcurrentchild=\count287
+\tikz@fig@count=\count288
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count283
-\pgfmatrixcurrentcolumn=\count284
-\pgf@matrix@numberofcolumns=\count285
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count289
+\pgfmatrixcurrentcolumn=\count290
+\pgf@matrix@numberofcolumns=\count291
 )
-\tikz@expandcount=\count286
+\tikz@expandcount=\count292
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(c:/texlive/2021/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+(c:/texlive/2023/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
 )
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(c:/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\arrowsize=\dimen259
-)) (c:/texlive/2021/texmf-dist/tex/latex/float/float.sty
+(c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen261
+)) (c:/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count287
-\float@exts=\toks42
-\float@box=\box60
-\@float@everytoks=\toks43
-\@floatcapt=\box61
+\c@float@type=\count293
+\float@exts=\toks43
+\float@box=\box64
+\@float@everytoks=\toks44
+\@floatcapt=\box65
 )
-(c:/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count288
-\lst@gtempboxa=\box62
-\lst@token=\toks44
-\lst@length=\count289
-\lst@currlwidth=\dimen260
-\lst@column=\count290
-\lst@pos=\count291
-\lst@lostspace=\dimen261
-\lst@width=\dimen262
-\lst@newlines=\count292
-\lst@lineno=\count293
-\lst@maxwidth=\dimen263
+(c:/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count294
+\lst@gtempboxa=\box66
+\lst@token=\toks45
+\lst@length=\count295
+\lst@currlwidth=\dimen262
+\lst@column=\count296
+\lst@pos=\count297
+\lst@lostspace=\dimen263
+\lst@width=\dimen264
+\lst@newlines=\count298
+\lst@lineno=\count299
+\lst@maxwidth=\dimen265
 
-(c:/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count294
-\lst@skipnumbers=\count295
-\lst@framebox=\box63
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count300
+\lst@skipnumbers=\count301
+\lst@framebox=\box67
 )
-(c:/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2020/03/24 1.8d listings configuration
+(c:/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
-Package: listings 2020/03/24 1.8d (Carsten Heinz)
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
 
-(c:/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+(c:/texlive/2023/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-\@float@every@algorithm=\toks45
-\c@algorithm=\count296
+\@float@every@algorithm=\toks46
+\c@algorithm=\count302
 )
-(c:/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+(c:/texlive/2023/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
 
-(c:/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+(c:/texlive/2023/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count297
-\c@ALG@rem=\count298
-\c@ALG@nested=\count299
-\ALG@tlm=\skip55
-\ALG@thistlm=\skip56
-\c@ALG@Lnr=\count300
-\c@ALG@blocknr=\count301
-\c@ALG@storecount=\count302
-\c@ALG@tmpcounter=\count303
-\ALG@tmplength=\skip57
+\c@ALG@line=\count303
+\c@ALG@rem=\count304
+\c@ALG@nested=\count305
+\ALG@tlm=\skip56
+\ALG@thistlm=\skip57
+\c@ALG@Lnr=\count306
+\c@ALG@blocknr=\count307
+\c@ALG@storecount=\count308
+\c@ALG@tmpcounter=\count309
+\ALG@tmplength=\skip58
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (c:/texlive/2021/texmf-dist/tex/latex/tools/array.sty
-Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen264
-\ar@mcellbox=\box64
-\extrarowheight=\dimen265
-\NC@list=\toks46
-\extratabsurround=\skip58
-\backup@length=\skip59
-\ar@cellbox=\box65
+) (c:/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen266
+\ar@mcellbox=\box68
+\extrarowheight=\dimen267
+\NC@list=\toks47
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box69
 )
-(c:/texlive/2021/texmf-dist/tex/latex/tools/tabularx.sty
+(c:/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen266
-\TX@old@table=\dimen267
-\TX@old@col=\dimen268
-\TX@target=\dimen269
-\TX@delta=\dimen270
-\TX@cols=\count304
-\TX@ftn=\toks47
+\TX@col@width=\dimen268
+\TX@old@table=\dimen269
+\TX@old@col=\dimen270
+\TX@target=\dimen271
+\TX@delta=\dimen272
+\TX@cols=\count310
+\TX@ftn=\toks48
 )
-(c:/texlive/2021/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip60
-\LTright=\skip61
-\LTpre=\skip62
-\LTpost=\skip63
-\LTchunksize=\count305
-\LTcapwidth=\dimen271
-\LT@head=\box66
-\LT@firsthead=\box67
-\LT@foot=\box68
-\LT@lastfoot=\box69
-\LT@cols=\count306
-\LT@rows=\count307
-\c@LT@tables=\count308
-\c@LT@chunks=\count309
-\LT@p@ftn=\toks48
+(c:/texlive/2023/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip61
+\LTright=\skip62
+\LTpre=\skip63
+\LTpost=\skip64
+\LTchunksize=\count311
+\LTcapwidth=\dimen273
+\LT@head=\box70
+\LT@firsthead=\box71
+\LT@foot=\box72
+\LT@lastfoot=\box73
+\LT@gbox=\box74
+\LT@cols=\count312
+\LT@rows=\count313
+\c@LT@tables=\count314
+\c@LT@chunks=\count315
+\LT@p@ftn=\toks49
 )
-(c:/texlive/2021/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count310
-\mult@box=\box70
-\multicol@leftmargin=\dimen272
-\c@unbalance=\count311
-\c@collectmore=\count312
-\doublecol@number=\count313
-\multicoltolerance=\count314
-\multicolpretolerance=\count315
-\full@width=\dimen273
-\page@free=\dimen274
-\premulticols=\dimen275
-\postmulticols=\dimen276
-\multicolsep=\skip64
-\multicolbaselineskip=\skip65
-\partial@page=\box71
-\last@line=\box72
-\maxbalancingoverflow=\dimen277
-\mult@rightbox=\box73
-\mult@grightbox=\box74
-\mult@gfirstbox=\box75
-\mult@firstbox=\box76
-\@tempa=\box77
-\@tempa=\box78
-\@tempa=\box79
-\@tempa=\box80
-\@tempa=\box81
+(c:/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count316
+\mult@box=\box75
+\multicol@leftmargin=\dimen274
+\c@unbalance=\count317
+\c@collectmore=\count318
+\doublecol@number=\count319
+\multicoltolerance=\count320
+\multicolpretolerance=\count321
+\full@width=\dimen275
+\page@free=\dimen276
+\premulticols=\dimen277
+\postmulticols=\dimen278
+\multicolsep=\skip65
+\multicolbaselineskip=\skip66
+\partial@page=\box76
+\last@line=\box77
+\maxbalancingoverflow=\dimen279
+\mult@rightbox=\box78
+\mult@grightbox=\box79
+\mult@firstbox=\box80
+\mult@gfirstbox=\box81
 \@tempa=\box82
 \@tempa=\box83
 \@tempa=\box84
@@ -776,100 +781,104 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box111
 \@tempa=\box112
 \@tempa=\box113
-\c@minrows=\count316
-\c@columnbadness=\count317
-\c@finalcolumnbadness=\count318
-\last@try=\dimen278
-\multicolovershoot=\dimen279
-\multicolundershoot=\dimen280
-\mult@nat@firstbox=\box114
-\colbreak@box=\box115
-\mc@col@check@num=\count319
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\c@minrows=\count322
+\c@columnbadness=\count323
+\c@finalcolumnbadness=\count324
+\last@try=\dimen280
+\multicolovershoot=\dimen281
+\multicolundershoot=\dimen282
+\mult@nat@firstbox=\box118
+\colbreak@box=\box119
+\mc@col@check@num=\count325
 )
-(c:/texlive/2021/texmf-dist/tex/latex/tools/indentfirst.sty
+(c:/texlive/2023/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-(c:/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
-\f@nch@headwidth=\skip66
-\f@nch@O@elh=\skip67
-\f@nch@O@erh=\skip68
-\f@nch@O@olh=\skip69
-\f@nch@O@orh=\skip70
-\f@nch@O@elf=\skip71
-\f@nch@O@erf=\skip72
-\f@nch@O@olf=\skip73
-\f@nch@O@orf=\skip74
+(c:/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip67
+\f@nch@O@elh=\skip68
+\f@nch@O@erh=\skip69
+\f@nch@O@olh=\skip70
+\f@nch@O@orh=\skip71
+\f@nch@O@elf=\skip72
+\f@nch@O@erf=\skip73
+\f@nch@O@olf=\skip74
+\f@nch@O@orf=\skip75
 )
-(c:/texlive/2021/texmf-dist/tex/latex/amsfonts/eucal.sty
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
-(c:/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+(c:/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(c:/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
+(c:/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(c:/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
+(c:/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count320
-\Gm@cntv=\count321
-\c@Gm@tempcnt=\count322
-\Gm@bindingoffset=\dimen281
-\Gm@wd@mp=\dimen282
-\Gm@odd@mp=\dimen283
-\Gm@even@mp=\dimen284
-\Gm@layoutwidth=\dimen285
-\Gm@layoutheight=\dimen286
-\Gm@layouthoffset=\dimen287
-\Gm@layoutvoffset=\dimen288
-\Gm@dimlist=\toks49
+\Gm@cnth=\count326
+\Gm@cntv=\count327
+\c@Gm@tempcnt=\count328
+\Gm@bindingoffset=\dimen283
+\Gm@wd@mp=\dimen284
+\Gm@odd@mp=\dimen285
+\Gm@even@mp=\dimen286
+\Gm@layoutwidth=\dimen287
+\Gm@layoutheight=\dimen288
+\Gm@layouthoffset=\dimen289
+\Gm@layoutvoffset=\dimen290
+\Gm@dimlist=\toks50
 )
-(c:/texlive/2021/texmf-dist/tex/latex/fancybox/fancybox.sty
+(c:/texlive/2023/texmf-dist/tex/latex/fancybox/fancybox.sty
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
-\@fancybox=\box116
-\shadowsize=\dimen289
-\@Sbox=\box117
-\do@VerbBox=\toks50
-\the@fancyput=\toks51
-\this@fancyput=\toks52
-\EndVerbatimTokens=\toks53
+\@fancybox=\box120
+\shadowsize=\dimen291
+\@Sbox=\box121
+\do@VerbBox=\toks51
+\the@fancyput=\toks52
+\this@fancyput=\toks53
+\EndVerbatimTokens=\toks54
 \Verbatim@Outfile=\write4
 \Verbatim@Infile=\read3
-) (c:/texlive/2021/texmf-dist/tex/generic/dirtree/dirtree.sty
+) (c:/texlive/2023/texmf-dist/tex/generic/dirtree/dirtree.sty
 Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 
-(c:/texlive/2021/texmf-dist/tex/generic/dirtree/dirtree.tex
+(c:/texlive/2023/texmf-dist/tex/generic/dirtree/dirtree.tex
 `dirtree' v0.32, 2012/12/11 (jcc)
-\DT@offset=\dimen290
-\DT@width=\dimen291
-\DT@sep=\dimen292
-\DT@all=\dimen293
-\DT@rulewidth=\dimen294
-\DT@dotwidth=\dimen295
-\DTbaselineskip=\dimen296
-\DT@counti=\count323
-\DT@countii=\count324
-\DT@countiii=\count325
-\DT@countiv=\count326
-\DT@indent=\dimen297
-\DT@parskip=\dimen298
-\DT@baselineskip=\dimen299
+\DT@offset=\dimen292
+\DT@width=\dimen293
+\DT@sep=\dimen294
+\DT@all=\dimen295
+\DT@rulewidth=\dimen296
+\DT@dotwidth=\dimen297
+\DTbaselineskip=\dimen298
+\DT@counti=\count329
+\DT@countii=\count330
+\DT@countiii=\count331
+\DT@countiv=\count332
+\DT@indent=\dimen299
+\DT@parskip=\dimen300
+\DT@baselineskip=\dimen301
 )
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 )
-\c@dl=\count327
+\c@dl=\count333
 
-(c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count328
-\l__pdf_internal_box=\box118
+(c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count334
+\l__pdf_internal_box=\box122
 )
 (./MauDoAnTotNghiep.aux
 
@@ -877,6 +886,9 @@ LaTeX Warning: Label `fig_dhandang1' multiply defined.
 
 
 LaTeX Warning: Label `table03' multiply defined.
+
+
+LaTeX Warning: Label `inner_fulldata_epoch15' multiply defined.
 
 )
 \openout1 = `MauDoAnTotNghiep.aux'.
@@ -897,29 +909,29 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
 LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
- (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
-\scratchdimen=\dimen300
-\scratchbox=\box119
-\nofMPsegments=\count330
-\nofMParguments=\count331
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count332
-\MPscratchDim=\dimen301
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
-\everyMPtoPDFconversion=\toks55
-) (c:/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count335
+\scratchdimen=\dimen302
+\scratchbox=\box123
+\nofMPsegments=\count336
+\nofMParguments=\count337
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count338
+\MPscratchDim=\dimen303
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
+\everyMPtoPDFconversion=\toks56
+) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(c:/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count335
+\c@lstlisting=\count341
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -995,30 +1007,30 @@ Package pdftex.def Info: ./logo.png  used on input line 105.
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 122.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 122
 .
-(c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 122
 .
 
-(c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 12
 2.
 
-(c:/texlive/2021/texmf-dist/tex/latex/base/ulasy.fd
+(c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
 2.
 
-(c:/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
+(c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 
-{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>]
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1224,7 +1236,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4 <./compare_cfa_with_other.jpg>]
+[4{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./com
+pare_cfa_with_other.jpg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1234,6 +1247,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5 <./work_flow_cfa.jpg> <./compare_convex-hull_with_rectangle.jpg>]
+
+LaTeX Warning: Citation `DCN' on page 6 undefined on input line 371.
+
 <./compare_normal_with_deformable_convolution.jpg, id=67, 588.26225pt x 244.008
 39pt>
 File: ./compare_normal_with_deformable_convolution.jpg Graphic file (type jpg)
@@ -1490,6 +1506,21 @@ Overfull \hbox (41.80247pt too wide) in paragraph at lines 1014--1045
  [] 
  []
 
+<./inner_cv_delta0.png, id=146, 642.4pt x 481.8pt>
+File: ./inner_cv_delta0.png Graphic file (type png)
+<use ./inner_cv_delta0.png>
+Package pdftex.def Info: ./inner_cv_delta0.png  used on input line 1052.
+(pdftex.def)             Requested size: 301.1261pt x 225.85054pt.
+<./inner_cv_delta10.png, id=147, 642.4pt x 481.8pt>
+File: ./inner_cv_delta10.png Graphic file (type png)
+<use ./inner_cv_delta10.png>
+Package pdftex.def Info: ./inner_cv_delta10.png  used on input line 1059.
+(pdftex.def)             Requested size: 301.1261pt x 225.85054pt.
+<./inner_cv_delta20.png, id=148, 642.4pt x 481.8pt>
+File: ./inner_cv_delta20.png Graphic file (type png)
+<use ./inner_cv_delta20.png>
+Package pdftex.def Info: ./inner_cv_delta20.png  used on input line 1066.
+(pdftex.def)             Requested size: 301.1261pt x 225.85054pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1499,35 +1530,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25 <./inner_cv_delta0.png (PNG copy)> <./inner_cv_delta10.png (PNG copy)>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26 <./inner_cv_delta20.png (PNG copy)>]
 Ch\uhorn \ohorn ng 3.
-[25
+[27
 
 ]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[26]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[27]
-<./demo_mmrotate_result.jpg, id=158, 684.5575pt x 542.025pt>
+<./demo_mmrotate_result.jpg, id=161, 684.5575pt x 542.025pt>
 File: ./demo_mmrotate_result.jpg Graphic file (type jpg)
 <use ./demo_mmrotate_result.jpg>
-Package pdftex.def Info: ./demo_mmrotate_result.jpg  used on input line 1117.
+Package pdftex.def Info: ./demo_mmrotate_result.jpg  used on input line 1094.
 (pdftex.def)             Requested size: 446.67038pt x 353.67673pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 1117--1118
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 1094--1095
  [] 
  []
 
@@ -1539,67 +1570,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28 <./demo_mmrotate_result.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1145
+[28]
 
- []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1145
+[29 <./demo_mmrotate_result.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1116--1117
 
  []
 
 LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 1
-165.
-(c:/texlive/2021/texmf-dist/tex/latex/vntex/t5cmtt.fd
+136.
+(c:/texlive/2023/texmf-dist/tex/latex/vntex/t5cmtt.fd
 File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[29]
-<./minh_hoa_hop_bao_dota.jpg, id=166, 1049.42062pt x 237.13594pt>
+<./minh_hoa_hop_bao_dota.jpg, id=169, 1049.42062pt x 237.13594pt>
 File: ./minh_hoa_hop_bao_dota.jpg Graphic file (type jpg)
 <use ./minh_hoa_hop_bao_dota.jpg>
-Package pdftex.def Info: ./minh_hoa_hop_bao_dota.jpg  used on input line 1170.
+Package pdftex.def Info: ./minh_hoa_hop_bao_dota.jpg  used on input line 1141.
 (pdftex.def)             Requested size: 446.67038pt x 100.9316pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 1170--1171
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 1141--1142
  [] 
  []
 
-(c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-(c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1181--1182
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1152--1153
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1611,9 +1617,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30 <./minh_hoa_hop_bao_dota.jpg>]
-(c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+[30] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1623,16 +1628,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31]
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 1267--1268
-[][][][][][][][][][][][][][][][][][][][][][]
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 1268--1270
-[][][][][][][][][][][][][][][][][][][][][][]
- []
-
+[31 <./minh_hoa_hop_bao_dota.jpg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1642,18 +1638,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [32]
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 1299--1300
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 1238--1239
+[][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 1239--1241
+[][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 1270--1271
 [][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 1307--1309
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 1310--1312
-[][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -1665,43 +1661,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [33]
-Overfull \hbox (47.66782pt too wide) in paragraph at lines 1322--1324
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 1278--1280
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 1281--1283
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (47.66782pt too wide) in paragraph at lines 1293--1295
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 1329--1330
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 1300--1301
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1336--1337
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1307--1308
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 1342--1343
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 1313--1314
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 1343--1346
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 1314--1317
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (139.29636pt too wide) in paragraph at lines 1349--1350
+Overfull \hbox (139.29636pt too wide) in paragraph at lines 1320--1321
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 1352--1353
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 1354--1356
-[][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -1713,6 +1709,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [34]
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 1323--1324
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 1325--1327
+[][][][][][][][][][][][][][][][][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1722,18 +1727,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35]
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 1417--1418
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 1388--1389
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 1419--1420
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 1390--1391
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1448--1450
-[][][][][][][][][][][][][][][] 
  []
 
 
@@ -1745,17 +1745,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [36]
-Overfull \hbox (23.25392pt too wide) in paragraph at lines 1466--1521
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1419--1421
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.25392pt too wide) in paragraph at lines 1437--1492
 []\T5/cmr/m/n/13 =====================tap D===================== 
  []
 
 
-Overfull \hbox (4.56859pt too wide) in paragraph at lines 1466--1521
+Overfull \hbox (4.56859pt too wide) in paragraph at lines 1437--1492
 \T5/cmr/m/n/13 =====================tap P===================== 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1521
+Underfull \hbox (badness 10000) in paragraph at lines 1437--1492
 
  []
 
@@ -1768,11 +1773,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [37]
-Overfull \hbox (9.4147pt too wide) in paragraph at lines 1525--1526
-[]\T5/cmr/m/n/13 M¢ CUDA C++ s³ ^^_÷ñc thay th¸ v o h m Jarvis cõa file cuda_io
-u_kernel.cuh.
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1782,18 +1782,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [38]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1542--1543
+Overfull \hbox (5.87968pt too wide) in paragraph at lines 1496--1497
+[]\T5/cmr/m/n/13 M¢ CUDA c++ s³ ^^_÷ñc thay th¸ v o h m Jarvis cõa file cuda_io
+u_kernel.cuh.
+ []
+
+
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1513--1514
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 1554--1555
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 1525--1526
 [][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 1567--1568
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -1805,7 +1806,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [39]
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 1614--1615
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 1538--1539
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1818,12 +1819,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1637--1638
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 1585--1586
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1608--1609
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 1648--1649
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 1619--1620
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1836,33 +1842,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 1670--1671
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 1641--1642
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 1689--1690
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 1660--1661
 [][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 1698--1699
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 1705--1706
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1708--1710
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1712--1714
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -1874,18 +1860,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [42]
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 1725--1726
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 1669--1670
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 1752--1753
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 1676--1677
+[][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 1753--1754
-[][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1679--1681
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1683--1685
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 1696--1697
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -1897,7 +1893,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43]
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 1789--1790
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 1723--1724
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 1724--1725
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 1760--1761
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1910,23 +1916,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44]
-Overfull \hbox (47.66782pt too wide) in paragraph at lines 1807--1808
+Overfull \hbox (47.66782pt too wide) in paragraph at lines 1778--1779
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1821--1822
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1792--1793
 [][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1839--1840
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (47.66782pt too wide) in paragraph at lines 1849--1850
-[][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -1938,12 +1934,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [45]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1851--1852
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1810--1811
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (47.66782pt too wide) in paragraph at lines 1820--1821
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1822--1823
 [][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 1860--1862
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 1831--1833
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1956,12 +1962,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46]
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 1905--1906
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 1876--1877
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 1926--1927
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 1897--1898
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1974,7 +1980,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [47]
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 1947--1948
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 1918--1919
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1987,7 +1993,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [48]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 1998--2002
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 1969--1973
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2009,10 +2015,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [50]
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 2120--2121
-[][][][][][][][] 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2022,28 +2024,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [51]
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 2133--2134
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 2091--2092
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 2104--2105
 [][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2139--2141
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2110--2112
 [][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2142--2144
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2113--2115
 [][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 2172--2173
-[][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 2176--2177
-[][][][][][][][][][][][] 
  []
 
 
@@ -2055,27 +2052,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [52]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2178--2181
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 2143--2144
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 2147--2148
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2181--2182
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2149--2152
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2152--2153
 [][][][][][][] 
  []
 
 
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 2183--2185
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 2154--2156
 [][][][][][][][] 
  []
 
 
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 2202--2203
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 2173--2174
 [][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2204--2206
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2175--2177
 [][][][][][][][] 
  []
 
@@ -2088,17 +2095,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [53]
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 2247--2248
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 2218--2219
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 2248--2249
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 2219--2220
 [][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (32.3964pt too wide) in paragraph at lines 2250--2251
+Overfull \hbox (32.3964pt too wide) in paragraph at lines 2221--2222
 [][][][][][][][][][] 
  []
 
@@ -2111,22 +2118,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [54]
-Overfull \hbox (47.66782pt too wide) in paragraph at lines 2270--2271
+Overfull \hbox (47.66782pt too wide) in paragraph at lines 2241--2242
 [][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (47.66782pt too wide) in paragraph at lines 2275--2277
+Overfull \hbox (47.66782pt too wide) in paragraph at lines 2246--2248
 [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 2292--2293
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 2263--2264
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 2294--2295
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 2265--2266
 [][][][][][][][][][][][][] 
  []
 
@@ -2157,7 +2164,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [57]
-Overfull \hbox (24.76068pt too wide) in paragraph at lines 2429--2430
+Overfull \hbox (24.76068pt too wide) in paragraph at lines 2400--2401
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2197,35 +2204,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [61]
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 2639--2640
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 2641--2642
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2642--2643
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 2643--2644
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 2644--2645
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 2645--2646
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2235,7 +2213,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [62]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2651--2652
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 2610--2611
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 2612--2613
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2613--2614
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 2614--2615
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 2615--2616
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 2616--2617
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2622--2623
 [][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2266,7 +2274,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [65]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2815--2817
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2786--2788
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2279,22 +2287,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [66]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2857--2858
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2828--2829
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2859--2860
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2830--2831
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2861--2862
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2832--2833
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2863--2865
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2834--2836
 [][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2307,10 +2315,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [67]
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 2913--2914
-[][][][][][][][][][][][] 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2320,13 +2324,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [68]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 2946--2947
-[][][][][][][][][][][][][][][] 
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 2884--2885
+[][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 2967--2968
-[][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 2917--2918
+[][][][][][][][][][][][][][][] 
  []
 
 
@@ -2338,7 +2342,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [69]
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 2973--2974
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 2938--2939
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 2944--2945
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2396,18 +2405,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [75]
-Overfull \hbox (17.12497pt too wide) in paragraph at lines 3258--3259
+Overfull \hbox (17.12497pt too wide) in paragraph at lines 3229--3230
 [][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 3279--3280
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 3286--3287
-[][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -2419,6 +2418,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [76]
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 3250--3251
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 3257--3258
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2437,18 +2445,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [78]
-Overfull \hbox (9.48926pt too wide) in paragraph at lines 3395--3396
+Overfull \hbox (9.48926pt too wide) in paragraph at lines 3366--3367
 [][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (40.0321pt too wide) in paragraph at lines 3418--3419
-[][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (1.85355pt too wide) in paragraph at lines 3419--3421
-[][][][][][][][][][][][][][][] 
  []
 
 
@@ -2460,6 +2458,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [79]
+Overfull \hbox (40.0321pt too wide) in paragraph at lines 3389--3390
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.85355pt too wide) in paragraph at lines 3390--3392
+[][][][][][][][][][][][][][][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2470,34 +2477,53 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [80]
 Ch\uhorn \ohorn ng 4.
-[81
 
-]
-<./mmrotate8_1000p_epoch20.JPG, id=334, 727.71875pt x 444.66125pt>
+Overfull \hbox (1.21175pt too wide) in paragraph at lines 3411--3411
+[]\T5/cmr/bx/n/17.28 Thay th¸ Outer Con-vex Ap-prox-i-ma-tion sû döng
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3412--3413
+
+ []
+
+<./outer_fulldata_epoch3.JPG, id=334, 966.61125pt x 342.27875pt>
+File: ./outer_fulldata_epoch3.JPG Graphic file (type jpg)
+<use ./outer_fulldata_epoch3.JPG>
+Package pdftex.def Info: ./outer_fulldata_epoch3.JPG  used on input line 3416.
+(pdftex.def)             Requested size: 451.68915pt x 159.94138pt.
+
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 3416--3417
+ [] 
+ []
+
+
+Overfull \hbox (1.21175pt too wide) in paragraph at lines 3422--3422
+[]\T5/cmr/bx/n/17.28 Thay th¸ Outer Con-vex Ap-prox-i-ma-tion sû döng
+ []
+
+<./mmrotate8_1000p_epoch20.JPG, id=335, 727.71875pt x 444.66125pt>
 File: ./mmrotate8_1000p_epoch20.JPG Graphic file (type jpg)
 <use ./mmrotate8_1000p_epoch20.JPG>
-Package pdftex.def Info: ./mmrotate8_1000p_epoch20.JPG  used on input line 3450
+Package pdftex.def Info: ./mmrotate8_1000p_epoch20.JPG  used on input line 3426
 .
 (pdftex.def)             Requested size: 451.68915pt x 276.00601pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 3450--3451
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 3426--3427
  [] 
  []
 
-<./cau_truc_thu_muc_result.JPG, id=335, 201.75375pt x 533.995pt>
-File: ./cau_truc_thu_muc_result.JPG Graphic file (type jpg)
-<use ./cau_truc_thu_muc_result.JPG>
-Package pdftex.def Info: ./cau_truc_thu_muc_result.JPG  used on input line 3458
-.
-(pdftex.def)             Requested size: 200.75073pt x 531.34557pt.
-<./ket_qua_file_none_log_json.JPG, id=336, 850.17625pt x 295.1025pt>
+[81
+
+]
+<./ket_qua_file_none_log_json.JPG, id=339, 850.17625pt x 295.1025pt>
 File: ./ket_qua_file_none_log_json.JPG Graphic file (type jpg)
 <use ./ket_qua_file_none_log_json.JPG>
 Package pdftex.def Info: ./ket_qua_file_none_log_json.JPG  used on input line 3
-466.
+434.
 (pdftex.def)             Requested size: 451.68915pt x 156.78632pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 3466--3467
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 3434--3435
  [] 
  []
 
@@ -2509,7 +2535,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[82 <./mmrotate8_1000p_epoch20.jpg>]
+[82 <./outer_fulldata_epoch3.jpg> <./mmrotate8_1000p_epoch20.jpg>]
+Overfull \hbox (5.42271pt too wide) in paragraph at lines 3441--3441
+[]\T5/cmr/bx/n/17.28 Thay th¸ Outer Con-vex Ap-prox-i-ma-tion v o h m
+ []
+
+<./inner_fulldata_epoch15.JPG, id=344, 952.55875pt x 325.215pt>
+File: ./inner_fulldata_epoch15.JPG Graphic file (type jpg)
+<use ./inner_fulldata_epoch15.JPG>
+Package pdftex.def Info: ./inner_fulldata_epoch15.JPG  used on input line 3448.
+
+(pdftex.def)             Requested size: 451.68915pt x 154.21571pt.
+
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 3448--3449
+ [] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2518,7 +2559,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[83 <./cau_truc_thu_muc_result.jpg>]
+[83 <./ket_qua_file_none_log_json.jpg>]
+File: ./inner_fulldata_epoch15.JPG Graphic file (type jpg)
+<use ./inner_fulldata_epoch15.JPG>
+Package pdftex.def Info: ./inner_fulldata_epoch15.JPG  used on input line 3457.
+
+(pdftex.def)             Requested size: 451.68915pt x 154.21571pt.
+
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 3457--3458
+ [] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2527,21 +2578,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[84 <./ket_qua_file_none_log_json.jpg>] [85
+[84 <./inner_fulldata_epoch15.jpg>] [85
 
 ]
-Underfull \hbox (badness 1122) in paragraph at lines 3491--3492
-[]\T5/cmr/m/n/13 Nguy¹n Ti¸n ^^^¤t (2022) ,\T5/cmr/m/it/13 t¼m hiºu v· De-forma
-ble Con-vo-lu-tion Net-
- []
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-Underfull \hbox (badness 1454) in paragraph at lines 3491--3492
-\T5/cmr/m/it/13 works\T5/cmr/m/n/13 , https://viblo.asia/p/tim-hieu-ve-deformab
-le-convolution-networks-
- []
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[86
+[86] [87
 
 ] (./MauDoAnTotNghiep.aux)
 
@@ -2549,41 +2597,43 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18836 strings out of 478994
- 339966 string characters out of 5862206
- 843916 words of memory out of 5000000
- 35917 multiletter control sequences out of 15000+600000
- 438619 words of font info for 120 fonts, out of 8000000 for 9000
+ 19675 strings out of 476025
+ 366333 string characters out of 5794014
+ 1914382 words of memory out of 5000000
+ 39720 multiletter control sequences out of 15000+600000
+ 547473 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,16n,102p,1411b,1797s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
-live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2021/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2021/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi9.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/t
-exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2021
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2021/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2021/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy6.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pf
-b><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c
-:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/
-2021/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2021/texmf-dist/fo
-nts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/vntex/vnr
-/vnr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb><c:/tex
-live/2021/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on MauDoAnTotNghiep.pdf (95 pages, 2245904 bytes).
+ 87i,16n,90p,1411b,1806s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2023/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:
+/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2023/texm
+f-dist/fonts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/
+vntex/vnr/vnr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pf
+b><c:/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on MauDoAnTotNghiep.pdf (96 pages, 2617460 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 282 compressed objects within 3 object streams
+ 456 PDF objects out of 1000 (max. 8388607)
+ 284 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -204,7 +204,7 @@
 \vspace{1cm}
 Chân thành cảm ơn cô giáo Nguyễn Kiều Linh, người đã đóng góp không ngừng sức mạnh và sự hiểu biết chuyên sâu, giúp tôi hoàn thành đồ án một cách thành công. Những lời hướng dẫn và sự chia sẻ của cô không chỉ giúp tôi giải quyết các vấn đề khó khăn mà còn mở rộng tầm nhìn và kiến thức của tôi trong lĩnh vực công nghệ thông tin.
 
-Tôi cũng muốn bày tỏ lòng biết ơn đặc biệt đến tác giả của các thư viện code MMROTATE và tác giả bài báo BeyoundBoundingBox, người đã chia sẻ những lời khuyên quý báu qua email. Điều này thực sự là một nguồn động viên lớn, giúp tôi áp dụng những kỹ thuật và giải pháp hiệu quả vào dự án của mình.
+Tôi cũng muốn bày tỏ lòng biết ơn đặc biệt đến tác giả của các thư viện code Mmrotate và tác giả bài báo BeyoundBoundingBox, người đã chia sẻ những lời khuyên quý báu qua email. Điều này thực sự là một nguồn động viên lớn, giúp tôi áp dụng những kỹ thuật và giải pháp hiệu quả vào dự án của mình.
 
 Cảm ơn anh Linh, đồng nghiệp tại công ty ESC, vì sự hỗ trợ tận tâm và việc cho mượn máy làm việc. Sự thuận tiện này thực sự đã giúp tôi tiếp cận công nghệ và dữ liệu cần thiết một cách dễ dàng và hiệu quả.
 
@@ -291,7 +291,7 @@ Nội dung chương 1 sẽ khái quát các vấn đề và phương pháp nhậ
 
 
 \textbf{Chương 2: Trình bày thuật toán bao lồi xấp xỉ:}
-Nội dung của chương 2 sẽ giới thiệu thuật toán, lý thuyết và triển khai thuật toán bằng code C++
+Nội dung của chương 2 sẽ giới thiệu thuật toán, lý thuyết và triển khai thuật toán bằng code c++
 
 
 \textbf{Chương 3: Thực nghiệm và kết quả:}
@@ -1046,83 +1046,60 @@ $T_{\rm Alg.\, 2}$ là thời gian chạy trung bình của thuật toán \ref{a
 		\label{table04}
 	\end{center}
 \end{table} 	
-
+ Dưới đây là một vài hình ảnh kết quả chạy của Inner Convex Approximation với nhiều $\delta$ khác nhau:
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=300px]{./inner_cv_delta0.png}
+		\caption{Inner Convex Approximation với delta = 0.}
+		\label{inner_cv_delta0}
+	\end{center}
+\end{figure} 
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=300px]{./inner_cv_delta10.png}
+		\caption{Inner Convex Approximation với delta = 10.}
+		\label{inner_cv_delta10}
+	\end{center}
+\end{figure} 
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=300px]{./inner_cv_delta20.png}
+		\caption{Inner Convex Approximation với delta = 20.}
+		\label{inner_cv_delta20}
+	\end{center}
+\end{figure} 
 
 \chapter{Thực nghiệm và kết quả}
 
-Chương này trình bày cách thức triển khai của đồ án: khởi tạo môi trường chạy, lấy tập dữ liệu DOTA, chuyển đổi thuật toán từ mã Python sang mã C++, thay thế thuật toán mới cho thuật toán cũ, cấu hình file config để thực hiện huấn luyện, một vài kết quả số.
+Chương này trình bày cách thức triển khai của đồ án: khởi tạo môi trường chạy, lấy tập dữ liệu DOTA, chuyển đổi thuật toán từ mã Python sang mã c++, thay thế thuật toán mới cho thuật toán cũ, cấu hình file config để thực hiện huấn luyện, một vài kết quả số.
 \section{Khởi tạo môi trường chạy} 
 
-Môi trường được sử dụng trong đồ án là Linux, bản phân phối Ubuntu 20.04.06 LTS, sử dụng 2 máy có thông số khác nhau để chạy. Một máy laptop với GTX 1650 4GB RAM và một máy pc RTX 3060 12GB RAM. CUDA Toolkit sử dụng phiên bản 11.6, cài đặt CUDNN.
+Môi trường được sử dụng trong đồ án: Linux, bản phân phối Ubuntu 20.04.06 LTS, sử dụng 2 máy có thông số khác nhau để chạy: máy laptop GTX 1650 4GB RAM, máy pc RTX 3060 12GB RAM. CUDA Toolkit 11.6 đã cài đặt CUDNN.
 
-Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản MMCV \cite{MMCV} hiện đại, em đã chuyển qua sử dụng thư viện MMROTATE, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện MMCV==1.7.1, MMDETECTION==2.28.2 và MMROTATE==0.3.4. Riêng 2 thư viện MMCV và MMROTATE \cite{MMRotate} thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMmlab. Thư viện MMCV đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA C++ để lập trình tính toán cho card đồ hoạ). Thư viện MMDETECTION \cite{MMDetection} là một bộ thư viện chủ đạo (ngoài ra còn có MMYolo) của phòng nghiên cứu OpenMmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện MMROTATE. 
+Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản Mmcv \cite{Mmcv} hiện đại, em đã chuyển qua sử dụng thư viện Mmrotate, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện Mmcv==1.7.1, Mmdetection==2.28.2 và Mmrotate==0.3.4. Riêng 2 thư viện Mmcv và Mmrotate \cite{MMRotate} thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMmlab. Thư viện Mmcv đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA c++ để lập trình tính toán cho card đồ hoạ). Thư viện Mmdetection \cite{MMDetection} là một bộ thư viện chủ đạo của phòng nghiên cứu OpenMmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện Mmrotate. 
 
 OpenMmlab là một dự án mã nguồn mở phục vụ cho nghiên cứu học thuật và ứng dụng công nghiệp, bao gồm nhiều chủ đề nghiên cứu trong lĩnh vực thị giác máy tính như: phân loại hình ảnh, phát hiện mục tiêu, phân đoạn mục tiêu, tạo hình ảnh siêu phân giải, và nhiều hơn nữa.
 
 Từ khi được mở cửa vào năm 2018, OpenMmlab đã phát hành hơn 20 thư viện thuật toán, bao gồm hơn 250 cách triển khai thuật toán và 2000 mô hình được huấn luyện trước. OpenMmlab đã thu hút được hơn 60,000+ người theo dõi trên GitHub, với sự tham gia của hơn 1,300 nhà phát triển cộng đồng.
 
-OpenMmlab cung cấp các thư viện chất lượng cao để giảm khó khăn trong việc tái cài đặt thuật toán, tạo ra chuỗi công cụ triển khai hiệu quả hướng đến nhiều backend và thiết bị khác nhau2. Dựa trên PyTorch, OpenMmlab phát triển MMEngine để cung cấp động cơ đào tạo và đánh giá phổ biến, và MMCV để cung cấp các toán tử mạng nơ-ron và biến đổi dữ liệu, phục vụ như một nền tảng cho toàn bộ dự án.
+OpenMmlab cung cấp các thư viện chất lượng cao để giảm khó khăn trong việc tái cài đặt thuật toán, tạo ra chuỗi công cụ triển khai hiệu quả hướng đến nhiều backend và thiết bị khác nhau. Dựa trên PyTorch, OpenMmlab phát triển MMEngine để cung cấp engine đào tạo và đánh giá phổ biến, và Mmcv để cung cấp các toán tử mạng nơ-ron và biến đổi dữ liệu, phục vụ như một nền tảng cho toàn bộ dự án.
 
 OpenMmlab đã phát hành hơn 30 thư viện thị giác, đã triển khai hơn 300 thuật toán, và chứa hơn 2000 mô hình được huấn luyện trước.
 
-MMCV là một thư viện nền tảng cho nghiên cứu thị giác máy tính cung cấp các chức năng chính như sau:
-\begin{itemize}
-	\item xử lý ảnh/video
-	\item trực quan hoá ảnh và nhãn của ảnh
-	\item biến đổi ảnh
-	\item các kiến trúc CNN khác nhau
-	\item triển khai chất lượng cao của các phép tính CUDA phổ biến
-\end{itemize}
+Mmdetection là một hộp công cụ phát hiện đối tượng chứa tập hợp các phương pháp phát hiện đối tượng phong phú, phân đoạn các thể hiện và phân đoạn toàn cảnh, cũng như các thành phân liên quan và các mô đun.
 
-MMDectection là một hộp công cụ phát hiện đối tượng chứa tập hợp các phương pháp phát hiện đối tượng phong phú, phân đoạn các thể hiện và phân đoạn toàn cảnh, cũng như  các thành phân liên quan và các mô đun. Dưới đây là toàn bộ khung của framework:
-\begin{itemize}
-	\item \textbf{api} cung cấp các APIs để hỗ trợ suy luận (inference)
-	\item \textbf{structures} cung cấp các cấu trúc dữ liệu như bbox, mask, DetDataSample
-	\item \textbf{datasets} hỗ trợ nhiều loai dataset khác nhau để phát hiện đối tượng, phân đoạn đối tượng, phân đoạn toàn cảnh
-	\begin{itemize}
-		\item \textbf{transforms} cung cấp nhiều phép biến đổi làm giàu dữ liệu
-	   \item \textbf{samplers} định nghĩa các chiến lược mẫu nạp dữ liệu khác nhau
-	\end{itemize}
-
-	\item \textbf{models} là phần quan trọng nhất của bộ phát hiện, chứa các thành phần khác nhau của bộ phát hiện
-	\begin{itemize}
-	\item \textbf{detectors} \text{định nghĩa tất các các lớp mô hình phát hiện}
-	\item \textbf{data\_preprocessors} \text{tiền xử lý dữ liệu đầu vào của mô hình}
-	\item \textbf{backbones} \text{chứa nhiều mạng xương sống khác nhau} 
-	\item \textbf{nexts} chứa \text{các thành phần cổ khác nhau của bộ phát hiện} 
-	\item \textbf{dense\_heads} chứa phần đầu của bộ phát hiện thực hiện dự đoán dày đặc
-	\item \textbf{roi\_heads} \text{chứa các phần đầu của bộ phát hiện dự đoán từ RoIs} 
-	\item \textbf{seg\_heads} \text{chứa nhiều các head dành cho bài toán phân đoạn} 
-	\item \textbf{losses} \text{ chứa các hàm loss khác nhau}
-	\item \textbf{task\_modules}  cung cấp các module cho các tác vụ phát hiện cụ thể 
-		 ví dụ: assigners, samplers, box coders và prior generators.
-	\item \textbf{layers} \text{cung cấp một vài lớp mạng cơ bản}
-	\end{itemize}
-	\item \textbf{engine} là một phần của của các thành phần chạy
-	\begin{itemize}
-		\item \textbf{runner} cung cấp các thành phần mở rộng của MMengine's runner
-		\item \textbf{schedulers} cung cấp bộ lập lich để điều chỉnh các siêu tham số tối ưu mạng
-		\item \textbf{optimizers} cung cấp bộ tối ưu và lớp bao tối ưu
-		\item \textbf{hooks} cung cấp các phần móc kết nối của bộ chạy
-		
-	\end{itemize}
-	\item \textbf{evaluation} cung cấp các tham số khác nhau để đánh giá hiệu năng của mô hình
-	\item \textbf{visualization} dùng để trực quan hoá các kết quả phát hiện
-	
-	
-\end{itemize}
-
+Mmrotate là một nhánh mới được xây dựng từ Mmdetection, là một hộp công cụ phát hiện đối tượng xoay dựa trên Pytorch. Nó cũng là một phần của các dự án OpenMMlab.
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./demo_mmrotate_result.jpg}
-		\caption{Minh hoạ kết quả hình ảnh output của thư viện MMROTATE.}
+		\caption{Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}
 		\label{demo_mmrotate_result}
 	\end{center}
 \end{figure} 
 
 \section{Tập dữ liệu DOTA} 
 
-Tập dữ liệu được sử dụng trong đồ án chính là tập dữ liệu DOTA v1.0. Tập dữ liệu DOTA được thu thập từ nền tảng Google Earth, GF-2 và vệ tinh JL-1 được cung cấp bởi Trung tâm Trung quốc nghiên cứu dữ liệu vệ tinh và ứng dụng, và các hình ảnh trên không được cung cấp bởi CycloMedia B.V. DOTA bao gồm các ảnh RGB và các ảnh mức xám. Tất cả các ảnh đều được lưu trữ dưới định dạng png. (\textit{bổ sung trích dẫn vào đây}). Tập dữ liệu DOTA có 3 phiên bản: v1.0, v1.5 và v2.0. Riêng tập dữ liệu v1.0 đã được chia sẵn các tập train, test, val.
+Tập dữ liệu được sử dụng trong đồ án chính là tập dữ liệu DOTA v1.0. Tập dữ liệu DOTA được thu thập từ nền tảng Google Earth, GF-2 và vệ tinh JL-1 được cung cấp bởi Trung tâm Trung quốc nghiên cứu dữ liệu vệ tinh và ứng dụng, và các hình ảnh trên không được cung cấp bởi CycloMedia B.V. DOTA bao gồm các ảnh RGB và các ảnh mức xám. Tất cả các ảnh đều được lưu trữ dưới định dạng png. Tập dữ liệu DOTA có 3 phiên bản: v1.0, v1.5 và v2.0. Riêng tập dữ liệu v1.0 đã được chia sẵn các tập train, test, val.
 
 Danh mục các đối tượng trong tập DOTA v1.0 bao gồm: \textit{plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field and swimming pool.}
 
@@ -1137,12 +1114,6 @@ $x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4$, category, difficult
 ...
 
 Sau khi download được tập dữ liệu DOTA về máy, thực hiện tiền xử lý dữ liệu. Ở đây có thể sử dụng tool split ảnh có sẵn trong source code Mmrotate. Sử dụng lệnh để chia ảnh ra với 8 process, kích thước ảnh 1024 pixels, overlaps 200. Sau khi chia ta có cây thư mục của tập dữ liệu như sau:\\
-\\
-\\
-\\
-\\
-\\
-
 
 \dirtree{%
 	.1 DOTA.
@@ -1188,7 +1159,7 @@ cudatoolkit=11.6 -c pytorch -c conda-forge
 $ cd mmcv
 $ git checkout v1.7.1
 $ pip install -r requirements/optional.txt 
-$ MMCV_WITH_OPS=1 pip install -e . -v 
+$ Mmcv_WITH_OPS=1 pip install -e . -v 
 $ pip install mmdet==2.28.2 
 $ cd ../mmrotate 
 $ git checkout v0.3.4
@@ -1520,9 +1491,9 @@ $\left[  69.44520875 -143.12099702\right]$\\
 So dinh P:  13\\
 
 
-Thuật toán có mã Python như trên, cần phải chuyển đổi về mã CUDA C++ để thay thế thuật toán Jarvis ở trong thư viện MMCV. 
+Thuật toán có mã Python như trên, cần phải chuyển đổi về mã CUDA c++ để thay thế thuật toán Jarvis ở trong thư viện Mmcv. 
 
-Mã CUDA C++ sẽ được thay thế vào hàm Jarvis của file cuda\_iou\_kernel.cuh. Trước tiên ta có vài hàm dùng chung như sau:
+Mã CUDA c++ sẽ được thay thế vào hàm Jarvis của file cuda\_iou\_kernel.cuh. Trước tiên ta có vài hàm dùng chung như sau:
 
 
 \begin{lstlisting}
@@ -3433,45 +3404,71 @@ break;
 \end{lstlisting}	
 \chapter{Một số kết quả tính toán }
 
-Ở đây cần quan tâm đến các yếu tố sau:\\
+Để thay được thuật toán mới vào bộ phát hiện, ta cần thay code của thuật toán mới vào thư viện Mmcv, được viết bằng mã CUDA c++. Ta cần quan tâm đến các yếu tố sau:\\
 Về vị trí cần thay hàm: Có hai hàm cần thay là Jarvis() và Jarvis\_and\_index().\\
-Về bộ dataset sử dụng: Có hai bộ đó là bộ hoàn chỉnh và bộ có 1000 ảnh trainval, 500 ảnh test.\\
-Với mỗi yếu tố trên em sẽ thử với nhiều lần, trong đó có các lần thử tiêu biểu như sau:
-\section{Thay thuật toán vào cả 2 hàm Jarvis và\\
-	 Jarvis\_and\_index với bộ dữ liệu đầy đủ}
-Sử dụng thuật toán Outer Convex Approximation để thay thế vào hai hàm trên, sau đó cho thuật toán huấn luyện với bộ dữ liệu DOTA đã được chia cắt tỷ lệ ảnh\\
-\textit{quên mất bộ dữ liệu này từng ở đâu, phải cho chạy lại trên máy cây}\\
-Kết quả huấn luyện: Bị lỗi illegal memory. Dự đoán nguyên nhân do tính toán bị sai hoặc máy hết dung lượng. Thực hiện restart máy và cho chạy lại từ file checkpoint mới nhất, tuy nhiên kết quả vẫn tương tự và không chạy thêm được epoch nào.
-\section{Thay thế thuật toán vào cả hai hàm nhưng sử dụng dataset nhỏ hơn}
-Do cần có kết quả sớm để xem thuật toán có thực hiện được hay không, em sẽ sử dụng với bộ dataset nhỏ hơn. Bộ dataset này được lấy từ bộ dataset đầy đủ với 1000 ảnh và nhãn dành cho tập trainval, 500 ảnh dành cho tập test. Kết quả là thuật toán chạy được đến epoch số 20 là bị sập, báo lỗi illigal memory (Hình \ref{mmrotate8_1000p_epoch20}). Ngoài ra quá trình huấn luyện thu được file checkpoint tại epoch số 20 (Hình \ref{cau_truc_thu_muc_result}) và file log (Hình \ref{ket_qua_file_none_log_json}).
+Về bộ dataset sử dụng: Có hai bộ đó là bộ hoàn chỉnh và bộ có 1000 ảnh trainval, 500 ảnh test. Yêu cầu của lần huấn luyện là phải đi qua được 40 epoch.\\
+Với mỗi yếu tố trên ta sẽ thử với nhiều lần, trong đó có các lần thử tiêu biểu như sau:
+\section{Thay thế Outer Convex Approximation sử dụng bộ dữ liệu đầy đủ}
+Sử dụng thuật toán Outer Convex Approximation để thay thế vào hai hàm trên, sau đó cho thuật toán huấn luyện với bộ dữ liệu DOTA đã được chia cắt tỷ lệ ảnh.\\
+
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=450px]{./outer_fulldata_epoch3.JPG}
+		\caption{Outer Convex Approximation sử dụng toàn bộ tập dữ liệu, sập tại epoch số 3.}
+		\label{outer_fulldata_epoch3}
+	\end{center}
+\end{figure} 
+\textbf{Kết quả huấn luyện}: Máy chạy tốt cho đến epoch thứ 3 báo lỗi illegal memory (Hình \ref{outer_fulldata_epoch3}). Dự đoán nguyên nhân do tính toán bị sai hoặc máy hết dung lượng. Thực hiện restart máy và cho chạy lại từ file checkpoint mới nhất, tuy nhiên kết quả vẫn tương tự và không chạy thêm được epoch nào.
+\section{Thay thế Outer Convex Approximation sử dụng dataset nhỏ hơn}
 
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=450px]{./mmrotate8_1000p_epoch20.JPG}
-		\caption{Kết quả huấn luyện khi thay thuật toán vào cả 2 hàm và chạy với dataset nhỏ.}
+		\caption{Outer Convex Approximation chạy với dataset nhỏ, sập tại epoch 20.}
 		\label{mmrotate8_1000p_epoch20}
 	\end{center}
 \end{figure} 
 
 \begin{figure}[ht!]
 	\begin{center}
-		\includegraphics[width=200px]{./cau_truc_thu_muc_result.JPG}
-		\caption{Cấu trúc thư muc results lưu trữ file checkpoint và file log quá trình huấn luyện.}
-		\label{cau_truc_thu_muc_result}
-	\end{center}
-\end{figure} 
-
-\begin{figure}[ht!]
-	\begin{center}
 		\includegraphics[width=450px]{./ket_qua_file_none_log_json.JPG}
-		\caption{Một đoạn nội dung trong file None.log.json.}
+		\caption{Outer Convex Approximation train với dataset nhỏ, sập tại epoch 20.}
 		\label{ket_qua_file_none_log_json}
 	\end{center}
 \end{figure} 
-\section{Thay thế mỗi thuật toán Jarvis và sử dụng bộ dataset nhỏ}
-Do nghi ngờ kết quả lỗi xuất hiện ở hàm Jarvis\_and\_index(), em chỉ thay thuật toán vào hàm Jarvis, tức là trong quá trình huấn luyện sẽ có sử dụng cả thuật toán Jarvis March và thuật toán Outer Convex Approximation. Kết quả quá trình huấn luyện diễn ra được thuận lợi, thuật toán chạy hết được 40 epochs mà không gặp lỗi gì. Tuy nhiên do bộ dataset quá nhỏ, cùng với giới hạn các class trong dataset bị mất cân bằng nên không sử dụng được kết quả này, chỉ có thể chứng minh được là thuật toán đã hoạt động được và cho kết quả chạy chính xác. Tuy nhiên kết luận này vẫn cần phải kiểm tra và xác minh lại tính chính xác khách quan hơn. 
+Do cần có kết quả sớm để xem thuật toán có thực hiện được hay không, ta sẽ sử dụng với bộ dataset nhỏ hơn. Bộ dataset này được lấy từ bộ dataset đầy đủ với 1000 ảnh và nhãn dành cho tập trainval, 500 ảnh dành cho tập test. Kết quả là thuật toán chạy được đến epoch số 20 là bị sập, báo lỗi illigal memory (Hình \ref{mmrotate8_1000p_epoch20}). Ngoài ra quá trình huấn luyện thu được file checkpoint  và file log (Hình \ref{ket_qua_file_none_log_json}).
+
+\section{Thay thế Outer Convex Approximation vào hàm Jarvis() và sử dụng bộ dataset nhỏ}
+Do nghi ngờ kết quả lỗi xuất hiện ở hàm Jarvis\_and\_index(), em chỉ thay thuật toán vào hàm Jarvis, tức là trong quá trình huấn luyện sẽ có sử dụng cả thuật toán Jarvis March và thuật toán Outer Convex Approximation. Kết quả quá trình huấn luyện diễn ra được thuận lợi, thuật toán chạy hết được 40 epochs mà không gặp lỗi gì. Tuy nhiên do bộ dataset quá nhỏ, cùng với giới hạn các class trong dataset bị mất cân bằng nên không sử dụng được kết quả này, chỉ có thể chứng minh được là thuật toán đã hoạt động được và cho kết quả chạy chính xác. Tuy nhiên kết luận này vẫn cần phải kiểm tra và xác minh lại tính chính xác khách quan hơn. \\
+\textit{cái này để bên máy của thoa vẫn chưa paste vào đây}
+\section{Thay thế Inner Convex Approximation sử dụng toàn bộ tập dữ liệu}
+\textbf{Kết quả}: Quá trình huấn luyện chạy thuận lợi cho đến epoch số 15, máy báo lỗi Illegal Memory, tức là lỗi truy cập vùng nhớ không hợp lệ.
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=450px]{./inner_fulldata_epoch15.JPG}
+		\caption{Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}
+		\label{inner_fulldata_epoch15}
+	\end{center}
+\end{figure} 
+\section{Thay thế Inner Convex Approximation sử dụng tập dữ liệu nhỏ hơn}
+\textbf{Kết quả}: \textit{đang chạy}
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=450px]{./inner_fulldata_epoch15.JPG}
+		\caption{Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}
+		\label{inner_fulldata_epoch15}
+	\end{center}
+\end{figure} 
 \chapter*{{Kết luận}}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt} Kết luận}
+Trong tất cả các lần huấn luyện trên, chỉ có lần thử với bộ dataset nhỏ cùng với việc thay thế 1 nửa thuật toán là đáp ứng được quá trình training 40 epoch. Vì số lượng bộ dữ liệu không đảm bảo cho kết quả huấn luyện đúng, nên chỉ có thể kết luận rằng thuật toán mới có thể thay thế được vào bộ phát hiện, nhưng chưa thể sử dụng được kết quả. Có nhiều nguyên nhân khác nhau dẫn đến lỗi, nhưng nguyên nhân chính vẫn là chưa tìm hiểu đủ kiến thức cũng như kinh nghiệm trong công việc này.\\
+Qua các lần training không thành công, em xin đề xuất hướng xử lý tiếp theo của đồ án:
+\begin{itemize}
+	\item Cần kiểm tra lại file config cấu hình training. Nếu file này cấu hình chưa đúng dẫn đến hiện tượng training giữa chừng thì bị lỗi.
+	\item Xem xét lỗi Illegal Memory. Lỗi này là lỗi chính bắt gặp khi thực hiện train. Cần phải tìm hiểu kĩ hơn nữa về nguyên nhân của lỗi là do phần cứng hay phần mềm sinh ra.
+	\item Cần tìm hiểu thêm về cách thư viện Mmrotate hoạt động. Đây là một thư viện lớn, có nhiều thuật ngữ và thuật toán khó hiểu. 
+	\item Tìm hiểu thêm nhiều tài liệu về bài toán phát hiện đối tượng nói riêng, cũng như trong lĩnh vực trí tuệ nhân tạo nói chung.
+\end{itemize}
 
 Trong quá trình làm đồ án tốt nghiệp, em đã có cơ hội được trải nghiệm chuyên ngành AI cũng như được thử sức qua các công nghệ nhận diện ảnh mới nhất. Em đã tích luỹ được những kinh nghiệm về kiến thức trong công việc cũng như các kỹ năng mềm trong xử lý các công việc liên quan đến hệ điều hành linux, cách triển khai một dự án trí tuệ nhân tạo, cách tìm hiểu thông tin từ các tài liệu chính thống.
  
@@ -3483,16 +3480,10 @@ Em được rèn luyện kỹ năng giải quyết các công việc con, cách 
 
 \begin{thebibliography}{30}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt} Tài liệu tham khảo}
-	
-\subsection*{Tiếng Việt}
 
-\bibitem{FPN} Trần Văn Huy (2021), \textit{Feature Pyramid Network (FPN) Understanding}, https://huytranvan2010.github.io/Feature-Pyramid-Network/
-
-\bibitem{DCN} Nguyễn Tiến Đạt (2022) ,\textit{tìm hiểu về Deformable Convolution Networks}, https://viblo.asia/p/tim-hieu-ve-deformable-convolution-networks-Ljy5VROb5ra
-\subsection*{Tiếng Anh}
 
 	\bibitem{Guo-Zonghao} Zonghao Guo, Chang Liu, Xiaosong Zhang, Jianbin Jiao, Xiangyang Ji and Qixiang Ye (2021), \textit{Beyond Bounding-Box: Convex-hull Feature Adaptation for Oriented and Densely Packed Object Detection} , IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).
-	\bibitem{MMCV} MMCV Contributors (2018), OpenMMLab Computer Vision Foundation, \textit{https://github.com/open-mmlab/mmcv}
+	\bibitem{Mmcv} Mmcv Contributors (2018), OpenMMLab Computer Vision Foundation, \textit{https://github.com/open-mmlab/mmcv}
 	\bibitem{MMRotate} MMRotate Contributors (2022),OpenMMLab rotated object detection toolbox and benchmark, \textit{https://github.com/open-mmlab/mmrotate}
 	\bibitem{MMDetection} MMDetection Contributors (2018), OpenMMLab Detection Toolbox and Benchmark, \textit{https://github.com/open-mmlab/mmdetection}
 \end{thebibliography} 

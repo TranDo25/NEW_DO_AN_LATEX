@@ -17,13 +17,15 @@
 \contentsline {chapter}{\numberline {2}Thuật toán tính bao lồi xấp xỉ}{14}{}%
 \contentsline {section}{\numberline {2.1}Outer convex approximation}{14}{}%
 \contentsline {section}{\numberline {2.2}Inner convex approximation}{21}{}%
-\contentsline {chapter}{\numberline {3}Thực nghiệm và kết quả}{25}{}%
-\contentsline {section}{\numberline {3.1}Khởi tạo môi trường chạy}{25}{}%
+\contentsline {chapter}{\numberline {3}Thực nghiệm và kết quả}{27}{}%
+\contentsline {section}{\numberline {3.1}Khởi tạo môi trường chạy}{27}{}%
 \contentsline {section}{\numberline {3.2}Tập dữ liệu DOTA}{28}{}%
 \contentsline {subsection}{\numberline {3.2.1}Các bước thực hiện}{30}{}%
 \contentsline {chapter}{\numberline {4}Một số kết quả tính toán }{81}{}%
-\contentsline {section}{\numberline {4.1}Thay thuật toán vào cả 2 hàm Jarvis và\\ Jarvis\_and\_index với bộ dữ liệu đầy đủ}{81}{}%
-\contentsline {section}{\numberline {4.2}Thay thế thuật toán vào cả hai hàm nhưng sử dụng dataset nhỏ hơn}{82}{}%
-\contentsline {section}{\numberline {4.3}Thay thế mỗi thuật toán Jarvis và sử dụng bộ dataset nhỏ}{82}{}%
+\contentsline {section}{\numberline {4.1}Thay thế Outer Convex Approximation sử dụng bộ dữ liệu đầy đủ}{81}{}%
+\contentsline {section}{\numberline {4.2}Thay thế Outer Convex Approximation sử dụng dataset nhỏ hơn}{82}{}%
+\contentsline {section}{\numberline {4.3}Thay thế Outer Convex Approximation vào hàm Jarvis() và sử dụng bộ dataset nhỏ}{83}{}%
+\contentsline {section}{\numberline {4.4}Thay thế Inner Convex Approximation sử dụng toàn bộ tập dữ liệu}{84}{}%
+\contentsline {section}{\numberline {4.5}Thay thế Inner Convex Approximation sử dụng tập dữ liệu nhỏ hơn}{84}{}%
 \contentsline {chapter}{\vspace *{-8pt} Kết luận}{85}{}%
-\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{86}{}%
+\contentsline {chapter}{\vspace *{-8pt} Tài liệu tham khảo}{87}{}%

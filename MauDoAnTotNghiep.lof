@@ -7,7 +7,7 @@
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Quá trình thực hiện tích chập biến dạng.}}{7}{}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Minh họa thuật toán Outer Convex Approximation.}}{8}{}%
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Minh họa thuật toán Inner Convex Approximation với đầu vào gồm 100 điểm ngẫu nhiên.}}{9}{}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc}}{11}{}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Minh họa xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc.}}{11}{}%
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc.}}{12}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Đa giác n điểm ngẫu nhiên có khung 16 cạnh ${\cal P}^\diamond $.}}{19}{}%
@@ -15,10 +15,15 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 5.}}{20}{}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 10.}}{20}{}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 30.}}{21}{}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Inner Convex Approximation với delta = 0.}}{25}{}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Inner Convex Approximation với delta = 10.}}{25}{}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Inner Convex Approximation với delta = 20.}}{26}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện MMROTATE.}}{28}{}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{30}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}}{29}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{31}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Kết quả huấn luyện khi thay thuật toán vào cả 2 hàm và chạy với dataset nhỏ.}}{82}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Cấu trúc thư muc results lưu trữ file checkpoint và file log quá trình huấn luyện.}}{83}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Một đoạn nội dung trong file None.log.json.}}{84}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Outer Convex Approximation sử dụng toàn bộ tập dữ liệu, sập tại epoch số 3.}}{82}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Outer Convex Approximation chạy với dataset nhỏ, sập tại epoch 20.}}{82}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Outer Convex Approximation train với dataset nhỏ, sập tại epoch 20.}}{83}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}}{84}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}}{84}{}%
