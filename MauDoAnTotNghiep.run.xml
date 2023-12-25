@@ -55,10 +55,7 @@
       <file>biblatex.def</file>
       <file>standard.bbx</file>
       <file>numeric.bbx</file>
-      <file>numeric-comp.bbx</file>
-      <file>ieee.bbx</file>
-      <file>numeric-comp.cbx</file>
-      <file>ieee.cbx</file>
+      <file>numeric.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
@@ -82,7 +79,7 @@
       <file>MauDoAnTotNghiep.bcf</file>
     </requires>
     <requires type="editable">
-      <file>trichdan.bib</file>
+      <file>dotx-doan.bib</file>
     </requires>
   </external>
 </requests>

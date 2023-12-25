@@ -1,48 +1,71 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: MauDoAnTotNghiep.aux
-I found no \citation commands---while reading file MauDoAnTotNghiep.aux
-I found no \bibdata command---while reading file MauDoAnTotNghiep.aux
-I found no \bibstyle command---while reading file MauDoAnTotNghiep.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            83 strings with 506 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
+The style file: plain.bst
+Database file #1: trichdan.bib
+Too many commas in name 1 of "Zonghao Guo, Chang Liu, Xiaosong Zhang, Jianbin Jiao, Xiangyang Ji and Qixiang Ye" for entry Guo_2021CVPR_CFA
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Zonghao Guo, Chang Liu, Xiaosong Zhang, Jianbin Jiao, Xiangyang Ji and Qixiang Ye" for entry Guo_2021CVPR_CFA
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei" for entry dai17dcn
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Zonghao Guo, Chang Liu, Xiaosong Zhang, Jianbin Jiao, Xiangyang Ji and Qixiang Ye" for entry Guo_2021CVPR_CFA
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Zonghao Guo, Chang Liu, Xiaosong Zhang, Jianbin Jiao, Xiangyang Ji and Qixiang Ye" for entry Guo_2021CVPR_CFA
+while executing---line 1090 of file plain.bst
+You've used 5 entries,
+            2118 wiz_defined-function locations,
+            523 strings with 5396 characters,
+and the built_in function-call counts, 2241 in all, are:
+= -- 175
+> -- 218
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 87
+- -- 82
+* -- 190
+:= -- 416
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 56
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 5
+duplicate$ -- 55
+empty$ -- 113
+format.name$ -- 82
+if$ -- 419
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 5
+missing$ -- 4
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 68
+preamble$ -- 1
+purify$ -- 51
 quote$ -- 0
-skip$ -- 0
+skip$ -- 36
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 25
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 20
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+while$ -- 10
+width$ -- 6
+write$ -- 52
+(There were 12 error messages)

@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{mmdetection}
+Kai Chen, Jiaqi Wang, Jiangmiao Pang, Yuhang Cao, Yu~Xiong, Xiaoxiao Li,
+  Shuyang Sun, Wansen Feng, Ziwei Liu, Jiarui Xu, Zheng Zhang, Dazhi Cheng,
+  Chenchen Zhu, Tianheng Cheng, Qijie Zhao, Buyu Li, Xin Lu, Rui Zhu, Yue Wu,
+  Jifeng Dai, Jingdong Wang, Jianping Shi, Wanli Ouyang, Chen~Change Loy, and
+  Dahua Lin.
+\newblock {MMDetection}: Open mmlab detection toolbox and benchmark.
+\newblock {\em arXiv preprint arXiv:1906.07155}, 2019.
+
+\bibitem{mmcv}
+MMCV Contributors.
+\newblock {MMCV: OpenMMLab} computer vision foundation.
+\newblock \url{https://github.com/open-mmlab/mmcv}, 2018.
+
+\bibitem{dai17dcn}
+Yuwen Xiong Yi Li Guodong Zhang Han Hu Yichen~Wei Jifeng~Dai, Haozhi~Qi.
+\newblock Deformable convolutional networks.
+\newblock {\em arXiv preprint arXiv:1703.06211}, 2017.
+
+\bibitem{zhou2022mmrotate}
+Yue Zhou, Xue Yang, Gefan Zhang, Jiabao Wang, Yanyi Liu, Liping Hou, Xue Jiang,
+  Xingzhao Liu, Junchi Yan, Chengqi Lyu, Wenwei Zhang, and Kai Chen.
+\newblock Mmrotate: A rotated object detection benchmark using pytorch.
+\newblock In {\em Proceedings of the 30th ACM International Conference on
+  Multimedia}, 2022.
+
+\bibitem{Guo_2021CVPR_CFA}
+Xiaosong Zhang Jianbin Jiao Xiangyang~Ji Zonghao~Guo, Chang~Liu and Qixiang Ye.
+\newblock Beyond bounding-box: Convex-hull feature adaptation for oriented and
+  densely packed object detection.
+\newblock In {\em IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, June 2021.
+
+\end{thebibliography}

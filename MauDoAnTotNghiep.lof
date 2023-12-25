@@ -1,29 +1,30 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Minh hoạ vấn đề. (Bên trên) Sử dụng cách biểu diễn dạng hộp, so với cách biểu diễn bao lồi (Bên dưới), hiện tương răng cưa đã được xử lý}}{4}{}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Biểu đồ luồng quy trình thực hiện của bộ phát hiện CFA.}}{5}{}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces So sánh biểu diễn hộp có hướng (bên trên) so với biểu diễn bao lồi (ở dưới).}}{5}{}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces So sánh biểu diễn hộp có hướng (bên trên) so với biểu diễn bao lồi (ở dưới).}}{6}{}%
 \contentsline {figure}{\numberline {1.4}{\ignorespaces So sánh tích chập thông thường và tích chập biến dạng.}}{6}{}%
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Các phép biến đổi tích chập biến dạng khác nhau }}{7}{}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Quá trình thực hiện tích chập biến dạng.}}{7}{}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Minh họa thuật toán Outer Convex Approximation.}}{8}{}%
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Minh họa thuật toán Inner Convex Approximation với đầu vào gồm 100 điểm ngẫu nhiên.}}{9}{}%
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Minh họa xây dựng tập các bao lồi để biểu diễn các đối tượng, đặc biệt với những đối tượng phân bổ dày đặc.}}{11}{}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc.}}{12}{}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Phân chia tập bao lồi theo hướng dẫn của nguyên tắc nhất quán độ dốc.}}{13}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Đa giác n điểm ngẫu nhiên có khung 16 cạnh ${\cal P}^\diamond $.}}{19}{}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 0.}}{19}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 5.}}{20}{}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 10.}}{20}{}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 30.}}{21}{}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Inner Convex Approximation với delta = 0.}}{25}{}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Inner Convex Approximation với delta = 10.}}{25}{}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Inner Convex Approximation với delta = 20.}}{26}{}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Đa giác n điểm ngẫu nhiên có khung 16 cạnh ${\cal P}^\diamond $.}}{20}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 0.}}{20}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 5.}}{21}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 10.}}{21}{}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bao lồi kết quả khi chạy với $\delta $ = 30.}}{22}{}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Inner Convex Approximation với delta = 0.}}{26}{}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Inner Convex Approximation với delta = 10.}}{26}{}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Inner Convex Approximation với delta = 20.}}{27}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}}{29}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}}{30}{}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{31}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Outer Convex Approximation sử dụng toàn bộ tập dữ liệu, sập tại epoch số 3.}}{82}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Outer Convex Approximation chạy với dataset nhỏ, sập tại epoch 20.}}{82}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Outer Convex Approximation train với dataset nhỏ, sập tại epoch 20.}}{83}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}}{84}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}}{84}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Outer Convex Approximation sử dụng toàn bộ tập dữ liệu, sập tại epoch số 3.}}{83}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Outer Convex Approximation chạy với dataset nhỏ, sập tại epoch 20.}}{83}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Outer Convex Approximation train với dataset nhỏ, sập tại epoch 20.}}{84}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Outer Convex Approximation chỉ thay code ở hàm Jarvis, đạt được 40 epoch.}}{85}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}}{85}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Inner Convex Approximation train với bộ dữ liệu nhỏ hơn, sập tại epoch số 20.}}{86}{}%

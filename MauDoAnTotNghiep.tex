@@ -14,8 +14,7 @@
 \usepackage[top=3.5cm, bottom=3.0cm, left=3.5cm, right=2cm] {geometry}
 \usepackage{fancybox}
 \usepackage{dirtree}
-
-
+\usepackage{url}
 %==================================  
 \newtheorem{dl}{Định lý}[section]
 \newtheorem{dn}[dl]{Định nghĩa} 
@@ -202,13 +201,13 @@
 	\Large{\textbf{LỜI CẢM ƠN}}\\
 \end{center}
 \vspace{1cm}
-Chân thành cảm ơn cô giáo Nguyễn Kiều Linh, người đã đóng góp không ngừng sức mạnh và sự hiểu biết chuyên sâu, giúp tôi hoàn thành đồ án một cách thành công. Những lời hướng dẫn và sự chia sẻ của cô không chỉ giúp tôi giải quyết các vấn đề khó khăn mà còn mở rộng tầm nhìn và kiến thức của tôi trong lĩnh vực công nghệ thông tin.
+Em xin chân thành cảm ơn cô giáo Nguyễn Kiều Linh, người đã đóng góp không ngừng sức mạnh và sự hiểu biết chuyên sâu, giúp em hoàn thành đồ án một cách thành công. Những lời hướng dẫn và sự chia sẻ của cô không chỉ giúp em giải quyết các vấn đề khó khăn mà còn mở rộng tầm nhìn và kiến thức của em trong lĩnh vực công nghệ thông tin.
 
-Tôi cũng muốn bày tỏ lòng biết ơn đặc biệt đến tác giả của các thư viện code Mmrotate và tác giả bài báo BeyoundBoundingBox, người đã chia sẻ những lời khuyên quý báu qua email. Điều này thực sự là một nguồn động viên lớn, giúp tôi áp dụng những kỹ thuật và giải pháp hiệu quả vào dự án của mình.
+Em cũng muốn bày tỏ lòng biết ơn đặc biệt đến tác giả của các thư viện code Mmrotate và tác giả bài báo BeyoundBoundingBox \cite{Guo_2021CVPR_CFA}, người đã chia sẻ những lời khuyên quý báu qua email. Điều này thực sự là một nguồn động viên lớn, giúp em áp dụng những kỹ thuật và giải pháp hiệu quả vào dự án của mình.
 
-Cảm ơn anh Linh, đồng nghiệp tại công ty ESC, vì sự hỗ trợ tận tâm và việc cho mượn máy làm việc. Sự thuận tiện này thực sự đã giúp tôi tiếp cận công nghệ và dữ liệu cần thiết một cách dễ dàng và hiệu quả.
+Cảm ơn anh Linh, đồng nghiệp tại công ty ESC, vì sự hỗ trợ tận tâm và việc cho mượn máy làm việc. Sự thuận tiện này thực sự đã giúp em tiếp cận công nghệ và dữ liệu cần thiết một cách dễ dàng và hiệu quả.
 
-Cuối cùng, xin gửi lời tri ân đến bạn bè, những người đã động viên và hỗ trợ tôi trong suốt quá trình thực hiện đồ án. Sự đoàn kết và tình bạn này thực sự là nguồn động viên mạnh mẽ, giúp tôi vượt qua mọi khó khăn. Cảm ơn mọi người vì tất cả!
+Cuối cùng, xin gửi lời tri ân đến bạn bè, những người đã động viên và hỗ trợ em trong suốt quá trình thực hiện đồ án. Cảm ơn mọi người vì tất cả!
 \
  \\
  
@@ -217,7 +216,7 @@ Cuối cùng, xin gửi lời tri ân đến bạn bè, những người đã đ
  \
   \\
  
-\phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn}\  {\textit{Hà Nội, tháng 11  năm 2023}} \\
+\phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn}\  {\textit{Hà Nội, tháng 12 năm 2023}} \\
 \phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn} {Sinh viên}\\
 \phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn} \\
 \phantom{nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn} \\ 
@@ -254,10 +253,8 @@ Cuối cùng, xin gửi lời tri ân đến bạn bè, những người đã đ
   CFA &  Convex-hull Feature Adaptation\\
   CIoU & Convex Intersection over Union\\
   RoI & Region of Interest transformer\\
-  FPN & Feature Pyramid Network\\
   Conv & Convolution\\
   DCN & Deformable Convolution Network\\
-  CCW & Counter Clock Wise\\
   \textit{loc} & localization\\
   \textit{cls} & classification\\
   FL & Focal Loss\\
@@ -287,23 +284,19 @@ Mục tiêu của đồ án là tìm hiểu, nghiên cứu phương pháp phát 
 Trong đồ án em sẽ tập trung trình bày một số nội dung chính như sau:
 
 \textbf{Chương 1: Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng:}
-Nội dung chương 1 sẽ khái quát các vấn đề và phương pháp nhận dạng đối tượng, trình bày về các phương pháp liên quan, nguyên lý và cách thức triển khai, giới thiệu sử dụng thuật toán bao lồi xấp xỉ để thực hiện bài toán.
+Nội dung chương 1 khái quát các vấn đề và phương pháp nhận dạng đối tượng, trình bày về các phương pháp liên quan, nguyên lý và cách thức triển khai, giới thiệu sử dụng thuật toán bao lồi xấp xỉ để thực hiện bài toán.
 
 
 \textbf{Chương 2: Trình bày thuật toán bao lồi xấp xỉ:}
-Nội dung của chương 2 sẽ giới thiệu thuật toán, lý thuyết và triển khai thuật toán bằng code c++
+Nội dung của chương 2 giới thiệu thuật toán Outer Convex Approximation, Inner Convex Approximation, lý thuyết và một số kết quả của thuật toán.
 
 
 \textbf{Chương 3: Thực nghiệm và kết quả:}
-Nội dung của chương 3 Áp dụng bao lồi xấp xỉ cho bài toán phát hiện, định hướng và đóng gói đối tượng, cách thức triển khai bộ phát hiện, cách thức thay thế thuật toán.
+Nội dung của chương 3 áp dụng bao lồi xấp xỉ cho bài toán phát hiện, định hướng và đóng gói đối tượng, cách thức triển khai bộ phát hiện, cách thức thay thế thuật toán.
 
 
 \textbf{Chương 4: Tổng kết:}
-Tổng kết bài toán, tóm tắt những kết quả đã đạt được và còn chưa đạt được. Từ đó đề xuất mục tiêu hướng tới cũng như hướng nghiên cứu, phát triển tiếp theo.
-
-
-
- 
+Nội dung chương 4 là tổng kết bài toán, tóm tắt những kết quả đã đạt được và còn chưa đạt được. Từ đó đề xuất mục tiêu hướng tới cũng như hướng nghiên cứu, phát triển tiếp theo.
 
 
 \chapter{Giới thiệu bài toán phát hiện, định hướng và đóng gói đối tượng}
@@ -313,7 +306,7 @@ Chương 1 đặt vấn đề về bài toán phát hiện đối tượng, trì
 
 
 \section{Giới thiệu}
-Trong bài toán phát hiện đối tượng, việc định vị và phát hiện đối tượng dày đặc vẫn còn là một vấn đề thách thức do vấn đề đặc trưng răng cưa (feature aliasing), tức là các pi. Có các giải pháp đã được sử dụng: làm giàu các đặc trưng (enhance features) và sử dụng anchors. Nhược điểm của các phương pháp này: làm cho cấu trúc mạng trở nên phức tạp hơn, tăng thời gian huấn luyện (training) và suy luận (inference). Một phương pháp khác đó là sử dụng biến đổi RoI, nhưng phương pháp này không thích ứng tốt với các đối tượng có hướng bất kỳ, đặc biệt đối với các đối tượng xuất hiện dày đặc trong hình ảnh.
+Trong bài toán phát hiện đối tượng, việc định vị và phát hiện đối tượng dày đặc vẫn còn là một vấn đề thách thức do vấn đề đặc trưng răng cưa (feature aliasing), tức là các góc của bounding box sẽ bị chồng lên nhau. Đã có các giải pháp được sử dụng như: làm giàu các đặc trưng (enhance features), hay sử dụng anchors. Nhược điểm chung của các phương pháp này là: làm cho cấu trúc mạng trở nên phức tạp hơn, tăng thời gian huấn luyện (training) và suy luận (inference). Một phương pháp khác đó là sử dụng biến đổi RoI, tuy nhiên phương pháp này không thích ứng tốt với các đối tượng có hướng ngẫu nhiên, đặc biệt đối với các đối tượng xuất hiện dày đặc trong hình ảnh.
 
 
 \begin{figure}[ht!]
@@ -325,12 +318,12 @@ Trong bài toán phát hiện đối tượng, việc định vị và phát hi�
 \end{figure} 
 
 
-Để giải quyết các vấn đề trên, một phương pháp đã được đưa ra: phương pháp thích ứng bao lồi (convex-hull feature adaptation-CFA). CFA được thực hiện dựa trên phương pháp biểu diễn bao lồi, định nghĩa một tập các điểm đặc trưng, giới hạn phạm vi của đối tượng mục tiêu sử dụng chỉ số CIoU. CFA đạt được sự phân bổ đặc trưng tối ưu nhờ vào việc xây dựng tập bao lồi và phân chia linh hoạt các bao lồi thành các bao lồi âm và bao lồi dương. CFA cũng xem xét sự chồng chéo nhau giữa bao lồi dự đoán và bao lồi thực tế, phạt các bao lồi được dùng chung bởi nhiều đối tượng, giảm thiểu hiện tượng đặc trưng răng cưa (feature aliasing), đạt được sự thích ứng đặc trưng tối ưu. Nó cũng đạt được kết quả tốt nhất khi thử nghiệm trên tập dữ liệu DOTA và SKUR110KR.
+Để giải quyết các vấn đề trên, một phương pháp đã được đưa ra đó là: phương pháp thích ứng bao lồi (convex-hull feature adaptation - CFA), hay \textit{bộ phát hiện CFA}. CFA được thực hiện dựa trên nguyên tắc biểu diễn bao lồi, định nghĩa một tập các điểm đặc trưng, giới hạn phạm vi của đối tượng mục tiêu nhờ sử dụng chỉ số CIoU. Bộ phát hiện này đạt được sự phân bổ đặc trưng tối ưu nhờ vào việc xây dựng tập bao lồi, cũng như phân chia linh hoạt các bao lồi thành các bao lồi âm và bao lồi dương. Ngoài ra, CFA xem xét sự chồng chéo nhau giữa bao lồi dự đoán và bao lồi thực tế, tiến hành phạt các bao lồi được chia sẻ bởi nhiều đối tượng, từ đó giúp giảm thiểu hiện tượng đặc trưng răng cưa (feature aliasing), đạt được sự thích ứng đặc trưng tối ưu. Bộ phát hiện đã đạt được kết quả tốt nhất khi thử nghiệm trên tập dữ liệu DOTA và SKUR110KR.
 
 Phương pháp CFA được chia làm 2 giai đoạn thực hiện:
 \begin{itemize}
-	\item Giai đoạn 1: tạo tập bao lồi và ước lượng sơ bộ bố cục của bao lồi.
-	\item Giai đoạn 2: chỉnh sửa bao lồi sao cho phù hợp với các đối tượng phân bổ dày đặc.
+	\item Giai đoạn 1: tạo tập bao lồi, ước lượng sơ bộ bố cục của bao lồi.
+	\item Giai đoạn 2: chỉnh sửa bao lồi để khớp với các đối tượng phân bổ dày đặc.
 \end{itemize}
 
 \begin{figure}[ht!]
@@ -342,12 +335,16 @@ Phương pháp CFA được chia làm 2 giai đoạn thực hiện:
 \end{figure} 
 
 \section{Xây dựng tập bao lồi đầu tiên}
-Việc biểu diễn bằng khung hình chữ nhật do bao lồi sinh ra làm giảm khả năng biểu diễn đối tượng. Vì thế phương pháp CFA đã đề xuất biểu diễn phạm vi của đối tượng bằng bao lồi. Mỗi bao lồi là một tập hợp các điểm thoả mãn công thức:
+Thông thường, các hộp bao (bounding-box) dùng cho việc phát hiện đối tượng sử dụng hình chữ nhật để biểu diễn. Điều này đôi khi làm giảm khả năng biểu diễn đối tượng, do không phải đối tượng nào cũng có dạng hình chữ nhật. Chính vì thế, phương pháp CFA đã đề xuất biểu diễn phạm vi của đối tượng bằng bao lồi, giúp cho việc phát hiện đối tượng được hiệu quả hơn.\\
+Mỗi bao lồi (convex-hull) là một tập hợp các điểm thoả mãn công thức:
 
 \begin{align} \label{convex_hull_definition}
 		C_i=\left\{\left(x_i^k, y_i^k\right)\right\}_i^{k=1 \ldots K}
 \end{align}
-Trong đó: $C_i$ là bao lồi thứ i, $\left(x_i^k, y_i^k\right)$ là điểm nằm trên bao lồi thứ k, k là chỉ số của điểm đặc trưng, $K = 9$ tương ứng với 9 điểm được khởi tạo của bao lồi.
+Trong đó:
+	\\ \indent	 $C_i$: bao lồi thứ i,
+	\\ \indent	 $\left(x_i^k, y_i^k\right)$: điểm nằm trên bao lồi thứ k, với k là chỉ số của điểm đặc trưng, 
+	\\ \indent	$K = 9$: tương ứng với 9 điểm được khởi tạo từ đầu cho mỗi bao lồi.
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -357,18 +354,19 @@ Trong đó: $C_i$ là bao lồi thứ i, $\left(x_i^k, y_i^k\right)$ là điểm
 \end{figure} 
 
 
-Việc huấn luyện có thể xem như là quá trình dự đoán độ lệch (offset), trong khi hệ số CIoU cần được tối đa hoá để đạt được so khớp tối ưu nhất. Đây là phương pháp sử dụng phép toán tích chập để dự đoán độ lệch:
+Việc huấn luyện có thể xem như là quá trình dự đoán độ lệch (offset), trong khi hệ số CIoU cần được tối đa hoá để đạt được so khớp tối ưu nhất. \\
+Dưới đây là phương pháp sử dụng phép toán tích chập để dự đoán độ lệch:
 $\left(\Delta x_i^k, \Delta y_i^k\right)$
-với từng điểm đặc trưng, sau trả về một bản đồ độ bù cho các đặc trưng
-$O \in R^{H \times W \times W}$ ($H, W, C$ lần lượt tương ứng với chiều dài, chiều rộng và số lượng kênh của bản đồ đặc trưng):
+với từng điểm đặc trưng, trả về một bản đồ phần bù các đặc trưng
+$O \in R^{H \times W \times W}$ ($H, W, C$ lần lượt là chiều dài, chiều rộng và số kênh của bản đồ đặc trưng):
 \begin{align} \label{convex_hull_learn_offset}
 	\hat{\mathcal{C}}_i(\theta) \leftarrow\left\{\left(x_i^k+\Delta x_i^k(\theta), y_i^k+\Delta y_i^k(\theta)\right)\right\}_i^{k=1 \ldots K}
 \end{align}
 
-Trong đó: $\theta$ biểu thị là các tham số của mạng. Việc dự đoán offset sẽ thực hiện theo công thức trên.
+\indent$\theta$ được ký hiệu là các tham số của mạng.
 
 \section{Tích chập biến dạng}
-Tích chập biến dạng (Deformable convolution - DCN) \cite{DCN} là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $N\mathrm{x}N$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
+Tích chập biến dạng (Deformable convolution - DCN) \cite{dai17dcn} là dạng tích chập mà vị trí thực hiện tích chập bị biến dạng, không giống tích chập truyền thống là dạng lưới $N\mathrm{x}N$. Ưu điểm của phương pháp này giúp trích xuất các đặc trưng mong muốn được chính xác hơn, lấy mẫu được ở những vị trí đa dạng hơn (Phép tích chập truyền thống chỉ có thể trích xuất các đặc trưng trên một khung hinh chữ nhật).(Hình \ref{so_sanh_tich_chap_thong_thuong_deformable})
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -400,7 +398,7 @@ Phép tích chập biến dạng thực ra là thêm phần bù cho các điểm
 
 Cho đầu vào là một bản đồ đặc trưng, giả sử phép tích chập là 3x3. Để học được phần bù, định nghĩa một lớp tích chập 3x3 khác, chiều của đầu ra là kích thước của bản đồ đặc trưng ban đầu, số kênh = $2N$. (Hình \ref{deformable_process}) Tiếp theo thực hiện tích chập biến dạng, dựa trên độ bù của các phần đã được tính trước đó, sau đó thực hiện phép tích chập như thông thường.
 \section{Thuật toán Convex Approximation}
-Sau khi học được phần bù, việc hoàn thành cập nhật các điểm đặc trưng của bao lồi được thực hiện bởi thuật toán Outer Convex Approximation, hoặc Inner Convex Approximation (cả hai thuật toán đều sử dụng $\delta$ = 0, không lấy bao lồi xấp xỉ). Bao lồi nhỏ nhất phù hợp điều kiện sẽ được chọn ra sau mỗi lần lặp.
+Sau khi học được phần bù, CFA cập nhật các điểm đặc trưng của bao lồi, được thực hiện bởi thuật toán Outer Convex Approximation, hoặc Inner Convex Approximation (cả hai thuật toán đều sử dụng $\delta$ = 0, không lấy bao lồi xấp xỉ). Kết quả là bao lồi nhỏ nhất phù hợp điều kiện sẽ được chọn ra sau mỗi lần lặp.
 \subsection{Thuật toán Outer Convex Approximation}
 \begin{figure}[ht!]
 	\begin{center}
@@ -409,8 +407,11 @@ Sau khi học được phần bù, việc hoàn thành cập nhật các điểm
 		\label{outer_convex_approximation_brief}
 	\end{center}
 \end{figure} 
-Tóm tắt thuật toán Outer Convex Approximation (Hình \ref{outer_convex_approximation_brief}): Xuất phát từ một hình chữ nhật nhỏ nhất bao quanh tất cả các điểm (màu xanh dương), thuật toán duyệt lần lượt các đỉnh được chọn, xác định hướng cực đại (direction) nhờ hai điểm liền trước (predecessor) và điểm liền sau (successor), để quyết định việc lấy thêm đỉnh mới cho bao lồi. Kết quả cuối cùng sẽ là hình chữ nhật được cải thiện dần thành bao lồi (màu đỏ) phù hợp với toàn bộ tập điểm. 
+Tóm tắt thuật toán: Xuất phát từ một hình chữ nhật nhỏ nhất bao quanh tất cả các điểm (màu xanh dương), duyệt lần lượt các đỉnh được chọn, xác định hướng cực đại (direction) nhờ hai điểm liền trước (predecessor) và điểm liền sau (successor), tính toán theo công thức để quyết định việc lấy thêm đỉnh mới cho bao lồi hay không. Kết quả cuối cùng sẽ là hình chữ nhật được cải thiện dần thành bao lồi (màu đỏ) phù hợp với toàn bộ tập điểm (Hình \ref{outer_convex_approximation_brief}). 
 \subsection{Inner Convex Approximation}
+
+Tóm tắt thuật toán): Xuất phát từ hình tứ giác ban đầu (màu cam), xét mỗi cạnh của đa giác, chọn các điểm phù hợp trong tập điểm nằm phía trên cạnh, từ đó xem xét có nên thêm cạnh mới hay không, nhằm mở rộng tứ giác ban đầu. Sau cùng khi không còn điểm nào nằm phía trên các cạnh, thuật toán sẽ kết thúc và trả về bao lồi kết quả(màu xanh lam). (Hình \ref{inner_convex_brief}).
+
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=350px]{./inner_convex_brief.png}
@@ -418,16 +419,15 @@ Tóm tắt thuật toán Outer Convex Approximation (Hình \ref{outer_convex_app
 		\label{inner_convex_brief}
 	\end{center}
 \end{figure} 
-Tóm tắt thuật toán (Hình \ref{inner_convex_brief}): Xuất phát từ hình tứ giác ban đầu (màu cam), ứng với mỗi cạnh sẽ chọn các điểm phù hợp trong tập các điểm phía trên cạnh đó để mở rộng tứ giác. Sau cùng khi không còn điểm nào nằm phía trên các cạnh, thuật toán sẽ kết thúc, trả về bao lồi (màu xanh lam).
 \section{Đinh nghĩa công thức Convex Intersection over Union (CIoU)}
-Dựa vào mỗi bao lồi dự đoán, có thể tính toán được hàm mất mát vị trí và phân lớp của một đối tượng. Công thức CIoU giữa bao lồi dự đoán thứ $i$:  $C_i(\theta)$ và hộp bao thật sự $\mathcal{B}_j$ của đối tượng thứ $j$ được tính như sau:
+Dựa vào mỗi bao lồi dự đoán, ta tính toán được hàm mất mát vị trí (localization) và phân lớp (classification)của một đối tượng. Công thức CIoU giữa bao lồi dự đoán thứ $i$:  $C_i(\theta)$ và bao lồi thực tế $\mathcal{B}_j$ của đối tượng thứ $j$ được tính như sau:
 
 \begin{align} \label{CioU_fomular}
 	\operatorname{CIoU}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)=\frac{\left|\mathcal{C}_i(\theta) \cap \mathcal{B}_j\right|}{\left|\mathcal{C}_i(\theta) \cup \mathcal{B}_j\right|}-\frac{\left|\mathcal{R}_j \backslash\left(\mathcal{C}_i(\theta) \cup \mathcal{B}_j\right)\right|}{\left|\mathcal{R}_j\right|}
 \end{align}
-Trong đó: $\mathcal{R}_j$ là hợp của hai đa giác, tức là đa giác nhỏ nhất có thể bao quanh  $C_i(\theta)$ và $\mathcal{B}_j$.
+Trong đó, $\mathcal{R}_j$ là đa giác nhỏ nhất có thể bao quanh  $C_i(\theta)$ và $\mathcal{B}_j$.
 \section{Hàm mất mát}
-Theo công thức \ref{CioU_fomular}, hàm mất mát vị trí CIoU được định nghĩa là:
+Theo công thức (\ref{CioU_fomular}), hàm mất mát vị trí CIoU được định nghĩa là:
 \begin{align} \label{cong_thuc_ham_loss_CIoU}
 	\mathcal{L}_i^{l o c}(\theta)=1-\operatorname{CIoU}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)
 \end{align}
@@ -435,25 +435,24 @@ Cho $f_i^{k}(\theta)$ là đặc trưng của điểm thứ $k$, bao lồi đặ
 \begin{align} \label{loss_classification}
 	\mathcal{L}_i^{c l s}(\theta)=\mathrm{FL}\left(S_i(\theta), Y_j\right)
 \end{align}
-ở đây $Y_j$ biểu thị là nhãn nhị phân thật sự (ground-truth) và FL() ở đây là hàm mất mát Focal (Focal loss). Kết quả có được là hàm mất mát dành cho bao lồi dương: 
+Trong đó, $Y_j$ biểu thị là nhãn nhị phân thật sự (ground-truth) và FL() là hàm mất mát Focal (Focal loss). Kết quả thu được là hàm mất mát của bao lồi dương: 
 \begin{align} \label{loss_function_positive_convex}
 	\mathcal{L}_i^{+}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)+\lambda \mathcal{L}_i^{l o c}\left(\mathcal{C}_i(\theta), \mathcal{B}_j\right)
 \end{align}
-Hàm mất mát \ref{loss_function_positive_convex} là tổng của hàm mất mát vị trí \ref{cong_thuc_ham_loss_CIoU} và hàm mất mát phân loại \ref{loss_classification}.
-Hàm mất mát dành cho bao lồi âm là:
+Hàm mất mát (\ref{loss_function_positive_convex}) là tổng của hàm mất mát vị trí (\ref{cong_thuc_ham_loss_CIoU}) và hàm mất mát phân loại (\ref{loss_classification}). Tương tự ta có hàm mất mát dành cho bao lồi âm:
 
 \begin{align} \label{loss_negative_convex}
 	\mathcal{L}_i^{-}(\theta)=\mathcal{L}_i^{c l s}\left(\mathcal{S}_i(\theta), Y_j\right)
 \end{align}
-Ngoài ra, trong quá trình huấn luyện (Hình \ref{work_flow_cfa}), vì các bao lồi được ban đầu chỉ được sinh ra bằng cách tối ưu CIoU, một hàm loss cần được định nghĩa cho việc giám sát:
+Trong quá trình huấn luyện, vì các bao lồi được ban đầu chỉ được sinh ra bằng cách tối ưu CIoU, nên cần định nghĩa một hàm loss cho việc giám sát:
 \begin{align} \label{loss_det_1}
 	\mathcal{L}^{\operatorname{det} 1}(\theta)=\frac{1}{J} \sum_i \mathbb{I}_{\left(x_i, y_i\right)} \mathcal{L}_i^{l o c}(\theta)
 \end{align}
-Nhìn chung, trong giai đoạn đầu tiên của việc sinh bao lồi, hàm mất mát $L^{\operatorname{det} 1}$ bên trên là hàm cần được quan tâm. Trong giai đoạn 2, hai hàm mất mát phân lớp (\ref{loss_negative_convex} và \ref{loss_function_positive_convex}) sẽ được sử dụng để phân loại bao lồi
+Nói tóm lại, trong giai đoạn đầu tiên của việc sinh bao lồi, hàm mất mát $L^{\operatorname{det} 1}$ bên trên là hàm cần được xem xét. Trong giai đoạn 2, hai hàm mất mát phân lớp (\ref{loss_negative_convex}) và (\ref{loss_function_positive_convex}) sẽ được sử dụng để phân loại bao lồi.
 \section{Thích ứng bao lồi}
-Phương pháp biểu diễn bằng bao lồi giúp định vị đối tượng ở bất kỳ hình dạng nào, tuy nhiên vẫn có một vấn đề, làm thế nào để định vị một cách chính xác các đối tượng dày đặc, đặc biệt là các đối tượng có đặc trưng răng cưa. Vì vậy bộ phát hiện CFA đã đề xuất một phương pháp thích ứng mới để tinh chỉnh các bao lồi sinh ra ở giai đoạn 1 để đạt được vị trí chính xác hơn và phân lớp hiệu quả hơn.
+Phương pháp biểu diễn bằng bao lồi giúp định vị đối tượng ở bất kỳ hình dạng nào. Tuy nhiên vẫn xảy ra một vấn đề, đó là làm thế nào để định vị một cách chính xác các đối tượng dày đặc, đặc biệt là các đối tượng có đặc trưng răng cưa (feature aliasing). Chính vì thế, bộ phát hiện CFA đã đề xuất một phương pháp thích ứng mới, giúp tinh chỉnh các bao lồi trong ở giai đoạn 1 để thu được vị trí chính xác hơn và phân lớp hiệu quả hơn.
 \subsection{Xây dựng tập các bao lồi}
-Bộ phát hiện cho xây dựng một tập các bao lồi với mỗi đối tượng, để một đối tượng mục tiêu có thể khớp với nhiều bao lồi phù hợp để cùng nhau tối ưu các đặc trưng của các đối tượng dày đặc.
+CFA xây dựng một tập các bao lồi với mỗi đối tượng, để một đối tượng mục tiêu có thể khớp với nhiều bao lồi phù hợp, từ đó cùng nhau tối ưu các đặc trưng của các đối tượng dày đặc.
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -462,11 +461,11 @@ Bộ phát hiện cho xây dựng một tập các bao lồi với mỗi đối 
 		\label{fig_dhandang1}
 	\end{center}
 \end{figure} 
-Với mỗi một đối tượng, ý tưởng xây dựng tập bao lồi tương ứng là: theo như hệ số CIoU giữa bao lồi dự đoán và bao lồi thực tế, chọn I bao lồi đứng đầu là ứng cử viên cho bao lồi dương để xây dựng tập các bao lồi. Ngoài ra cũng có thể xây dựng tập bao lồi sử dụng ngưỡng CIoU xác định bằng thực nghiệm. Các bao lồi còn lại không thuộc vào bất kỳ tập bao lồi nào sẽ được gộp lại thành tập bao lồi âm $S$.
+Với mỗi một đối tượng, việc xây dựng tập bao lồi tương ứng là: xem xét hệ số CIoU giữa bao lồi dự đoán và bao lồi thực tế, chọn ra top-\textit{I} bao lồi làm bao lồi dương để xây dựng tập các bao lồi. Các bao lồi còn lại không thuộc vào bất kỳ tập bao lồi nào sẽ được gộp lại thành tập bao lồi âm $S$.
 \begin{align} \label{construct_convex_hull_set}
 \mathcal{L}_{S_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \omega_i \mathcal{L}_i^{+}(\theta)
 \end{align}
-Khi nhiều đối tượng tập hợp lại cùng nhau, không phải tất cả các bao lồi nằm trong tập bao lồi đều phù hợp với đối tượng, và các bao lồi có đặc trưng răng cưa sẽ phải được phân loại thành tập các bao lồi âm. Cùng thời điểm đó, các bao lồi được chia sẻ bởi nhiều đối tượng phải phải có độ tin cậy thấp hơn.
+Khi nhiều đối tượng trong ảnh nằm gần nhau, không phải tất cả các bao lồi nằm trong tập bao lồi đều phù hợp với đối tượng. Các bao lồi có đặc trưng răng cưa sẽ phải được phân loại thành tập các bao lồi âm. Các bao lồi được chia sẻ bởi nhiều đối tượng thì sẽ có độ tin cậy thấp hơn các bao lồi khác.
 \subsection{Chiến lược phân đoạn tập các bao lồi}
 Để giải quyết vấn đề đặc trưng răng cưa ở các đối tượng dày đặc, bộ phát hiện CFA đề xuất chiến lược phân đoạn tập các bao lồi để đánh giá động các mẫu bao lồi âm và mẫu dương, chuyển đổi trọng số $\omega_i$ thành $f\left(L_i^{+}(\theta)\right)$. Sau khi thay thế, được công thức sau:
 \begin{align} \label{loss_positive_convert}
@@ -485,9 +484,9 @@ Nguyên tắc phân chia tập bao lồi là nguyên tắc nhất quá độ d�
 \begin{align} \label{gradient_of_loss}
 	 \frac{\partial \mathcal{L}_{s_j}^{+}(\theta)}{\partial \theta}=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} \frac{\partial\left(f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)\right)}{\partial \mathcal{L}_i^{+}(\theta)} \frac{\partial \mathcal{L}_i^{+}(\theta)}{\partial \theta}
 \end{align}
-Tiêu chí để thực hiện phân đoạn tập các bao lồi là: đạo hàm của mỗi một bao lồi dương $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ yêu cầu đạo hàm của toàn bộ tập bao lồi $\frac{\partial L_{S_j}^{+}(\theta)}{\partial \theta}$ là nhất quán. Điều này có nghĩa là: bao lồi nào có độ dốc không nhất quán được xem là bao lồi âm, tức là những bao lồi này sẽ dẫn đến hiện tượng răng cưa đặc trưng. Xem xét công thức \ref{gradient_of_loss}, nếu $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ mang giá trị dương, thì bao lồi $C_i$ được xếp là bao lồi dương, hoặc ngược lại bao lồi sẽ là âm. Xem xét hình \ref{gradient_consistentcy_illustration}, khi sắp xếp các giá trị mất mát  $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ theo thứ tự tăng dần, $f\left(\partial L_i^{+}(\theta)\right) L_i^{+}(\theta)$ (đường màu cam) là một hàm lồi hướng lên với một cực trị duy nhất, trong khi đường  $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ (màu xanh lục) chia các bao lồi thành tập các bao lồi dương $S_j$ và tập bao lồi âm $S\_$.
+ Đạo hàm của mỗi một bao lồi dương $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ yêu cầu đạo hàm của toàn bộ tập bao lồi $\frac{\partial L_{S_j}^{+}(\theta)}{\partial \theta}$ là nhất quán, nghĩa là: bao lồi nào có độ dốc không nhất quán được xem là bao lồi âm. Những bao lồi này sẽ dẫn đến hiện tượng răng cưa đặc trưng. Xét công thức (\ref{gradient_of_loss}), nếu $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ mang giá trị dương, thì bao lồi $C_i$ được xếp là bao lồi dương, hoặc sẽ là bao lồi âm. Xem xét hình \ref{gradient_consistentcy_illustration}, khi sắp xếp các giá trị mất mát  $\frac{\partial L_i^{+}(\theta)}{\partial \theta}$ theo thứ tự tăng dần, $f\left(\partial L_i^{+}(\theta)\right) L_i^{+}(\theta)$ (đường màu cam) là một hàm lồi hướng lên với một cực trị duy nhất, trong khi đường  $\frac{\partial\left(f\left(L_i^{+}(\theta)\right) L_i^{+}(\theta)\right)}{\partial L_i^{+}(\theta)}$ (màu xanh lục) chia các bao lồi thành tập các bao lồi dương $S_j$ và tập bao lồi âm $S\_$.
 
-Cùng thời điểm đó, để xử lý đặc trưng răng cưa, tác giả cũng giới thiệu hệ số chống đặc trưng răng cưa:
+Cùng lúc đó, để xử lý đặc trưng răng cưa, CFA cũng giới thiệu hệ số chống đặc trưng răng cưa:
 \begin{align}\label{FAA_fomular}
 	p_i = \gamma\dot{\frac{\mathrm{CIoU}(\mathcal{C}_i, \mathcal{B}_j)}{\sum_{m=1}^{M}\mathrm{CIoU}\left(\mathcal{C}_i, \mathcal{B}_j\right)}}
 \end{align}
@@ -497,7 +496,7 @@ Hàm mất mát được cập nhật thành:
 \begin{align}\label{loss_update}
 	\mathcal{L}_{s_j}^{+}(\theta)=\frac{1}{\left|S_j\right|} \sum_{i \in S_j} p_i f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta)
 \end{align}
-Giai đoạn 2 của quá trình tối ưu được điều khiển bởi hàm mất mát trên tập bao lồi, hàm này được xác định bằng cách kết hợp hàm mất mát phân loại và hàm mất mát vị trí:
+Nói tóm lại, giai đoạn 2 của quá trình tối ưu được điều khiển bởi hàm mất mát trên tập bao lồi, được xác định bằng cách kết hợp hàm mất mát phân loại và hàm mất mát vị trí:
 \begin{align} \label{loss_det_2}
 	\begin{aligned}
 		\mathcal{L}^{\operatorname{det} 2}(\theta)= & \frac{1}{J} \sum_{j=1}^J \frac{1}{\left|S_j\right|} \sum_{i \in S_j} p_i f\left(\mathcal{L}_i^{+}(\theta)\right) \mathcal{L}_i^{+}(\theta) \\
@@ -810,7 +809,7 @@ Một vài hình ảnh kết quả chạy thuật toán Outer Convex Approximati
 \end{figure} 	
 \section{Inner convex approximation}\label{InnerConvexApproximation}
 
-Cho $X$ thỏa mãn (\ref{ct2.1})--(\ref{ct2.2}) và $\delta \geq 0$, ở đây ta sẽ tìm một bao lồi xấp xỉ lồi trong ${\cal P}^{\rm inner}$  của $X$, tức là:
+Cho $X$ thỏa mãn (\ref{ct2.1})--(\ref{ct2.2}) và $\delta \geq 0$. Ta sẽ tìm một bao lồi xấp xỉ trong ${\cal P}^{\rm inner}$ của $X$, tức là:
 \begin{equation}\label{ct2.37}
 	{\cal P}^{\rm inner} := \ conv X', \ \mbox{ với} X' \subset X,
 \end{equation}
@@ -819,13 +818,12 @@ Sao cho:
 	\ dist_{\rm H}(\ conv X, {\cal P}^{\rm inner}) \leq \delta.
 \end{equation}
 
-Ta mô tả ${\cal P}^{\rm inner}$ bởi tập $E$ của các cạnh có hướng của nó $[p, p^+]$, trong đó $p^+$  là đỉnh kế tiếp ngược chiều kim đồng hồ của $p$, tức là:
+Ta mô tả ${\cal P}^{\rm inner}$ bởi tập $E$ của các cạnh có hướng $[p, p^+]$, trong đó $p^+$  là đỉnh kế tiếp ngược chiều kim đồng hồ của $p$, tức là:
 \begin{equation}\label{ct2.39}
 	E := \{[p, p^+] \mid p, p^+ \in X', \mbox{ $[p, p^+]$ là một cạnh của ${\cal P}^{\rm inner}$}\}.
 \end{equation}
 
-
-Ta bắt đầu quá trình tìm bao lồi xấp xỉ trong với tứ giác $\bar q_1 \bar q_2 \bar q_3 \bar q_4$, tức là:
+Ta bắt đầu quá trình tìm bao lồi xấp xỉ trong với tứ giác $\bar q_1 \bar q_2 \bar q_3 \bar q_4$. Xét hai công thức sau:
 \begin{equation}\label{ct2.40}
 	\begin{array}{lcl}
 		X' &:=& \{\bar q_1, \bar q_2, \bar q_3, \bar q_4\}, \\
@@ -859,11 +857,11 @@ Và
 		&& \bar q_4 = (\bar q_4^1, \bar q_4^2) \in X^2_{\rm min} \mbox{  thỏa mãn } \bar q_4^1 = \max\{x^1 \mid (x^1, x^2) \in X^2_{\rm min}\}.
 	\end{array}
 \end{equation}
-Lưu ý rằng hai trong số bốn điểm $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$ có thể trùng nhau, nhưng (\ref{ct2.2}) ngầm định rằng phải ít nhất ba trong số chúng khác nhau.
+Lưu ý rằng có thể hai trong số bốn điểm $\bar q_1$, $\bar q_2$, $\bar q_3$, và $\bar q_4$  trùng nhau, nhưng (\ref{ct2.2}) ngụ ý rằng phải ít nhất ba trong số chúng khác nhau.
 
 Trong các bước tiếp theo, đa giác ${\cal P}^{\rm inner}$ được xây dựng và cải thiện 
 như sau.\\
-Với cạnh bất kỳ $[p, p^+] \in E$ ($p \not= p^+$), ta xác định:
+Xét cạnh bất kỳ $[p, p^+] \in E$ ($p \not= p^+$), xác định:
 \begin{equation}\label{ct2.44}
 	\begin{array}{lcl}
 		\bar d_{[p, p^+]}^{\, T} &:=& \|p^+ - p\|^{-1} R \, (p^+ - p)^T, \\
@@ -889,7 +887,7 @@ Nếu:
 \begin{equation}\label{dct2.46}
 	\beta_{[p, p^+]} - \bar d_{[p, p^+]}\, p^T \leq \delta
 \end{equation}
-Thì ta không cần phải mở rộng ${\cal P}^{\rm inner }$ theo hướng $\bar d_{[p, p^+]}$ nữa.
+Thì không cần phải mở rộng ${\cal P}^{\rm inner }$ theo hướng $\bar d_{[p, p^+]}$ nữa.
 
 Ngược lại, nếu:
 \begin{equation}\label{ct2.47}
@@ -1004,7 +1002,7 @@ Bảng \ref{table03} cho thấy một số kết quả thử nghiệm, trong đ�
 	\bigskip
 
 \medskip
-Bảng \ref{table04}  thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán Outer Convex Approximation khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{frame_polygon}, trong đó
+Bảng \ref{table04}  thể hiện một số kết quả thực nghiệm về thời gian chạy của thuật toán Inner Convex Approximation khi $X$ gồm $n$ điểm ngẫu nhiên được trình bày trong bảng \ref{table03} phải được tạo ra trong đa giác có khung $16$ cạnh ${\cal P}^\diamond$ hiển thị trong hình \ref{frame_polygon}, trong đó
 
 $T_{\rm Alg.\, 2}$ là thời gian chạy trung bình của thuật toán \ref{al-blduoi4}.
 
@@ -1076,19 +1074,19 @@ Chương này trình bày cách thức triển khai của đồ án: khởi tạ
 
 Môi trường được sử dụng trong đồ án: Linux, bản phân phối Ubuntu 20.04.06 LTS, sử dụng 2 máy có thông số khác nhau để chạy: máy laptop GTX 1650 4GB RAM, máy pc RTX 3060 12GB RAM. CUDA Toolkit 11.6 đã cài đặt CUDNN.
 
-Do code trong paper BeyoundBoundingBox đã không còn tương thích với phiên bản Mmcv \cite{Mmcv} hiện đại, em đã chuyển qua sử dụng thư viện Mmrotate, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA. Thực hiện tải về các thư viện Mmcv==1.7.1, Mmdetection==2.28.2 và Mmrotate==0.3.4. Riêng 2 thư viện Mmcv và Mmrotate \cite{MMRotate} thì clone git về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMmlab. Thư viện Mmcv đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA c++ để lập trình tính toán cho card đồ hoạ). Thư viện Mmdetection \cite{MMDetection} là một bộ thư viện chủ đạo của phòng nghiên cứu OpenMmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện Mmrotate. 
+Do code trong paper Beyound Bounding Box đã không còn tương thích với phiên bản Mmcv \cite{mmcv} hiện đại, em đã chuyển qua sử dụng thư viện Mmrotate \cite{zhou2022mmrotate}, một thư viện mới được xây dựng vài tháng gần đây, có triển khai lại paper trên như là một bộ phát hiện mới, có tên là CFA.\\
+ Thực hiện tải về các thư viện Mmcv==1.7.1, Mmdetection==2.28.2 và Mmrotate==0.3.4. Riêng 2 thư viện Mmcv và Mmrotate thực hiện clone repo về và xây dựng thư viện từ nguồn (build from source) theo như tài liệu của OpenMmlab.\\
 
 OpenMmlab là một dự án mã nguồn mở phục vụ cho nghiên cứu học thuật và ứng dụng công nghiệp, bao gồm nhiều chủ đề nghiên cứu trong lĩnh vực thị giác máy tính như: phân loại hình ảnh, phát hiện mục tiêu, phân đoạn mục tiêu, tạo hình ảnh siêu phân giải, và nhiều hơn nữa.
 
-Từ khi được mở cửa vào năm 2018, OpenMmlab đã phát hành hơn 20 thư viện thuật toán, bao gồm hơn 250 cách triển khai thuật toán và 2000 mô hình được huấn luyện trước. OpenMmlab đã thu hút được hơn 60,000+ người theo dõi trên GitHub, với sự tham gia của hơn 1,300 nhà phát triển cộng đồng.
-
-OpenMmlab cung cấp các thư viện chất lượng cao để giảm khó khăn trong việc tái cài đặt thuật toán, tạo ra chuỗi công cụ triển khai hiệu quả hướng đến nhiều backend và thiết bị khác nhau. Dựa trên PyTorch, OpenMmlab phát triển MMEngine để cung cấp engine đào tạo và đánh giá phổ biến, và Mmcv để cung cấp các toán tử mạng nơ-ron và biến đổi dữ liệu, phục vụ như một nền tảng cho toàn bộ dự án.
-
 OpenMmlab đã phát hành hơn 30 thư viện thị giác, đã triển khai hơn 300 thuật toán, và chứa hơn 2000 mô hình được huấn luyện trước.
+
+Thư viện Mmcv đóng vai trò cung cấp các phép toán hỗ trợ ở mức thấp (sử dụng code CUDA c++ để lập trình tính toán cho card đồ hoạ). Thư viện Mmdetection \cite{mmdetection} là một bộ thư viện chủ đạo của phòng nghiên cứu OpenMmlab, cung cấp nền tảng để xây dựng tiếp một nhánh khác đó chính là thư viện Mmrotate. 
 
 Mmdetection là một hộp công cụ phát hiện đối tượng chứa tập hợp các phương pháp phát hiện đối tượng phong phú, phân đoạn các thể hiện và phân đoạn toàn cảnh, cũng như các thành phân liên quan và các mô đun.
 
 Mmrotate là một nhánh mới được xây dựng từ Mmdetection, là một hộp công cụ phát hiện đối tượng xoay dựa trên Pytorch. Nó cũng là một phần của các dự án OpenMMlab.
+
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=445px]{./demo_mmrotate_result.jpg}
@@ -1101,9 +1099,9 @@ Mmrotate là một nhánh mới được xây dựng từ Mmdetection, là một
 
 Tập dữ liệu được sử dụng trong đồ án chính là tập dữ liệu DOTA v1.0. Tập dữ liệu DOTA được thu thập từ nền tảng Google Earth, GF-2 và vệ tinh JL-1 được cung cấp bởi Trung tâm Trung quốc nghiên cứu dữ liệu vệ tinh và ứng dụng, và các hình ảnh trên không được cung cấp bởi CycloMedia B.V. DOTA bao gồm các ảnh RGB và các ảnh mức xám. Tất cả các ảnh đều được lưu trữ dưới định dạng png. Tập dữ liệu DOTA có 3 phiên bản: v1.0, v1.5 và v2.0. Riêng tập dữ liệu v1.0 đã được chia sẵn các tập train, test, val.
 
-Danh mục các đối tượng trong tập DOTA v1.0 bao gồm: \textit{plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field and swimming pool.}
+Danh mục các class trong tập DOTA v1.0 bao gồm: plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field and swimming pool.
 
-Về định dạng nhãn, mỗi đối tượng được gán nhãn bởi một hộp bao có hướng (oriented bounding box - OBB), được ký hiệu là: $(x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4)$. Trong đó $(x_i, y_i)$ biểu thị đỉnh thứ i của OBB. Các đỉnh được sắp xếp theo chiều kim đồng hồ. Ảnh \ref{minh_hoa_hop_bao_dota} minh hoạ trực quan các nhãn. Điểm màu vàng đại diện cho điểm bắt đầu, có nghĩa là: a) góc trái của máy bay, b) góc trái trên cùng của một phương tiện to, c) trung tâm của một sân bóng chày.
+Mỗi đối tượng được gán nhãn bởi một hộp bao có hướng (oriented bounding box - OBB), được ký hiệu là: $(x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4)$. Trong đó $(x_i, y_i)$ biểu thị đỉnh thứ i của OBB. Các đỉnh được sắp xếp theo chiều kim đồng hồ. Ảnh \ref{minh_hoa_hop_bao_dota} minh hoạ trực quan các nhãn. Điểm màu vàng đại diện cho điểm bắt đầu, có nghĩa là: a) góc trái của máy bay, b) góc trái trên cùng của một phương tiện to, c) trung tâm của một sân bóng chày.
 
 Mỗi một thể hiện trong file nhãn có thêm một danh mục (category) và độ khó (difficult) biểu thi liệu thể hiện này có khó nhận diện hay không (1 là khó, 0 là không khó). Các nhãn của một ảnh được lưu trong một file text với cùng tên file. Mỗi dòng trong file đại diện cho một thể hiện. Ví dụ:
 
@@ -1143,9 +1141,9 @@ Với annfiles chứa các file annotation của từng ảnh, images là thư m
 		\label{minh_hoa_hop_bao_dota}
 	\end{center}
 \end{figure} 
-\subsection{Các bước thực hiện}
-Tiếp theo thực hiện cài đặt miniconda, là một phiên bản thu gọn của Anaconda. Sau đó chạy các câu lệnh sau:
+\section{Các thức thay thế thuật toán}
 
+Tiếp theo thực hiện cài đặt miniconda, một phiên bản thu gọn của Anaconda. Sau đó chạy các câu lệnh sau:
 
 \begin{lstlisting}[language=bash, caption={Mô tả lệnh command line để tạo môi trường ảo}, label={lst:command-line}]
 
@@ -1171,7 +1169,7 @@ $ pip install future tensorboard
 
 \end{lstlisting}
 
-Tiếp theo cần phải thay thế code thuật toán mới vào thuật toán Jarvis. Để thay thế được ta cần phải thay thế vào thư viện mmcv, tìm đến kernel convex\_iou\_kernel.cuh để thay thế 2 hàm Jarvis và Jarvis\_and\_index. Hai hàm hày có đầu vào là một mảng các Point tên là in\_poly đại diện cho số điểm cần tìm bao lồi, n\_poly đại diện cho số lượng phần tử trong mảng in\_poly. Đầu tiên thay thế bằng thuật toán Outer Convex Approximation thứ nhất. Thuật toán này có code Python như sau:
+Ta cần phải thay thế code thuật toán mới vào thuật toán Jarvis. Để thay thế được ta cần phải thay thế vào thư viện mmcv, tìm đến kernel convex\_iou\_kernel.cuh để thay thế 2 hàm Jarvis và Jarvis\_and\_index. Hai hàm hày có đầu vào là một mảng các Point tên là in\_poly đại diện cho số điểm cần tìm bao lồi, n\_poly đại diện cho số lượng phần tử trong mảng in\_poly. Đầu tiên thay thế bằng thuật toán Outer Convex Approximation thứ nhất. Thuật toán này có code Python như sau:
 
 \begin{lstlisting}[language=Python, caption={Mô tả mã nguồn Python}, label={lst:python-code}]
 # import cac thu vien can thiet
@@ -2780,7 +2778,8 @@ Point* X, int n, double min_y,
 	size_point = count;
 }
 \end{lstlisting}	
-\textbf{Ta có hai hàm thay mới tương tự dành cho thuật toán Inner Convex Approximation:}
+
+Ta có hai hàm thay mới tương tự dành cho thuật toán Inner Convex Approximation:\\ 
 
 \begin{lstlisting}
 __device__ inline void Jarvis(Point* in_poly, int& n_poly) {
@@ -3404,11 +3403,16 @@ break;
 \end{lstlisting}	
 \chapter{Một số kết quả tính toán }
 
-Để thay được thuật toán mới vào bộ phát hiện, ta cần thay code của thuật toán mới vào thư viện Mmcv, được viết bằng mã CUDA c++. Ta cần quan tâm đến các yếu tố sau:\\
-Về vị trí cần thay hàm: Có hai hàm cần thay là Jarvis() và Jarvis\_and\_index().\\
-Về bộ dataset sử dụng: Có hai bộ đó là bộ hoàn chỉnh và bộ có 1000 ảnh trainval, 500 ảnh test. Yêu cầu của lần huấn luyện là phải đi qua được 40 epoch.\\
+Để thay được thuật toán mới vào bộ phát hiện, ta cần thay code của thuật toán mới vào thư viện Mmcv, được viết bằng mã CUDA c++. Ta cần quan tâm đến các yếu tố sau:
+
+Về vị trí cần thay hàm: Có hai hàm cần thay là Jarvis() và Jarvis\_and\_index().
+
+Về bộ dataset sử dụng: Có hai bộ đó là bộ hoàn chỉnh và bộ có 1000 ảnh trainval, 500 ảnh test. Yêu cầu của lần huấn luyện là phải đi qua được 40 epoch.
+
 Với mỗi yếu tố trên ta sẽ thử với nhiều lần, trong đó có các lần thử tiêu biểu như sau:
-\section{Thay thế Outer Convex Approximation sử dụng bộ dữ liệu đầy đủ}
+
+\section{Thay thế Outer Convex Approximation và huấn luyện sử dụng bộ dữ liệu đầy đủ}
+
 Sử dụng thuật toán Outer Convex Approximation để thay thế vào hai hàm trên, sau đó cho thuật toán huấn luyện với bộ dữ liệu DOTA đã được chia cắt tỷ lệ ảnh.\\
 
 \begin{figure}[ht!]
@@ -3418,8 +3422,9 @@ Sử dụng thuật toán Outer Convex Approximation để thay thế vào hai h
 		\label{outer_fulldata_epoch3}
 	\end{center}
 \end{figure} 
+
 \textbf{Kết quả huấn luyện}: Máy chạy tốt cho đến epoch thứ 3 báo lỗi illegal memory (Hình \ref{outer_fulldata_epoch3}). Dự đoán nguyên nhân do tính toán bị sai hoặc máy hết dung lượng. Thực hiện restart máy và cho chạy lại từ file checkpoint mới nhất, tuy nhiên kết quả vẫn tương tự và không chạy thêm được epoch nào.
-\section{Thay thế Outer Convex Approximation sử dụng dataset nhỏ hơn}
+\section{Thay thế Outer Convex Approximation và huấn luyện sử dụng dataset nhỏ}
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -3436,13 +3441,24 @@ Sử dụng thuật toán Outer Convex Approximation để thay thế vào hai h
 		\label{ket_qua_file_none_log_json}
 	\end{center}
 \end{figure} 
+
 Do cần có kết quả sớm để xem thuật toán có thực hiện được hay không, ta sẽ sử dụng với bộ dataset nhỏ hơn. Bộ dataset này được lấy từ bộ dataset đầy đủ với 1000 ảnh và nhãn dành cho tập trainval, 500 ảnh dành cho tập test. Kết quả là thuật toán chạy được đến epoch số 20 là bị sập, báo lỗi illigal memory (Hình \ref{mmrotate8_1000p_epoch20}). Ngoài ra quá trình huấn luyện thu được file checkpoint  và file log (Hình \ref{ket_qua_file_none_log_json}).
 
-\section{Thay thế Outer Convex Approximation vào hàm Jarvis() và sử dụng bộ dataset nhỏ}
-Do nghi ngờ kết quả lỗi xuất hiện ở hàm Jarvis\_and\_index(), em chỉ thay thuật toán vào hàm Jarvis, tức là trong quá trình huấn luyện sẽ có sử dụng cả thuật toán Jarvis March và thuật toán Outer Convex Approximation. Kết quả quá trình huấn luyện diễn ra được thuận lợi, thuật toán chạy hết được 40 epochs mà không gặp lỗi gì. Tuy nhiên do bộ dataset quá nhỏ, cùng với giới hạn các class trong dataset bị mất cân bằng nên không sử dụng được kết quả này, chỉ có thể chứng minh được là thuật toán đã hoạt động được và cho kết quả chạy chính xác. Tuy nhiên kết luận này vẫn cần phải kiểm tra và xác minh lại tính chính xác khách quan hơn. \\
-\textit{cái này để bên máy của thoa vẫn chưa paste vào đây}
-\section{Thay thế Inner Convex Approximation sử dụng toàn bộ tập dữ liệu}
+\section{Thay thế Outer Convex Approximation vào hàm Jarvis() và huấn luyện sử dụng dataset nhỏ}
+
+Do nghi ngờ kết quả lỗi xuất hiện ở hàm Jarvis\_and\_index(), em chỉ thay thuật toán vào hàm Jarvis, tức là trong quá trình huấn luyện sẽ có sử dụng cả thuật toán Jarvis March và thuật toán Outer Convex Approximation. Kết quả quá trình huấn luyện diễn ra được thuận lợi, thuật toán chạy hết được 40 epochs mà không gặp lỗi gì. Tuy nhiên do bộ dataset quá nhỏ, cùng với giới hạn các class trong dataset bị mất cân bằng nên không sử dụng được kết quả này, chỉ có thể chứng minh được là thuật toán đã hoạt động được và cho kết quả chạy chính xác. Tuy nhiên kết luận này vẫn cần phải kiểm tra và xác minh lại tính chính xác khách quan hơn.
+
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=450px]{./outer_just_javis_smalldata_40epoch.JPG}
+		\caption{Outer Convex Approximation chỉ thay code ở hàm Jarvis, đạt được 40 epoch.}
+		\label{outer_just_javis_smalldata_40epoch}
+	\end{center}
+\end{figure} 
+\section{Thay thế Inner Convex Approximation và huấn luyện sử dụng toàn bộ dữ liệu đầy đủ}
+
 \textbf{Kết quả}: Quá trình huấn luyện chạy thuận lợi cho đến epoch số 15, máy báo lỗi Illegal Memory, tức là lỗi truy cập vùng nhớ không hợp lệ.
+
 \begin{figure}[ht!]
 	\begin{center}
 		\includegraphics[width=450px]{./inner_fulldata_epoch15.JPG}
@@ -3450,18 +3466,23 @@ Do nghi ngờ kết quả lỗi xuất hiện ở hàm Jarvis\_and\_index(), em 
 		\label{inner_fulldata_epoch15}
 	\end{center}
 \end{figure} 
-\section{Thay thế Inner Convex Approximation sử dụng tập dữ liệu nhỏ hơn}
-\textbf{Kết quả}: \textit{đang chạy}
+\section{Thay thế Inner Convex Approximation và huấn luyện sử dụng bộ dữ liệu nhỏ}
+
+\textbf{Kết quả}: Máy chạy đến epoch số 20 báo lỗi Illegal Memory.
+
 \begin{figure}[ht!]
 	\begin{center}
-		\includegraphics[width=450px]{./inner_fulldata_epoch15.JPG}
-		\caption{Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}
-		\label{inner_fulldata_epoch15}
+		\includegraphics[width=450px]{./inner_smalldata_epoch20.JPG}
+		\caption{Inner Convex Approximation train với bộ dữ liệu nhỏ hơn, sập tại epoch số 20.}
+		\label{inner_smalldata_epoch20}
 	\end{center}
 \end{figure} 
+
 \chapter*{{Kết luận}}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt} Kết luận}
-Trong tất cả các lần huấn luyện trên, chỉ có lần thử với bộ dataset nhỏ cùng với việc thay thế 1 nửa thuật toán là đáp ứng được quá trình training 40 epoch. Vì số lượng bộ dữ liệu không đảm bảo cho kết quả huấn luyện đúng, nên chỉ có thể kết luận rằng thuật toán mới có thể thay thế được vào bộ phát hiện, nhưng chưa thể sử dụng được kết quả. Có nhiều nguyên nhân khác nhau dẫn đến lỗi, nhưng nguyên nhân chính vẫn là chưa tìm hiểu đủ kiến thức cũng như kinh nghiệm trong công việc này.\\
+
+Trong tất cả các lần huấn luyện trên, chỉ có lần thử với bộ dataset nhỏ cùng với việc thay thế 1 nửa thuật toán là đáp ứng được quá trình training 40 epoch. Vì số lượng bộ dữ liệu không đảm bảo cho kết quả huấn luyện đúng, nên chỉ có thể kết luận rằng thuật toán mới có thể thay thế được vào bộ phát hiện, nhưng chưa thể sử dụng được kết quả. Có nhiều nguyên nhân khác nhau dẫn đến lỗi, nhưng nguyên nhân chính vẫn là chưa tìm hiểu đủ kiến thức cũng như kinh nghiệm trong công việc này.
+
 Qua các lần training không thành công, em xin đề xuất hướng xử lý tiếp theo của đồ án:
 \begin{itemize}
 	\item Cần kiểm tra lại file config cấu hình training. Nếu file này cấu hình chưa đúng dẫn đến hiện tượng training giữa chừng thì bị lỗi.
@@ -3473,19 +3494,7 @@ Qua các lần training không thành công, em xin đề xuất hướng xử l
 Trong quá trình làm đồ án tốt nghiệp, em đã có cơ hội được trải nghiệm chuyên ngành AI cũng như được thử sức qua các công nghệ nhận diện ảnh mới nhất. Em đã tích luỹ được những kinh nghiệm về kiến thức trong công việc cũng như các kỹ năng mềm trong xử lý các công việc liên quan đến hệ điều hành linux, cách triển khai một dự án trí tuệ nhân tạo, cách tìm hiểu thông tin từ các tài liệu chính thống.
  
 Em được rèn luyện kỹ năng giải quyết các công việc con, cách tương tác với người khác để trao đổi kiến thức, từ đó rút ngắn công sức và thời gian. Đồng thời em cũng được áp dụng lại các kiến thức đã được học từ các môn trên trường vào đồ án thực tế này.
-
-
-
-
-
-\begin{thebibliography}{30}
-\addcontentsline{toc}{chapter}{\vspace*{-8pt} Tài liệu tham khảo}
-
-
-	\bibitem{Guo-Zonghao} Zonghao Guo, Chang Liu, Xiaosong Zhang, Jianbin Jiao, Xiangyang Ji and Qixiang Ye (2021), \textit{Beyond Bounding-Box: Convex-hull Feature Adaptation for Oriented and Densely Packed Object Detection} , IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).
-	\bibitem{Mmcv} Mmcv Contributors (2018), OpenMMLab Computer Vision Foundation, \textit{https://github.com/open-mmlab/mmcv}
-	\bibitem{MMRotate} MMRotate Contributors (2022),OpenMMLab rotated object detection toolbox and benchmark, \textit{https://github.com/open-mmlab/mmrotate}
-	\bibitem{MMDetection} MMDetection Contributors (2018), OpenMMLab Detection Toolbox and Benchmark, \textit{https://github.com/open-mmlab/mmdetection}
-\end{thebibliography} 
+\bibliographystyle{plain}
+\bibliography{trichdan}
 \end{document}
  
