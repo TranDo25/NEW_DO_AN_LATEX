@@ -19,12 +19,18 @@
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Inner Convex Approximation với delta = 10.}}{26}{}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Inner Convex Approximation với delta = 20.}}{27}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}}{30}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh hoạ kết quả hình ảnh output của thư viện Mmrotate.}}{29}{}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Minh hoạ nhãn hộp bao có hướng của tập dữ liệu DOTA.}}{31}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Outer Convex Approximation sử dụng toàn bộ tập dữ liệu, sập tại epoch số 3.}}{83}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Outer Convex Approximation chạy với dataset nhỏ, sập tại epoch 20.}}{83}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Outer Convex Approximation train với dataset nhỏ, sập tại epoch 20.}}{84}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Outer Convex Approximation chỉ thay code ở hàm Jarvis, đạt được 40 epoch.}}{85}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}}{85}{}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Inner Convex Approximation train với bộ dữ liệu nhỏ hơn, sập tại epoch số 20.}}{86}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Kết quả của bộ phát hiện CFA thực hiện trên tập dữ liệu DOTA khi so sánh với các bộ phát hiện khác}}{37}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces So sánh hàm loss CIoU và hàm loss Smoothed-L1.}}{37}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Nghiên cứu cắt bỏ của các module trong CFA. CGen là Convex hull Generation, FA-S là feature adaptation by set splitting, FA-A là Feature Adaptation với anti-aliasing. Mạng backbone được dùng là ResNet50.}}{38}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Đánh giá tham số và các modules. }}{39}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Quá trình phát triển của bao lồi trong quá trình huấn luyện.}}{39}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Biểu đồ nhiệt khi có thích nghi đặc trưng và không có thích nghi đặc trưng}}{40}{}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Outer Convex Approximation sử dụng toàn bộ tập dữ liệu, sập tại epoch số 3.}}{40}{}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Outer Convex Approximation chạy với dataset nhỏ, sập tại epoch 20.}}{41}{}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Outer Convex Approximation train với dataset nhỏ, sập tại epoch 20.}}{41}{}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Outer Convex Approximation chỉ thay code ở hàm Jarvis, đạt được 40 epoch.}}{42}{}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Inner Convex Approximation train với toàn bộ dữ liệu, sập tại epoch số 15.}}{43}{}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Inner Convex Approximation train với bộ dữ liệu nhỏ hơn, sập tại epoch số 20.}}{43}{}%
