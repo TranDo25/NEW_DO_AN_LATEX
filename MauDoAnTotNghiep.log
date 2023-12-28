@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.11)  27 DEC 2023 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.11)  28 DEC 2023 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1304,7 +1304,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 File: ./outer_convex_approximation_brief.png Graphic file (type png)
 <use ./outer_convex_approximation_brief.png>
 Package pdftex.def Info: ./outer_convex_approximation_brief.png  used on input 
-line 405.
+line 412.
 (pdftex.def)             Requested size: 351.31378pt x 263.49107pt.
 
 
@@ -1319,7 +1319,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <./inner_convex_brief.png, id=80, 642.4pt x 481.8pt>
 File: ./inner_convex_brief.png Graphic file (type png)
 <use ./inner_convex_brief.png>
-Package pdftex.def Info: ./inner_convex_brief.png  used on input line 417.
+Package pdftex.def Info: ./inner_convex_brief.png  used on input line 424.
 (pdftex.def)             Requested size: 351.31378pt x 263.49107pt.
 
 
@@ -1344,10 +1344,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 File: ./construction_convex_hull_set.jpg Graphic file (type jpg)
 <use ./construction_convex_hull_set.jpg>
 Package pdftex.def Info: ./construction_convex_hull_set.jpg  used on input line
- 459.
+ 466.
 (pdftex.def)             Requested size: 446.67038pt x 221.53499pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 459--460
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 466--467
  [] 
  []
 
@@ -1363,10 +1363,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <./gaussian_gradient.jpg, id=94, 870.25125pt x 310.15875pt>
 File: ./gaussian_gradient.jpg Graphic file (type jpg)
 <use ./gaussian_gradient.jpg>
-Package pdftex.def Info: ./gaussian_gradient.jpg  used on input line 478.
+Package pdftex.def Info: ./gaussian_gradient.jpg  used on input line 485.
 (pdftex.def)             Requested size: 446.67038pt x 159.19638pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 478--479
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 485--486
  [] 
  []
 
@@ -1402,10 +1402,10 @@ Ch\uhorn \ohorn ng 2.
 
 ]
 
-LaTeX Warning: Command \textless invalid in math mode on input line 564.
+LaTeX Warning: Command \textless invalid in math mode on input line 571.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 564.
+LaTeX Warning: Command \textless invalid in math mode on input line 571.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1437,27 +1437,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <./frame_polygon.jpg, id=122, 408.3255pt x 264.99pt>
 File: ./frame_polygon.jpg Graphic file (type jpg)
 <use ./frame_polygon.jpg>
-Package pdftex.def Info: ./frame_polygon.jpg  used on input line 774.
+Package pdftex.def Info: ./frame_polygon.jpg  used on input line 781.
 (pdftex.def)             Requested size: 351.31378pt x 227.99612pt.
 <./outer_res_delta0.png, id=123, 642.4pt x 481.8pt>
 File: ./outer_res_delta0.png Graphic file (type png)
 <use ./outer_res_delta0.png>
-Package pdftex.def Info: ./outer_res_delta0.png  used on input line 784.
+Package pdftex.def Info: ./outer_res_delta0.png  used on input line 791.
 (pdftex.def)             Requested size: 351.31378pt x 263.49107pt.
 <./outer_res_delta5.png, id=124, 642.4pt x 481.8pt>
 File: ./outer_res_delta5.png Graphic file (type png)
 <use ./outer_res_delta5.png>
-Package pdftex.def Info: ./outer_res_delta5.png  used on input line 791.
+Package pdftex.def Info: ./outer_res_delta5.png  used on input line 798.
 (pdftex.def)             Requested size: 351.31378pt x 263.49107pt.
 <./outer_res_delta10.png, id=125, 642.4pt x 481.8pt>
 File: ./outer_res_delta10.png Graphic file (type png)
 <use ./outer_res_delta10.png>
-Package pdftex.def Info: ./outer_res_delta10.png  used on input line 798.
+Package pdftex.def Info: ./outer_res_delta10.png  used on input line 805.
 (pdftex.def)             Requested size: 351.31378pt x 263.49107pt.
 <./outer_res_delta30.png, id=126, 642.4pt x 481.8pt>
 File: ./outer_res_delta30.png Graphic file (type png)
 <use ./outer_res_delta30.png>
-Package pdftex.def Info: ./outer_res_delta30.png  used on input line 805.
+Package pdftex.def Info: ./outer_res_delta30.png  used on input line 812.
 (pdftex.def)             Requested size: 351.31378pt x 263.49107pt.
 
 
@@ -1517,24 +1517,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Overfull \hbox (41.80247pt too wide) in paragraph at lines 1012--1043
+Overfull \hbox (41.80247pt too wide) in paragraph at lines 1019--1050
  [] 
  []
 
 <./inner_cv_delta0.png, id=149, 642.4pt x 481.8pt>
 File: ./inner_cv_delta0.png Graphic file (type png)
 <use ./inner_cv_delta0.png>
-Package pdftex.def Info: ./inner_cv_delta0.png  used on input line 1050.
+Package pdftex.def Info: ./inner_cv_delta0.png  used on input line 1057.
 (pdftex.def)             Requested size: 301.1261pt x 225.85054pt.
 <./inner_cv_delta10.png, id=150, 642.4pt x 481.8pt>
 File: ./inner_cv_delta10.png Graphic file (type png)
 <use ./inner_cv_delta10.png>
-Package pdftex.def Info: ./inner_cv_delta10.png  used on input line 1057.
+Package pdftex.def Info: ./inner_cv_delta10.png  used on input line 1064.
 (pdftex.def)             Requested size: 301.1261pt x 225.85054pt.
 <./inner_cv_delta20.png, id=151, 642.4pt x 481.8pt>
 File: ./inner_cv_delta20.png Graphic file (type png)
 <use ./inner_cv_delta20.png>
-Package pdftex.def Info: ./inner_cv_delta20.png  used on input line 1064.
+Package pdftex.def Info: ./inner_cv_delta20.png  used on input line 1071.
 (pdftex.def)             Requested size: 301.1261pt x 225.85054pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1565,7 +1565,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [27 <./inner_cv_delta20.png (PNG copy)>]
 Ch\uhorn \ohorn ng 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1077--1079
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1086
 
  []
 
@@ -1575,7 +1575,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1077--1079
 <./demo_mmrotate_result.jpg, id=165, 684.5575pt x 542.025pt>
 File: ./demo_mmrotate_result.jpg Graphic file (type jpg)
 <use ./demo_mmrotate_result.jpg>
-Package pdftex.def Info: ./demo_mmrotate_result.jpg  used on input line 1092.
+Package pdftex.def Info: ./demo_mmrotate_result.jpg  used on input line 1099.
 (pdftex.def)             Requested size: 250.93842pt x 198.68521pt.
 
 
@@ -1587,17 +1587,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29 <./demo_mmrotate_result.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1106--1118
+Underfull \hbox (badness 10000) in paragraph at lines 1113--1125
 
  []
 
 <./minh_hoa_hop_bao_dota.jpg, id=169, 1049.42062pt x 237.13594pt>
 File: ./minh_hoa_hop_bao_dota.jpg Graphic file (type jpg)
 <use ./minh_hoa_hop_bao_dota.jpg>
-Package pdftex.def Info: ./minh_hoa_hop_bao_dota.jpg  used on input line 1121.
+Package pdftex.def Info: ./minh_hoa_hop_bao_dota.jpg  used on input line 1128.
 (pdftex.def)             Requested size: 446.67038pt x 100.9316pt.
 
-Overfull \hbox (5.65265pt too wide) in paragraph at lines 1121--1122
+Overfull \hbox (5.65265pt too wide) in paragraph at lines 1128--1129
  [] 
  []
 
@@ -1611,7 +1611,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [30]
 LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 1
-156.
+163.
  (c:/texlive/2023/texmf-dist/tex/latex/vntex/t5cmtt.fd
 File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -1630,7 +1630,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31 <./minh_hoa_hop_bao_dota.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1172--1173
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1180
 
  []
 
@@ -1678,10 +1678,10 @@ Ch\uhorn \ohorn ng 4.
 File: ../slide-do-an/detection_performance_on_DOTA.png Graphic file (type png)
 <use ../slide-do-an/detection_performance_on_DOTA.png>
 Package pdftex.def Info: ../slide-do-an/detection_performance_on_DOTA.png  used
- on input line 1319.
+ on input line 1326.
 (pdftex.def)             Requested size: 455.24408pt x 183.43094pt.
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 1319--1320
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 1326--1327
  [][] 
  []
 
@@ -1694,7 +1694,7 @@ File: ../slide-do-an/compare_CIoU_loss_with_L1_loss.png Graphic file (type png)
 
 <use ../slide-do-an/compare_CIoU_loss_with_L1_loss.png>
 Package pdftex.def Info: ../slide-do-an/compare_CIoU_loss_with_L1_loss.png  use
-d on input line 1336.
+d on input line 1343.
 (pdftex.def)             Requested size: 170.71652pt x 54.44826pt.
 <../slide-do-an/nghien_cuu_cat_bo_cua_cac_module.png, id=197, 286.06876pt x 115
 .93312pt>
@@ -1702,7 +1702,7 @@ File: ../slide-do-an/nghien_cuu_cat_bo_cua_cac_module.png Graphic file (type pn
 g)
 <use ../slide-do-an/nghien_cuu_cat_bo_cua_cac_module.png>
 Package pdftex.def Info: ../slide-do-an/nghien_cuu_cat_bo_cua_cac_module.png  u
-sed on input line 1349.
+sed on input line 1356.
 (pdftex.def)             Requested size: 341.43306pt x 138.37251pt.
 
 
@@ -1721,7 +1721,7 @@ File: ../slide-do-an/evaluation_of_hyperparameter_and_modules.png Graphic file
 (type png)
 <use ../slide-do-an/evaluation_of_hyperparameter_and_modules.png>
 Package pdftex.def Info: ../slide-do-an/evaluation_of_hyperparameter_and_module
-s.png  used on input line 1355.
+s.png  used on input line 1362.
 (pdftex.def)             Requested size: 341.43306pt x 245.72292pt.
 <../slide-do-an/convex_hull_evolution_during_training.png, id=204, 767.11594pt 
 x 325.215pt>
@@ -1729,10 +1729,10 @@ File: ../slide-do-an/convex_hull_evolution_during_training.png Graphic file (ty
 pe png)
 <use ../slide-do-an/convex_hull_evolution_during_training.png>
 Package pdftex.def Info: ../slide-do-an/convex_hull_evolution_during_training.p
-ng  used on input line 1362.
+ng  used on input line 1369.
 (pdftex.def)             Requested size: 455.24408pt x 193.00163pt.
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 1362--1363
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 1369--1370
  [][] 
  []
 
@@ -1741,52 +1741,52 @@ Overfull \hbox (14.22635pt too wide) in paragraph at lines 1362--1363
 File: ../slide-do-an/heat_map_comparision_of_CFA.png Graphic file (type png)
 <use ../slide-do-an/heat_map_comparision_of_CFA.png>
 Package pdftex.def Info: ../slide-do-an/heat_map_comparision_of_CFA.png  used o
-n input line 1368.
+n input line 1375.
 (pdftex.def)             Requested size: 455.24408pt x 126.08376pt.
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 1368--1369
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 1375--1376
  [][] 
  []
 
 
-Overfull \hbox (8.01105pt too wide) in paragraph at lines 1375--1376
+Overfull \hbox (8.01105pt too wide) in paragraph at lines 1382--1383
 []\T5/cmr/m/n/13 V· và tr½ c¦n thay h m: Câ hai h m c¦n thay l  Jarvis() v  Jar
 vis_and_index(). 
  []
 
 
-Overfull \hbox (0.56389pt too wide) in paragraph at lines 1381--1381
+Overfull \hbox (0.56389pt too wide) in paragraph at lines 1388--1388
 []\T5/cmr/bx/n/17.28 Thay th¸ Outer Con-vex Ap-prox-i-ma-tion v  hu§n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1384
+Underfull \hbox (badness 10000) in paragraph at lines 1390--1391
 
  []
 
 <./outer_fulldata_epoch3.JPG, id=206, 966.61125pt x 342.27875pt>
 File: ./outer_fulldata_epoch3.JPG Graphic file (type jpg)
 <use ./outer_fulldata_epoch3.JPG>
-Package pdftex.def Info: ./outer_fulldata_epoch3.JPG  used on input line 1387.
+Package pdftex.def Info: ./outer_fulldata_epoch3.JPG  used on input line 1394.
 (pdftex.def)             Requested size: 451.68915pt x 159.94138pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 1387--1388
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 1394--1395
  [] 
  []
 
 
-Overfull \hbox (0.56389pt too wide) in paragraph at lines 1394--1394
+Overfull \hbox (0.56389pt too wide) in paragraph at lines 1401--1401
 []\T5/cmr/bx/n/17.28 Thay th¸ Outer Con-vex Ap-prox-i-ma-tion v  hu§n
  []
 
 <./mmrotate8_1000p_epoch20.JPG, id=207, 727.71875pt x 444.66125pt>
 File: ./mmrotate8_1000p_epoch20.JPG Graphic file (type jpg)
 <use ./mmrotate8_1000p_epoch20.JPG>
-Package pdftex.def Info: ./mmrotate8_1000p_epoch20.JPG  used on input line 1398
+Package pdftex.def Info: ./mmrotate8_1000p_epoch20.JPG  used on input line 1405
 .
 (pdftex.def)             Requested size: 451.68915pt x 276.00601pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 1398--1399
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 1405--1406
  [] 
  []
 
@@ -1813,15 +1813,15 @@ an/convex_hull_evolution_during_training.png>]
 File: ./ket_qua_file_none_log_json.JPG Graphic file (type jpg)
 <use ./ket_qua_file_none_log_json.JPG>
 Package pdftex.def Info: ./ket_qua_file_none_log_json.JPG  used on input line 1
-406.
+413.
 (pdftex.def)             Requested size: 451.68915pt x 156.78632pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 1406--1407
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 1413--1414
  [] 
  []
 
 
-Overfull \hbox (5.42271pt too wide) in paragraph at lines 1414--1414
+Overfull \hbox (5.42271pt too wide) in paragraph at lines 1421--1421
 []\T5/cmr/bx/n/17.28 Thay th¸ Outer Con-vex Ap-prox-i-ma-tion v o h m
  []
 
@@ -1848,32 +1848,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 File: ./outer_just_javis_smalldata_40epoch.JPG Graphic file (type jpg)
 <use ./outer_just_javis_smalldata_40epoch.JPG>
 Package pdftex.def Info: ./outer_just_javis_smalldata_40epoch.JPG  used on inpu
-t line 1420.
+t line 1427.
 (pdftex.def)             Requested size: 451.68915pt x 166.41606pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 1420--1421
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 1427--1428
  [] 
  []
 
 <./inner_fulldata_epoch15.JPG, id=228, 952.55875pt x 325.215pt>
 File: ./inner_fulldata_epoch15.JPG Graphic file (type jpg)
 <use ./inner_fulldata_epoch15.JPG>
-Package pdftex.def Info: ./inner_fulldata_epoch15.JPG  used on input line 1431.
+Package pdftex.def Info: ./inner_fulldata_epoch15.JPG  used on input line 1438.
 
 (pdftex.def)             Requested size: 451.68915pt x 154.21571pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 1431--1432
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 1438--1439
  [] 
  []
 
 <./inner_smalldata_epoch20.JPG, id=229, 961.5925pt x 326.21875pt>
 File: ./inner_smalldata_epoch20.JPG Graphic file (type jpg)
 <use ./inner_smalldata_epoch20.JPG>
-Package pdftex.def Info: ./inner_smalldata_epoch20.JPG  used on input line 1442
+Package pdftex.def Info: ./inner_smalldata_epoch20.JPG  used on input line 1449
 .
 (pdftex.def)             Requested size: 451.68915pt x 153.2382pt.
 
-Overfull \hbox (10.67142pt too wide) in paragraph at lines 1442--1443
+Overfull \hbox (10.67142pt too wide) in paragraph at lines 1449--1450
  [] 
  []
 
@@ -1951,7 +1951,7 @@ msfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
 ts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/
 vnr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb><c:/texl
 ive/2023/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on MauDoAnTotNghiep.pdf (55 pages, 3996968 bytes).
+Output written on MauDoAnTotNghiep.pdf (55 pages, 3997988 bytes).
 PDF statistics:
  344 PDF objects out of 1000 (max. 8388607)
  198 compressed objects within 2 object streams

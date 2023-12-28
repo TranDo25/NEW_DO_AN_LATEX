@@ -515,7 +515,7 @@ Hàm mất mát này xem xét sự tương ứng về đặc trưng của nhiề
 \begin{align} \label{final_loss_CFA}
 	L^{\operatorname{det} 1}(\theta)+L^{\operatorname{det} 2}(\theta)
 \end{align}
-
+Tóm lại trong chương 1 trình bày lý thuyết của bộ phát hiện CFA, bao gồm cách biểu diễn hộp bao bằng bao lồi, thuật toán tìm bao lồi, hàm loss CIoU và cách thích ứng đặc trưng của bộ phát hiện sử dụng chiến lược phân chia tập các bao lồi.
 \chapter{Thuật toán tính bao lồi xấp xỉ}
 Thuật toán tìm bao lồi xấp xỉ nhận đầu vào là một tập các điểm ngẫu nhiên, đầu ra trả về một tập điểm biểu diễn một bao lồi bao quanh tất cả các điểm còn lại. Với ngưỡng $\delta$ tuỳ chỉnh, sẽ cho ra được dạng bao lồi khác nhau.
 \section{Outer convex approximation}
@@ -1454,8 +1454,24 @@ Do nghi ngờ kết quả lỗi xuất hiện ở hàm Jarvis\_and\_index(), em 
 
 \chapter*{{Kết luận}}
 \addcontentsline{toc}{chapter}{\vspace*{-8pt} Kết luận}
+Tóm lại trong đồ án này, em đã thực hiện các công việc sau:
+\begin{itemize}
+	\item Đọc và tìm hiểu tài liệu của bộ phát hiện CFA
+	\item Chuẩn bị tập dữ liệu DOTA để cho vào huấn luyện
+	\item Thực hiện chạy thử huấn luyện với tập dữ liệu DOTA như trong bài báo của CFA
+	\item Viết mã CUDA C++ cho 2 thuật toán Outer Convex Approximation và Inner Convex Approximation
+	\item Tìm cách thay thế hai thuật toán mới này vào thư viện Mmcv để có thể huẩn luyện mô hình
+\end{itemize}
 
 Trong tất cả các lần huấn luyện trên, chỉ có lần thử với bộ dataset nhỏ cùng với việc thay thế 1 nửa thuật toán là đáp ứng được quá trình training 40 epoch. Vì số lượng bộ dữ liệu không đảm bảo cho kết quả huấn luyện đúng, nên chỉ có thể kết luận rằng thuật toán mới có thể thay thế được vào bộ phát hiện, nhưng chưa thể sử dụng được kết quả. Có nhiều nguyên nhân khác nhau dẫn đến lỗi, nhưng nguyên nhân chính vẫn là chưa tìm hiểu đủ kiến thức cũng như kinh nghiệm trong công việc này.
+
+Các khó khăn chính khi thực hiện đồ án: 
+\begin{itemize}
+	\item Tài liệu khó đọc
+	\item Thiết lập môi trường cài đặt rất khó
+	\item Mã CUDA C++ có vài điểm khác biệt so với mã C++ truyền thống. Việc này làm cho quá trình viết mã mới gặp nhiều khó khăn
+	\item Khó debug được lỗi viết bằng mã CUDA C++. Gần như không thể xem log được thông tin gì. Cần phải sử dụng các kỹ thuật debug khác
+\end{itemize}
 
 Qua các lần training không thành công, em xin đề xuất hướng xử lý tiếp theo của đồ án:
 \begin{itemize}

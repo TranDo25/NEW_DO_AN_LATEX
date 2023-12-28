@@ -6,9 +6,10 @@
 \contentsline {section}{\numberline {1.1}Giới thiệu}{3}{}%
 \contentsline {section}{\numberline {1.2}Xây dựng tập bao lồi đầu tiên}{4}{}%
 \contentsline {section}{\numberline {1.3}Tích chập biến dạng}{5}{}%
-\contentsline {section}{\numberline {1.4}Thuật toán Convex Approximation}{8}{}%
-\contentsline {subsection}{\numberline {1.4.1}Thuật toán Outer Convex Approximation}{8}{}%
-\contentsline {subsection}{\numberline {1.4.2}Inner Convex Approximation}{9}{}%
+\contentsline {section}{\numberline {1.4}Thuật toán tìm bao lồi}{8}{}%
+\contentsline {subsection}{\numberline {1.4.1}Thuật toán Jarvis March}{8}{}%
+\contentsline {subsection}{\numberline {1.4.2}Thuật toán Outer Convex Approximation}{8}{}%
+\contentsline {subsection}{\numberline {1.4.3}Inner Convex Approximation}{9}{}%
 \contentsline {section}{\numberline {1.5}Đinh nghĩa công thức Convex Intersection over Union (CIoU)}{9}{}%
 \contentsline {section}{\numberline {1.6}Hàm mất mát}{10}{}%
 \contentsline {section}{\numberline {1.7}Thích ứng bao lồi}{11}{}%
